@@ -236,6 +236,16 @@
 如果你完全没接触过 Git、GitHub、版本控制，请先花 5 分钟读完这一章。
 不需要记命令，只要建立三个**生活类比**，后面学起来就会顺畅很多。
 
+\begin{warnbox}
+\textbf{为什么需要版本控制？}
+
+想象一下这样的场景：你正在写一个网站项目，代码文件名叫 \texttt{index.html}。你改了一版，觉得不太对，于是复制了一份，命名为 \texttt{index\_v2.html}；又改了一版，变成 \texttt{index\_v3\_final.html}；后来又发现有个 bug，于是有了 \texttt{index\_v3\_final\_真的.html}……一周以后，你的文件夹里堆满了各种版本的文件，你已经完全忘记哪个才是"最终版"。
+
+这还只是一个人工作的场景。如果团队里三个人同时修改同一个文件呢？你改完传给同事，同事改完传回来，你再改——文件名变成了 \texttt{index\_张三\_改.html}、\texttt{index\_李四\_改\_最终.html}。最后，你们都不知道该用哪个版本了。
+
+版本控制系统就是为解决这些问题而生的。它自动记录每一次修改，让你可以随时回到过去的任意版本，还能让多人协作时不再"文件满天飞"。
+\end{warnbox}
+
 \section{三个核心类比}
 
 \begin{center}
@@ -367,6 +377,28 @@
 版本控制（Version Control）是一种记录文件内容变化历史、以便将来可以回溯到特定版本的系统。
 想象你在写论文：每隔一段时间，你会另存一个副本——"论文\_v1.doc"、"论文\_v2\_final.doc"、
 "论文\_v3\_真的final.doc"……版本控制系统就是自动帮你管理这些"副本"的工具，而且远比手动另存高效。
+
+\begin{infobox}
+\textbf{场景：一个没有版本控制的下午}
+
+假设你和小明、小红三个人合作写一个网站。你们约定好，每人负责一个页面：
+\begin{itemize}
+  \item 你负责 \texttt{index.html}（首页）
+  \item 小明负责 \texttt{about.html}（关于页面）
+  \item 小红负责 \texttt{contact.html}（联系页面）
+\end{itemize}
+
+你们用微信传文件。下午 2 点，你把改好的 \texttt{index.html} 发到群里，小明下载后开始修改。
+下午 3 点，小红说她也需要改首页的导航栏，于是她也下载了 \texttt{index.html}。
+下午 4 点，小明改完了，把文件发回群里。
+下午 5 点，小红也改完了，也把文件发回群里。
+
+现在问题来了：群里有两个版本的 \texttt{index.html}，它们都基于你下午 2 点的版本，但小明和小红各自做了不同的修改。你需要手动把两个人的修改"合并"到一起——打开两个文件，一行一行对比，复制粘贴……这个过程叫"手动合并"，耗时且极易出错。
+
+更糟糕的是，如果你不小心复制错了，覆盖了某人的修改，这个修改就永远消失了，除非你记得具体内容，否则无法恢复。
+
+版本控制系统就是为解决这些问题而生的。它自动记录每次修改的内容、时间和作者，让多人协作时不再"文件满天飞"，还能让你随时回到过去的任意版本。
+\end{infobox}
 
 在软件开发中，版本控制系统帮助开发者解决以下核心问题：
 
@@ -654,6 +686,19 @@ VS Code 内置了强大的 Git 集成，将上述所有操作都图形化了。�
 
 \section{安装 Git}
 
+\begin{infobox}
+\textbf{Git 版本选择建议}
+
+Git 是一个持续更新的工具，新版本通常修复了旧版本的 bug 并增加了功能。
+\begin{itemize}
+  \item \textbf{Windows}：建议从官网下载最新版（通常每几个月更新一次）
+  \item \textbf{macOS}：通过 Homebrew 安装可以方便地更新（\texttt{brew upgrade git}）
+  \item \textbf{Linux}：系统包管理器中的版本可能较旧，如需最新版可从官网下载源码编译
+\end{itemize}
+
+本书基于 Git 2.40+ 版本编写，但绝大多数操作在所有现代 Git 版本中都相同。
+\end{infobox}
+
 \subsection{Windows 系统}
 
 \begin{stepbox}
@@ -706,6 +751,20 @@ sudo pacman -S git
 安装 Git 后，第一件事是配置你的身份信息和偏好设置。这些配置会附加在你每次提交上，
 相当于给每次修改"签名"。
 
+\begin{infobox}
+\textbf{为什么需要配置用户信息？}
+
+Git 是分布式版本控制系统，每次提交都会记录"谁"做了这次修改。如果没有配置用户信息，
+Git 会拒绝提交，并提示你设置 \texttt{user.name} 和 \texttt{user.email}。
+
+这些信息会被永久记录在提交历史中，用于：
+\begin{itemize}
+  \item 追溯代码的作者（\texttt{git log} 和 \texttt{git blame}）
+  \item 与 GitHub/GitLab 等平台的账号关联
+  \item 生成贡献统计图表
+\end{itemize}
+\end{infobox}
+
 \subsection{用户身份（必须配置）}
 
 \begin{lstlisting}[style=shell]
@@ -715,6 +774,14 @@ git config --global user.name "你的名字"
 # 设置全局邮箱（必须与 GitHub 账号邮箱一致）
 git config --global user.email "your.email@example.com"
 \end{lstlisting}
+
+\begin{keybox}
+\textbf{配置原理}：这些设置被存储在你的用户目录下的 \texttt{.gitconfig} 文件中（Windows 在 
+\texttt{C:\\Users\\你的用户名\\.gitconfig}，macOS/Linux 在 \texttt{\textasciitilde/.gitconfig}）。
+
+每次执行 \texttt{git commit} 时，Git 会读取这个文件，将用户名和邮箱写入提交记录中。
+你可以随时用 \texttt{git config --global --list} 查看当前配置。
+\end{keybox}
 
 \begin{warnbox}
 邮箱地址必须与你的 GitHub 账号关联的邮箱一致，否则 GitHub 无法将提交与你的账号关联。
@@ -773,6 +840,19 @@ Git 配置有三个层级，优先级从高到低：
 \section{安装 VS Code}
 
 VS Code（Visual Studio Code）是微软开发的免费代码编辑器，内置了强大的 Git 集成。
+
+\begin{infobox}
+\textbf{为什么选择 VS Code？}
+
+VS Code 之所以成为最受欢迎的代码编辑器之一，除了免费开源外，还有以下优势：
+\begin{itemize}
+  \item \textbf{内置 Git 集成}：无需额外安装插件，开箱即用
+  \item \textbf{直观的 Diff 视图}：清晰展示文件修改前后的对比
+  \item \textbf{图形化冲突解决}：用颜色标记冲突区域，一键选择保留哪边
+  \item \textbf{丰富的扩展生态}：GitLens、Git Graph 等扩展进一步增强了 Git 体验
+  \item \textbf{跨平台}：Windows、macOS、Linux 都有完全一致的界面和操作
+\end{itemize}
+\end{infobox}
 
 \begin{stepbox}
 \begin{enumerate}[leftmargin=1.5em]
@@ -918,7 +998,17 @@ ssh -T git@github.com
 
 \section{初始化仓库}
 
-每个 Git 项目都始于一个\textbf{仓库}（Repository）。有两种方式创建仓库：
+每个 Git 项目都始于一个\textbf{仓库}（Repository）。
+
+\begin{infobox}
+\textbf{什么是仓库？}
+
+你可以把"仓库"理解为一个"时间胶囊"——它不仅存储了你当前的文件，还存储了这些文件的每一次修改记录。当你对一个文件进行修改、保存、提交后，Git 会把这次修改记录下来，就像一个时间戳，标记着"在这个时刻，文件是这样的"。
+
+初始化仓库，就是告诉 Git："从现在开始，请帮我记录这个文件夹里所有文件的变化历史。"
+\end{infobox}
+
+有两种方式创建仓库：
 
 \subsection{方式一：在已有项目中初始化}
 
@@ -1455,6 +1545,15 @@ logs/
 如果直接在 \texttt{main} 上开发，这三天的半成品代码会一直"污染"主线。
 使用分支，你可以在独立的平行世界中开发，完成后一次性合并回去。
 
+\begin{infobox}
+\textbf{分支的本质类比}：想象你在玩一个 RPG 游戏，主线剧情是 \texttt{main} 分支。
+当你想尝试一个支线任务时，你保存了当前进度（创建分支），然后在支线任务中探索。
+如果支线任务失败（功能开发失败），你可以随时回到主线进度（切换回 \texttt{main}），
+不会丢失任何主线进度。如果支线任务成功（功能完成），你可以将支线任务的奖励合并到主线中（合并分支）。
+
+这就是分支的核心价值：\textbf{隔离风险，并行探索}。
+\end{infobox}
+
 \section{分支操作}
 
 \subsection{创建、切换、删除分支}
@@ -1511,6 +1610,13 @@ git branch -D feature-login
 \section{合并分支}
 
 当功能开发完成后，需要将功能分支合并回主分支。
+
+\begin{infobox}
+\textbf{合并的本质}：合并（merge）是将两个分支的历史整合到一起的过程。
+想象两条河流（分支）在下游汇合（合并点），Git 会尝试自动将两边的修改整合到一起。
+如果两边的修改没有冲突（比如修改了不同的文件或同一文件的不同部分），Git 会自动完成合并；
+如果两边修改了同一处内容，Git 就会标记冲突，需要人工介入决定保留哪边的修改。
+\end{infobox}
 
 \subsection{合并的两种类型}
 
@@ -1803,6 +1909,20 @@ GitFlow 更适合有严格发布流程的大型项目。
 远程仓库（Remote）是托管在服务器上的 Git 仓库副本。最常用的是 \texttt{origin}，
 通常指向 GitHub 上的仓库。你可以有多个远程仓库（比如同时托管在 GitHub 和 GitLab）。
 
+\begin{keybox}
+\textbf{本地仓库 vs 远程仓库}：
+
+想象你在家里写小说（本地仓库），同时你还将手稿复印了一份寄给出版社（远程仓库）。
+出版社的编辑可以阅读你的小说，但不能直接修改你家里的原稿——除非你把他们的修改"拉取"回来。
+
+在 Git 中：
+\begin{itemize}
+  \item \textbf{本地仓库}：存储在你电脑上的完整仓库副本，包含所有历史和分支
+  \item \textbf{远程仓库}：存储在服务器（如 GitHub）上的仓库副本，用于团队协作和备份
+  \item \texttt{origin}：默认的远程仓库名称，就像 \texttt{main} 是默认分支名一样
+\end{itemize}
+\end{keybox}
+
 \begin{lstlisting}[style=shell]
 # 查看远程仓库
 git remote -v
@@ -1931,6 +2051,28 @@ VS Code 可以一步完成"初始化 + 提交 + 创建远程仓库 + 推送"：
 Pull Request 是 GitHub 的核心协作功能。它不是 Git 命令，而是 GitHub 的网页功能。
 PR 的本质是："我做了些修改，请你审查并合并到主分支。"
 
+\begin{infobox}
+\textbf{为什么需要 Pull Request？}
+
+想象你正在为一个开源项目贡献代码。如果没有 PR 流程，你只能直接推送代码到主分支，
+这可能导致：
+\begin{itemize}
+  \item 未经审查的代码直接进入生产环境
+  \item 团队成员不知道你做了什么修改
+  \item 无法追踪某个功能是由谁、在什么时候、为什么引入的
+\end{itemize}
+
+PR 流程解决了这些问题：
+\begin{enumerate}
+  \item \textbf{代码审查}：在合并前，其他开发者可以审查你的代码，提出改进建议
+  \item \textbf{自动化测试}：PR 可以触发自动化测试，确保不会破坏现有功能
+  \item \textbf{讨论记录}：PR 页面保留了所有讨论和修改历史，方便追溯
+  \item \textbf{知识共享}：团队成员可以通过审查他人的 PR 学习新的编码技巧
+\end{enumerate}
+
+\textbf{简单记忆}：PR = 代码的"体检报告"，确保代码健康后才合并。
+\end{infobox}
+
 \subsection{PR 的标准流程}
 
 \begin{stepbox}
@@ -2041,6 +2183,21 @@ PR 的本质是："我做了些修改，请你审查并合并到主分支。"
 本章将系统性地展示所有功能，帮助你建立完整的认知。
 
 \section{源代码管理视图（Source Control）}
+
+\begin{infobox}
+\textbf{为什么需要图形界面？}
+
+虽然 Git 命令行功能强大，但对于初学者来说，图形界面（GUI）有以下优势：
+\begin{itemize}
+  \item \textbf{可视化}：直观地看到哪些文件被修改、哪些已暂存、哪些未跟踪
+  \item \textbf{低门槛}：不需要记忆命令，通过点击按钮即可完成操作
+  \item \textbf{Diff 对比}：内置强大的文件对比功能，一眼看出修改内容
+  \item \textbf{冲突解决}：图形化界面让冲突解决变得简单直观
+  \item \textbf{集成度高}：与编辑器深度集成，开发流程更流畅
+\end{itemize}
+
+VS Code 的 Git 集成是业界公认最出色的之一，足以满足日常 90\% 的 Git 操作需求。
+\end{infobox}
 
 \subsection{打开方式}
 
@@ -2194,6 +2351,8 @@ Git History & Don Jayamanne & 查看文件/行的详细提交历史 \\
 
 \begin{tipbox}
 \textbf{成功标志}：Timeline 视图中 \texttt{hello.txt} 列出了多条提交记录，最近一条是 \texttt{练习部分暂存}。
+
+\textbf{下一章预告}：我们将学习如何将这些技能整合成一套完整的工作流，以及如何在团队中高效协作。
 \end{tipbox}
 
 % ================================================================
@@ -2212,6 +2371,25 @@ Git History & Don Jayamanne & 查看文件/行的详细提交历史 \\
 \end{infobox}
 
 \section{完整的 Feature Branch 开发流程}
+
+\begin{infobox}
+\textbf{为什么需要规范的工作流？}
+
+想象一个团队有 5 个开发者，每个人都在同时开发不同的功能：
+\begin{itemize}
+  \item 如果没有规范，大家都往 \texttt{main} 分支直接推送，代码会频繁冲突，项目随时可能崩溃
+  \item 如果没有 PR 审查，有问题的代码可能直接上线，导致生产环境故障
+  \item 如果没有分支策略，团队成员不知道谁在开发什么，沟通成本极高
+\end{itemize}
+
+Feature Branch 工作流通过以下原则解决这些问题：
+\begin{enumerate}
+  \item \textbf{主分支稳定}：\texttt{main} 分支始终是可部署的
+  \item \textbf{功能隔离}：每个功能在独立分支开发，互不影响
+  \item \textbf{代码审查}：通过 PR 确保代码质量
+  \item \textbf{历史清晰}：合并后的历史记录完整可追溯
+\end{enumerate}
+\end{infobox}
 
 以下是一个完整的功能开发流程示例，从创建分支到合并：
 
