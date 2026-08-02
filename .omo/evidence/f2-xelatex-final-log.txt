@@ -1,0 +1,36 @@
+F2: LaTeX 编译与引用一致性审查 — tikz-cross-refs plan
+========================================================
+审查时间 : 2026-08-02
+编译文件 : Git_VSCode_Tutorial.tex
+编译器   : xelatex (MiKTeX, 两次连续编译)
+PDF 输出 : Git_VSCode_Tutorial.pdf (86 pages, 3,067,384 bytes, 2026-08-02 20:39:03)
+
+一、证据来源
+------------
+1. .omo/evidence/t3-xelatex-log-1.txt — 第一次编译日志 (23368 bytes)
+2. .omo/evidence/t3-xelatex-log-2.txt — 第二次编译日志 (21983 bytes)
+3. Git_VSCode_Tutorial.log — 当前最新编译日志 (与 t3 第二次结果一致)
+
+二、检查结果
+------------
+[PASS] 致命错误 (fatal error / Emergency stop)
+       -> 两个日志均无 fatal error / Emergency stop。
+       -> 日志中的 "fatal: refusing to" 为文档正文 Git 报错示例文本，非编译错误。
+
+[PASS] "Reference ... undefined" 警告
+       -> 第一次编译出现 11 处 fig:xxx undefined（首编译 .aux 未生成时的正常现象，
+          并伴随 "Rerun to get cross-references right" 提示，属预期）。
+       -> 第二次编译后：0 处 undefined；"There were undefined references." 未再出现。
+       -> 当前最新 Git_VSCode_Tutorial.log 亦为 0 处 undefined。
+
+[PASS] "Label ... multiply defined" 警告
+       -> 两次日志及当前日志均无 "multiply defined" 匹配。
+
+[PASS] PDF 生成成功
+       -> 第二次编译输出 "Output written on Git_VSCode_Tutorial.pdf (86 pages)."
+       -> PDF 文件存在，86 页，约 3.0 MB，时间戳与第二次编译一致。
+
+三、结论
+--------
+编译两次后交叉引用全部解析，无未定义引用、无重复标签、无致命错误，
+PDF 正常生成。F2 审查通过。

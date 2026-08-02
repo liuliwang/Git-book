@@ -1,0 +1,67 @@
+F1: 计划合规审计 (Plan Compliance Audit) — grep evidence
+Plan: .omo/plans/tikz-cross-refs.md
+File audited: Git_VSCode_Tutorial.tex
+Date: 2026-08-02
+
+====================================================================
+1. \begin{figure}[H] count
+====================================================================
+Result: 14
+- Expected 14 (3 existing bitmap command defs + 11 new TikZ figures)
+- PASS
+
+====================================================================
+2. \label{fig:} for TikZ — count and keys
+====================================================================
+Total distinct \label{fig: keys: 11
+Each of the 11 TikZ label keys occurs exactly once:
+
+  \label{fig:three-analogies}       : 1
+  \label{fig:learning-path}         : 1
+  \label{fig:git-objects}           : 1
+  \label{fig:commit-structure}      : 1
+  \label{fig:three-zones}           : 1
+  \label{fig:file-states}           : 1
+  \label{fig:merge-rebase}          : 1
+  \label{fig:pr-workflow}           : 1
+  \label{fig:cheatsheet-zones}      : 1
+  \label{fig:cheatsheet-merge-rebase}: 1
+  \label{fig:cheatsheet-remote}     : 1
+- Expected 11 new TikZ labels
+- PASS
+
+====================================================================
+3. \ref{fig:} count
+====================================================================
+Total \ref{fig: occurrences: 36
+TikZ refs (11 keys, each referenced once):
+  \ref{fig:three-analogies}, \ref{fig:learning-path}, \ref{fig:git-objects},
+  \ref{fig:commit-structure}, \ref{fig:three-zones}, \ref{fig:file-states},
+  \ref{fig:merge-rebase}, \ref{fig:pr-workflow}, \ref{fig:cheatsheet-zones},
+  \ref{fig:cheatsheet-merge-rebase}, \ref{fig:cheatsheet-remote}
+- Expected 11 TikZ refs
+- PASS
+
+====================================================================
+4. Label uniqueness / conflict check
+====================================================================
+11 TikZ label keys are all unique (each appears exactly once as a \label).
+Existing (bitmap) figure ref keys found in document (24 distinct keys):
+  fig:clone-repo, fig:commit-button, fig:create-branch, fig:create-branch-alt,
+  fig:current-branch, fig:diff-editor, fig:diff-sidebyside, fig:gutter-blame,
+  fig:gutter-diff, fig:init-repo, fig:merge-conflict, fig:merge-editor,
+  fig:modified-files, fig:modified-files-publish, fig:pull-push, fig:sc-graph,
+  fig:sc-overview, fig:sc-overview-annotated, fig:stage-changes, fig:stage-detail,
+  fig:stage-lines, fig:sync-changes, fig:timeline, fig:view-changes
+  (fig:modified-files is referenced twice → 25 bitmap ref occurrences)
+
+Set intersection between 11 TikZ label keys and bitmap keys: EMPTY
+- No conflicts with existing labels
+- PASS
+
+====================================================================
+SUMMARY: ALL CHECKS PASS
+  1. figure[H] count = 14 .................... PASS
+  2. TikZ labels = 11 (unique, 1 each) ........ PASS
+  3. TikZ refs = 11 ........................... PASS
+  4. No label conflicts with existing bitmap keys PASS

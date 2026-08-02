@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.5) (preloaded format=xelatex 2026.7.31)  2 AUG 2026 16:10
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.5) (preloaded format=xelatex 2026.7.31)  2 AUG 2026 20:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1353,26 +1353,26 @@ Package pdfcol Info: pdfTeX's color stacks are not available.
 (Git_VSCode_Tutorial.aux)
 \openout1 = `Git_VSCode_Tutorial.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 190.
-LaTeX Font Info:    ... okay on input line 190.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 190.
-LaTeX Font Info:    ... okay on input line 190.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 190.
-LaTeX Font Info:    ... okay on input line 190.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 190.
-LaTeX Font Info:    ... okay on input line 190.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 190.
-LaTeX Font Info:    ... okay on input line 190.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 190.
-LaTeX Font Info:    ... okay on input line 190.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 190.
-LaTeX Font Info:    ... okay on input line 190.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 190.
-LaTeX Font Info:    ... okay on input line 190.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 190.
-LaTeX Font Info:    ... okay on input line 190.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 190.
-LaTeX Font Info:    ... okay on input line 190.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 188.
+LaTeX Font Info:    ... okay on input line 188.
 
 Package fontspec Info: 
 (fontspec)             Adjusting the maths setup (use [no-math] to avoid
@@ -1380,58 +1380,58 @@ Package fontspec Info:
 
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 190.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 190.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 190.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 190.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 190.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 190.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 190.
-LaTeX Font Info:    Redeclaring math accent \check on input line 190.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 190.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 190.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 190.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 190.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 190.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 190.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 190.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 190.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 190.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 190.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 190.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 190.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 190.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 190.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 190.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 190.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 190.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 188.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 188.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 188.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 188.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 188.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 188.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 188.
+LaTeX Font Info:    Redeclaring math accent \check on input line 188.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 188.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 188.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 188.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 188.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 188.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 188.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 188.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 188.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 188.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 188.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 188.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 188.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 188.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 188.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 188.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 188.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 188.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 190.
+(Font)              `operators' in the math version `normal' on input line 188.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 190.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 188.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 190.
+(Font)              `operators' in the math version `bold' on input line 188.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 190.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 188.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 190.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 188.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 190.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 188.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 190.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 188.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 190.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 188.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 190.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 188.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 190.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 188.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 190.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 188.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 190.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 188.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 190.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 188.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1468,7 +1468,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count396
-Package hyperref Info: Link coloring ON on input line 190.
+Package hyperref Info: Link coloring ON on input line 188.
 (Git_VSCode_Tutorial.out) (Git_VSCode_Tutorial.out)
 \@outlinefile=\write4
 \openout4 = `Git_VSCode_Tutorial.out'.
@@ -1521,12 +1521,15 @@ Package fontspec Info:
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [7
 
 
 ]
 Overfull \hbox (101.49763pt too wide) in paragraph at lines 332--333
- [] 
+ [][] 
  []
 
 [8] [9]
@@ -1538,53 +1541,58 @@ Overfull \hbox (101.49763pt too wide) in paragraph at lines 332--333
 Underfull \vbox (badness 6608) has occurred while \output is active []
 
  [11]
+Overfull \hbox (101.50801pt too wide) in paragraph at lines 445--457
+[]\TU/SimSun(0)/b/n/12 集 中 式 \TU/lmr/bx/n/12 vs \TU/SimSun(0)/b/n/12 分 布 式 版 本 
+控 制\TU/SimSun(0)/m/n/12 ：| [] 
+ []
+
 [12]
-Overfull \hbox (72.73174pt too wide) in paragraph at lines 480--481
- [] 
+Overfull \hbox (72.73174pt too wide) in paragraph at lines 510--511
+ [][] 
  []
 
-
-Underfull \vbox (badness 1394) has occurred while \output is active []
-
- [13]
-Overfull \hbox (25.4869pt too wide) in paragraph at lines 560--571
-[][] 
+[13]
+Overfull \hbox (57.57133pt too wide) in paragraph at lines 537--539
+[]\TU/lmr/bx/n/12 HEAD\TU/SimSun(0)/m/n/12 ：|  指 向 当 前 检 出 的 分 支 或 \TU/lmr/m/n/
+12 Commit\TU/SimSun(0)/m/n/12 。| \TU/lmtt/m/n/12 .git/HEAD \TU/SimSun(0)/m/n/12
+ 文 件 内 容 通 常 是 \TU/lmtt/m/n/12 ref: refs/heads/main\TU/SimSun(0)/m/n/12 ，|
  []
 
+[14]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 549.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14]
-Overfull \hbox (174.84547pt too wide) in paragraph at lines 605--606
- [] 
+ [15]
+[16]
+Overfull \hbox (25.4869pt too wide) in paragraph at lines 666--677
+[][] 
  []
 
-[15]
+[17]
+Overfull \hbox (174.84547pt too wide) in paragraph at lines 711--712
+ [][] 
+ []
+
 File: images/01-sc-overview.png Graphic file (type bmp)
 <images/01-sc-overview.png>
- [16] [17]
+[18] [19] [20]
 第二章
 
 Underfull \vbox (badness 1546) has occurred while \output is active []
 
- [18
+ [21
 
 ]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 722.
-
-[19] [20] [21] [22] [23]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [24]
-[25]
+[22] [23] [24] [25] [26] [27] [28]
 第三章
-[26
+[29
 
 ]
 File: images/12-init-repo.png Graphic file (type bmp)
 <images/12-init-repo.png>
- [27]
+ [30]
 File: images/11-clone-repo.png Graphic file (type bmp)
 <images/11-clone-repo.png>
 
@@ -1592,47 +1600,42 @@ File: images/11-clone-repo.png Graphic file (type bmp)
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (75.58202pt too wide) in paragraph at lines 1108--1109
- [] 
+Overfull \hbox (75.58202pt too wide) in paragraph at lines 1214--1215
+ [][] 
  []
 
-[28]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31]
 File: images/13-modified-files.png Graphic file (type bmp)
 <images/13-modified-files.png>
- [29] [30]
+
+[32]
 File: images/05-stage-changes.png Graphic file (type bmp)
 <images/05-stage-changes.png>
+ [33]
 File: images/15-commit-button.png Graphic file (type bmp)
 <images/15-commit-button.png>
 
-Underfull \vbox (badness 3209) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
-[32]
+ [34]
 File: images/03-diff-editor.png Graphic file (type bmp)
 <images/03-diff-editor.png>
+
+[35]
 File: images/24-diff-sidebyside.png Graphic file (type bmp)
 <images/24-diff-sidebyside.png>
 File: images/25-diff-inline.png Graphic file (type bmp)
 <images/25-diff-inline.png>
-
-Underfull \vbox (badness 4556) has occurred while \output is active []
-
- [33]
 File: images/21-gutter-diff.png Graphic file (type bmp)
 <images/21-gutter-diff.png>
-
-[34] [35] [36] [37] [38] [39]
-Underfull \hbox (badness 2111) in paragraph at lines 1500--1501
-[]\TU/SimSun(0)/m/n/12 在 顶 部 提 交 信 息 输 入 框 中 输 入 \TU/FangSong(0)/m/n/12 更 新 问 候
- 语\TU/SimSun(0)/m/n/12 ，|  点 击  |「提 交」|  按 钮  |（或 按
- []
-
-[40]
+ [36] [37] [38] [39] [40] [41] [42] [43]
 第四章
-[41
+[44
 
-] [42]
+] [45]
 File: images/18-current-branch.png Graphic file (type bmp)
 <images/18-current-branch.png>
 File: images/19-create-branch.png Graphic file (type bmp)
@@ -1640,282 +1643,276 @@ File: images/19-create-branch.png Graphic file (type bmp)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43]
-[44] [45]
+ [46]
+[47] [48]
 File: images/merge-conflict.png Graphic file (type bmp)
 <images/merge-conflict.png>
 File: images/08-merge-editor.png Graphic file (type bmp)
 <images/08-merge-editor.png>
- [46] [47] [48] [49] [50] [51]
+ [49] [50] [51] [52] [53] [54]
 第五章
-[52
+[55
 
-] [53]
+] [56]
 File: images/17-pull-push.png Graphic file (type bmp)
 <images/17-pull-push.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [54]
 File: images/16-sync-button.png Graphic file (type bmp)
 <images/16-sync-button.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [55]
+ [57] [58]
 File: images/13-modified-files.png Graphic file (type bmp)
 <images/13-modified-files.png>
-
-[56] [57]
-Overfull \hbox (41.5882pt too wide) in paragraph at lines 2139--2140
+ [59] [60]
+Overfull \hbox (10.29025pt too wide) in paragraph at lines 2247--2248
 []\TU/SimSun(0)/m/n/12 添 加 上 游 远 程：| \TU/lmtt/m/n/12 git remote add upstream ht
 tps://github.com/original/repo.git 
  []
 
-[58]
-Underfull \vbox (badness 7308) has occurred while \output is active []
-
- [59]
-[60]
+[61] [62]
 第六章
-[61
+[63
 
 ]
 File: images/01-sc-overview.png Graphic file (type bmp)
 <images/01-sc-overview.png>
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 2212--2212
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 2322--2322
  [][][][] 
  []
 
-[62]
+[64]
 File: images/02-sc-graph.png Graphic file (type bmp)
 <images/02-sc-graph.png>
 File: images/22-stage-detail.png Graphic file (type bmp)
 <images/22-stage-detail.png>
 File: images/23-stage-lines.png Graphic file (type bmp)
 <images/23-stage-lines.png>
- [63]
+ [65]
 File: images/07-sync-changes.png Graphic file (type bmp)
 <images/07-sync-changes.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [64]
+ [66]
 File: images/19-create-branch.png Graphic file (type bmp)
 <images/19-create-branch.png>
 File: images/10-timeline.png Graphic file (type bmp)
 <images/10-timeline.png>
-
-[65]
+ [67]
 File: images/04-gutter-blame.png Graphic file (type bmp)
 <images/04-gutter-blame.png>
- [66]
-Underfull \vbox (badness 3601) has occurred while \output is active []
+ [68] [69]
+Overfull \hbox (36.12744pt too wide) in paragraph at lines 2459--2460
+[]\TU/SimSun(0)/m/n/12 点 击 源 代 码 管 理 视 图 标 题 栏 的  |「提 交 历 史 图」|  图 标，|  在 图 形 视
+ 图 中 观 察 \TU/lmtt/m/n/12 feature/sc-practice
+ []
 
- [67]
-[68]
+[70]
 第七章
-[69
+[71
 
-] [70]
+] [72]
 File: images/20-view-changes.png Graphic file (type bmp)
 <images/20-view-changes.png>
- [71] [72] [73] [74] [75]
+
+Overfull \hbox (35.27196pt too wide) in paragraph at lines 2556--2558
+[]\TU/SimSun(0)/b/n/12 创 建 分 支\TU/SimSun(0)/m/n/12 ：|  点 击 底 部 状 态 栏 的 分 支 名 称 
+$\OMS/cmsy/m/n/12 !$ \TU/lmr/m/n/12 ”Create new branch” $\OMS/cmsy/m/n/12 !$ \T
+U/SimSun(0)/m/n/12 输 入 \TU/lmtt/m/n/12 feature/user-auth\TU/SimSun(0)/m/n/12 。|
+ 
+ []
+
+[73] [74] [75] [76] [77]
 第八章
 
-Underfull \hbox (badness 10000) in paragraph at lines 2604--2605
+Underfull \hbox (badness 10000) in paragraph at lines 2716--2717
 []|\TU/lmr/m/n/12 2. \TU/lmtt/m/n/12 git
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2604--2605
+Underfull \hbox (badness 10000) in paragraph at lines 2716--2717
 \TU/lmtt/m/n/12 filter-repo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2604--2605
+Underfull \hbox (badness 10000) in paragraph at lines 2716--2717
 \TU/lmtt/m/n/12 --path
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2604--2605
+Underfull \hbox (badness 10000) in paragraph at lines 2716--2717
 \TU/lmtt/m/n/12 secret.txt
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2605--2605
+Underfull \hbox (badness 10000) in paragraph at lines 2717--2717
 []|\TU/lmr/m/n/12 3. \TU/lmtt/m/n/12 git push
  []
 
 
-Overfull \hbox (11.65536pt too wide) in paragraph at lines 2605--2605
+Overfull \hbox (11.65536pt too wide) in paragraph at lines 2717--2717
 \TU/lmtt/m/n/12 --force-with-lease| 
  []
 
 
-Underfull \hbox (badness 1226) in paragraph at lines 2606--2606
+Underfull \hbox (badness 1226) in paragraph at lines 2718--2718
 []|\TU/SimSun(0)/m/n/12 误 删 文 件 想 恢
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2606--2606
+Underfull \hbox (badness 10000) in paragraph at lines 2718--2718
 []|\TU/lmtt/m/n/12 git restore
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2606--2606
+Underfull \hbox (badness 10000) in paragraph at lines 2718--2718
 \TU/lmtt/m/n/12 --source=HEAD 1
  []
 
 
-Underfull \hbox (badness 1226) in paragraph at lines 2607--2607
+Underfull \hbox (badness 1226) in paragraph at lines 2719--2719
 []|\TU/SimSun(0)/m/n/12 想 撤 销 已 推 送
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2607--2607
+Underfull \hbox (badness 10000) in paragraph at lines 2719--2719
 []|\TU/lmtt/m/n/12 git reset --hard
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2607--2607
+Underfull \hbox (badness 10000) in paragraph at lines 2719--2719
 []|\TU/lmtt/m/n/12 git revert
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2607--2607
+Underfull \hbox (badness 10000) in paragraph at lines 2719--2719
 \TU/lmtt/m/n/12 <commit-hash>
  []
 
 
-Underfull \hbox (badness 1226) in paragraph at lines 2608--2608
+Underfull \hbox (badness 1226) in paragraph at lines 2720--2720
 []|\TU/SimSun(0)/m/n/12 长 期 不 拉 取 直
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2608--2608
+Underfull \hbox (badness 10000) in paragraph at lines 2720--2720
 []|\TU/SimSun(0)/m/n/12 先 \TU/lmtt/m/n/12 git pull
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2609--2609
+Underfull \hbox (badness 10000) in paragraph at lines 2721--2721
 []|\TU/lmtt/m/n/12 git switch -c
  []
 
 
-Underfull \hbox (badness 1226) in paragraph at lines 2610--2610
+Underfull \hbox (badness 1226) in paragraph at lines 2722--2722
 []|\TU/SimSun(0)/m/n/12 解 决 冲 突 时 手
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2611--2611
+Underfull \hbox (badness 10000) in paragraph at lines 2723--2723
 []|\TU/SimSun(0)/m/n/12 提 交 信 息
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2611--2611
+Underfull \hbox (badness 10000) in paragraph at lines 2723--2723
 \TU/SimSun(0)/m/n/12 写\TU/lmr/m/n/12 ”fix” ”up-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2612--2612
+Underfull \hbox (badness 10000) in paragraph at lines 2724--2724
 []|\TU/lmtt/m/n/12 git push --force
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2613--2613
+Underfull \hbox (badness 10000) in paragraph at lines 2725--2725
 []|\TU/SimSun(0)/m/n/12 忽 略\TU/lmr/m/n/12 .gitignore
  []
 
 
-Underfull \hbox (badness 5970) in paragraph at lines 2613--2613
+Underfull \hbox (badness 5970) in paragraph at lines 2725--2725
 []|\TU/SimSun(0)/m/n/12 新 建 仓 库 第 一 步
  []
 
 
-Underfull \hbox (badness 1226) in paragraph at lines 2614--2614
+Underfull \hbox (badness 1226) in paragraph at lines 2726--2726
 []|\TU/SimSun(0)/m/n/12 合 并 冲 突 后 忘
  []
 
 
-Underfull \hbox (badness 5119) in paragraph at lines 2614--2614
+Underfull \hbox (badness 5119) in paragraph at lines 2726--2726
 []|\TU/SimSun(0)/m/n/12 冲 突 解 决 后 \TU/lmtt/m/n/12 git
  []
 
-[76
+[78
 
-] [77]
-Underfull \hbox (badness 10000) in paragraph at lines 2649--2649
+]
+Underfull \hbox (badness 10000) in paragraph at lines 2761--2761
 []|\TU/lmr/m/n/12 Permission denied
  []
 
 
-Underfull \hbox (badness 4927) in paragraph at lines 2650--2650
+Underfull \hbox (badness 4927) in paragraph at lines 2762--2762
 []|\TU/lmr/m/n/12 remote: Repository
  []
 
 
-Underfull \hbox (badness 1048) in paragraph at lines 2650--2651
+Underfull \hbox (badness 1048) in paragraph at lines 2762--2763
 []|\TU/SimSun(0)/m/n/12 远 程 地 址 错 误 或 无 权 限。|  修 复：| \TU/lmtt/m/n/12 git remote
  -v \TU/SimSun(0)/m/n/12 核
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2651--2651
+Underfull \hbox (badness 10000) in paragraph at lines 2763--2763
 []|\TU/lmr/m/n/12 fatal: refusing to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2651--2651
+Underfull \hbox (badness 10000) in paragraph at lines 2763--2763
 \TU/lmr/m/n/12 merge unrelated
  []
 
-[78]
+[79] [80]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 2719.
- [79
+(Font)              <10.95> on input line 2834.
+ [81
 
-] [80
+] [82
 
 ]
 Missing character: There is no ✓ in font [lmmono10-regular]:!
-[81
+[83
 
 ]
 第九章
-[82
+[84
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 2930--2930
+Underfull \hbox (badness 10000) in paragraph at lines 3054--3054
 []|\TU/lmtt/m/n/12 git remote add origin
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2935--2935
+Underfull \hbox (badness 10000) in paragraph at lines 3059--3059
 []|\TU/lmtt/m/n/12 git push -u origin
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2951--2951
+Underfull \hbox (badness 10000) in paragraph at lines 3075--3075
 []|\TU/lmtt/m/n/12 git restore --staged
  []
 
-[83] [84] (Git_VSCode_Tutorial.aux)
+[85] [86] (Git_VSCode_Tutorial.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026/07/22>
  ***********
 Package rerunfilecheck Info: File `Git_VSCode_Tutorial.out' has not changed.
-(rerunfilecheck)             Checksum: 4E5EB7C0775BE43DFE48BE1895A1CCDD;19788.
+(rerunfilecheck)             Checksum: 2165033C7238AF57DD260C3B2F5D2E79;19936.
  ) 
 Here is how much of TeX's memory you used:
- 37085 strings out of 402629
- 829689 string characters out of 5439127
- 1457536 words of memory out of 5000000
- 65631 multiletter control sequences out of 15000+600000
+ 37068 strings out of 402629
+ 829474 string characters out of 5439127
+ 1445092 words of memory out of 5000000
+ 65614 multiletter control sequences out of 15000+600000
  633743 words of font info for 101 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 102i,13n,111p,1207b,1910s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,13n,111p,1207b,2120s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Git_VSCode_Tutorial.pdf (84 pages).
+Output written on Git_VSCode_Tutorial.pdf (86 pages).

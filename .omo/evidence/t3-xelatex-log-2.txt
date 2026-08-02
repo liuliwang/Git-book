@@ -1,0 +1,457 @@
+﻿This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.5) (preloaded format=xelatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(Git_VSCode_Tutorial.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-06-18>
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/ctex\ctexbook.cls
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/ctex/config\ctexbackend
+.cfg)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-xet
+ex.def))
+Document Class: ctexbook 2026/07/14 v2.6.4 Chinese adapter for class book (CTEX
+)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/ctex\ctexhook.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/ctex\ctexpatch.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/base\fix-cm.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1enc.def))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/ctex/config\ctexopts.cf
+g) (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
+Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/base\bk12.clo))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/ctex/engine\ctex-engine
+-xetex.def
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/xelatex/xecjk\xeCJK.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xtemplate\xt
+emplate.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec-xetex
+.sty (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.cfg))
+) (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/xelatex/xecjk\xeCJK.cfg)))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/zhnumber\zhnumber.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/zhnumber\zhnumber-utf8.
+cfg))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/ctex/scheme\ctex-scheme
+-chinese-book.def
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/ctex/config\ctex-name-u
+tf8.cfg))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/ctex/fontset\ctex-fonts
+et-windows.def))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/ctex/config\ctex.cfg)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xetex.def)
+)) (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+) (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg))
+
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/xelatex/xecjk\xeCJK-listings.
+sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox.sty
+
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
+sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.st
+y
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-common.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-latex.def)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.
+code.tex
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.
+sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.
+sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s.code.tex
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+libraryfiltered.code.tex))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
+fg)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-xetex.def
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-dvipdfmx.def
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-common-pdf.def))))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+ssoftpath.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+sprotocol.code.tex))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+e.code.tex
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.
+code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
+r.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.basic.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.trigonometric.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.random.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.comparison.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.base.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.round.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.misc.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.integerarithmetics.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.
+code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
+.code.tex))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
+tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epoints.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathconstruct.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathusage.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+escopes.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+egraphicstate.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransformations.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+equick.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eobjects.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathprocessing.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+earrows.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eshade.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eimage.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eexternal.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+elayers.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransparency.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epatterns.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+erdf.code.tex)))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+shapes.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+plot.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-0-65.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-1-18.sty))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.st
+y
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.s
+ty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.
+code.tex))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z\tikz.code.tex
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryplothandlers.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+matrix.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarytopaths.code.tex)))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces.s
+ty))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty))
+
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\fontawesom
+e5.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3k
+eys2e.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\fontawesom
+e5-utex-helper.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\tufontawes
+omefree.fd)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/fontawesome5\tufontawes
+omebrands.fd)))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
+ty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty)))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
+lestring.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+)))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.s
+ty) (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+) (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+) (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
+.sty)))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hxetex.def
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
+echeck.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
+ounter.sty)))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarypositioning.code.tex)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.sty))
+ (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.sty)
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskins.code
+.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.10.0'
+
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzfill.image
+.sty
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzlibraryfil
+l.image.code.tex))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskinsjigsa
+w.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.10.0'
+))
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbbreakable.
+code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.10.0'
+(C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/pdfcol\pdfcol.sty))
+(Git_VSCode_Tutorial.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+(Git_VSCode_Tutorial.out) (Git_VSCode_Tutorial.out) [1] [2]
+(Git_VSCode_Tutorial.toc [3] [4] [5]) [6]
+Underfull \vbox (badness 10000) has occurred while \output is active [7]
+Overfull \hbox (101.49763pt too wide) in paragraph at lines 332--333
+ [][] 
+[8] [9]
+绗竴绔?
+[10]
+Underfull \vbox (badness 6608) has occurred while \output is active [11]
+Overfull \hbox (101.50801pt too wide) in paragraph at lines 445--457
+[]\TU/SimSun(0)/b/n/12 闆?涓?寮?\TU/lmr/bx/n/12 vs \TU/SimSun(0)/b/n/12 鍒?甯?寮?鐗?鏈?
+鎺?鍒禱TU/SimSun(0)/m/n/12 锛殀 [] 
+[12]
+Overfull \hbox (72.73174pt too wide) in paragraph at lines 510--511
+ [][] 
+[13]
+Overfull \hbox (57.57133pt too wide) in paragraph at lines 537--539
+[]\TU/lmr/bx/n/12 HEAD\TU/SimSun(0)/m/n/12 锛殀  鎸?鍚?褰?鍓?妫€ 鍑?鐨?鍒?鏀?鎴?\TU/lmr/m/n/
+12 Commit\TU/SimSun(0)/m/n/12 銆倈 \TU/lmtt/m/n/12 .git/HEAD \TU/SimSun(0)/m/n/12
+ 鏂?浠?鍐?瀹?閫?甯?鏄?\TU/lmtt/m/n/12 ref: refs/heads/main\TU/SimSun(0)/m/n/12 锛寍
+[14]
+Underfull \vbox (badness 10000) has occurred while \output is active [15]
+[16]
+Overfull \hbox (25.4869pt too wide) in paragraph at lines 666--677
+[][] 
+[17]
+Overfull \hbox (174.84547pt too wide) in paragraph at lines 711--712
+ [][] 
+[18] [19] [20]
+绗簩绔?
+
+Underfull \vbox (badness 1546) has occurred while \output is active [21]
+[22] [23] [24] [25] [26] [27] [28]
+绗笁绔?
+[29] [30]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (75.58202pt too wide) in paragraph at lines 1214--1215
+ [][] 
+
+Underfull \vbox (badness 10000) has occurred while \output is active [31]
+[32] [33]
+Underfull \vbox (badness 10000) has occurred while \output is active [34]
+[35] [36] [37] [38] [39] [40] [41] [42] [43]
+绗洓绔?
+[44] [45]
+Underfull \vbox (badness 10000) has occurred while \output is active [46]
+[47] [48] [49] [50] [51] [52] [53] [54]
+绗簲绔?
+[55] [56] [57] [58] [59] [60]
+Overfull \hbox (10.29025pt too wide) in paragraph at lines 2247--2248
+[]\TU/SimSun(0)/m/n/12 娣?鍔?涓?娓?杩?绋嬶細| \TU/lmtt/m/n/12 git remote add upstream ht
+tps://github.com/original/repo.git 
+[61] [62]
+绗叚绔?
+[63]
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 2322--2322
+ [][][][] 
+[64] [65] [66] [67] [68] [69]
+Overfull \hbox (36.12744pt too wide) in paragraph at lines 2459--2460
+[]\TU/SimSun(0)/m/n/12 鐐?鍑?婧?浠?鐮?绠?鐞?瑙?鍥?鏍?棰?鏍?鐨? |銆屾彁 浜?鍘?鍙?鍥俱€峾  鍥?鏍囷紝|  鍦?鍥?褰?瑙?
+ 鍥?涓?瑙?瀵?\TU/lmtt/m/n/12 feature/sc-practice
+[70]
+绗竷绔?
+[71] [72]
+Overfull \hbox (35.27196pt too wide) in paragraph at lines 2556--2558
+[]\TU/SimSun(0)/b/n/12 鍒?寤?鍒?鏀痋TU/SimSun(0)/m/n/12 锛殀  鐐?鍑?搴?閮?鐘?鎬?鏍?鐨?鍒?鏀?鍚?绉?
+$\OMS/cmsy/m/n/12 !$ \TU/lmr/m/n/12 鈥滳reate new branch鈥?$\OMS/cmsy/m/n/12 !$ \T
+U/SimSun(0)/m/n/12 杈?鍏?\TU/lmtt/m/n/12 feature/user-auth\TU/SimSun(0)/m/n/12 銆倈
+ 
+[73] [74] [75] [76] [77]
+绗叓绔?
+
+Underfull \hbox (badness 10000) in paragraph at lines 2716--2717
+[]|\TU/lmr/m/n/12 2. \TU/lmtt/m/n/12 git
+
+Underfull \hbox (badness 10000) in paragraph at lines 2716--2717
+\TU/lmtt/m/n/12 filter-repo
+
+Underfull \hbox (badness 10000) in paragraph at lines 2716--2717
+\TU/lmtt/m/n/12 --path
+
+Underfull \hbox (badness 10000) in paragraph at lines 2716--2717
+\TU/lmtt/m/n/12 secret.txt
+
+Underfull \hbox (badness 10000) in paragraph at lines 2717--2717
+[]|\TU/lmr/m/n/12 3. \TU/lmtt/m/n/12 git push
+
+Overfull \hbox (11.65536pt too wide) in paragraph at lines 2717--2717
+\TU/lmtt/m/n/12 --force-with-lease| 
+
+Underfull \hbox (badness 1226) in paragraph at lines 2718--2718
+[]|\TU/SimSun(0)/m/n/12 璇?鍒?鏂?浠?鎯?鎭?
+
+Underfull \hbox (badness 10000) in paragraph at lines 2718--2718
+[]|\TU/lmtt/m/n/12 git restore
+
+Underfull \hbox (badness 10000) in paragraph at lines 2718--2718
+\TU/lmtt/m/n/12 --source=HEAD 1
+
+Underfull \hbox (badness 1226) in paragraph at lines 2719--2719
+[]|\TU/SimSun(0)/m/n/12 鎯?鎾?閿€ 宸?鎺?閫?
+
+Underfull \hbox (badness 10000) in paragraph at lines 2719--2719
+[]|\TU/lmtt/m/n/12 git reset --hard
+
+Underfull \hbox (badness 10000) in paragraph at lines 2719--2719
+[]|\TU/lmtt/m/n/12 git revert
+
+Underfull \hbox (badness 10000) in paragraph at lines 2719--2719
+\TU/lmtt/m/n/12 <commit-hash>
+
+Underfull \hbox (badness 1226) in paragraph at lines 2720--2720
+[]|\TU/SimSun(0)/m/n/12 闀?鏈?涓?鎷?鍙?鐩?
+
+Underfull \hbox (badness 10000) in paragraph at lines 2720--2720
+[]|\TU/SimSun(0)/m/n/12 鍏?\TU/lmtt/m/n/12 git pull
+
+Underfull \hbox (badness 10000) in paragraph at lines 2721--2721
+[]|\TU/lmtt/m/n/12 git switch -c
+
+Underfull \hbox (badness 1226) in paragraph at lines 2722--2722
+[]|\TU/SimSun(0)/m/n/12 瑙?鍐?鍐?绐?鏃?鎵?
+
+Underfull \hbox (badness 10000) in paragraph at lines 2723--2723
+[]|\TU/SimSun(0)/m/n/12 鎻?浜?淇?鎭?
+
+Underfull \hbox (badness 10000) in paragraph at lines 2723--2723
+\TU/SimSun(0)/m/n/12 鍐橽TU/lmr/m/n/12 鈥漟ix鈥?鈥漸p-
+
+Underfull \hbox (badness 10000) in paragraph at lines 2724--2724
+[]|\TU/lmtt/m/n/12 git push --force
+
+Underfull \hbox (badness 10000) in paragraph at lines 2725--2725
+[]|\TU/SimSun(0)/m/n/12 蹇?鐣TU/lmr/m/n/12 .gitignore
+
+Underfull \hbox (badness 5970) in paragraph at lines 2725--2725
+[]|\TU/SimSun(0)/m/n/12 鏂?寤?浠?搴?绗?涓€ 姝?
+
+Underfull \hbox (badness 1226) in paragraph at lines 2726--2726
+[]|\TU/SimSun(0)/m/n/12 鍚?骞?鍐?绐?鍚?蹇?
+
+Underfull \hbox (badness 5119) in paragraph at lines 2726--2726
+[]|\TU/SimSun(0)/m/n/12 鍐?绐?瑙?鍐?鍚?\TU/lmtt/m/n/12 git
+[78]
+Underfull \hbox (badness 10000) in paragraph at lines 2761--2761
+[]|\TU/lmr/m/n/12 Permission denied
+
+Underfull \hbox (badness 4927) in paragraph at lines 2762--2762
+[]|\TU/lmr/m/n/12 remote: Repository
+
+Underfull \hbox (badness 1048) in paragraph at lines 2762--2763
+[]|\TU/SimSun(0)/m/n/12 杩?绋?鍦?鍧€ 閿?璇?鎴?鏃?鏉?闄愩€倈  淇?澶嶏細| \TU/lmtt/m/n/12 git remote
+ -v \TU/SimSun(0)/m/n/12 鏍?
+
+Underfull \hbox (badness 10000) in paragraph at lines 2763--2763
+[]|\TU/lmr/m/n/12 fatal: refusing to
+
+Underfull \hbox (badness 10000) in paragraph at lines 2763--2763
+\TU/lmr/m/n/12 merge unrelated
+[79] [80] [81] [82]
+Missing character: There is no 鉁?in font [lmmono10-regular]:!
+[83]
+绗節绔?
+[84]
+Underfull \hbox (badness 10000) in paragraph at lines 3054--3054
+[]|\TU/lmtt/m/n/12 git remote add origin
+
+Underfull \hbox (badness 10000) in paragraph at lines 3059--3059
+[]|\TU/lmtt/m/n/12 git push -u origin
+
+Underfull \hbox (badness 10000) in paragraph at lines 3075--3075
+[]|\TU/lmtt/m/n/12 git restore --staged
+[85] [86] (Git_VSCode_Tutorial.aux) )
+(see the transcript file for additional information)
+Output written on Git_VSCode_Tutorial.pdf (86 pages).
+Transcript written on Git_VSCode_Tutorial.log.
+

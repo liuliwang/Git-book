@@ -1,0 +1,5 @@
+﻿=== T3 QA Verification ===
+begin{figure}[H] count: 14 (expect 14)
+fig:cheatsheet-zones occurrences: 2 (expect 2: 1 label + 1 ref)
+fig:cheatsheet-merge-rebase occurrences: 2 (expect 2: 1 label + 1 ref)
+fig:cheatsheet-remote occurrences: 2 (expect 2: 1 label + 1 ref)

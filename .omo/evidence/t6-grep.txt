@@ -1,0 +1,18 @@
+# T6 验证证据：图片 label + \ref 引导句
+# 文件: Git_VSCode_Tutorial.tex | 日期: 2026-08-02
+# 验证方式: grep 'fig:pull-push|fig:sync-button|fig:modified-files-publish|\ref{fig:'
+
+# --- 3 处图片调用均含 fig: label 参数 ---
+2099: \vscodeimg{images/17-pull-push.png}{...}{fig:pull-push}
+2101: \vscodeimg{images/16-sync-button.png}{...}{fig:sync-button}
+2139: \vscodeimg{images/13-modified-files.png}{...}{fig:modified-files-publish}
+
+# --- 2 处引导句含 \ref{fig:} ---
+2097: ...同步按钮一键完成，如图~\ref{fig:pull-push} 与图~\ref{fig:sync-button} 所示：   # 含两个 \ref
+2137: ...创建远程仓库 + 推送"，如图~\ref{fig:modified-files-publish} 所示：
+
+# --- 复用图区分确认 ---
+# fig:modified-files (行1234/1238, T3) 与 fig:modified-files-publish (行2137/2139, T6) 为同一张
+# images/13-modified-files.png 的两次使用，label 不同，无冲突。
+
+# 说明: 新 \ref 的 "Undefined reference" 为编译前预期状态，\label{#3} 由 T1 追加，xelatex 编译两次后解析。

@@ -86,18 +86,17 @@
 % ==================== 提示框定义 ====================
 \tcbuselibrary{skins,breakable}
 
-\newtcolorbox{tipbox}[1][]{
-  colback=tipgreen!5!white,
-  colframe=tipgreen!70!black,
-  fonttitle=\bfseries,
-  title={\faLightbulb\; 提示},
-  breakable,
-  #1
+\newenvironment{tipbox}{%
+  \medskip
+  \noindent\textbf{\faLightbulb\; 提示}
+  \smallskip
+}{%
+  \medskip
 }
 
 \newtcolorbox{warnbox}[1][]{
-  colback=warnred!5!white,
-  colframe=warnred!70!black,
+  colback=white,
+  colframe=warnred,
   fonttitle=\bfseries,
   title={\faExclamationTriangle\; 注意},
   breakable,
@@ -105,54 +104,53 @@
 }
 
 \newtcolorbox{infobox}[1][]{
-  colback=infoblue!5!white,
-  colframe=infoblue!70!black,
+  colback=white,
+  colframe=infoblue,
   fonttitle=\bfseries,
   title={\faInfoCircle\; 说明},
   breakable,
   #1
 }
 
-\newtcolorbox{keybox}[1][]{
-  colback=gitorange!5!white,
-  colframe=gitorange!80!black,
-  fonttitle=\bfseries,
-  title={\faKey\; 核心概念},
-  breakable,
-  #1
+\newenvironment{keybox}{%
+  \medskip
+  \noindent\textbf{\faKey\; 核心概念}
+  \smallskip
+}{%
+  \medskip
 }
 
-\newtcolorbox{stepbox}[1][]{
-  colback=purple!3!white,
-  colframe=purple!60!black,
-  fonttitle=\bfseries,
-  title={\faCogs\; 操作步骤},
-  breakable,
-  #1
+\newenvironment{stepbox}{%
+  \medskip
+  \noindent\textbf{\faCogs\; 操作步骤}
+  \smallskip
+}{%
+  \medskip
 }
+\renewcommand{\figurename}{图}
 
 % ==================== 图片包装命令 ====================
-\newcommand{\vscodeimg}[2]{%
+\newcommand{\vscodeimg}[3]{%
   \begin{figure}[H]
     \centering
     \fcolorbox{imgborder}{white}{\includegraphics[width=0.92\textwidth]{#1}}
-    \caption{#2}
+    \caption{#2}\label{#3}
   \end{figure}
 }
 
-\newcommand{\vscodeimgnarrow}[2]{%
+\newcommand{\vscodeimgnarrow}[3]{%
   \begin{figure}[H]
     \centering
     \fcolorbox{imgborder}{white}{\includegraphics[width=0.72\textwidth]{#1}}
-    \caption{#2}
+    \caption{#2}\label{#3}
   \end{figure}
 }
 
-\newcommand{\vscodeimgwide}[2]{%
+\newcommand{\vscodeimgwide}[3]{%
   \begin{figure}[H]
     \centering
     \fcolorbox{imgborder}{white}{\includegraphics[width=\textwidth]{#1}}
-    \caption{#2}
+    \caption{#2}\label{#3}
   \end{figure}
 }
 
@@ -248,7 +246,8 @@
 
 \section{三个核心类比}
 
-\begin{center}
+三者关系如图~\ref{fig:three-analogies} 所示——
+\begin{figure}[H]\centering
 \begin{tikzpicture}[
   box/.style={draw, rounded corners=10pt, minimum width=3.5cm, minimum height=2.5cm,
               font=\small, align=center, fill=#1, inner sep=8pt},
@@ -278,7 +277,7 @@
   \draw[arr] (vscode) -- node[left, font=\small]{图形化操作} (git);
   \draw[arr] (vscode) -- node[right, font=\small]{一键同步} (github);
 \end{tikzpicture}
-\end{center}
+\caption{Git、GitHub 与 VS Code 的关系——三者协作构成完整的版本控制工作流}\label{fig:three-analogies}\end{figure}
 
 \subsection{Git 是「时光机」}
 
@@ -310,7 +309,8 @@
 
 \section{本教程的学习路径图}
 
-\begin{center}
+完整路径如图~\ref{fig:learning-path} 所示——
+\begin{figure}[H]\centering
 \begin{tikzpicture}[
   phase/.style={draw, rounded corners=8pt, minimum width=4cm, minimum height=1.6cm,
                 font=\small\bfseries, align=center, fill=#1},
@@ -330,7 +330,7 @@
   \draw[arr] (p2) -- (p4);
   \draw[arr] (p3) -- (p4);
 \end{tikzpicture}
-\end{center}
+\caption{本教程学习路径——从心智模型到实战工作流的章节安排}\label{fig:learning-path}\end{figure}
 
 \begin{infobox}
 \textbf{建议阅读策略}：
@@ -432,27 +432,57 @@
 Git 是由 Linus Torvalds（Linux 内核的创造者）于 2005 年开发的\textbf{分布式版本控制系统}。
 它的名字来源于英式英语中"愚蠢的人"的俚语——Linus 自嘲式的幽默。
 
+在 Git 诞生之前，Linux 内核的维护者一直在寻找合适的版本控制工具。2002 年，Linux 内核项目
+开始使用 BitKeeper——一个当时先进的商业分布式版本控制系统。BitKeeper 为 Linux 社区免费提供
+使用许可，在大型项目的协作中发挥了重要作用。
+
+然而到了 2005 年，BitKeeper 与 Linux 社区之间爆发了许可证冲突，开发者失去了免费使用权，
+内核的日常开发一度陷入困境。作为回应，Linus Torvalds 仅用了大约 4 天时间就写出了 Git 的
+原型，并迅速将其用于 Linux 内核的版本管理。Git 从一开始就被设计为 BitKeeper 的自托管替代方案，
+这也解释了它为何如此强调速度、分布式与数据完整性。
+
+\begin{infobox}
+\textbf{集中式 vs 分布式版本控制}：
+\begin{tabular}{llp{5cm}p{5cm}}
+\toprule
+\textbf{特性} & \textbf{集中式（如 SVN）} & \textbf{分布式（如 Git）} \\
+\midrule
+工作方式 & 所有修改提交到中央服务器 & 每个开发者拥有完整仓库副本 \\
+离线能力 & 无法提交、查看历史 & 可提交、查看历史、创建分支 \\
+分支成本 & 服务器复制文件，成本高 & 仅创建指针，成本极低 \\
+数据完整性 & 依赖中央服务器 & SHA-1 哈希链保证 \\
+代表工具 & SVN, CVS & Git, Mercurial \\
+\bottomrule
+\end{tabular}
+\end{infobox}
+
 \textbf{为什么 Git 能胜出？} 在 Git 之前，SVN 是主流。SVN 是集中式的——所有人的修改都要提交到
 同一台中央服务器。如果服务器宕机，所有人都无法工作。而 Git 是分布式的：每个人的电脑上都有
 一份\textbf{完整的}仓库副本（包括全部历史），即使断网也能提交、查看历史、创建分支。
 
-如今，Git 已成为全球最广泛使用的版本控制系统，几乎所有开源项目和绝大多数商业软件团队都在使用它。
+如今，Git 已成为全球最广泛使用的版本控制系统，几乎所有开源项目和绝大多数商业软件团队都在使用它。截至 2025 年，Git 已成为全球开发者的标准工具。Stack Overflow 2024 年开发者调查显示，超过 93\% 的专业开发者使用 Git 进行版本控制。GitHub 平台拥有超过 1 亿开发者用户，托管了数千万个开源项目。Linux 内核——世界上最大的 Git 仓库——包含超过 3000 万个文件对象和数百万次提交记录，充分证明了 Git 处理超大规模项目的能力。
 
 \subsection{Git 的核心特性}
 
 \begin{keybox}
 \begin{enumerate}[leftmargin=1.5em]
   \item \textbf{分布式架构}：每个开发者的机器上都有一份完整的代码仓库和历史记录，
-        无需联网也能进行提交、查看历史、创建分支等操作。
+        无需联网也能进行提交、查看历史、创建分支等操作。这意味着即使 GitHub 服务器宕机，
+        你依然可以提交、查看历史、切换分支。
   \item \textbf{快照式存储}：Git 不是记录文件差异（diff），而是对每次提交保存整个项目
-        的快照。未修改的文件只保留指向旧快照的链接，因此效率极高。
+        的快照。未修改的文件只保留指向旧快照的链接，因此效率极高。因此 checkout 任意历史版本
+        是 O(1) 操作，不受项目规模影响。
   \item \textbf{强大的分支}：Git 的分支操作几乎是瞬时的（仅创建一个指针），
-        创建、切换、合并分支的成本极低，鼓励频繁使用分支。
-  \item \textbf{数据完整性}：每次提交都通过 SHA-1 哈希校验，任何篡改都会被检测到。
+        创建、切换、合并分支的成本极低，鼓励频繁使用分支。创建一个分支仅占用 41 字节，
+        这是 Git 鼓励频繁使用分支的根本原因。
+  \item \textbf{数据完整性}：每次提交都通过 SHA-1 哈希校验，任何篡改都会被检测到。SHA-1 哈希链保证任何历史篡改（哪怕是单字节）都会被立即检测。
   \item \textbf{暂存区设计}：独特的暂存区（Staging Area）机制，允许精确控制每次提交
-        包含哪些变更。这是 Git 区别于其他版本控制系统的重要特性。
+        包含哪些变更。这是 Git 区别于其他版本控制系统的重要特性。这让你可以将一个大改动
+        拆分为多个语义清晰的提交，而非一个混乱的大提交。
 \end{enumerate}
 \end{keybox}
+
+理解了 Git 解决了什么问题以及它的设计哲学之后，让我们深入底层，看看 Git 是如何存储和寻址数据的。这一节的内容是理解 Git 命令背后原理的关键——你不必背诵，但理解后会让你在遇到问题时不再困惑。
 
 \section{Git 的内部数据模型}
 
@@ -460,9 +490,9 @@ Git 是由 Linus Torvalds（Linux 内核的创造者）于 2005 年开发的\tex
 
 \subsection{Git 的四个核心对象}
 
-Git 仓库中的所有数据都存储为以下四种对象：
+Git 仓库中的所有数据都存储为以下四种对象，如图~\ref{fig:git-objects} 所示：
 
-\begin{center}
+\begin{figure}[H]\centering
 \begin{tikzpicture}[
   box/.style={draw, rounded corners=8pt, minimum width=3.5cm, minimum height=1.2cm,
               font=\bfseries, align=center, fill=#1},
@@ -478,7 +508,7 @@ Git 仓库中的所有数据都存储为以下四种对象：
   \draw[arr] (tree) -- (commit);
   \draw[arr] (commit) -- (branch);
 \end{tikzpicture}
-\end{center}
+\caption{Git 的四个核心对象——Blob、Tree、Commit、Branch 的层次关系}\label{fig:git-objects}\end{figure}
 
 \begin{itemize}[leftmargin=2em]
   \item \textbf{Blob（二进制大对象）}：存储文件内容，不包括文件名。每个文件版本对应一个 Blob。
@@ -487,16 +517,67 @@ Git 仓库中的所有数据都存储为以下四种对象：
   \item \textbf{Branch（分支）}：只是一个指向 Commit 的指针，创建分支就是创建一个新指针。
 \end{itemize}
 
+\begin{infobox}
+\textbf{Tag（标签）}：指向特定 Commit 的固定引用，通常用于标记版本号（如 v1.0、v2.3）。
+
+Git 支持两种标签：
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Annotated Tag（附注标签）}：存储完整对象，包含标签名、日期、注释和可选的 PGP 签名。
+        创建命令：\texttt{git tag -a v1.0 -m "Release 1.0"}
+  \item \textbf{Lightweight Tag（轻量标签）}：只是指向 Commit 的指针（等价于不会移动的分支），不存储额外元数据。
+        创建命令：\texttt{git tag v1.0}
+\end{itemize}
+\end{infobox}
+
+\subsection{HEAD 与引用}
+
+除了四种对象，Git 还使用\textbf{引用（refs）}来跟踪当前工作状态：
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{HEAD}：指向当前检出的分支或 Commit。\texttt{.git/HEAD} 文件内容通常是
+        \texttt{ref: refs/heads/main}，表示当前在 \texttt{main} 分支上。
+  \item \textbf{Detached HEAD}：当 HEAD 直接指向某个 Commit 哈希（而非分支名）时，
+        称为"游离 HEAD"状态。此时修改不会关联到任何分支，容易丢失。
+  \item \textbf{分支引用}：\texttt{.git/refs/heads/} 目录下每个文件对应一个本地分支，
+        文件内容是该分支指向的 Commit 哈希。
+  \item \textbf{标签引用}：\texttt{.git/refs/tags/} 目录下存放标签引用，
+        Annotated Tag 指向 Tag 对象，Lightweight Tag 直接指向 Commit。
+\end{itemize}
+
+可以用以下命令查看 HEAD 和分支的关系：
+\begin{lstlisting}[style=shell]
+git log --oneline --all --graph  # 图形化展示分支与 HEAD 关系
+git show-ref --heads             # 查看所有分支引用
+git show-ref --tags              # 查看所有标签引用
+\end{lstlisting}
+
 \begin{keybox}
 \textbf{关键理解}：Git 中的一切都是哈希。Blob、Tree、Commit 都有唯一的 SHA-1 哈希值（40 位十六进制字符串）。
 Git 通过哈希值来寻址内容，而不是文件名。这意味着：如果两个文件内容相同，无论文件名是否相同，Git 只存储一份 Blob。
 \end{keybox}
 
+\begin{infobox}
+\textbf{验证内容寻址}：
+
+用底层命令验证：同一内容无论文件名为何，Blob 哈希相同。
+\begin{lstlisting}[style=shell]
+# 计算 "Hello Git" 内容的哈希
+echo "Hello Git" | git hash-object --stdin
+# 输出固定哈希值（例如：8ab686e...）
+
+# 再次运行，输出相同哈希
+echo "Hello Git" | git hash-object --stdin
+\end{lstlisting}
+
+这就是内容寻址的核心：Git 通过内容计算哈希，而非通过文件名定位。
+如果两个文件内容相同，无论文件名是否相同，Git 只存储一份 Blob。
+\end{infobox}
+
 \subsection{一次提交的完整结构}
 
-下图展示了一次提交的完整数据模型：
+一次提交的完整数据模型如图~\ref{fig:commit-structure} 所示：
 
-\begin{center}
+\begin{figure}[H]\centering
 \resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
   obj/.style={draw, rounded corners=5pt, minimum width=2.5cm, minimum height=0.8cm,
@@ -538,7 +619,19 @@ Git 通过哈希值来寻址内容，而不是文件名。这意味着：如果�
   \draw[arr] (commit) -- (parent);
 \end{tikzpicture}%
 }
-\end{center}
+\caption{一次提交的完整数据模型——Commit 指向 Tree，Tree 指向 Blob，并记录父提交}\label{fig:commit-structure}\end{figure}
+
+\begin{infobox}
+\textbf{用底层命令查看对象}：
+
+Git 提供了底层命令来直接查看四种对象的内容：
+\begin{lstlisting}[style=shell]
+git cat-file -p HEAD          # 查看 HEAD 指向的 Commit 对象
+git cat-file -p HEAD^{tree}   # 查看该 Commit 对应的 Tree 对象
+git ls-tree HEAD              # 列出 Tree 中的文件与 Blob 映射
+git cat-file -p <blob-hash>   # 查看 Blob 的内容
+\end{lstlisting}
+\end{infobox}
 
 \begin{infobox}
 \textbf{为什么 Git 高效？}
@@ -546,8 +639,21 @@ Git 通过哈希值来寻址内容，而不是文件名。这意味着：如果�
   \item \textbf{快照式存储}：每次提交保存完整快照，未修改的文件复用旧 Blob（通过哈希判断）。
   \item \textbf{指针轻量}：分支只是一个 40 字节的指针，创建分支几乎不消耗空间。
   \item \textbf{本地完整}：每个克隆都包含完整历史，无需联网即可查看和操作。
+  \item \textbf{自动垃圾回收}：Git 定期运行 \texttt{git gc}，将松散对象（loose objects）
+        打包为 packfile 和索引文件，通过 delta 压缩进一步节省存储空间。
 \end{itemize}
 \end{infobox}
+
+\begin{tipbox}
+\textbf{Porcelain vs Plumbing}：
+
+Git 命令分为两层\textbf{表层（Porcelain）}是你日常使用的命令（\texttt{git add}、
+\texttt{git commit}、\texttt{git log}），设计为人类友好；\textbf{底层（Plumbing）}是 Git
+内部使用的命令（\texttt{git cat-file}、\texttt{git hash-object}、\texttt{git ls-tree}），
+输出格式稳定，适合脚本调用。理解数据模型时，底层命令是最好的"显微镜"。
+
+日常工作中你几乎不需要直接使用 Plumbing 命令，但了解它们能帮你深入诊断问题。
+\end{tipbox}
 
 \section{GitHub 简介}
 
@@ -584,9 +690,9 @@ GitHub 提供的核心功能包括：
 \section{Git 的三大工作区域}
 
 理解 Git 的关键在于理解它的\textbf{三个工作区域}。所有 Git 操作本质上都是在这三个区域之间移动数据。
-这是学习 Git 最重要的一张图，请务必理解：
+这是学习 Git 最重要的一张图，请务必理解，如图~\ref{fig:three-zones} 所示：
 
-\begin{center}
+\begin{figure}[H]\centering
 \begin{tikzpicture}[
   box/.style={draw, rounded corners=8pt, minimum width=3cm, minimum height=1.5cm,
               font=\bfseries, align=center, fill=#1},
@@ -603,7 +709,7 @@ GitHub 提供的核心功能包括：
   \draw[arr] (repo) -- node[above, font=\small, align=center]{git push\\{\tiny 推送到远程}} (remote);
   \draw[arr] (remote) -- node[below, font=\small, align=center]{git pull / fetch\\{\tiny 拉取更新}} (work);
 \end{tikzpicture}
-\end{center}
+\caption{Git 三大工作区域与远程仓库——工作区、暂存区、本地仓库、远程仓库之间的数据流转}\label{fig:three-zones}\end{figure}
 
 \begin{itemize}[leftmargin=2em]
   \item \textbf{工作区}（Working Directory）：你在磁盘上看到的实际文件，可以直接编辑。
@@ -628,10 +734,10 @@ GitHub 提供的核心功能包括：
 
 \section{VS Code 如何与 Git 协作}
 
-VS Code 内置了强大的 Git 集成，将上述所有操作都图形化了。下图展示了 VS Code 源代码管理视图
+VS Code 内置了强大的 Git 集成，将上述所有操作都图形化了。如图~\ref{fig:sc-overview} 所示，VS Code 源代码管理视图
 的全貌——你将在本教程中反复看到这个界面：
 
-\vscodeimg{images/01-sc-overview.png}{VS Code 源代码管理视图全景——左侧为变更文件列表，上方为提交信息输入框和提交按钮。这是你与 Git 交互的主要界面}
+\vscodeimg{images/01-sc-overview.png}{VS Code 源代码管理视图全景——左侧为变更文件列表，上方为提交信息输入框和提交按钮。这是你与 Git 交互的主要界面}{fig:sc-overview}
 
 在 VS Code 中，你可以通过\textbf{点击按钮}完成大部分 Git 操作，而不必记住命令行语法。
 但理解底层命令仍然重要——它们帮助你诊断问题、执行高级操作。
@@ -1026,9 +1132,9 @@ git init
 \end{lstlisting}
 
 在 VS Code 中，操作更加直观——打开项目文件夹后，源代码管理视图会自动检测到
-这不是一个 Git 仓库，并显示"初始化仓库"按钮：
+这不是一个 Git 仓库，并显示"初始化仓库"按钮，如图~\ref{fig:init-repo} 所示：
 
-\vscodeimg{images/12-init-repo.png}{VS Code 中的"初始化仓库"按钮——打开一个非 Git 项目时，源代码管理视图会提示你初始化}
+\vscodeimg{images/12-init-repo.png}{VS Code 中的"初始化仓库"按钮——打开一个非 Git 项目时，源代码管理视图会提示你初始化}{fig:init-repo}
 
 点击后，VS Code 会在项目根目录执行 \texttt{git init}，创建 \texttt{.git} 目录。
 此时你会看到所有项目文件出现在"更改"列表中，状态为 \texttt{U}（Untracked，未跟踪）。
@@ -1048,9 +1154,9 @@ git clone https://github.com/username/repo-name.git my-folder
 git clone -b develop https://github.com/username/repo-name.git
 \end{lstlisting}
 
-在 VS Code 中，可以通过命令面板执行克隆操作：
+在 VS Code 中，可以通过命令面板执行克隆操作，如图~\ref{fig:clone-repo} 所示：
 
-\vscodeimg{images/11-clone-repo.png}{VS Code 的 Git: Clone 命令——按 Ctrl+Shift+P 输入"clone"，粘贴仓库 URL 即可克隆}
+\vscodeimg{images/11-clone-repo.png}{VS Code 的 Git: Clone 命令——按 Ctrl+Shift+P 输入"clone"，粘贴仓库 URL 即可克隆}{fig:clone-repo}
 
 \begin{infobox}
 \texttt{git clone} 实际上做了三件事：
@@ -1079,9 +1185,9 @@ Staged（已暂存） & \texttt{A} / \texttt{M} & 修改已放入暂存区，将
 \end{tabular}
 \end{table}
 
-文件状态的生命周期如下：
+文件状态的生命周期如图~\ref{fig:file-states} 所示：
 
-\begin{center}
+\begin{figure}[H]\centering
 \begin{tikzpicture}[
   state/.style={draw, rounded corners=8pt, minimum width=3.5cm, minimum height=1.2cm,
                 font=\small, align=center, fill=#1},
@@ -1106,7 +1212,7 @@ Staged（已暂存） & \texttt{A} / \texttt{M} & 修改已放入暂存区，将
     \textbf{说明}：新建文件 → git add → 已暂存 → git commit → 未修改 → 编辑 → 已修改 → git add → ...
   };
 \end{tikzpicture}
-\end{center}
+\caption{文件状态生命周期——未跟踪、已修改、已暂存、未修改之间的转换关系}\label{fig:file-states}\end{figure}
 
 \section{日常工作流：status → add → commit}
 
@@ -1127,11 +1233,11 @@ git status -s
 # ?? untracked.txt        ← 未跟踪的文件（红色）
 \end{lstlisting}
 
-在 VS Code 中，\texttt{git status} 的信息直接体现在源代码管理视图里：
+在 VS Code 中，\texttt{git status} 的信息直接体现在源代码管理视图里，如图~\ref{fig:modified-files} 所示：
 
-\vscodeimg{images/13-modified-files.png}{修改后的文件列表——源代码管理视图的"更改"区域显示所有已修改但未暂存的文件，每个文件旁有状态标记}
+\vscodeimg{images/13-modified-files.png}{修改后的文件列表——源代码管理视图的"更改"区域显示所有已修改但未暂存的文件，每个文件旁有状态标记}{fig:modified-files}
 
-上图中，你可以看到：
+图~\ref{fig:modified-files} 中，你可以看到：
 \begin{itemize}[leftmargin=2em]
   \item 每个修改过的文件都列在"更改"区域下
   \item 文件名右侧的字母表示状态（M = Modified，U = Untracked）
@@ -1165,9 +1271,9 @@ git add src/
 git diff --cached
 \end{lstlisting}
 
-在 VS Code 中，暂存操作就是点击文件旁边的 "+" 按钮（单个暂存），或点击"更改"标题右侧的 "+" 按钮（全部暂存）：
+在 VS Code 中，暂存操作就是点击文件旁边的 "+" 按钮（单个暂存），或点击"更改"标题右侧的 "+" 按钮（全部暂存），如图~\ref{fig:stage-changes} 所示：
 
-\vscodeimg{images/05-stage-changes.png}{暂存操作——点击文件右侧的 "+" 按钮暂存单个文件，或点击"更改"标题旁的"+"按钮全部暂存}
+\vscodeimg{images/05-stage-changes.png}{暂存操作——点击文件右侧的 "+" 按钮暂存单个文件，或点击"更改"标题旁的"+"按钮全部暂存}{fig:stage-changes}
 
 \begin{warnbox}
 \texttt{git add .}（或 VS Code 中的全部暂存按钮）会暂存\textbf{所有}变更，
@@ -1188,9 +1294,9 @@ git commit -m "添加用户登录功能"
 git commit -a -m "修复样式问题"
 \end{lstlisting}
 
-在 VS Code 中，提交操作分两步：输入提交信息 → 点击提交按钮。
+在 VS Code 中，提交操作分两步：输入提交信息 → 点击提交按钮，如图~\ref{fig:commit-button} 所示。
 
-\vscodeimg{images/15-commit-button.png}{提交操作——在顶部输入框填写提交信息，然后点击"提交"按钮（或按 Ctrl+Enter）完成提交}
+\vscodeimg{images/15-commit-button.png}{提交操作——在顶部输入框填写提交信息，然后点击"提交"按钮（或按 Ctrl+Enter）完成提交}{fig:commit-button}
 
 提交后，"暂存的更改"区域清空，变更进入本地历史记录。
 
@@ -1227,9 +1333,9 @@ VS Code 会根据你的代码变更自动生成描述。你可以在此基础上
 
 \subsection{打开 Diff 视图}
 
-在源代码管理视图中，\textbf{点击文件名}即可打开差异对比视图：
+在源代码管理视图中，\textbf{点击文件名}即可打开差异对比视图，如图~\ref{fig:diff-editor} 所示：
 
-\vscodeimg{images/03-diff-editor.png}{差异对比编辑器——左侧为旧版本（HEAD），右侧为当前修改。绿色背景表示新增内容，红色背景表示删除内容}
+\vscodeimg{images/03-diff-editor.png}{差异对比编辑器——左侧为旧版本（HEAD），右侧为当前修改。绿色背景表示新增内容，红色背景表示删除内容}{fig:diff-editor}
 
 \subsection{并排视图 vs 内联视图}
 
@@ -1240,24 +1346,24 @@ VS Code 支持两种差异对比模式，点击 Diff 编辑器右上角的按钮
   \item \textbf{内联视图（Inline）}：所有变更在同一文件中显示，适合小改动。
 \end{itemize}
 
-两种模式的对比如下——并排视图可以一目了然地看到左右差异，而内联视图则更紧凑：
+两种模式的对比如图~\ref{fig:diff-sidebyside} 与图~\ref{fig:diff-inline} 所示——并排视图可以一目了然地看到左右差异，而内联视图则更紧凑：
 
 \vspace{0.5cm}
 \noindent
 \begin{minipage}[t]{0.48\textwidth}
-\vscodeimgnarrow{images/24-diff-sidebyside.png}{并排视图——左右分栏，适合大幅修改}
+\vscodeimgnarrow{images/24-diff-sidebyside.png}{并排视图——左右分栏，适合大幅修改}{fig:diff-sidebyside}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\textwidth}
-\vscodeimgnarrow{images/25-diff-inline.png}{内联视图——变更在同一文件中显示，适合小改动}
+\vscodeimgnarrow{images/25-diff-inline.png}{内联视图——变更在同一文件中显示，适合小改动}{fig:diff-inline}
 \end{minipage}
 \vspace{0.5cm}
 
 \subsection{编辑器中的实时变更指示}
 
-在代码编辑器中，VS Code 会在行号右侧的 gutter 区域\textbf{实时}显示变更指示：
+在代码编辑器中，VS Code 会在行号右侧的 gutter 区域\textbf{实时}显示变更指示，如图~\ref{fig:gutter-diff} 所示：
 
-\vscodeimg{images/21-gutter-diff.png}{编辑器 Gutter 变更指示器——绿色竖线表示新增行，蓝色竖线表示修改行，红色三角表示删除行。点击可查看详细信息}
+\vscodeimg{images/21-gutter-diff.png}{编辑器 Gutter 变更指示器——绿色竖线表示新增行，蓝色竖线表示修改行，红色三角表示删除行。点击可查看详细信息}{fig:gutter-diff}
 
 \begin{itemize}[leftmargin=2em]
   \item \textbf{绿色竖线}：新增的行
@@ -1583,13 +1689,13 @@ git branch -d feature-login
 git branch -D feature-login
 \end{lstlisting}
 
-在 VS Code 中，分支操作非常直观——点击底部状态栏的分支名称，会弹出分支选择列表，你可以在其中切换或创建新分支：
+在 VS Code 中，分支操作非常直观——点击底部状态栏的分支名称，会弹出分支选择列表，你可以在其中切换或创建新分支，如图~\ref{fig:current-branch} 所示：
 
-\vscodeimg{images/18-current-branch.png}{底部状态栏的分支指示器——显示当前所在分支名称（如"main"），点击可切换或创建分支}
+\vscodeimg{images/18-current-branch.png}{底部状态栏的分支指示器——显示当前所在分支名称（如"main"），点击可切换或创建分支}{fig:current-branch}
 
-创建新分支时，在弹出的输入框中输入分支名称即可（如 \texttt{feature/login}），VS Code 会自动从当前分支创建并切换：
+创建新分支时，在弹出的输入框中输入分支名称即可（如 \texttt{feature/login}），VS Code 会自动从当前分支创建并切换，如图~\ref{fig:create-branch} 所示：
 
-\vscodeimg{images/19-create-branch.png}{创建新分支——输入分支名称后，VS Code 会自动从当前分支创建并切换}
+\vscodeimg{images/19-create-branch.png}{创建新分支——输入分支名称后，VS Code 会自动从当前分支创建并切换}{fig:create-branch}
 
 \subsection{分支命名规范}
 
@@ -1658,7 +1764,7 @@ git merge feature-login
 
 \subsection{冲突标记}
 
-冲突发生时，Git 会在文件中插入冲突标记：
+冲突发生时，Git 会在文件中插入冲突标记（如图~\ref{fig:merge-conflict} 所示）：
 
 \begin{lstlisting}[style=shell]
 <<<<<<< HEAD
@@ -1668,7 +1774,7 @@ git merge feature-login
 >>>>>>> feature
 \end{lstlisting}
 
-\vscodeimg{images/merge-conflict.png}{VS Code 中的合并冲突标记——文件中用特殊颜色标记冲突区域，并提供快捷操作按钮}
+\vscodeimg{images/merge-conflict.png}{VS Code 中的合并冲突标记——文件中用特殊颜色标记冲突区域，并提供快捷操作按钮}{fig:merge-conflict}
 
 \subsection{VS Code 的冲突解决体验}
 
@@ -1681,9 +1787,9 @@ VS Code 在遇到合并冲突时，会在每个冲突区域上方提供\textbf{�
   \item \textbf{Compare Changes}：打开并排对比视图，仔细查看差异
 \end{itemize}
 
-VS Code 还提供了专门的三方合并编辑器：
+VS Code 还提供了专门的三方合并编辑器，如图~\ref{fig:merge-editor} 所示：
 
-\vscodeimg{images/08-merge-editor.png}{VS Code 的三方合并编辑器——左侧为当前分支（Current），右侧为传入分支（Incoming），底部为合并结果}
+\vscodeimg{images/08-merge-editor.png}{VS Code 的三方合并编辑器——左侧为当前分支（Current），右侧为传入分支（Incoming），底部为合并结果}{fig:merge-editor}
 
 \subsection{解决冲突的完整步骤}
 
@@ -1723,7 +1829,9 @@ Rebase（变基，把提交历史整理成一条直线）是另一种整合分�
 
 \subsection{Rebase 与 Merge 的区别}
 
-\begin{center}
+两者对比如图~\ref{fig:merge-rebase} 所示——
+
+\begin{figure}[H]\centering
 \resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
   commit/.style={draw, circle, minimum size=0.4cm, fill=#1},
@@ -1758,7 +1866,7 @@ Rebase（变基，把提交历史整理成一条直线）是另一种整合分�
   \node[label] at (10.25,-1) {\textbf{Rebase}：线性历史，无合并提交};
 \end{tikzpicture}%
 }
-\end{center}
+\caption{Merge 与 Rebase 的对比——Merge 保留完整历史产生合并节点，Rebase 生成线性历史}\label{fig:merge-rebase}\end{figure}
 
 \subsection{Rebase 的使用场景}
 
@@ -1990,11 +2098,11 @@ git config --global pull.rebase true
 推荐做法：日常使用 \texttt{git pull --rebase}，需要谨慎时使用 \texttt{fetch} + 手动 \texttt{merge}。
 \end{keybox}
 
-在 VS Code 中，推送（把本地提交上传到云端）和拉取（从云端下载最新并合并）操作可以通过底部状态栏的同步按钮一键完成：
+在 VS Code 中，推送（把本地提交上传到云端）和拉取（从云端下载最新并合并）操作可以通过底部状态栏的同步按钮一键完成，如图~\ref{fig:pull-push} 与图~\ref{fig:sync-button} 所示：
 
-\vscodeimg{images/17-pull-push.png}{Pull 和 Push 操作——在源代码管理视图的"..."菜单中可以单独执行拉取或推送}
+\vscodeimg{images/17-pull-push.png}{Pull 和 Push 操作——在源代码管理视图的"..."菜单中可以单独执行拉取或推送}{fig:pull-push}
 
-\vscodeimg{images/16-sync-button.png}{同步按钮——源代码管理视图顶部的同步操作按钮，点击可执行一键同步（pull + push）}
+\vscodeimg{images/16-sync-button.png}{同步按钮——源代码管理视图顶部的同步操作按钮，点击可执行一键同步（pull + push）}{fig:sync-button}
 
 \section{在 GitHub 上创建仓库}
 
@@ -2030,9 +2138,9 @@ git push -u origin main
 
 \subsection{方式三：VS Code 一键发布}
 
-VS Code 可以一步完成"初始化 + 提交 + 创建远程仓库 + 推送"：
+VS Code 可以一步完成"初始化 + 提交 + 创建远程仓库 + 推送"，如图~\ref{fig:modified-files-publish} 所示：
 
-\vscodeimg{images/13-modified-files.png}{VS Code 一键发布——对于未初始化的项目，VS Code 提供"初始化仓库"按钮，之后可以直接"发布到 GitHub"}
+\vscodeimg{images/13-modified-files.png}{VS Code 一键发布——对于未初始化的项目，VS Code 提供"初始化仓库"按钮，之后可以直接"发布到 GitHub"}{fig:modified-files-publish}
 
 \begin{stepbox}
 \begin{enumerate}[leftmargin=1.5em]
@@ -2101,9 +2209,9 @@ PR 流程解决了这些问题：
 
 \subsection{PR 工作流程图}
 
-下图展示了 Pull Request 的完整工作流程：
+Pull Request 的完整工作流程如图~\ref{fig:pr-workflow} 所示：
 
-\begin{center}
+\begin{figure}[H]\centering
 \begin{tikzpicture}[
   box/.style={draw, rounded corners=5pt, minimum width=3.5cm, minimum height=1cm,
               font=\small, align=center, fill=#1},
@@ -2126,7 +2234,7 @@ PR 流程解决了这些问题：
   \draw[arr] (review) -- node[above, font=\small]{通过} (merge);
   \draw[arr, dashed] (merge) -- node[left, font=\small]{循环} (main);
 \end{tikzpicture}
-\end{center}
+\caption{Pull Request 完整工作流程——从创建分支到代码审查再到合并的协作循环}\label{fig:pr-workflow}\end{figure}
 
 \section{Fork 与贡献开源项目}
 
@@ -2209,7 +2317,9 @@ VS Code 的 Git 集成是业界公认最出色的之一，足以满足日常 90\
 
 \subsection{界面详解}
 
-\vscodeimgwide{images/01-sc-overview.png}{源代码管理视图完整界面——各区域标注：(A) 提交信息输入框 (B) 提交按钮及下拉菜单 (C) 暂存的更改 (D) 更改列表 (E) 文件状态标记}
+界面各区域如图~\ref{fig:sc-overview-annotated} 所示——
+
+\vscodeimgwide{images/01-sc-overview.png}{源代码管理视图完整界面——各区域标注：(A) 提交信息输入框 (B) 提交按钮及下拉菜单 (C) 暂存的更改 (D) 更改列表 (E) 文件状态标记}{fig:sc-overview-annotated}
 
 界面各区域功能详解：
 
@@ -2233,21 +2343,23 @@ VS Code 的 Git 集成是业界公认最出色的之一，足以满足日常 90\
 
 \subsection{提交历史图（Source Control Graph）}
 
-VS Code 新增了源代码管理图形视图，直观展示提交历史和分支关系。每个节点代表一次提交，绿色圆点表示当前分支的提交，点击可查看详细信息：
+VS Code 新增了源代码管理图形视图，直观展示提交历史和分支关系。每个节点代表一次提交，绿色圆点表示当前分支的提交，点击可查看详细信息，如图~\ref{fig:sc-graph} 所示：
 
-\vscodeimg{images/02-sc-graph.png}{源代码管理图形视图——以时间线形式展示提交历史，不同颜色区分不同分支，点击节点可查看详细信息}
+\vscodeimg{images/02-sc-graph.png}{源代码管理图形视图——以时间线形式展示提交历史，不同颜色区分不同分支，点击节点可查看详细信息}{fig:sc-graph}
 
 \section{暂存（Stage）与提交（Commit）详解}
 
 \subsection{暂存文件}
 
-\vscodeimg{images/22-stage-detail.png}{暂存操作详情——每个文件右侧有"+"按钮可以单独暂存，"更改"标题旁有全部暂存按钮}
+暂存操作如图~\ref{fig:stage-detail} 所示——
+
+\vscodeimg{images/22-stage-detail.png}{暂存操作详情——每个文件右侧有"+"按钮可以单独暂存，"更改"标题旁有全部暂存按钮}{fig:stage-detail}
 
 \subsection{部分暂存（Stage Selected Ranges）}
 
-VS Code 支持精细到\textbf{代码行}级别的暂存——一个文件中改了多处，可以只暂存其中一部分：
+VS Code 支持精细到\textbf{代码行}级别的暂存——一个文件中改了多处，可以只暂存其中一部分，如图~\ref{fig:stage-lines} 所示：
 
-\vscodeimg{images/23-stage-lines.png}{部分暂存——打开文件 Diff 后，可以选择特定的代码块进行暂存，而非整个文件}
+\vscodeimg{images/23-stage-lines.png}{部分暂存——打开文件 Diff 后，可以选择特定的代码块进行暂存，而非整个文件}{fig:stage-lines}
 
 \begin{stepbox}
 \textbf{部分暂存操作步骤}：
@@ -2263,23 +2375,23 @@ VS Code 支持精细到\textbf{代码行}级别的暂存——一个文件中改
 
 \subsection{一键同步}
 
-VS Code 底部状态栏显示同步状态，点击同步图标可以一键执行 pull + push：
+VS Code 底部状态栏显示同步状态，点击同步图标可以一键执行 pull + push，如图~\ref{fig:sync-changes} 所示：
 
-\vscodeimg{images/07-sync-changes.png}{同步更改——底部状态栏显示当前分支和同步状态（↑ 待推送，↓ 待拉取），点击旋转箭头图标执行一键同步}
+\vscodeimg{images/07-sync-changes.png}{同步更改——底部状态栏显示当前分支和同步状态（↑ 待推送，↓ 待拉取），点击旋转箭头图标执行一键同步}{fig:sync-changes}
 
 \section{分支管理详解}
 
 \subsection{查看和切换分支}
 
-当前分支名称显示在 VS Code \textbf{底部状态栏的左下角}，点击即可查看分支列表、切换分支或创建新分支。创建新分支时，VS Code 会自动从当前分支创建并立即切换：
+当前分支名称显示在 VS Code \textbf{底部状态栏的左下角}，点击即可查看分支列表、切换分支或创建新分支。创建新分支时，VS Code 会自动从当前分支创建并立即切换，如图~\ref{fig:create-branch-alt} 所示：
 
-\vscodeimg{images/19-create-branch.png}{创建新分支——输入新分支名称后，VS Code 会自动从当前分支创建并切换}
+\vscodeimg{images/19-create-branch.png}{创建新分支——输入新分支名称后，VS Code 会自动从当前分支创建并切换}{fig:create-branch-alt}
 
 \section{Timeline 视图：文件历史}
 
-VS Code 的 Timeline 视图（默认在资源管理器底部）显示当前文件的所有提交历史：
+VS Code 的 Timeline 视图（默认在资源管理器底部）显示当前文件的所有提交历史，如图~\ref{fig:timeline} 所示：
 
-\vscodeimg{images/10-timeline.png}{Timeline 视图——显示当前文件的所有提交历史，按时间排列。点击任意提交可查看该次修改的详细内容，右键可选择"比较"或"还原"}
+\vscodeimg{images/10-timeline.png}{Timeline 视图——显示当前文件的所有提交历史，按时间排列。点击任意提交可查看该次修改的详细内容，右键可选择"比较"或"还原"}{fig:timeline}
 
 \section{Stash（暂存工作）}
 
@@ -2301,9 +2413,9 @@ VS Code 的 Timeline 视图（默认在资源管理器底部）显示当前文�
 
 \section{Git Blame 与行内注释}
 
-安装 GitLens 扩展后，VS Code 会在每一行代码后面显示最后修改者和时间：
+安装 GitLens 扩展后，VS Code 会在每一行代码后面显示最后修改者和时间，如图~\ref{fig:gutter-blame} 所示：
 
-\vscodeimg{images/04-gutter-blame.png}{GitLens 的行内 Blame 注释——每行代码后显示灰色文字：最后修改者、时间和提交信息摘要}
+\vscodeimg{images/04-gutter-blame.png}{GitLens 的行内 Blame 注释——每行代码后显示灰色文字：最后修改者、时间和提交信息摘要}{fig:gutter-blame}
 
 \section{推荐扩展}
 
@@ -2434,9 +2546,9 @@ git push origin --delete feature/user-auth
 
 \section{VS Code 中的完整操作流程}
 
-同样的流程，在 VS Code 中的操作步骤：
+同样的流程，在 VS Code 中的操作步骤，如图~\ref{fig:view-changes} 所示：
 
-\vscodeimg{images/20-view-changes.png}{开发中的 VS Code——编辑器 Gutter 实时显示你的修改（绿色/蓝色/红色标记），源代码管理视图列出所有变更文件}
+\vscodeimg{images/20-view-changes.png}{开发中的 VS Code——编辑器 Gutter 实时显示你的修改（绿色/蓝色/红色标记），源代码管理视图列出所有变更文件}{fig:view-changes}
 
 \begin{stepbox}
 \begin{enumerate}[leftmargin=1.5em]
@@ -2665,7 +2777,10 @@ fatal: not a git repository & 当前目录非 Git 仓库。修复：\texttt{cd <
 
 \section{速查卡 1：Git 四大区域数据流转}
 
-\begin{center}
+完整数据流转如图~\ref{fig:cheatsheet-zones} 所示——
+
+\begin{figure}[H]
+\centering
 \resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
   zone/.style={draw, rounded corners=12pt, minimum width=3.2cm, minimum height=2.8cm,
@@ -2717,13 +2832,17 @@ fatal: not a git repository & 当前目录非 Git 仓库。修复：\texttt{cd <
   };
 \end{tikzpicture}%
 }
-\end{center}
+\caption{Git 四大区域数据流转速查——工作区、暂存区、本地仓库、远程仓库之间的完整操作路径}\label{fig:cheatsheet-zones}
+\end{figure}
 
 \clearpage
 
 \section{速查卡 2：分支演变——合并 vs 变基}
 
-\begin{center}
+分支演变对比如图~\ref{fig:cheatsheet-merge-rebase} 所示——
+
+\begin{figure}[H]
+\centering
 \resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
   commit/.style={draw, circle, minimum size=0.5cm, inner sep=0pt, fill=#1},
@@ -2777,7 +2896,8 @@ fatal: not a git repository & 当前目录非 Git 仓库。修复：\texttt{cd <
   \node[tag] at (rf1) {feature (rebased)};
 \end{tikzpicture}%
 }
-\end{center}
+\caption{分支演变对比速查——Merge 产生菱形合并节点，Rebase 生成线性历史}\label{fig:cheatsheet-merge-rebase}
+\end{figure}
 
 \begin{center}
 \texttt{[分支]} \texttt{git merge feature}：保留分支上下文，适合团队公共分支 \\
@@ -2788,7 +2908,10 @@ fatal: not a git repository & 当前目录非 Git 仓库。修复：\texttt{cd <
 
 \section{速查卡 3：远程协作完整链路}
 
-\begin{center}
+完整协作链路如图~\ref{fig:cheatsheet-remote} 所示——
+
+\begin{figure}[H]
+\centering
 \resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
   box/.style={draw, rounded corners=8pt, minimum width=3.5cm, minimum height=1.6cm,
@@ -2861,7 +2984,8 @@ fatal: not a git repository & 当前目录非 Git 仓库。修复：\texttt{cd <
   };
 \end{tikzpicture}%
 }
-\end{center}
+\caption{远程协作完整链路速查——从本地开发到 GitHub 合并的完整流程}\label{fig:cheatsheet-remote}
+\end{figure}
 
 % ================================================================
 %  附录：常用命令速查表

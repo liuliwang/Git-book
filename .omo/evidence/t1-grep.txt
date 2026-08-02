@@ -1,0 +1,49 @@
+# T1 证据 — 第 0-1 章 TikZ 图 figure 环境改造 (grep 校验)
+
+日期: 2026-08-02
+
+## QA 结果
+
+| 校验项 | 期望 | 实际 | 状态 |
+|--------|------|------|------|
+| `\begin{figure}[H]` 总数 | 3 原有 + 5 新增 = 8 | 8 | PASS |
+| 5 个 label 键总命中 (label+ref) | 10 | 10 | PASS |
+| `\ref{fig:` 新增 | 5 | 5 | PASS |
+
+## 各 label 键命中数 (每个应为 2: 1 label + 1 ref)
+
+- fig:three-analogies = 2
+- fig:learning-path = 2
+- fig:git-objects = 2
+- fig:commit-structure = 2
+- fig:three-zones = 2
+
+## 新增 figure 环境位置 (grep 确认)
+
+```
+  250: \begin{figure}[H]\centering          (fig:three-analogies)
+  280: \caption{...}\label{fig:three-analogies}\end{figure}
+  313: \begin{figure}[H]\centering          (fig:learning-path)
+  333: \caption{...}\label{fig:learning-path}\end{figure}
+  495: \begin{figure}[H]\centering          (fig:git-objects)
+  511: \caption{...}\label{fig:git-objects}\end{figure}
+  580: \begin{figure}[H]\centering          (fig:commit-structure, resizebox)
+  622: \caption{...}\label{fig:commit-structure}\end{figure}
+  695: \begin{figure}[H]\centering          (fig:three-zones)
+  712: \caption{...}\label{fig:three-zones}\end{figure}
+```
+
+## 正文交叉引用插入点
+
+- L247 `\section{三个核心类比}` 后: `三者关系如图~\ref{fig:three-analogies} 所示——`
+- L309 `\section{本教程的学习路径图}` 后: `完整路径如图~\ref{fig:learning-path} 所示——`
+- L491: `...存储为以下四种对象，如图~\ref{fig:git-objects} 所示：`
+- L576: `一次提交的完整数据模型如图~\ref{fig:commit-structure} 所示：`
+- L691: `...请务必理解，如图~\ref{fig:three-zones} 所示：`
+
+## 说明
+
+- 未改动 TikZ 图内容（节点/箭头/样式），未动 26 处 \vscodeimg，未动 tcolorbox
+- 未新增宏包；T1 约定不编译，仅 grep 校验
+- 注意事项：`\end{tikzpicture}%\n}\n\end{center}` 模式在文件中出现 5 次，
+  编辑 commit-structure 结尾时需附带 `\draw[arr] (commit) -- (parent);` 上下文行保证唯一匹配

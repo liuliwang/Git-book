@@ -1,0 +1,22 @@
+T5 证据 — vscodeimg 第3参数 label + 引导句 \ref 插入（grep 验证）
+
+grep 模式: \\(vscodeimg\{[^}]+\}\{[^}]+\}\{fig:|ref\{fig:)
+
+匹配结果（本任务 8 处）:
+
+[1] 行 1692: \vscodeimg{images/18-current-branch.png}{...}{fig:current-branch}
+[2] 行 1690: 引导句含 "如图~\ref{fig:current-branch} 所示"
+
+[3] 行 1696: \vscodeimg{images/19-create-branch.png}{...}{fig:create-branch}
+[4] 行 1694: 引导句含 "如图~\ref{fig:create-branch} 所示"
+
+[5] 行 1775: \vscodeimg{images/merge-conflict.png}{...}{fig:merge-conflict}
+[6] 行 1765: 引导句含 "（如图~\ref{fig:merge-conflict} 所示）"
+
+[7] 行 1790: \vscodeimg{images/08-merge-editor.png}{...}{fig:merge-editor}
+[8] 行 1788: 引导句含 "如图~\ref{fig:merge-editor} 所示"
+
+说明:
+- 任务描述行号 (1691/1695/1774/1789) 与实际文件行号 (1692/1696/1775/1790) 相差 1，按内容精确匹配完成。
+- caption 文字未改动；tcolorbox 环境未改动；未编译。
+- LSP "Undefined reference" 为编译前正常状态（\label 需 xelatex 生成 .aux 后解析），其余 735-1362 行引用错误为存量，与本任务无关。

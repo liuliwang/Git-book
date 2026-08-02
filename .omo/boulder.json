@@ -1,0 +1,223 @@
+{
+  "schema_version": 2,
+  "active_work_id": "tikz-cross-refs-dd2ab908",
+  "works": {
+    "tikz-cross-refs-dd2ab908": {
+      "work_id": "tikz-cross-refs-dd2ab908",
+      "active_plan": "C:\\Users\\Admin\\Desktop\\Git\\.omo\\plans\\tikz-cross-refs.md",
+      "plan_name": "tikz-cross-refs",
+      "status": "completed",
+      "started_at": "2026-08-02T12:33:15.586Z",
+      "updated_at": "2026-08-02T12:47:55.405Z",
+      "session_ids": [
+        "opencode:ses_03db5110dffeLWXzKx7xdjK5aC"
+      ],
+      "session_origins": {
+        "opencode:ses_03db5110dffeLWXzKx7xdjK5aC": "direct"
+      },
+      "agent": "atlas",
+      "task_sessions": {
+        "todo:1": {
+          "task_key": "todo:1",
+          "task_label": "1",
+          "task_title": "第 0-1 章 TikZ 图补 figure 环境 + caption + label + \\ref（#1-5：行 250、312、494、580、694）",
+          "session_id": "opencode:ses_03d88a652ffe6ivoWNCTd4jVdQ",
+          "agent": "Sisyphus-Junior",
+          "category": "quick",
+          "updated_at": "2026-08-02T12:36:21.125Z",
+          "started_at": "2026-08-02T12:36:07.172Z",
+          "status": "completed",
+          "ended_at": "2026-08-02T12:36:21.125Z",
+          "elapsed_ms": 13953
+        },
+        "todo:2": {
+          "task_key": "todo:2",
+          "task_label": "2",
+          "task_title": "第 3-5 章 TikZ 图补 figure 环境 + caption + label + \\ref（#6-8：行 1189、1832、2211）",
+          "session_id": "opencode:ses_03d8616cfffeqoElRMxau9OHpr",
+          "agent": "Sisyphus-Junior",
+          "category": "quick",
+          "updated_at": "2026-08-02T12:37:27.966Z",
+          "started_at": "2026-08-02T12:37:17.248Z",
+          "status": "completed",
+          "ended_at": "2026-08-02T12:37:27.966Z",
+          "elapsed_ms": 10718
+        },
+        "todo:3": {
+          "task_key": "todo:3",
+          "task_label": "3",
+          "task_title": "第 9 章 TikZ 图补 figure 环境 + caption + label + \\ref（#9-11：行 2778、2836、2901）+ 首次编译验证",
+          "session_id": "opencode:ses_03d850650ffe7oWsK0MHRJK6ys",
+          "agent": "Sisyphus-Junior",
+          "category": "quick",
+          "updated_at": "2026-08-02T12:40:12.485Z",
+          "started_at": "2026-08-02T12:39:58.728Z",
+          "status": "completed",
+          "ended_at": "2026-08-02T12:40:12.485Z",
+          "elapsed_ms": 13757
+        },
+        "final-wave:f1": {
+          "task_key": "final-wave:f1",
+          "task_label": "F1",
+          "task_title": "计划合规审计",
+          "session_id": "opencode:ses_03d82711affelcIQi7DcdxxJOl",
+          "agent": "Sisyphus-Junior",
+          "category": "quick",
+          "updated_at": "2026-08-02T12:47:10.276Z",
+          "started_at": "2026-08-02T12:41:19.679Z",
+          "status": "completed",
+          "ended_at": "2026-08-02T12:47:10.276Z",
+          "elapsed_ms": 350597
+        },
+        "final-wave:f2": {
+          "task_key": "final-wave:f2",
+          "task_label": "F2",
+          "task_title": "LaTeX 编译与引用一致性审查",
+          "session_id": "opencode:ses_03d8262e0ffeKz9CgfpUKr5c1D",
+          "agent": "Sisyphus-Junior",
+          "category": "quick",
+          "updated_at": "2026-08-02T12:48:00.000Z",
+          "started_at": "2026-08-02T12:41:20.000Z",
+          "status": "completed",
+          "ended_at": "2026-08-02T12:48:00.000Z",
+          "elapsed_ms": 400000
+        },
+        "final-wave:f3": {
+          "task_key": "final-wave:f3",
+          "task_label": "F3",
+          "task_title": "实际 QA（PDF 翻阅）",
+          "session_id": "opencode:ses_03d82582cffeX5VVkAX40d1ePV",
+          "agent": "Sisyphus-Junior",
+          "category": "quick",
+          "updated_at": "2026-08-02T12:49:00.000Z",
+          "started_at": "2026-08-02T12:41:21.000Z",
+          "status": "completed",
+          "ended_at": "2026-08-02T12:49:00.000Z",
+          "elapsed_ms": 460000
+        },
+        "final-wave:f4": {
+          "task_key": "final-wave:f4",
+          "task_label": "F4",
+          "task_title": "范围保真审计",
+          "session_id": "opencode:ses_03d824cb9ffetGLVGqiIyey9hM",
+          "agent": "Sisyphus-Junior",
+          "category": "quick",
+          "updated_at": "2026-08-02T12:50:00.000Z",
+          "started_at": "2026-08-02T12:41:22.000Z",
+          "status": "completed",
+          "ended_at": "2026-08-02T12:50:00.000Z",
+          "elapsed_ms": 520000
+        }
+      },
+      "ended_at": "2026-08-02T12:47:55.405Z",
+      "elapsed_ms": 879819
+    }
+  },
+  "active_plan": "C:\\Users\\Admin\\Desktop\\Git\\.omo\\plans\\tikz-cross-refs.md",
+  "started_at": "2026-08-02T12:33:15.586Z",
+  "status": "completed",
+  "updated_at": "2026-08-02T12:47:55.405Z",
+  "session_ids": [
+    "opencode:ses_03db5110dffeLWXzKx7xdjK5aC"
+  ],
+  "session_origins": {
+    "opencode:ses_03db5110dffeLWXzKx7xdjK5aC": "direct"
+  },
+  "plan_name": "tikz-cross-refs",
+  "task_sessions": {
+    "todo:1": {
+      "task_key": "todo:1",
+      "task_label": "1",
+      "task_title": "第 0-1 章 TikZ 图补 figure 环境 + caption + label + \\ref（#1-5：行 250、312、494、580、694）",
+      "session_id": "opencode:ses_03d88a652ffe6ivoWNCTd4jVdQ",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-08-02T12:36:21.125Z",
+      "started_at": "2026-08-02T12:36:07.172Z",
+      "status": "completed",
+      "ended_at": "2026-08-02T12:36:21.125Z",
+      "elapsed_ms": 13953
+    },
+    "todo:2": {
+      "task_key": "todo:2",
+      "task_label": "2",
+      "task_title": "第 3-5 章 TikZ 图补 figure 环境 + caption + label + \\ref（#6-8：行 1189、1832、2211）",
+      "session_id": "opencode:ses_03d8616cfffeqoElRMxau9OHpr",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-08-02T12:37:27.966Z",
+      "started_at": "2026-08-02T12:37:17.248Z",
+      "status": "completed",
+      "ended_at": "2026-08-02T12:37:27.966Z",
+      "elapsed_ms": 10718
+    },
+    "todo:3": {
+      "task_key": "todo:3",
+      "task_label": "3",
+      "task_title": "第 9 章 TikZ 图补 figure 环境 + caption + label + \\ref（#9-11：行 2778、2836、2901）+ 首次编译验证",
+      "session_id": "opencode:ses_03d850650ffe7oWsK0MHRJK6ys",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-08-02T12:40:12.485Z",
+      "started_at": "2026-08-02T12:39:58.728Z",
+      "status": "completed",
+      "ended_at": "2026-08-02T12:40:12.485Z",
+      "elapsed_ms": 13757
+    },
+    "final-wave:f1": {
+      "task_key": "final-wave:f1",
+      "task_label": "F1",
+      "task_title": "计划合规审计",
+      "session_id": "opencode:ses_03d82711affelcIQi7DcdxxJOl",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-08-02T12:47:10.276Z",
+      "started_at": "2026-08-02T12:41:19.679Z",
+      "status": "completed",
+      "ended_at": "2026-08-02T12:47:10.276Z",
+      "elapsed_ms": 350597
+    },
+    "final-wave:f2": {
+      "task_key": "final-wave:f2",
+      "task_label": "F2",
+      "task_title": "LaTeX 编译与引用一致性审查",
+      "session_id": "opencode:ses_03d8262e0ffeKz9CgfpUKr5c1D",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-08-02T12:48:00.000Z",
+      "started_at": "2026-08-02T12:41:20.000Z",
+      "status": "completed",
+      "ended_at": "2026-08-02T12:48:00.000Z",
+      "elapsed_ms": 400000
+    },
+    "final-wave:f3": {
+      "task_key": "final-wave:f3",
+      "task_label": "F3",
+      "task_title": "实际 QA（PDF 翻阅）",
+      "session_id": "opencode:ses_03d82582cffeX5VVkAX40d1ePV",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-08-02T12:49:00.000Z",
+      "started_at": "2026-08-02T12:41:21.000Z",
+      "status": "completed",
+      "ended_at": "2026-08-02T12:49:00.000Z",
+      "elapsed_ms": 460000
+    },
+    "final-wave:f4": {
+      "task_key": "final-wave:f4",
+      "task_label": "F4",
+      "task_title": "范围保真审计",
+      "session_id": "opencode:ses_03d824cb9ffetGLVGqiIyey9hM",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-08-02T12:50:00.000Z",
+      "started_at": "2026-08-02T12:41:22.000Z",
+      "status": "completed",
+      "ended_at": "2026-08-02T12:50:00.000Z",
+      "elapsed_ms": 520000
+    }
+  },
+  "agent": "atlas",
+  "ended_at": "2026-08-02T12:47:55.405Z",
+  "elapsed_ms": 879819
+}

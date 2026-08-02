@@ -1,0 +1,26 @@
+# T4 证据：Diff 视图图片 label + \ref 引导句
+
+验证时间：2026-08-02
+验证方式：grep 'fig:(diff-editor|diff-sidebyside|diff-inline|gutter-diff)' Git_VSCode_Tutorial.tex
+
+## 结果（7 处全部命中）
+
+行 1334: 引导句含 \ref{fig:diff-editor}
+  在源代码管理视图中，\textbf{点击文件名}即可打开差异对比视图，如图~\ref{fig:diff-editor} 所示：
+行 1336: \vscodeimg{images/03-diff-editor.png}{...}{fig:diff-editor}
+行 1347: 引导句含 \ref{fig:diff-sidebyside} 与 \ref{fig:diff-inline}（两个 \ref）
+  两种模式的对比如图~\ref{fig:diff-sidebyside} 与图~\ref{fig:diff-inline} 所示——...
+行 1352: \vscodeimgnarrow{images/24-diff-sidebyside.png}{...}{fig:diff-sidebyside}（minipage 内）
+行 1356: \vscodeimgnarrow{images/25-diff-inline.png}{...}{fig:diff-inline}（minipage 内）
+行 1362: 引导句含 \ref{fig:gutter-diff}
+  在代码编辑器中，...\textbf{实时}显示变更指示，如图~\ref{fig:gutter-diff} 所示：
+行 1364: \vscodeimg{images/21-gutter-diff.png}{...}{fig:gutter-diff}
+
+## 校验项
+- 4 处图片调用均含第 3 参数 fig: label：PASS
+- 3 处引导句均含 \ref{fig:...}：PASS
+- 行 1347 含两个 \ref：PASS
+- minipage 内两图（1352/1356）各独立 label：PASS
+- caption 文字未改动：PASS
+- tcolorbox 环境未改动：PASS
+- 未编译：PASS（LSP "Undefined reference" 为编译期解析的预期现象，T1 已在命令定义中追加 \label{#3}）

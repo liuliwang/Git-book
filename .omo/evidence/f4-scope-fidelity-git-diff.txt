@@ -1,0 +1,71 @@
+F4 范围保真审计 — tikz-cross-refs 计划
+========================================
+审计时间：2026-08-02
+审计对象：git diff 8ac8d88(origin/main base)..HEAD，Git_VSCode_Tutorial.tex
+审计范围：仅验证 tikz-cross-refs 计划的改动是否符合 Scope（IN/OUT）
+
+════════════════════════════════════════════
+一、git diff --stat（origin/main..HEAD）
+════════════════════════════════════════════
+ Git_VSCode_Tutorial.tex | 350 ++++++++++++++++--------（237+/113-）
+ 其余：.omo/（plans/evidence/notepads/drafts）+ 编译产物
+      （.aux/.log/.out/.toc/.pdf）+ AGENTS.md
+ images/ 目录：0 处改动
+ sc-*.md 目录：0 处改动
+
+注意：origin/main..HEAD 共 2 个提交，除 tikz-cross-refs 外还包含
+figure-cross-refs、simplify-boxes、enrich-ch1-sections、color-adjust-boxes
+等先前计划的内容（见 .omo/plans/ 中这些计划的已完成 todo）。
+本审计只对 tikz-cross-refs 计划做范围保真判定。
+
+════════════════════════════════════════════
+二、IN 范围验证（应全部命中）
+════════════════════════════════════════════
+[PASS] 11 处 \begin{center}→\begin{figure}[H] 转换
+       base 有 15 处 \begin{center}，HEAD 剩 4 处（均为非 TikZ：
+       行195/3104 tcolorbox、行2902 表格、行3125 封面），恰好转换 11 处
+[PASS] 11 处 \end{center}→\caption{...}\label{...}\end{figure}
+       每处 caption 格式为「名称——说明」（与现有 26 处位图一致）
+[PASS] 11 处正文引导句插入 \ref{fig:xxx}（label=1/ref=1 逐一配对）
+       键名与逐图替换表完全一致：
+       three-analogies learning-path git-objects commit-structure
+       three-zones file-states merge-rebase pr-workflow
+       cheatsheet-zones cheatsheet-merge-rebase cheatsheet-remote
+[PASS] 5 个 resizebox 图（#4 #7 #9 #10 #11）caption/label 位于
+       resizebox 闭合 } 之后、\end{figure} 之前（行 622/1869/2835/2899/2987）
+[PASS] 11 个 label 键全部唯一，不与现有 26 处位图 label 撞名
+
+════════════════════════════════════════════
+三、OUT 范围验证（必须零改动）
+════════════════════════════════════════════
+[PASS] TikZ 图内容（节点/箭头/样式）：11/11 个 tikzpicture 块
+       base 与 HEAD 逐字节完全一致（程序化比对确认）
+[PASS] 现有 26 处位图：images/ 目录 0 改动；tikz-cross-refs 自身
+       未触碰位图（vscodeimg 命令 [2]→[3] 参数改造属于
+       figure-cross-refs 计划，非本计划改动）
+[PASS] 新 LaTeX 包：usepackage 清单 base vs HEAD 完全一致
+       （float/graphicx/tikz 均已预加载，零新包）
+[PASS] 章节结构：无 \chapter/\section/\subsection 增删改动
+[PASS] 首行 % !TEX program = xelatex 未改
+[PASS] sc-*.md 参考文档 0 改动
+[注]   tcolorbox 环境定义（tipbox/keybox/stepbox \newtcolorbox→
+       \newenvironment）在提交范围内存在改动，但归属 simplify-boxes
+       计划（该计划 todos 全部 [x]），非 tikz-cross-refs 引入
+
+════════════════════════════════════════════
+四、编译产物状态
+════════════════════════════════════════════
+.gitignore 未覆盖 .aux/.log/.out/.toc/.pdf，为 xelatex 编译自然产物：
+ - 4daa05a（T3）已提交一次编译产物
+ - 工作区仍有未提交的 .aux/.log/.out/.toc/.pdf（F1-F4 验证期间的重新编译）
+ - .omo/evidence/f2-xelatex-final-log.txt 为 F2 证据（未跟踪，正常）
+
+════════════════════════════════════════════
+五、结论
+════════════════════════════════════════════
+✅ tikz-cross-refs 计划范围保真审计 PASS：
+   仅改 11 处 center→figure[H] + 11 处 caption/label + 11 处引导句 \ref；
+   TikZ 图内容零改动；26 位图零改动；零新包；章节/首行/sc-*.md 零改动。
+⚠️ 提交卫生观察（非本计划违规）：2 个提交混合了 5 个计划的改动
+   （figure-cross-refs 的位图 label、simplify-boxes 的 tcolorbox、
+   enrich-ch1-sections 的正文扩充），建议后续计划遵守原子提交。

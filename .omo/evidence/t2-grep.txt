@@ -1,0 +1,18 @@
+﻿T2 — 第 3-5 章 TikZ 图 figure 环境改造 + 交叉引用
+时间: 2026-08-02
+文件: Git_VSCode_Tutorial.tex
+
+验证 1: grep -c "\\begin{figure}[H]" → 11 (改造前 8 处位图 figure + 新增 3 处 TikZ figure)
+
+验证 2: 各 label 键命中 2 次 (1 label + 1 ref):
+  1188: 文件状态的生命周期如图~\ref{fig:file-states} 所示：
+  1215: \caption{...}\label{fig:file-states}\end{figure}
+  1832: 两者对比如图~\ref{fig:merge-rebase} 所示——
+  1869: \caption{...}\label{fig:merge-rebase}\end{figure}
+  2212: Pull Request 的完整工作流程如图~\ref{fig:pr-workflow} 所示：
+  2237: \caption{...}\label{fig:pr-workflow}\end{figure}
+
+结论: 3 处 \begin{center}→\begin{figure}[H]\centering
+      3 处 \end{center}→\caption{...}\label{...}\end{figure}
+      3 处正文引导句插入 \ref
+      全部通过。TikZ 内容、tcolorbox、位图未改动。

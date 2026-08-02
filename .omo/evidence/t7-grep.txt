@@ -1,0 +1,53 @@
+﻿=== 9 image calls with fig: label ===
+738: \vscodeimg{images/01-sc-overview.png}{VS Code 源代码管理视图全景——左侧为变更文件列表，上方为提交信息输入框和提交按钮。这是你与 Git 交互的主要界面}{fig:sc-overview}
+1135: \vscodeimg{images/12-init-repo.png}{VS Code 中的"初始化仓库"按钮——打开一个非 Git 项目时，源代码管理视图会提示你初始化}{fig:init-repo}
+1157: \vscodeimg{images/11-clone-repo.png}{VS Code 的 Git: Clone 命令——按 Ctrl+Shift+P 输入"clone"，粘贴仓库 URL 即可克隆}{fig:clone-repo}
+1236: \vscodeimg{images/13-modified-files.png}{修改后的文件列表——源代码管理视图的"更改"区域显示所有已修改但未暂存的文件，每个文件旁有状态标记}{fig:modified-files}
+1274: \vscodeimg{images/05-stage-changes.png}{暂存操作——点击文件右侧的 "+" 按钮暂存单个文件，或点击"更改"标题旁的"+"按钮全部暂存}{fig:stage-changes}
+1297: \vscodeimg{images/15-commit-button.png}{提交操作——在顶部输入框填写提交信息，然后点击"提交"按钮（或按 Ctrl+Enter）完成提交}{fig:commit-button}
+1336: \vscodeimg{images/03-diff-editor.png}{差异对比编辑器——左侧为旧版本（HEAD），右侧为当前修改。绿色背景表示新增内容，红色背景表示删除内容}{fig:diff-editor}
+1352: \vscodeimgnarrow{images/24-diff-sidebyside.png}{并排视图——左右分栏，适合大幅修改}{fig:diff-sidebyside}
+1356: \vscodeimgnarrow{images/25-diff-inline.png}{内联视图——变更在同一文件中显示，适合小改动}{fig:diff-inline}
+1364: \vscodeimg{images/21-gutter-diff.png}{编辑器 Gutter 变更指示器——绿色竖线表示新增行，蓝色竖线表示修改行，红色三角表示删除行。点击可查看详细信息}{fig:gutter-diff}
+1692: \vscodeimg{images/18-current-branch.png}{底部状态栏的分支指示器——显示当前所在分支名称（如"main"），点击可切换或创建分支}{fig:current-branch}
+1696: \vscodeimg{images/19-create-branch.png}{创建新分支——输入分支名称后，VS Code 会自动从当前分支创建并切换}{fig:create-branch}
+1775: \vscodeimg{images/merge-conflict.png}{VS Code 中的合并冲突标记——文件中用特殊颜色标记冲突区域，并提供快捷操作按钮}{fig:merge-conflict}
+1790: \vscodeimg{images/08-merge-editor.png}{VS Code 的三方合并编辑器——左侧为当前分支（Current），右侧为传入分支（Incoming），底部为合并结果}{fig:merge-editor}
+2099: \vscodeimg{images/17-pull-push.png}{Pull 和 Push 操作——在源代码管理视图的"..."菜单中可以单独执行拉取或推送}{fig:pull-push}
+2101: \vscodeimg{images/16-sync-button.png}{同步按钮——源代码管理视图顶部的同步操作按钮，点击可执行一键同步（pull + push）}{fig:sync-button}
+2139: \vscodeimg{images/13-modified-files.png}{VS Code 一键发布——对于未初始化的项目，VS Code 提供"初始化仓库"按钮，之后可以直接"发布到 GitHub"}{fig:modified-files-publish}
+2318: \vscodeimgwide{images/01-sc-overview.png}{源代码管理视图完整界面——各区域标注：(A) 提交信息输入框 (B) 提交按钮及下拉菜单 (C) 暂存的更改 (D) 更改列表 (E) 文件状态标记}{fig:sc-overview-annotated}
+2344: \vscodeimg{images/02-sc-graph.png}{源代码管理图形视图——以时间线形式展示提交历史，不同颜色区分不同分支，点击节点可查看详细信息}{fig:sc-graph}
+2352: \vscodeimg{images/22-stage-detail.png}{暂存操作详情——每个文件右侧有"+"按钮可以单独暂存，"更改"标题旁有全部暂存按钮}{fig:stage-detail}
+2358: \vscodeimg{images/23-stage-lines.png}{部分暂存——打开文件 Diff 后，可以选择特定的代码块进行暂存，而非整个文件}{fig:stage-lines}
+2376: \vscodeimg{images/07-sync-changes.png}{同步更改——底部状态栏显示当前分支和同步状态（↑ 待推送，↓ 待拉取），点击旋转箭头图标执行一键同步}{fig:sync-changes}
+2384: \vscodeimg{images/19-create-branch.png}{创建新分支——输入新分支名称后，VS Code 会自动从当前分支创建并切换}{fig:create-branch-alt}
+2390: \vscodeimg{images/10-timeline.png}{Timeline 视图——显示当前文件的所有提交历史，按时间排列。点击任意提交可查看该次修改的详细内容，右键可选择"比较"或"还原"}{fig:timeline}
+2414: \vscodeimg{images/04-gutter-blame.png}{GitLens 的行内 Blame 注释——每行代码后显示灰色文字：最后修改者、时间和提交信息摘要}{fig:gutter-blame}
+2547: \vscodeimg{images/20-view-changes.png}{开发中的 VS Code——编辑器 Gutter 实时显示你的修改（绿色/蓝色/红色标记），源代码管理视图列出所有变更文件}{fig:view-changes}
+
+=== 9 ref{fig:} occurrences ===
+735: VS Code 内置了强大的 Git 集成，将上述所有操作都图形化了。如图~\ref{fig:sc-overview} 所示，VS Code 源代码管理视图
+1133: 这不是一个 Git 仓库，并显示"初始化仓库"按钮，如图~\ref{fig:init-repo} 所示：
+1155: 在 VS Code 中，可以通过命令面板执行克隆操作，如图~\ref{fig:clone-repo} 所示：
+1234: 在 VS Code 中，\texttt{git status} 的信息直接体现在源代码管理视图里，如图~\ref{fig:modified-files} 所示：
+1272: 在 VS Code 中，暂存操作就是点击文件旁边的 "+" 按钮（单个暂存），或点击"更改"标题右侧的 "+" 按钮（全部暂存），如图~\ref{fig:stage-changes} 所示：
+1295: 在 VS Code 中，提交操作分两步：输入提交信息 → 点击提交按钮，如图~\ref{fig:commit-button} 所示。
+1334: 在源代码管理视图中，\textbf{点击文件名}即可打开差异对比视图，如图~\ref{fig:diff-editor} 所示：
+1347: 两种模式的对比如图~\ref{fig:diff-sidebyside} 与图~\ref{fig:diff-inline} 所示——并排视图可以一目了然地看到左右差异，而内联视图则更紧凑：
+1362: 在代码编辑器中，VS Code 会在行号右侧的 gutter 区域\textbf{实时}显示变更指示，如图~\ref{fig:gutter-diff} 所示：
+1690: 在 VS Code 中，分支操作非常直观——点击底部状态栏的分支名称，会弹出分支选择列表，你可以在其中切换或创建新分支，如图~\ref{fig:current-branch} 所示：
+1694: 创建新分支时，在弹出的输入框中输入分支名称即可（如 \texttt{feature/login}），VS Code 会自动从当前分支创建并切换，如图~\ref{fig:create-branch} 所示：
+1765: 冲突发生时，Git 会在文件中插入冲突标记（如图~\ref{fig:merge-conflict} 所示）：
+1788: VS Code 还提供了专门的三方合并编辑器，如图~\ref{fig:merge-editor} 所示：
+2097: 在 VS Code 中，推送（把本地提交上传到云端）和拉取（从云端下载最新并合并）操作可以通过底部状态栏的同步按钮一键完成，如图~\ref{fig:pull-push} 与图~\ref{fig:sync-button} 所示：
+2137: VS Code 可以一步完成"初始化 + 提交 + 创建远程仓库 + 推送"，如图~\ref{fig:modified-files-publish} 所示：
+2316: 界面各区域如图~\ref{fig:sc-overview-annotated} 所示——
+2342: VS Code 新增了源代码管理图形视图，直观展示提交历史和分支关系。每个节点代表一次提交，绿色圆点表示当前分支的提交，点击可查看详细信息，如图~\ref{fig:sc-graph} 所示：
+2350: 暂存操作如图~\ref{fig:stage-detail} 所示——
+2356: VS Code 支持精细到\textbf{代码行}级别的暂存——一个文件中改了多处，可以只暂存其中一部分，如图~\ref{fig:stage-lines} 所示：
+2374: VS Code 底部状态栏显示同步状态，点击同步图标可以一键执行 pull + push，如图~\ref{fig:sync-changes} 所示：
+2382: 当前分支名称显示在 VS Code \textbf{底部状态栏的左下角}，点击即可查看分支列表、切换分支或创建新分支。创建新分支时，VS Code 会自动从当前分支创建并立即切换，如图~\ref{fig:create-branch-alt} 所示：
+2388: VS Code 的 Timeline 视图（默认在资源管理器底部）显示当前文件的所有提交历史，如图~\ref{fig:timeline} 所示：
+2412: 安装 GitLens 扩展后，VS Code 会在每一行代码后面显示最后修改者和时间，如图~\ref{fig:gutter-blame} 所示：
+2545: 同样的流程，在 VS Code 中的操作步骤，如图~\ref{fig:view-changes} 所示：
