@@ -100,22 +100,27 @@
 \contentsline {section}{\numberline {6.6}Stash（暂存工作）}{66}{section.6.6}%
 \contentsline {section}{\numberline {6.7}Git Blame 与行内注释}{66}{section.6.7}%
 \contentsline {section}{\numberline {6.8}推荐扩展}{67}{section.6.8}%
-\contentsline {chapter}{\numberline {第七章\hspace {.3em}}实战工作流}{69}{chapter.7}%
-\contentsline {section}{\numberline {7.1}完整的 Feature Branch 开发流程}{69}{section.7.1}%
-\contentsline {section}{\numberline {7.2}VS Code 中的完整操作流程}{71}{section.7.2}%
-\contentsline {section}{\numberline {7.3}日常开发的最佳实践}{71}{section.7.3}%
-\contentsline {section}{\numberline {7.4}常见问题 FAQ}{72}{section.7.4}%
-\contentsline {chapter}{\numberline {第八章\hspace {.3em}}新手避坑指南}{75}{chapter.8}%
-\contentsline {section}{\numberline {8.1}核心避坑表}{75}{section.8.1}%
-\contentsline {section}{\numberline {8.2}紧急救命命令速查}{76}{section.8.2}%
-\contentsline {section}{\numberline {8.3}常见报错与一键修复}{77}{section.8.3}%
-\contentsline {chapter}{可视化速查卡}{78}{chapter*.44}%
-\contentsline {section}{\numberline {8.4}速查卡 1：Git 四大区域数据流转}{78}{section.8.4}%
-\contentsline {section}{\numberline {8.5}速查卡 2：分支演变——合并 vs 变基}{79}{section.8.5}%
-\contentsline {section}{\numberline {8.6}速查卡 3：远程协作完整链路}{80}{section.8.6}%
-\contentsline {chapter}{\numberline {第九章\hspace {.3em}}附录：常用命令速查表}{81}{chapter.9}%
-\contentsline {section}{\numberline {9.1}基础操作}{81}{section.9.1}%
-\contentsline {section}{\numberline {9.2}分支操作}{81}{section.9.2}%
-\contentsline {section}{\numberline {9.3}远程操作}{82}{section.9.3}%
-\contentsline {section}{\numberline {9.4}撤销操作}{82}{section.9.4}%
-\contentsline {section}{\numberline {9.5}VS Code 快捷键速查}{83}{section.9.5}%
+\contentsline {subsection}{\numberline {6.8.1}GitLens 详细使用指南}{68}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}GitHub Pull Requests 使用指南}{69}{subsection.6.8.2}%
+\contentsline {subsection}{\numberline {6.8.3}GitHub Issues 使用指南}{70}{subsection.6.8.3}%
+\contentsline {subsection}{\numberline {6.8.4}Git Graph 使用指南}{71}{subsection.6.8.4}%
+\contentsline {subsection}{\numberline {6.8.5}Git History 使用指南}{71}{subsection.6.8.5}%
+\contentsline {chapter}{\numberline {第七章\hspace {.3em}}实战工作流}{74}{chapter.7}%
+\contentsline {section}{\numberline {7.1}完整的 Feature Branch 开发流程}{74}{section.7.1}%
+\contentsline {section}{\numberline {7.2}VS Code 中的完整操作流程}{76}{section.7.2}%
+\contentsline {section}{\numberline {7.3}日常开发的最佳实践}{76}{section.7.3}%
+\contentsline {section}{\numberline {7.4}常见问题 FAQ}{77}{section.7.4}%
+\contentsline {chapter}{\numberline {第八章\hspace {.3em}}新手避坑指南}{80}{chapter.8}%
+\contentsline {section}{\numberline {8.1}核心避坑表}{80}{section.8.1}%
+\contentsline {section}{\numberline {8.2}紧急救命命令速查}{81}{section.8.2}%
+\contentsline {section}{\numberline {8.3}常见报错与一键修复}{82}{section.8.3}%
+\contentsline {chapter}{可视化速查卡}{83}{chapter*.49}%
+\contentsline {section}{\numberline {8.4}速查卡 1：Git 四大区域数据流转}{83}{section.8.4}%
+\contentsline {section}{\numberline {8.5}速查卡 2：分支演变——合并 vs 变基}{84}{section.8.5}%
+\contentsline {section}{\numberline {8.6}速查卡 3：远程协作完整链路}{85}{section.8.6}%
+\contentsline {chapter}{\numberline {第九章\hspace {.3em}}附录：常用命令速查表}{86}{chapter.9}%
+\contentsline {section}{\numberline {9.1}基础操作}{86}{section.9.1}%
+\contentsline {section}{\numberline {9.2}分支操作}{86}{section.9.2}%
+\contentsline {section}{\numberline {9.3}远程操作}{87}{section.9.3}%
+\contentsline {section}{\numberline {9.4}撤销操作}{87}{section.9.4}%
+\contentsline {section}{\numberline {9.5}VS Code 快捷键速查}{88}{section.9.5}%

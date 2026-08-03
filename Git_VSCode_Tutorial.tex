@@ -2452,6 +2452,98 @@ Git History & Don Jayamanne & 查看文件/行的详细提交历史 \\
   \item \textbf{比较分支}：可视化比较任意两个分支的差异。
 \end{itemize}
 
+\subsection{GitLens 详细使用指南}
+
+GitLens 是 VS Code 中最流行的 Git 增强扩展，它能在编辑器中直接显示代码的提交历史和作者信息，帮助初学者快速理解代码的演变过程。
+
+\textbf{安装步骤}：按 \texttt{Ctrl+Shift+X} 打开 Extensions 面板，搜索 \texttt{GitLens}，点击 Install。
+
+\textbf{核心功能}：
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Inline Blame}：安装后自动在每行代码末尾显示最后修改者和时间。
+  \item \textbf{CodeLens}：在函数和类上方显示作者和提交信息。
+  \item \texttt{GitLens: Show Commit Graph}：打开提交历史图形视图。
+  \item \texttt{GitLens: Open File History}：右键文件 $\to$ 选择此命令查看完整历史。
+  \item \texttt{GitLens: Toggle Line Blame} / \texttt{GitLens: Toggle Git CodeLens}：快速开关行内 blame 和 CodeLens 显示。
+\end{itemize}
+
+\vscodeimg{images/28-gitlens-blame.png}{GitLens 行内 Blame 与 CodeLens 显示}{fig:ext-gitlens-blame}
+
+\vscodeimg{images/29-gitlens-graph.png}{GitLens 提交图（Commit Graph）}{fig:ext-gitlens-graph}
+
+\textbf{提示}：初学者可以先开启 Inline Blame 和 CodeLens，它们能让你在阅读代码时自然了解修改背景。
+
+\subsection{GitHub Pull Requests 使用指南}
+
+GitHub Pull Requests 扩展让你在 VS Code 中直接查看、创建和审查 Pull Request，无需频繁切换浏览器。
+
+\textbf{安装步骤}：按 \texttt{Ctrl+Shift+X} 打开 Extensions 面板，搜索 \texttt{GitHub Pull Requests and Issues}，点击 Install。安装后需要登录 GitHub：按 \texttt{Ctrl+Shift+P} 打开命令面板，输入 \texttt{GitHub: Sign in} 并按提示完成授权。登录后 Activity Bar 会出现 GitHub 图标。
+
+\textbf{核心功能}：
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Activity Bar 中的 GitHub 图标}：点击后查看当前仓库的 PR 列表。
+  \item \texttt{GitHub Pull Requests: Create Pull Request}：从当前分支创建 PR。
+  \item \textbf{查看 PR 详情}：点击 PR 列表中的条目，可查看 diff 和评论。
+  \item \textbf{Checkout PR}：点击 Checkout 按钮切换到 PR 对应的分支进行审查。
+\end{itemize}
+
+\vscodeimg{images/30-gh-pr.png}{GitHub Pull Requests 侧边栏中的 PR 列表}{fig:ext-gh-pr}
+
+\textbf{提示}：审查队友的 PR 时，可以直接在代码行上添加评论，所有操作都会同步到 GitHub。
+
+\subsection{GitHub Issues 使用指南}
+
+GitHub Issues 扩展将 Issue 跟踪功能集成到 VS Code 中，方便你在编码时随时查看和管理任务。
+
+\textbf{安装步骤}：按 \texttt{Ctrl+Shift+X} 打开 Extensions 面板，搜索 \texttt{GitHub Issues}，点击 Install。
+
+\textbf{核心功能}：
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{侧边栏 GitHub Issues 视图}：显示当前仓库的未关闭 Issues。
+  \item \texttt{GitHub Issues: Create Issue from Selection}：选中代码后快速创建 Issue。
+  \item \textbf{引用关联}：在提交信息或 PR 描述中输入 \texttt{\#issue-number} 自动关联对应 Issue。
+  \item \textbf{创建新 Issue}：点击侧边栏中的按钮直接创建。
+\end{itemize}
+
+\textbf{提示}：与 GitHub Pull Requests 扩展配合使用，可以在一个界面中同时管理 Issues 和 PRs。
+
+\subsection{Git Graph 使用指南}
+
+Git Graph 提供直观的图形化分支时间线，让初学者一眼看清项目的分支结构和合并历史。
+
+\textbf{安装步骤}：按 \texttt{Ctrl+Shift+X} 打开 Extensions 面板，搜索 \texttt{Git Graph}，点击 Install。
+
+\textbf{核心功能}：
+\begin{itemize}[leftmargin=2em]
+  \item \texttt{Git Graph: View Git Graph}：打开彩色分支时间线视图。
+  \item \textbf{右键点击提交}：选择 Cherry Pick、Revert、Checkout、Create Branch 或 Merge。
+  \item \textbf{右键点击分支}：选择 Checkout、Delete、Merge、Push 或 Rebase。
+  \item \textbf{比较提交}：Ctrl+Click 第二个提交，比较任意两个提交的差异。
+  \item \textbf{搜索提交}：在图形视图中按 \texttt{Ctrl+F} 搜索提交。
+\end{itemize}
+
+\vscodeimg{images/31-git-graph.png}{Git Graph 分支时间线视图}{fig:ext-git-graph}
+
+\textbf{提示}：学习分支与合并时，用 Git Graph 配合第四章内容，能直观理解分支的创建和合并过程。
+
+\subsection{Git History 使用指南}
+
+Git History 专注于查看单个文件或代码行的详细提交历史，界面轻量，适合快速追溯代码变更。
+
+\textbf{安装步骤}：按 \texttt{Ctrl+Shift+X} 打开 Extensions 面板，搜索 \texttt{Git History}，点击 Install。
+
+\textbf{核心功能}：
+\begin{itemize}[leftmargin=2em]
+  \item \texttt{Git: View File History}：查看当前文件的完整提交历史。
+  \item \texttt{Git: View Line History}：查看光标所在行的修改历史。
+  \item \texttt{Git: View Branch History}：查看当前分支的提交历史。
+  \item \texttt{Git: View Commit History}：查看整个仓库的提交历史。
+\end{itemize}
+
+\vscodeimg{images/32-git-history.png}{Git History 文件历史视图}{fig:ext-git-history}
+
+\textbf{提示}：使用前先打开目标文件，再运行命令，否则可能看不到预期的历史记录。
+
 \subsection*{动手实验 6：VS Code中完成完整Git工作流}
 
 花 5 分钟把本章的核心功能串起来走一遍：建分支、编辑、部分暂存、提交、查看历史图。全程只使用鼠标点击，不需要输入任何命令。

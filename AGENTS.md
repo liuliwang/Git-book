@@ -24,12 +24,12 @@ C:\Users\Admin\AppData\Local\Programs\MiKTeX\miktex\bin\x64\xelatex.exe Git_VSCo
 
 ## 项目结构
 
-| 路径 | 说明 |
-|------|------|
-| `Git_VSCode_Tutorial.tex` | 唯一可编辑的文档源（3165 行） |
-| `images/` | 截图目录（27 张），命名 `NN-description.png` |
-| `sc-*.md` | 参考文档（sc-overview / sc-quickstart / sc-staging / sc-branches），**只读** |
-| `.omo/` | 计划与证据（plans/、evidence/、drafts/、notepads/） |
+| 路径                        | 说明                                                                               |
+| --------------------------- | ---------------------------------------------------------------------------------- |
+| `Git_VSCode_Tutorial.tex` | 唯一可编辑的文档源（3165 行）                                                      |
+| `images/`                 | 截图目录（27 张），命名`NN-description.png`                                      |
+| `sc-*.md`                 | 参考文档（sc-overview / sc-quickstart / sc-staging / sc-branches），**只读** |
+| `.omo/`                   | 计划与证据（plans/、evidence/、drafts/、notepads/）                                |
 
 ## 文档撰写规范
 
@@ -39,13 +39,13 @@ C:\Users\Admin\AppData\Local\Programs\MiKTeX\miktex\bin\x64\xelatex.exe Git_VSCo
 
 preamble 中定义了 5 个 tcolorbox 环境（行 86-129），但 **仅 `warnbox` 在正文中使用**（8 个实例，行 243/903/1293/1479/1512/1585/1905/2589）。其余 4 个（tipbox/keybox/stepbox/infobox）已全部转换为散文段落/列表/独立表格，定义保留在 preamble 但正文无 `\begin{...}` 调用。
 
-| 环境 | 正文实例 | 视觉样式 | 用途 |
-|------|---------|---------|------|
-| `warnbox` | **8**（唯一活跃） | 白底 + 纯红细框（`warnred`） | 不可逆操作警告 |
-| `tipbox` | 0（已转换） | 无框，粗体标题 | — |
-| `infobox` | 0（已转换） | 白底 + 纯蓝细框（`infoblue`） | — |
-| `keybox` | 0（已转换） | 无框，粗体标题 | — |
-| `stepbox` | 0（已转换） | 无框，粗体标题 | — |
+| 环境        | 正文实例                | 视觉样式                        | 用途           |
+| ----------- | ----------------------- | ------------------------------- | -------------- |
+| `warnbox` | **8**（唯一活跃） | 白底 + 纯红细框（`warnred`）  | 不可逆操作警告 |
+| `tipbox`  | 0（已转换）             | 无框，粗体标题                  | —             |
+| `infobox` | 0（已转换）             | 白底 + 纯蓝细框（`infoblue`） | —             |
+| `keybox`  | 0（已转换）             | 无框，粗体标题                  | —             |
+| `stepbox` | 0（已转换）             | 无框，粗体标题                  | —             |
 
 - **warnbox 是 `\newtcolorbox`**，保留细框 + `warnred` 颜色
 - **tipbox / keybox / stepbox 是 `\newenvironment`**（正文中 `[...]` 可选参数会导致编译错误）
@@ -59,20 +59,19 @@ preamble 中定义了 5 个 tcolorbox 环境（行 86-129），但 **仅 `warnbo
 
 ### 颜色定义
 
-| 颜色 | 值 | 用途 |
-|------|-----|------|
-| `warnred` | RGB(198,40,40) | warnbox 边框 + 警示文字 |
-| `infoblue` | RGB(21,101,192) | infobox 边框 + 说明文字 |
-| `tipgreen` | RGB(46,125,50) | tipbox 标题 |
-| `gitorange` | RGB(240,80,50) | 文档主题色 |
-| `codebg` / `codeframe` | RGB(248,248,248) / (200,200,200) | 代码块 |
+| 颜色                       | 值                               | 用途                    |
+| -------------------------- | -------------------------------- | ----------------------- |
+| `warnred`                | RGB(198,40,40)                   | warnbox 边框 + 警示文字 |
+| `infoblue`               | RGB(21,101,192)                  | infobox 边框 + 说明文字 |
+| `tipgreen`               | RGB(46,125,50)                   | tipbox 标题             |
+| `gitorange`              | RGB(240,80,50)                   | 文档主题色              |
+| `codebg` / `codeframe` | RGB(248,248,248) / (200,200,200) | 代码块                  |
 
 ### 图片命令
 
 - `\vscodeimg{路径}{caption}{label}` — 默认宽度 `0.92\textwidth`，**3 参数**（第 3 参数为 `\label` 键）
 - `\vscodeimgnarrow{路径}{caption}{label}` — 窄幅 `0.72\textwidth`
 - `\vscodeimgwide{路径}{caption}{label}` — 全宽 `\textwidth`
-
 - 所有图片必须有 caption；只引用 `images/` 中真实存在的文件
 - 新截图按 `NN-description.png` 命名并放入 `images/`
 - Shell 代码用 `listings` 的 `shell` 样式
@@ -122,7 +121,11 @@ preamble 中定义了 5 个 tcolorbox 环境（行 86-129），但 **仅 `warnbo
 
 - **Always**：修改 `.tex` 后必须 xelatex 编译两次通过再交付
 - **Ask first**：删除图片、修改章节结构、修改 `images/` 目录中文件
-- **Never**：修改 `sc-*.md` 参考文档、提交含 secrets 的文件、伪造截图、**自动提交 git**
+- **Never**：
+  - 修改 `sc-*.md` 参考文档
+  - 提交含 secrets 的文件
+  - 伪造截图
+  - **禁止自动执行任何 git 写操作**：包括但不限于 `git commit`、`git push`、`git pull`、`git merge`、`git rebase`、`git reset`、`git checkout`（切换/丢弃改动）、`git stash drop`、`git tag`、`git branch -D`、`git rm`、创建 PR 等不可逆或影响远程仓库的操作。所有此类操作必须经用户显式确认后由用户自行执行或明确授权后才可执行
 - **环境清理**：编译异常后先 `taskkill /f /im xelatex.exe` 再重试，避免残留进程锁文件
 
 ## 参考文档

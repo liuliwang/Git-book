@@ -1,249 +1,119 @@
 {
   "schema_version": 2,
-  "active_work_id": "reduce-boxes-pro-cac6980c",
+  "active_work_id": "extensions-usage-tutorial-ca8160f8",
   "works": {
-    "reduce-boxes-pro-cac6980c": {
-      "work_id": "reduce-boxes-pro-cac6980c",
-      "active_plan": "C:\\Users\\Admin\\Desktop\\Git\\.omo\\plans\\reduce-boxes-pro.md",
-      "plan_name": "reduce-boxes-pro",
+    "extensions-usage-tutorial-ca8160f8": {
+      "work_id": "extensions-usage-tutorial-ca8160f8",
+      "active_plan": "C:\\Users\\Admin\\Desktop\\Git\\.omo\\plans\\extensions-usage-tutorial.md",
+      "plan_name": "extensions-usage-tutorial",
       "status": "completed",
-      "started_at": "2026-08-03T04:27:26.104Z",
-      "updated_at": "2026-08-03T06:40:04.765Z",
+      "started_at": "2026-08-03T08:08:12.487Z",
+      "ended_at": "2026-08-03T08:24:09.932Z",
+      "elapsed_ms": 957445,
+      "updated_at": "2026-08-03T08:24:09.932Z",
       "session_ids": [
-        "opencode:ses_03a2c0ee6ffeaaL5bMGEzKVyM0"
+        "opencode:ses_0395e0636ffeBqtxXElYO4HBsU"
       ],
       "session_origins": {
-        "opencode:ses_03a2c0ee6ffeaaL5bMGEzKVyM0": "direct"
+        "opencode:ses_0395e0636ffeBqtxXElYO4HBsU": "direct"
       },
       "agent": "atlas",
       "task_sessions": {
         "todo:1": {
           "task_key": "todo:1",
           "task_label": "1",
-          "task_title": "Line 343: `\\textbf{建议阅读策略}：` + itemize",
-          "session_id": "opencode:ses_039ba0b75ffeAzTyCUPgZbMaXT",
+          "task_title": "`\\subsection{GitLens 详细使用指南}`",
+          "session_id": "opencode:ses_03948cfbaffedYuyPqlnk9UN0r",
           "agent": "Sisyphus-Junior",
           "category": "quick",
-          "started_at": "2026-08-03T04:33:11.859Z",
-          "ended_at": "2026-08-03T06:21:28.697Z",
-          "elapsed_ms": 6496838,
+          "started_at": "2026-08-03T08:16:46.510Z",
+          "ended_at": "2026-08-03T08:22:50.293Z",
+          "elapsed_ms": 363783,
           "status": "completed",
-          "updated_at": "2026-08-03T06:21:28.697Z"
-        },
-        "todo:2": {
-          "task_key": "todo:2",
-          "task_label": "2",
-          "task_title": "转换全部 stepbox 为普通 enumerate 列表",
-          "session_id": "opencode:ses_03a18a9ecffe1DFR7hkBe68F1x",
-          "agent": "Sisyphus-Junior",
-          "category": "quick",
-          "updated_at": "2026-08-03T04:42:29.653Z",
-          "started_at": "2026-08-03T04:40:44.457Z",
-          "status": "completed",
-          "ended_at": "2026-08-03T04:42:29.653Z",
-          "elapsed_ms": 105196
-        },
-        "todo:3": {
-          "task_key": "todo:3",
-          "task_label": "3",
-          "task_title": "转换全部 keybox 为粗体散文段落",
-          "session_id": "opencode:ses_03a10b9d8ffeiAmtVZ1i8WBWHD",
-          "agent": "Sisyphus-Junior",
-          "category": "quick",
-          "updated_at": "2026-08-03T04:50:47.637Z",
-          "started_at": "2026-08-03T04:48:30.157Z",
-          "status": "completed",
-          "ended_at": "2026-08-03T04:50:47.637Z",
-          "elapsed_ms": 137480
-        },
-        "todo:4": {
-          "task_key": "todo:4",
-          "task_label": "4",
-          "task_title": "转换全部 tipbox 为内联散文（第 0-4 章）",
-          "session_id": "opencode:ses_03a080153ffet3XoqHjXLwA7TP",
-          "agent": "Sisyphus-Junior",
-          "category": "writing",
-          "updated_at": "2026-08-03T05:00:55.930Z",
-          "started_at": "2026-08-03T04:58:20.792Z",
-          "status": "completed",
-          "ended_at": "2026-08-03T05:00:55.930Z",
-          "elapsed_ms": 155138
-        },
-        "todo:5": {
-          "task_key": "todo:5",
-          "task_label": "5",
-          "task_title": "转换全部 tipbox 为内联散文（第 5-8 章 + 附录）",
-          "session_id": "opencode:ses_03a00ae10ffe30zxYOKc981Lyi",
-          "agent": "Sisyphus-Junior",
-          "category": "writing",
-          "updated_at": "2026-08-03T05:59:16.901Z",
-          "started_at": "2026-08-03T05:56:40.872Z",
-          "status": "completed",
-          "ended_at": "2026-08-03T05:59:16.901Z",
-          "elapsed_ms": 156029
-        },
-        "todo:6": {
-          "task_key": "todo:6",
-          "task_label": "6",
-          "task_title": "提取 infobox 中的表格为独立 table 环境",
-          "session_id": "opencode:ses_039c91e32ffe0IMCzxukitfmqk",
-          "agent": "Sisyphus-Junior",
-          "category": "quick",
-          "updated_at": "2026-08-03T06:05:44.197Z",
-          "started_at": "2026-08-03T06:03:30.020Z",
-          "status": "completed",
-          "ended_at": "2026-08-03T06:05:44.197Z",
-          "elapsed_ms": 134177
+          "updated_at": "2026-08-03T08:22:50.293Z"
         },
         "todo:7": {
           "task_key": "todo:7",
           "task_label": "7",
-          "task_title": "转换 infobox 章节学习目标为粗体段落",
-          "session_id": "opencode:ses_039c39306ffe6KVR30N8JzGrxf",
+          "task_title": "`Git_VSCode_Tutorial.tex`: Compile with xelatex twice — verify no fatal errors, all `\\ref{fig:ext-*}` resolve to correct figure numbers. Verify table of contents, page count reasonable.",
+          "session_id": "opencode:ses_0394ad08effeUC4Rh6AdLxY2ek",
           "agent": "Sisyphus-Junior",
           "category": "quick",
-          "updated_at": "2026-08-03T06:11:39.769Z",
-          "started_at": "2026-08-03T06:10:21.841Z",
+          "updated_at": "2026-08-03T08:21:26.020Z",
+          "started_at": "2026-08-03T08:21:08.321Z",
           "status": "completed",
-          "ended_at": "2026-08-03T06:11:39.769Z",
-          "elapsed_ms": 77928
+          "ended_at": "2026-08-03T08:21:26.020Z",
+          "elapsed_ms": 17699
         },
-        "todo:10": {
-          "task_key": "todo:10",
-          "task_label": "10",
-          "task_title": "增量编译验证与警告回归检查",
-          "session_id": "opencode:ses_039b66a1bffe3S6B46ox43JbhY",
+        "final-wave:f1": {
+          "task_key": "final-wave:f1",
+          "task_label": "F1",
+          "task_title": "`git diff` review: confirm no unintended changes to existing sections, tables, or images. All modifications are within the `\\section{推荐扩展}` scope (lines 2426-2453 + new content before line 2455). Confirm existing GitLens tips paragraph untouched.",
+          "session_id": "opencode:ses_039492195ffeWOfDfHUKci4c3Z",
           "agent": "Sisyphus-Junior",
           "category": "quick",
-          "updated_at": "2026-08-03T06:26:27.201Z",
-          "started_at": "2026-08-03T06:23:41.409Z",
+          "updated_at": "2026-08-03T08:23:34.715Z",
+          "started_at": "2026-08-03T08:23:20.359Z",
           "status": "completed",
-          "ended_at": "2026-08-03T06:26:27.201Z",
-          "elapsed_ms": 165792
+          "ended_at": "2026-08-03T08:23:34.715Z",
+          "elapsed_ms": 14356
         }
-      },
-      "ended_at": "2026-08-03T06:40:04.765Z",
-      "elapsed_ms": 7958661
+      }
     }
   },
-  "active_plan": "C:\\Users\\Admin\\Desktop\\Git\\.omo\\plans\\reduce-boxes-pro.md",
-  "started_at": "2026-08-03T04:27:26.104Z",
+  "active_plan": "C:\\Users\\Admin\\Desktop\\Git\\.omo\\plans\\extensions-usage-tutorial.md",
+  "started_at": "2026-08-03T08:08:12.487Z",
+  "ended_at": "2026-08-03T08:24:09.932Z",
+  "elapsed_ms": 957445,
   "status": "completed",
-  "updated_at": "2026-08-03T06:40:04.765Z",
+  "updated_at": "2026-08-03T08:24:09.932Z",
   "session_ids": [
-    "opencode:ses_03a2c0ee6ffeaaL5bMGEzKVyM0"
+    "opencode:ses_0395e0636ffeBqtxXElYO4HBsU"
   ],
   "session_origins": {
-    "opencode:ses_03a2c0ee6ffeaaL5bMGEzKVyM0": "direct"
+    "opencode:ses_0395e0636ffeBqtxXElYO4HBsU": "direct"
   },
-  "plan_name": "reduce-boxes-pro",
+  "plan_name": "extensions-usage-tutorial",
   "task_sessions": {
     "todo:1": {
       "task_key": "todo:1",
       "task_label": "1",
-      "task_title": "Line 343: `\\textbf{建议阅读策略}：` + itemize",
-      "session_id": "opencode:ses_039ba0b75ffeAzTyCUPgZbMaXT",
+      "task_title": "`\\subsection{GitLens 详细使用指南}`",
+      "session_id": "opencode:ses_03948cfbaffedYuyPqlnk9UN0r",
       "agent": "Sisyphus-Junior",
       "category": "quick",
-      "started_at": "2026-08-03T04:33:11.859Z",
-      "ended_at": "2026-08-03T06:21:28.697Z",
-      "elapsed_ms": 6496838,
+      "started_at": "2026-08-03T08:16:46.510Z",
+      "ended_at": "2026-08-03T08:22:50.293Z",
+      "elapsed_ms": 363783,
       "status": "completed",
-      "updated_at": "2026-08-03T06:21:28.697Z"
-    },
-    "todo:2": {
-      "task_key": "todo:2",
-      "task_label": "2",
-      "task_title": "转换全部 stepbox 为普通 enumerate 列表",
-      "session_id": "opencode:ses_03a18a9ecffe1DFR7hkBe68F1x",
-      "agent": "Sisyphus-Junior",
-      "category": "quick",
-      "updated_at": "2026-08-03T04:42:29.653Z",
-      "started_at": "2026-08-03T04:40:44.457Z",
-      "status": "completed",
-      "ended_at": "2026-08-03T04:42:29.653Z",
-      "elapsed_ms": 105196
-    },
-    "todo:3": {
-      "task_key": "todo:3",
-      "task_label": "3",
-      "task_title": "转换全部 keybox 为粗体散文段落",
-      "session_id": "opencode:ses_03a10b9d8ffeiAmtVZ1i8WBWHD",
-      "agent": "Sisyphus-Junior",
-      "category": "quick",
-      "updated_at": "2026-08-03T04:50:47.637Z",
-      "started_at": "2026-08-03T04:48:30.157Z",
-      "status": "completed",
-      "ended_at": "2026-08-03T04:50:47.637Z",
-      "elapsed_ms": 137480
-    },
-    "todo:4": {
-      "task_key": "todo:4",
-      "task_label": "4",
-      "task_title": "转换全部 tipbox 为内联散文（第 0-4 章）",
-      "session_id": "opencode:ses_03a080153ffet3XoqHjXLwA7TP",
-      "agent": "Sisyphus-Junior",
-      "category": "writing",
-      "updated_at": "2026-08-03T05:00:55.930Z",
-      "started_at": "2026-08-03T04:58:20.792Z",
-      "status": "completed",
-      "ended_at": "2026-08-03T05:00:55.930Z",
-      "elapsed_ms": 155138
-    },
-    "todo:5": {
-      "task_key": "todo:5",
-      "task_label": "5",
-      "task_title": "转换全部 tipbox 为内联散文（第 5-8 章 + 附录）",
-      "session_id": "opencode:ses_03a00ae10ffe30zxYOKc981Lyi",
-      "agent": "Sisyphus-Junior",
-      "category": "writing",
-      "updated_at": "2026-08-03T05:59:16.901Z",
-      "started_at": "2026-08-03T05:56:40.872Z",
-      "status": "completed",
-      "ended_at": "2026-08-03T05:59:16.901Z",
-      "elapsed_ms": 156029
-    },
-    "todo:6": {
-      "task_key": "todo:6",
-      "task_label": "6",
-      "task_title": "提取 infobox 中的表格为独立 table 环境",
-      "session_id": "opencode:ses_039c91e32ffe0IMCzxukitfmqk",
-      "agent": "Sisyphus-Junior",
-      "category": "quick",
-      "updated_at": "2026-08-03T06:05:44.197Z",
-      "started_at": "2026-08-03T06:03:30.020Z",
-      "status": "completed",
-      "ended_at": "2026-08-03T06:05:44.197Z",
-      "elapsed_ms": 134177
+      "updated_at": "2026-08-03T08:22:50.293Z"
     },
     "todo:7": {
       "task_key": "todo:7",
       "task_label": "7",
-      "task_title": "转换 infobox 章节学习目标为粗体段落",
-      "session_id": "opencode:ses_039c39306ffe6KVR30N8JzGrxf",
+      "task_title": "`Git_VSCode_Tutorial.tex`: Compile with xelatex twice — verify no fatal errors, all `\\ref{fig:ext-*}` resolve to correct figure numbers. Verify table of contents, page count reasonable.",
+      "session_id": "opencode:ses_0394ad08effeUC4Rh6AdLxY2ek",
       "agent": "Sisyphus-Junior",
       "category": "quick",
-      "updated_at": "2026-08-03T06:11:39.769Z",
-      "started_at": "2026-08-03T06:10:21.841Z",
+      "updated_at": "2026-08-03T08:21:26.020Z",
+      "started_at": "2026-08-03T08:21:08.321Z",
       "status": "completed",
-      "ended_at": "2026-08-03T06:11:39.769Z",
-      "elapsed_ms": 77928
+      "ended_at": "2026-08-03T08:21:26.020Z",
+      "elapsed_ms": 17699
     },
-    "todo:10": {
-      "task_key": "todo:10",
-      "task_label": "10",
-      "task_title": "增量编译验证与警告回归检查",
-      "session_id": "opencode:ses_039b66a1bffe3S6B46ox43JbhY",
+    "final-wave:f1": {
+      "task_key": "final-wave:f1",
+      "task_label": "F1",
+      "task_title": "`git diff` review: confirm no unintended changes to existing sections, tables, or images. All modifications are within the `\\section{推荐扩展}` scope (lines 2426-2453 + new content before line 2455). Confirm existing GitLens tips paragraph untouched.",
+      "session_id": "opencode:ses_039492195ffeWOfDfHUKci4c3Z",
       "agent": "Sisyphus-Junior",
       "category": "quick",
-      "updated_at": "2026-08-03T06:26:27.201Z",
-      "started_at": "2026-08-03T06:23:41.409Z",
+      "updated_at": "2026-08-03T08:23:34.715Z",
+      "started_at": "2026-08-03T08:23:20.359Z",
       "status": "completed",
-      "ended_at": "2026-08-03T06:26:27.201Z",
-      "elapsed_ms": 165792
+      "ended_at": "2026-08-03T08:23:34.715Z",
+      "elapsed_ms": 14356
     }
   },
-  "agent": "atlas",
-  "ended_at": "2026-08-03T06:40:04.765Z",
-  "elapsed_ms": 7958661
+  "agent": "atlas"
 }
