@@ -1,126 +1,131 @@
 \contentsline {chapter}{第 0 章：开始前的准备——建立心智模型}{7}{chapter*.2}%
 \contentsline {section}{\numberline {0.1}三个核心类比}{7}{section.0.1}%
 \contentsline {subsection}{\numberline {0.1.1}Git 是「时光机」}{8}{subsection.0.1.1}%
-\contentsline {subsection}{\numberline {0.1.2}GitHub 是「云端仓库」}{8}{subsection.0.1.2}%
-\contentsline {subsection}{\numberline {0.1.3}VS Code 是「驾驶舱」}{8}{subsection.0.1.3}%
-\contentsline {section}{\numberline {0.2}本教程的学习路径图}{9}{section.0.2}%
-\contentsline {section}{\numberline {0.3}动手实验 0：验证环境就绪}{9}{section.0.3}%
-\contentsline {chapter}{\numberline {第一章\hspace {.3em}}版本控制与 Git 概述}{10}{chapter.1}%
-\contentsline {section}{\numberline {1.1}什么是版本控制}{10}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Git 简介}{12}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Git 的核心特性}{12}{subsection.1.2.1}%
-\contentsline {section}{\numberline {1.3}Git 的内部数据模型}{13}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Git 的四个核心对象}{13}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}HEAD 与引用}{14}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}一次提交的完整结构}{15}{subsection.1.3.3}%
-\contentsline {section}{\numberline {1.4}GitHub 简介}{16}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Git 的三大工作区域}{17}{section.1.5}%
-\contentsline {section}{\numberline {1.6}VS Code 如何与 Git 协作}{18}{section.1.6}%
-\contentsline {chapter}{\numberline {第二章\hspace {.3em}}Git 安装与配置}{20}{chapter.2}%
-\contentsline {section}{\numberline {2.1}安装 Git}{20}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Windows 系统}{20}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}macOS 系统}{21}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Linux 系统}{21}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}基本配置}{21}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}用户身份（必须配置）}{22}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}其他推荐配置}{22}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}配置层级}{23}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}安装 VS Code}{23}{section.2.3}%
-\contentsline {section}{\numberline {2.4}配置 GitHub 认证}{24}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}方式一：GitHub CLI（推荐）}{24}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}方式二：Personal Access Token}{24}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}方式三：SSH 密钥（最推荐）}{25}{subsection.2.4.3}%
-\contentsline {chapter}{\numberline {第三章\hspace {.3em}}Git 基础操作}{27}{chapter.3}%
-\contentsline {section}{\numberline {3.1}初始化仓库}{27}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}方式一：在已有项目中初始化}{28}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}方式二：克隆远程仓库}{28}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}文件状态与跟踪}{29}{section.3.2}%
-\contentsline {section}{\numberline {3.3}日常工作流：status → add → commit}{30}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}第一步：查看状态（git status）}{30}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}第二步：暂存文件（git add）}{31}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}第三步：提交变更（git commit）}{32}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}编写好的提交信息}{33}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}查看修改内容：Diff 视图}{33}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}打开 Diff 视图}{34}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}并排视图 vs 内联视图}{34}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}编辑器中的实时变更指示}{35}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}命令行 diff 详解}{35}{subsection.3.4.4}%
-\contentsline {section}{\numberline {3.5}查看历史：git log}{36}{section.3.5}%
-\contentsline {section}{\numberline {3.6}撤销操作}{37}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}撤销工作区的修改（未 add）}{37}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}取消暂存（已 add，未 commit）}{37}{subsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.6.3}修改上一次提交}{38}{subsection.3.6.3}%
-\contentsline {subsection}{\numberline {3.6.4}回退到之前的版本}{38}{subsection.3.6.4}%
-\contentsline {section}{\numberline {3.7}.gitignore 文件}{39}{section.3.7}%
-\contentsline {chapter}{\numberline {第四章\hspace {.3em}}分支与合并}{42}{chapter.4}%
-\contentsline {section}{\numberline {4.1}分支的概念}{42}{section.4.1}%
-\contentsline {section}{\numberline {4.2}分支操作}{43}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}创建、切换、删除分支}{43}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}分支命名规范}{45}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}合并分支}{45}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}合并的两种类型}{46}{subsection.4.3.1}%
-\contentsline {section}{\numberline {4.4}解决合并冲突}{46}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}冲突标记}{46}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}VS Code 的冲突解决体验}{47}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}解决冲突的完整步骤}{48}{subsection.4.4.3}%
-\contentsline {section}{\numberline {4.5}Rebase：整理历史}{49}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Rebase 与 Merge 的区别}{49}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Rebase 的使用场景}{49}{subsection.4.5.2}%
-\contentsline {section}{\numberline {4.6}Cherry-pick：挑选提交}{50}{section.4.6}%
-\contentsline {section}{\numberline {4.7}分支策略简介}{51}{section.4.7}%
-\contentsline {subsection}{\numberline {4.7.1}Feature Branch 工作流（推荐）}{51}{subsection.4.7.1}%
-\contentsline {subsection}{\numberline {4.7.2}GitFlow 工作流}{51}{subsection.4.7.2}%
-\contentsline {chapter}{\numberline {第五章\hspace {.3em}}远程仓库与 GitHub}{53}{chapter.5}%
-\contentsline {section}{\numberline {5.1}远程仓库的概念}{53}{section.5.1}%
-\contentsline {section}{\numberline {5.2}推送与拉取}{54}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}git push：上传本地提交到远程}{54}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}git fetch：下载远程更新（不合并）}{54}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}git pull：下载并合并远程更新}{55}{subsection.5.2.3}%
-\contentsline {section}{\numberline {5.3}在 GitHub 上创建仓库}{56}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}方式一：先在 GitHub 创建，再克隆到本地}{56}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}方式二：先在本地创建，再推送到 GitHub}{56}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}方式三：VS Code 一键发布}{57}{subsection.5.3.3}%
-\contentsline {section}{\numberline {5.4}Pull Request（PR）}{57}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}PR 的标准流程}{58}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}PR 工作流程图}{59}{subsection.5.4.2}%
-\contentsline {section}{\numberline {5.5}Fork 与贡献开源项目}{59}{section.5.5}%
-\contentsline {chapter}{\numberline {第六章\hspace {.3em}}VS Code 中的 Git 集成}{61}{chapter.6}%
-\contentsline {section}{\numberline {6.1}源代码管理视图（Source Control）}{61}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}打开方式}{61}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}界面详解}{62}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}提交历史图（Source Control Graph）}{63}{subsection.6.1.3}%
-\contentsline {section}{\numberline {6.2}暂存（Stage）与提交（Commit）详解}{63}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}暂存文件}{63}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}部分暂存（Stage Selected Ranges）}{63}{subsection.6.2.2}%
-\contentsline {section}{\numberline {6.3}同步操作详解}{64}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}一键同步}{64}{subsection.6.3.1}%
-\contentsline {section}{\numberline {6.4}分支管理详解}{65}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}查看和切换分支}{65}{subsection.6.4.1}%
-\contentsline {section}{\numberline {6.5}Timeline 视图：文件历史}{65}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Stash（暂存工作）}{66}{section.6.6}%
-\contentsline {section}{\numberline {6.7}Git Blame 与行内注释}{66}{section.6.7}%
-\contentsline {section}{\numberline {6.8}推荐扩展}{67}{section.6.8}%
-\contentsline {subsection}{\numberline {6.8.1}GitLens 详细使用指南}{68}{subsection.6.8.1}%
-\contentsline {subsection}{\numberline {6.8.2}GitHub Pull Requests 使用指南}{69}{subsection.6.8.2}%
-\contentsline {subsection}{\numberline {6.8.3}GitHub Issues 使用指南}{70}{subsection.6.8.3}%
-\contentsline {subsection}{\numberline {6.8.4}Git Graph 使用指南}{71}{subsection.6.8.4}%
-\contentsline {subsection}{\numberline {6.8.5}Git History 使用指南}{71}{subsection.6.8.5}%
-\contentsline {chapter}{\numberline {第七章\hspace {.3em}}实战工作流}{74}{chapter.7}%
-\contentsline {section}{\numberline {7.1}完整的 Feature Branch 开发流程}{74}{section.7.1}%
-\contentsline {section}{\numberline {7.2}VS Code 中的完整操作流程}{76}{section.7.2}%
-\contentsline {section}{\numberline {7.3}日常开发的最佳实践}{76}{section.7.3}%
-\contentsline {section}{\numberline {7.4}常见问题 FAQ}{77}{section.7.4}%
-\contentsline {chapter}{\numberline {第八章\hspace {.3em}}新手避坑指南}{80}{chapter.8}%
-\contentsline {section}{\numberline {8.1}核心避坑表}{80}{section.8.1}%
-\contentsline {section}{\numberline {8.2}紧急救命命令速查}{81}{section.8.2}%
-\contentsline {section}{\numberline {8.3}常见报错与一键修复}{82}{section.8.3}%
-\contentsline {chapter}{可视化速查卡}{83}{chapter*.49}%
-\contentsline {section}{\numberline {8.4}速查卡 1：Git 四大区域数据流转}{83}{section.8.4}%
-\contentsline {section}{\numberline {8.5}速查卡 2：分支演变——合并 vs 变基}{84}{section.8.5}%
-\contentsline {section}{\numberline {8.6}速查卡 3：远程协作完整链路}{85}{section.8.6}%
-\contentsline {chapter}{\numberline {第九章\hspace {.3em}}附录：常用命令速查表}{86}{chapter.9}%
-\contentsline {section}{\numberline {9.1}基础操作}{86}{section.9.1}%
-\contentsline {section}{\numberline {9.2}分支操作}{86}{section.9.2}%
-\contentsline {section}{\numberline {9.3}远程操作}{87}{section.9.3}%
-\contentsline {section}{\numberline {9.4}撤销操作}{87}{section.9.4}%
-\contentsline {section}{\numberline {9.5}VS Code 快捷键速查}{88}{section.9.5}%
+\contentsline {subsection}{\numberline {0.1.2}GitHub 是「云端仓库」}{9}{subsection.0.1.2}%
+\contentsline {subsection}{\numberline {0.1.3}VS Code 是「驾驶舱」}{9}{subsection.0.1.3}%
+\contentsline {section}{\numberline {0.2}Git 的设计哲学：四个关键词}{9}{section.0.2}%
+\contentsline {subsection}{\numberline {0.2.1}关键词一：每个存档都有独一无二的编号}{10}{subsection.0.2.1}%
+\contentsline {subsection}{\numberline {0.2.2}关键词二：保存完整快照，不是只记差异}{10}{subsection.0.2.2}%
+\contentsline {subsection}{\numberline {0.2.3}关键词三：历史是一张网，不是一条直线}{10}{subsection.0.2.3}%
+\contentsline {subsection}{\numberline {0.2.4}关键词四：分支和标签只是小纸条}{10}{subsection.0.2.4}%
+\contentsline {section}{\numberline {0.3}本教程的学习路径图}{10}{section.0.3}%
+\contentsline {section}{\numberline {0.4}动手实验 0：验证环境就绪}{11}{section.0.4}%
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}版本控制与 Git 概述}{12}{chapter.1}%
+\contentsline {section}{\numberline {1.1}什么是版本控制}{12}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Git 简介}{14}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Git 的核心特性}{14}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Git 的内部数据模型}{15}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Git 的四个核心对象}{15}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}HEAD 与引用}{16}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}一次提交的完整结构}{17}{subsection.1.3.3}%
+\contentsline {section}{\numberline {1.4}GitHub 简介}{18}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Git 的三大工作区域}{19}{section.1.5}%
+\contentsline {section}{\numberline {1.6}VS Code 如何与 Git 协作}{20}{section.1.6}%
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}Git 安装与配置}{22}{chapter.2}%
+\contentsline {section}{\numberline {2.1}安装 Git}{22}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Windows 系统}{22}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}macOS 系统}{23}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Linux 系统}{23}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}基本配置}{23}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}用户身份（必须配置）}{24}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}其他推荐配置}{24}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}配置层级}{25}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}安装 VS Code}{25}{section.2.3}%
+\contentsline {section}{\numberline {2.4}配置 GitHub 认证}{26}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}方式一：GitHub CLI（推荐）}{26}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}方式二：Personal Access Token}{26}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}方式三：SSH 密钥（最推荐）}{27}{subsection.2.4.3}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}Git 基础操作}{29}{chapter.3}%
+\contentsline {section}{\numberline {3.1}初始化仓库}{29}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}方式一：在已有项目中初始化}{30}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}方式二：克隆远程仓库}{30}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}文件状态与跟踪}{31}{section.3.2}%
+\contentsline {section}{\numberline {3.3}日常工作流：status → add → commit}{32}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}第一步：查看状态（git status）}{32}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}第二步：暂存文件（git add）}{33}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}第三步：提交变更（git commit）}{34}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}编写好的提交信息}{35}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}查看修改内容：Diff 视图}{35}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}打开 Diff 视图}{36}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}并排视图 vs 内联视图}{36}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}编辑器中的实时变更指示}{37}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}命令行 diff 详解}{37}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.5}查看历史：git log}{38}{section.3.5}%
+\contentsline {section}{\numberline {3.6}撤销操作}{39}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}撤销工作区的修改（未 add）}{39}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}取消暂存（已 add，未 commit）}{39}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}修改上一次提交}{40}{subsection.3.6.3}%
+\contentsline {subsection}{\numberline {3.6.4}回退到之前的版本}{40}{subsection.3.6.4}%
+\contentsline {section}{\numberline {3.7}.gitignore 文件}{41}{section.3.7}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}分支与合并}{44}{chapter.4}%
+\contentsline {section}{\numberline {4.1}分支的概念}{44}{section.4.1}%
+\contentsline {section}{\numberline {4.2}分支操作}{45}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}创建、切换、删除分支}{45}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}分支命名规范}{47}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}合并分支}{47}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}合并的两种类型}{48}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}解决合并冲突}{48}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}冲突标记}{48}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}VS Code 的冲突解决体验}{49}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}解决冲突的完整步骤}{50}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.5}Rebase：整理历史}{51}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Rebase 与 Merge 的区别}{51}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Rebase 的使用场景}{51}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}Cherry-pick：挑选提交}{52}{section.4.6}%
+\contentsline {section}{\numberline {4.7}分支策略简介}{53}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Feature Branch 工作流（推荐）}{53}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}GitFlow 工作流}{53}{subsection.4.7.2}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}远程仓库与 GitHub}{55}{chapter.5}%
+\contentsline {section}{\numberline {5.1}远程仓库的概念}{55}{section.5.1}%
+\contentsline {section}{\numberline {5.2}推送与拉取}{56}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}git push：上传本地提交到远程}{56}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}git fetch：下载远程更新（不合并）}{56}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}git pull：下载并合并远程更新}{57}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}在 GitHub 上创建仓库}{58}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}方式一：先在 GitHub 创建，再克隆到本地}{58}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}方式二：先在本地创建，再推送到 GitHub}{58}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}方式三：VS Code 一键发布}{59}{subsection.5.3.3}%
+\contentsline {section}{\numberline {5.4}Pull Request（PR）}{59}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}PR 的标准流程}{60}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}PR 工作流程图}{61}{subsection.5.4.2}%
+\contentsline {section}{\numberline {5.5}Fork 与贡献开源项目}{61}{section.5.5}%
+\contentsline {chapter}{\numberline {第六章\hspace {.3em}}VS Code 中的 Git 集成}{63}{chapter.6}%
+\contentsline {section}{\numberline {6.1}源代码管理视图（Source Control）}{63}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}打开方式}{63}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}界面详解}{64}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}提交历史图（Source Control Graph）}{65}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}暂存（Stage）与提交（Commit）详解}{65}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}暂存文件}{65}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}部分暂存（Stage Selected Ranges）}{65}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}同步操作详解}{66}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}一键同步}{66}{subsection.6.3.1}%
+\contentsline {section}{\numberline {6.4}分支管理详解}{67}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}查看和切换分支}{67}{subsection.6.4.1}%
+\contentsline {section}{\numberline {6.5}Timeline 视图：文件历史}{67}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Stash（暂存工作）}{68}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Git Blame 与行内注释}{68}{section.6.7}%
+\contentsline {section}{\numberline {6.8}推荐扩展}{69}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}GitLens 详细使用指南}{70}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}GitHub Pull Requests 使用指南}{71}{subsection.6.8.2}%
+\contentsline {subsection}{\numberline {6.8.3}GitHub Issues 使用指南}{72}{subsection.6.8.3}%
+\contentsline {subsection}{\numberline {6.8.4}Git Graph 使用指南}{73}{subsection.6.8.4}%
+\contentsline {subsection}{\numberline {6.8.5}Git History 使用指南}{73}{subsection.6.8.5}%
+\contentsline {chapter}{\numberline {第七章\hspace {.3em}}实战工作流}{76}{chapter.7}%
+\contentsline {section}{\numberline {7.1}完整的 Feature Branch 开发流程}{76}{section.7.1}%
+\contentsline {section}{\numberline {7.2}VS Code 中的完整操作流程}{78}{section.7.2}%
+\contentsline {section}{\numberline {7.3}日常开发的最佳实践}{78}{section.7.3}%
+\contentsline {section}{\numberline {7.4}常见问题 FAQ}{79}{section.7.4}%
+\contentsline {chapter}{\numberline {第八章\hspace {.3em}}新手避坑指南}{82}{chapter.8}%
+\contentsline {section}{\numberline {8.1}核心避坑表}{82}{section.8.1}%
+\contentsline {section}{\numberline {8.2}紧急救命命令速查}{83}{section.8.2}%
+\contentsline {section}{\numberline {8.3}常见报错与一键修复}{84}{section.8.3}%
+\contentsline {chapter}{可视化速查卡}{85}{chapter*.49}%
+\contentsline {section}{\numberline {8.4}速查卡 1：Git 四大区域数据流转}{85}{section.8.4}%
+\contentsline {section}{\numberline {8.5}速查卡 2：分支演变——合并 vs 变基}{86}{section.8.5}%
+\contentsline {section}{\numberline {8.6}速查卡 3：远程协作完整链路}{87}{section.8.6}%
+\contentsline {chapter}{\numberline {第九章\hspace {.3em}}附录：常用命令速查表}{88}{chapter.9}%
+\contentsline {section}{\numberline {9.1}基础操作}{88}{section.9.1}%
+\contentsline {section}{\numberline {9.2}分支操作}{88}{section.9.2}%
+\contentsline {section}{\numberline {9.3}远程操作}{89}{section.9.3}%
+\contentsline {section}{\numberline {9.4}撤销操作}{89}{section.9.4}%
+\contentsline {section}{\numberline {9.5}VS Code 快捷键速查}{90}{section.9.5}%
