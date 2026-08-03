@@ -474,7 +474,8 @@ Git 是由 Linus Torvalds（Linux 内核的创造者）于 2005 年开发的\tex
 
 \subsection{Git 的核心特性}
 
-\begin{keybox}
+\medskip
+\textbf{核心概念}
 \begin{enumerate}[leftmargin=1.5em]
   \item \textbf{分布式架构}：每个开发者的机器上都有一份完整的代码仓库和历史记录，
         无需联网也能进行提交、查看历史、创建分支等操作。这意味着即使 GitHub 服务器宕机，
@@ -490,7 +491,7 @@ Git 是由 Linus Torvalds（Linux 内核的创造者）于 2005 年开发的\tex
         包含哪些变更。这是 Git 区别于其他版本控制系统的重要特性。这让你可以将一个大改动
         拆分为多个语义清晰的提交，而非一个混乱的大提交。
 \end{enumerate}
-\end{keybox}
+\medskip
 
 理解了 Git 解决了什么问题以及它的设计哲学之后，让我们深入底层，看看 Git 是如何存储和寻址数据的。这一节的内容是理解 Git 命令背后原理的关键——你不必背诵，但理解后会让你在遇到问题时不再困惑。
 
@@ -563,10 +564,10 @@ git show-ref --heads             # 查看所有分支引用
 git show-ref --tags              # 查看所有标签引用
 \end{lstlisting}
 
-\begin{keybox}
+\medskip
 \textbf{关键理解}：Git 中的一切都是哈希。Blob、Tree、Commit 都有唯一的 SHA-1 哈希值（40 位十六进制字符串）。
 Git 通过哈希值来寻址内容，而不是文件名。这意味着：如果两个文件内容相同，无论文件名是否相同，Git 只存储一份 Blob。
-\end{keybox}
+\medskip
 
 \begin{infobox}
 \textbf{验证内容寻址}：
@@ -895,13 +896,13 @@ git config --global user.name "你的名字"
 git config --global user.email "your.email@example.com"
 \end{lstlisting}
 
-\begin{keybox}
+\medskip
 \textbf{配置原理}：这些设置被存储在你的用户目录下的 \texttt{.gitconfig} 文件中（Windows 在 
 \texttt{C:\\Users\\你的用户名\\.gitconfig}，macOS/Linux 在 \texttt{\textasciitilde/.gitconfig}）。
 
 每次执行 \texttt{git commit} 时，Git 会读取这个文件，将用户名和邮箱写入提交记录中。
 你可以随时用 \texttt{git config --global --list} 查看当前配置。
-\end{keybox}
+\medskip
 
 \begin{warnbox}
 邮箱地址必须与你的 GitHub 账号关联的邮箱一致，否则 GitHub 无法将提交与你的账号关联。
@@ -1063,14 +1064,14 @@ ssh -T git@github.com
 \end{enumerate}
 \medskip
 
-\begin{keybox}
+\medskip
 \textbf{HTTPS vs SSH 对比}：
 \begin{itemize}
   \item \textbf{HTTPS}：使用用户名+密码（或 Token）认证。适合临时使用，但频繁推送时需要输入凭据。
   \item \textbf{SSH}：使用密钥对认证。配置一次后免密操作，适合长期开发。
 \end{itemize}
 \textbf{推荐}：个人开发使用 SSH，团队协作可配合使用 HTTPS。
-\end{keybox}
+\medskip
 
 \subsection*{动手实验 2：配置用户身份和SSH密钥}
 
@@ -1534,14 +1535,14 @@ git revert HEAD
 git revert <commit-hash>
 \end{lstlisting}
 
-\begin{keybox}
+\medskip
 \textbf{reset vs revert 的选择原则}：
 \begin{itemize}
   \item \texttt{reset}：修改历史。适用于\textbf{未推送}的本地提交。
   \item \texttt{revert}：添加新提交来撤销。适用于\textbf{已推送}的提交，不会破坏他人的历史。
 \end{itemize}
 简单记忆：已经 push 的用 revert，没 push 的用 reset。
-\end{keybox}
+\medskip
 
 \section{.gitignore 文件}
 
@@ -1650,7 +1651,7 @@ logs/
 分支（Branch）是 Git 最强大的特性之一。一个分支本质上只是一个\textbf{指向某个提交的可移动指针}。
 创建分支不会复制任何文件，只是创建了一个新指针——因此几乎不消耗时间和空间。
 
-\begin{keybox}
+\medskip
 \textbf{HEAD 指针}：\texttt{HEAD}（当前所在的平行宇宙入口）是一个特殊指针，指向你当前所在的分支。
 当你切换分支时，\texttt{HEAD} 移动到新分支，工作区的文件也随之更新为该分支最后一次提交的状态。
 
@@ -1663,7 +1664,7 @@ logs/
 上图中，\texttt{HEAD} 指向 \texttt{main} 分支，\texttt{main} 指向提交 C，
 \texttt{feature} 分支指向提交 E。当你在 \texttt{feature} 分支上提交时，
 \texttt{feature} 指针会向前移动，但 \texttt{main} 保持不动。
-\end{keybox}
+\medskip
 
 \textbf{为什么要用分支？} 假设你正在开发一个功能，需要三天才能完成。
 如果直接在 \texttt{main} 上开发，这三天的半成品代码会一直"污染"主线。
@@ -1914,14 +1915,14 @@ git rebase --abort
 Rebase 会改写提交历史，如果其他人已经基于旧历史做了工作，rebase 后会导致混乱。
 \end{warnbox}
 
-\begin{keybox}
+\medskip
 \textbf{Merge vs Rebase 的选择}：
 \begin{itemize}
   \item \textbf{Merge}：保留完整历史，适合团队协作的公共分支（如 main）
   \item \textbf{Rebase}：整理历史，适合个人开发的功能分支（在推送前）
   \item \textbf{推荐做法}：本地开发时用 rebase 整理历史，合并到 main 时用 merge
 \end{itemize}
-\end{keybox}
+\medskip
 
 \section{Cherry-pick：挑选提交}
 
@@ -2038,7 +2039,7 @@ GitFlow 更适合有严格发布流程的大型项目。
 远程仓库（Remote）是托管在服务器上的 Git 仓库副本。最常用的是 \texttt{origin}，
 通常指向 GitHub 上的仓库。你可以有多个远程仓库（比如同时托管在 GitHub 和 GitLab）。
 
-\begin{keybox}
+\medskip
 \textbf{本地仓库 vs 远程仓库}：
 
 想象你在家里写小说（本地仓库），同时你还将手稿复印了一份寄给出版社（远程仓库）。
@@ -2050,7 +2051,7 @@ GitFlow 更适合有严格发布流程的大型项目。
   \item \textbf{远程仓库}：存储在服务器（如 GitHub）上的仓库副本，用于团队协作和备份
   \item \texttt{origin}：默认的远程仓库名称，就像 \texttt{main} 是默认分支名一样
 \end{itemize}
-\end{keybox}
+\medskip
 
 \begin{lstlisting}[style=shell]
 # 查看远程仓库
@@ -2110,14 +2111,14 @@ git pull --rebase origin main
 git config --global pull.rebase true
 \end{lstlisting}
 
-\begin{keybox}
+\medskip
 \textbf{fetch vs pull}：
 \begin{itemize}
   \item \texttt{fetch}：只下载，不修改你的工作区。安全操作，可以先查看再决定。
   \item \texttt{pull}：下载并立即合并。更方便，但可能产生意外的合并提交。
 \end{itemize}
 推荐做法：日常使用 \texttt{git pull --rebase}，需要谨慎时使用 \texttt{fetch} + 手动 \texttt{merge}。
-\end{keybox}
+\medskip
 
 在 VS Code 中，推送（把本地提交上传到云端）和拉取（从云端下载最新并合并）操作可以通过底部状态栏的同步按钮一键完成，如图~\ref{fig:pull-push} 与图~\ref{fig:sync-button} 所示：
 
@@ -2593,7 +2594,7 @@ git push origin --delete feature/user-auth
 
 \section{日常开发的最佳实践}
 
-\begin{keybox}
+\medskip
 \textbf{日常工作习惯}：
 \begin{enumerate}[leftmargin=1.5em]
   \item \textbf{开始工作前}：先 \texttt{git pull --rebase} 同步远程更新。
@@ -2604,7 +2605,7 @@ git push origin --delete feature/user-auth
   \item \textbf{推送前同步}：推送前先 pull，避免推送失败。
   \item \textbf{合并后清理}：删除已合并的功能分支，保持仓库整洁。
 \end{enumerate}
-\end{keybox}
+\medskip
 
 \begin{warnbox}
 \textbf{常见错误与预防}：
