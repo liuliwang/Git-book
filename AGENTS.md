@@ -18,7 +18,9 @@
 xelatex -interaction=nonstopmode Git_VSCode_Tutorial.tex
 xelatex -interaction=nonstopmode Git_VSCode_Tutorial.tex
 ```
-每次修改后必须检查 `.log`，确保无 fatal error 或 missing reference 警告。
+每次修改后必须检查 `.log`，按以下标准判读（避免误报）：
+- **必须修复**：fatal error、`undefined reference`（交叉引用缺失）、本次改动行范围内的 `Overfull \hbox ... at lines N`。
+- **可忽略（既有问题）**：`Missing character` 警告（正文 `✓` 等特殊字符缺字形，全书均存在）；改动范围之外的 Overfull。
 
 ## 4. LaTeX 写作规范（复用已有宏，禁止重复定义）
 
@@ -36,6 +38,7 @@ xelatex -interaction=nonstopmode Git_VSCode_Tutorial.tex
 
 **代码与颜色**：
 - 使用 `lstlisting` + `style=shell` 排版命令行；`shellinbox` 用于框内嵌套。
+- `verbatim` 块行宽受限（每行约 ≤50 字符），只用 ASCII 字符（箭头写 `->`）；超宽或 Unicode 特殊字符会触发 `Overfull \hbox` 编译警告。
 - 已定义颜色：`gitorange`、`gitdark`、`codebg`、`codeframe`、`tipgreen`、`warnred`、`infoblue`、`sectioncolor`、`linkcolor`、`imgborder`。
 - `\figurename=图`，`\tablename=表`。
 
@@ -97,3 +100,8 @@ xelatex -interaction=nonstopmode Git_VSCode_Tutorial.tex
 - 中文撰写，直接、不做作，避免 AI 腔。
 - 不用 emoji；LaTeX 内允许使用 `\faLightbulb` 等 `fontawesome5` 符号作为排版元素。
 - 技术术语首次出现时附英文原词，后续直接使用中文或约定缩写。
+
+## 10. Windows 环境注意（重要）
+
+- **文件编码**：`.tex`/`.md` 均为 UTF-8 无 BOM。禁止用 PowerShell `Add-Content`/`Out-File` 默认编码写入或追加（会以 GBK 写坏中文），改用 `[System.IO.File]::AppendAllText($path, $text, [System.Text.Encoding]::UTF8)`，或直接用编辑工具。
+- **git diff 乱码**：PowerShell 控制台默认代码页可能把 UTF-8 中文显示为乱码，属显示问题；文件实际内容以 Read 工具或 `git diff --stat` 核实为准。

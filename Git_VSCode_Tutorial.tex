@@ -1879,6 +1879,107 @@ git merge --abort
 \noindent\textbf{提示：}\textbf{搜索冲突}：按 \texttt{Ctrl + Shift + P}，输入 "Merge Conflict"，
 可以看到所有冲突相关的命令，包括"Accept All Current"等批量操作。
 
+\subsection{远程协作中的冲突（PR 冲突）}
+
+前面讲的是本地合并冲突。但在团队协作中，还有一种更常见的场景：
+你创建了一个 Pull Request（PR），继续在该分支上工作并再次 push 后，
+PR 页面突然提示"This branch has conflicts that must be resolved"。
+这不是你的 push 失败了，而是远程仓库的历史发生了分叉。
+
+\subsubsection{PR 冲突的产生原因}
+
+想象两条铁路从同一个车站（共同祖先）出发，分别向不同方向延伸。
+一条是 \texttt{main} 分支，另一条是你的 \texttt{feature} 分支。
+当你创建 PR 后，\texttt{main} 上可能又有其他人提交了新的代码，
+而你的 \texttt{feature} 分支也继续提交了新的修改。
+如果两边的修改恰好落在同一文件的同一区域，Git 就无法自动合并，PR 页面就会提示冲突。
+
+用时间线表示，冲突的产生过程如下：
+
+\begin{verbatim}
+main:    A --- B --- C --- D          <- PR 后 main 新增 C、D
+feature: A --- B --- E --- F          <- 分支上继续提交 E、F
+               |
+               | 双方在 B 后分叉，改到同一处 -> PR 冲突
+\end{verbatim}
+
+\begin{infobox}
+PR 冲突的本质和本地冲突一样：两个分支修改了同一文件的同一部分，Git 不知道听谁的。
+区别在于，本地冲突发生在你执行 \texttt{git merge} 时，而 PR 冲突发生在远程仓库尝试合并时。
+\end{infobox}
+
+\subsubsection{PR 冲突与本地冲突的区别}
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{发生位置不同}：本地冲突在你的电脑上；PR 冲突在远程仓库（GitHub/Gitee 服务器端）。
+  \item \textbf{触发时机不同}：本地冲突是执行 \texttt{git merge} 时触发；PR 冲突是 PR 页面尝试合并时检测到的。
+  \item \textbf{解决方式不同}：本地冲突直接在本地解决后提交；PR 冲突需要先同步远程最新代码，解决后再 push 更新 PR。
+\end{itemize}
+
+\begin{keybox}
+PR 冲突不是你的 push 失败了，而是 PR 双方的历史分叉所致。
+只要将远程 \texttt{main} 的最新内容同步到你的分支，解决冲突后再 push，PR 就会恢复正常。
+\end{keybox}
+
+\subsubsection{解决 PR 冲突的方法}
+
+解决 PR 冲突有两种方式：命令行和 VS Code 图形界面。
+
+\textbf{方式一：命令行}
+
+\begin{lstlisting}[style=shell]
+# 1. 先获取远程最新状态
+git fetch origin
+
+# 2. 方式一：用 rebase 把本地提交变基到最新 main 上（推荐，历史整洁）
+git rebase origin/main
+# 解决冲突后：git add <文件> 再 git rebase --continue
+# 最后强制推送更新 PR：git push --force-with-lease
+
+# 2. 方式二：用 merge 合并远程 main 到本地分支
+git merge origin/main
+# 解决冲突后：git add <文件> 再 git commit
+# 最后推送更新 PR：git push
+\end{lstlisting}
+
+\begin{warnbox}
+\textbf{rebase 会重写提交历史}。如果分支已推送到远程且被他人使用，不要 rebase，改用 merge；
+否则会导致他人的本地分支与远程不一致。
+\end{warnbox}
+
+\begin{tipbox}
+\textbf{--force-with-lease} 比 \texttt{--force} 更安全：
+它只在远程没有新提交时才强制覆盖，避免覆盖他人的工作。
+\end{tipbox}
+
+\textbf{方式二：VS Code 图形界面}
+
+在 VS Code 中解决 PR 冲突的步骤如下：
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item 点击源代码管理视图顶部的"同步"按钮（或执行 \texttt{git fetch origin}），获取远程最新代码。
+  \item 执行 rebase 或 merge 操作后，VS Code 会显示冲突标记和快捷操作按钮（如图~\ref{fig:merge-conflict} 所示）。
+  \item 使用"Accept Current Change"、"Accept Incoming Change"等按钮，或手动编辑冲突区域。
+  \item 删除所有冲突标记（\texttt{<<<<<<<}、\texttt{=======}、\texttt{>>>>>>>}），保存文件。
+  \item 在源代码管理视图中，点击冲突文件旁的"+"暂存（标记为已解决）。
+  \item 输入提交信息，点击"提交"完成合并。
+  \item 最后 push 更新 PR。
+\end{enumerate}
+
+\begin{infobox}
+PR 冲突不是分支坏了，而是双方改了同一处代码，解决后推送即可。
+核心思路是：先同步远程最新代码，解决冲突，再推送更新 PR。
+\end{infobox}
+
+\subsubsection{预防措施}
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{经常同步 main}：定期执行 \texttt{git fetch origin}，将 \texttt{main} 的最新内容同步进自己的分支（通过 rebase 或 merge）。
+  \item \textbf{小步快跑}：提交要小、PR 要小，冲突面就小。一个 PR 只解决一个问题，避免大段代码长时间不合并。
+  \item \textbf{合并前再确认}：PR 合并前再次同步 \texttt{main}，确认无冲突后再点"Merge"。
+  \item \textbf{提前沟通}：大改动前先和团队沟通改动范围，避免多人同时改同一文件。
+\end{enumerate}
+
 \section{Rebase：整理历史}
 
 Rebase（变基，把提交历史整理成一条直线）是另一种整合分支的方式。与 merge 不同，rebase 会"重写"提交历史，

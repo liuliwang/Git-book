@@ -1,119 +1,67 @@
 {
   "schema_version": 2,
-  "active_work_id": "extensions-usage-tutorial-ca8160f8",
+  "active_work_id": "chapter4-pr-conflicts-062e4525",
   "works": {
-    "extensions-usage-tutorial-ca8160f8": {
-      "work_id": "extensions-usage-tutorial-ca8160f8",
-      "active_plan": "C:\\Users\\Admin\\Desktop\\Git\\.omo\\plans\\extensions-usage-tutorial.md",
-      "plan_name": "extensions-usage-tutorial",
+    "chapter4-pr-conflicts-062e4525": {
+      "work_id": "chapter4-pr-conflicts-062e4525",
+      "active_plan": "D:\\Git-book\\.omo\\plans\\chapter4-pr-conflicts.md",
+      "plan_name": "chapter4-pr-conflicts",
       "status": "completed",
-      "started_at": "2026-08-03T08:08:12.487Z",
-      "ended_at": "2026-08-03T08:24:09.932Z",
-      "elapsed_ms": 957445,
-      "updated_at": "2026-08-03T08:24:09.932Z",
+      "completed_at": "2026-08-03T13:57:00.000Z",
+      "started_at": "2026-08-03T13:48:38.662Z",
+      "updated_at": "2026-08-03T13:56:30.666Z",
       "session_ids": [
-        "opencode:ses_0395e0636ffeBqtxXElYO4HBsU"
+        "opencode:ses_038246371ffe75B2XaX6qthCPD"
       ],
       "session_origins": {
-        "opencode:ses_0395e0636ffeBqtxXElYO4HBsU": "direct"
+        "opencode:ses_038246371ffe75B2XaX6qthCPD": "direct"
       },
       "agent": "atlas",
       "task_sessions": {
         "todo:1": {
           "task_key": "todo:1",
           "task_label": "1",
-          "task_title": "`\\subsection{GitLens 详细使用指南}`",
-          "session_id": "opencode:ses_03948cfbaffedYuyPqlnk9UN0r",
+          "task_title": "在第4章\"解决合并冲突\"部分增加\"远程协作中的冲突（PR 冲突）\"子节",
+          "session_id": "opencode:ses_0381c86a0ffeljwR1WHgOyFrRU",
           "agent": "Sisyphus-Junior",
-          "category": "quick",
-          "started_at": "2026-08-03T08:16:46.510Z",
-          "ended_at": "2026-08-03T08:22:50.293Z",
-          "elapsed_ms": 363783,
+          "started_at": "2026-08-03T13:52:32.913Z",
           "status": "completed",
-          "updated_at": "2026-08-03T08:22:50.293Z"
-        },
-        "todo:7": {
-          "task_key": "todo:7",
-          "task_label": "7",
-          "task_title": "`Git_VSCode_Tutorial.tex`: Compile with xelatex twice — verify no fatal errors, all `\\ref{fig:ext-*}` resolve to correct figure numbers. Verify table of contents, page count reasonable.",
-          "session_id": "opencode:ses_0394ad08effeUC4Rh6AdLxY2ek",
-          "agent": "Sisyphus-Junior",
-          "category": "quick",
-          "updated_at": "2026-08-03T08:21:26.020Z",
-          "started_at": "2026-08-03T08:21:08.321Z",
-          "status": "completed",
-          "ended_at": "2026-08-03T08:21:26.020Z",
-          "elapsed_ms": 17699
-        },
-        "final-wave:f1": {
-          "task_key": "final-wave:f1",
-          "task_label": "F1",
-          "task_title": "`git diff` review: confirm no unintended changes to existing sections, tables, or images. All modifications are within the `\\section{推荐扩展}` scope (lines 2426-2453 + new content before line 2455). Confirm existing GitLens tips paragraph untouched.",
-          "session_id": "opencode:ses_039492195ffeWOfDfHUKci4c3Z",
-          "agent": "Sisyphus-Junior",
-          "category": "quick",
-          "updated_at": "2026-08-03T08:23:34.715Z",
-          "started_at": "2026-08-03T08:23:20.359Z",
-          "status": "completed",
-          "ended_at": "2026-08-03T08:23:34.715Z",
-          "elapsed_ms": 14356
+          "updated_at": "2026-08-03T13:55:58.500Z",
+          "ended_at": "2026-08-03T13:55:58.500Z",
+          "elapsed_ms": 205587
         }
-      }
+      },
+      "ended_at": "2026-08-03T13:56:30.666Z",
+      "elapsed_ms": 472004
     }
   },
-  "active_plan": "C:\\Users\\Admin\\Desktop\\Git\\.omo\\plans\\extensions-usage-tutorial.md",
-  "started_at": "2026-08-03T08:08:12.487Z",
-  "ended_at": "2026-08-03T08:24:09.932Z",
-  "elapsed_ms": 957445,
+  "active_plan": "D:\\Git-book\\.omo\\plans\\chapter4-pr-conflicts.md",
+  "started_at": "2026-08-03T13:48:38.662Z",
   "status": "completed",
-  "updated_at": "2026-08-03T08:24:09.932Z",
+  "completed_at": "2026-08-03T13:57:00.000Z",
+  "updated_at": "2026-08-03T13:56:30.666Z",
   "session_ids": [
-    "opencode:ses_0395e0636ffeBqtxXElYO4HBsU"
+    "opencode:ses_038246371ffe75B2XaX6qthCPD"
   ],
   "session_origins": {
-    "opencode:ses_0395e0636ffeBqtxXElYO4HBsU": "direct"
+    "opencode:ses_038246371ffe75B2XaX6qthCPD": "direct"
   },
-  "plan_name": "extensions-usage-tutorial",
+  "plan_name": "chapter4-pr-conflicts",
   "task_sessions": {
     "todo:1": {
       "task_key": "todo:1",
       "task_label": "1",
-      "task_title": "`\\subsection{GitLens 详细使用指南}`",
-      "session_id": "opencode:ses_03948cfbaffedYuyPqlnk9UN0r",
+      "task_title": "在第4章\"解决合并冲突\"部分增加\"远程协作中的冲突（PR 冲突）\"子节",
+      "session_id": "opencode:ses_0381c86a0ffeljwR1WHgOyFrRU",
       "agent": "Sisyphus-Junior",
-      "category": "quick",
-      "started_at": "2026-08-03T08:16:46.510Z",
-      "ended_at": "2026-08-03T08:22:50.293Z",
-      "elapsed_ms": 363783,
+      "started_at": "2026-08-03T13:52:32.913Z",
       "status": "completed",
-      "updated_at": "2026-08-03T08:22:50.293Z"
-    },
-    "todo:7": {
-      "task_key": "todo:7",
-      "task_label": "7",
-      "task_title": "`Git_VSCode_Tutorial.tex`: Compile with xelatex twice — verify no fatal errors, all `\\ref{fig:ext-*}` resolve to correct figure numbers. Verify table of contents, page count reasonable.",
-      "session_id": "opencode:ses_0394ad08effeUC4Rh6AdLxY2ek",
-      "agent": "Sisyphus-Junior",
-      "category": "quick",
-      "updated_at": "2026-08-03T08:21:26.020Z",
-      "started_at": "2026-08-03T08:21:08.321Z",
-      "status": "completed",
-      "ended_at": "2026-08-03T08:21:26.020Z",
-      "elapsed_ms": 17699
-    },
-    "final-wave:f1": {
-      "task_key": "final-wave:f1",
-      "task_label": "F1",
-      "task_title": "`git diff` review: confirm no unintended changes to existing sections, tables, or images. All modifications are within the `\\section{推荐扩展}` scope (lines 2426-2453 + new content before line 2455). Confirm existing GitLens tips paragraph untouched.",
-      "session_id": "opencode:ses_039492195ffeWOfDfHUKci4c3Z",
-      "agent": "Sisyphus-Junior",
-      "category": "quick",
-      "updated_at": "2026-08-03T08:23:34.715Z",
-      "started_at": "2026-08-03T08:23:20.359Z",
-      "status": "completed",
-      "ended_at": "2026-08-03T08:23:34.715Z",
-      "elapsed_ms": 14356
+      "updated_at": "2026-08-03T13:55:58.500Z",
+      "ended_at": "2026-08-03T13:55:58.500Z",
+      "elapsed_ms": 205587
     }
   },
-  "agent": "atlas"
+  "agent": "atlas",
+  "ended_at": "2026-08-03T13:56:30.666Z",
+  "elapsed_ms": 472004
 }
