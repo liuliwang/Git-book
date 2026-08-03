@@ -762,6 +762,7 @@ VS Code 内置了强大的 Git 集成，将上述所有操作都图形化了。�
   \item Git 的三大工作区域：工作区 → 暂存区 → 本地仓库 → 远程仓库
   \item VS Code 内置了强大的 Git 集成，将命令行操作图形化
 \end{itemize}
+\medskip
 
 \textbf{下一章预告}：我们将学习如何安装 Git 和 VS Code，以及如何配置 GitHub 认证。
 \medskip
@@ -1593,8 +1594,7 @@ logs/
 例如 Python 项目、Node.js 项目、Java 项目都有对应的模板。
 \medskip
 
-\begin{tipbox}
-\textbf{本章小结}
+\noindent\textbf{提示：}\textbf{本章小结}
 \begin{itemize}
   \item 通过 \texttt{git init} 初始化仓库，\texttt{git clone} 克隆远程仓库
   \item 文件有四种状态：未跟踪、未修改、已修改、已暂存
@@ -1603,9 +1603,9 @@ logs/
   \item 撤销操作：\texttt{git restore}（工作区）、\texttt{git restore --staged}（暂存区）、\texttt{git commit --amend}（提交）
   \item \texttt{.gitignore} 用于排除不需要跟踪的文件
 \end{itemize}
+\medskip
 
 \textbf{下一章预告}：我们将学习 Git 最强大的特性——分支与合并。
-\end{tipbox}
 
 \subsection*{动手实验 3：修改-暂存-提交完整流程}
 
@@ -1621,9 +1621,8 @@ logs/
 \end{enumerate}
 \medskip
 
-\begin{tipbox}
-\textbf{成功标志}：点击源代码管理视图标题栏的「提交历史图」图标，能看到一条提交记录 \texttt{更新问候语}。
-\end{tipbox}
+\noindent\textbf{提示：}\textbf{成功标志}：点击源代码管理视图标题栏的「提交历史图」图标，能看到一条提交记录 \texttt{更新问候语}。
+\medskip
 
 % ================================================================
 %  第四章：分支与合并
@@ -1834,10 +1833,8 @@ git commit  # 完成合并（Git 会自动生成合并提交信息）
 git merge --abort
 \end{lstlisting}
 
-\begin{tipbox}
-\textbf{搜索冲突}：按 \texttt{Ctrl + Shift + P}，输入 "Merge Conflict"，
+\noindent\textbf{提示：}\textbf{搜索冲突}：按 \texttt{Ctrl + Shift + P}，输入 "Merge Conflict"，
 可以看到所有冲突相关的命令，包括"Accept All Current"等批量操作。
-\end{tipbox}
 
 \section{Rebase：整理历史}
 
@@ -1975,13 +1972,10 @@ feature:       C --- D --- E --- F
   \item \texttt{hotfix/*}：从 \texttt{main} 创建的紧急修复分支。
 \end{itemize}
 
-\begin{tipbox}
 对于个人项目或小团队，Feature Branch 工作流已经足够。
 GitFlow 更适合有严格发布流程的大型项目。
-\end{tipbox}
 
-\begin{tipbox}
-\textbf{本章小结}
+\noindent\textbf{提示：}\textbf{本章小结}
 \begin{itemize}
   \item 分支是指向提交的可移动指针，创建和切换分支几乎不消耗资源
   \item 合并分支有 Fast-forward 和 3-way merge 两种方式
@@ -1990,9 +1984,9 @@ GitFlow 更适合有严格发布流程的大型项目。
   \item Cherry-pick 可以挑选特定提交应用到当前分支
   \item Feature Branch 是最常用的分支策略，GitFlow 适合大型项目
 \end{itemize}
+\medskip
 
 \textbf{下一章预告}：我们将学习如何将本地仓库与远程仓库同步，以及如何在 GitHub 上进行协作。
-\end{tipbox}
 
 \subsection*{动手实验 4：创建分支、合并、解决冲突}
 
@@ -2008,10 +2002,8 @@ GitFlow 更适合有严格发布流程的大型项目。
 \end{enumerate}
 \medskip
 
-\begin{tipbox}
-\textbf{成功标志}：底部状态栏分支名为 \texttt{main}，源代码管理视图无待处理更改。
+\noindent\textbf{提示：}\textbf{成功标志}：底部状态栏分支名为 \texttt{main}，源代码管理视图无待处理更改。
 若想放弃合并，点击「…」菜单 $\to$「分支」$\to$「中止合并」即可。
-\end{tipbox}
 
 % ================================================================
 %  第五章：远程仓库与 GitHub
@@ -2214,15 +2206,13 @@ PR 流程解决了这些问题：
 \end{enumerate}
 \medskip
 
-\begin{tipbox}
-\textbf{好的 PR 描述应包含}：
+\noindent\textbf{提示：}\textbf{好的 PR 描述应包含}：
 \begin{itemize}
   \item 这个 PR 解决了什么问题？
   \item 做了什么改动？
   \item 如何测试这些改动？
   \item 相关的 Issue 编号（如 \texttt{Closes \#123}）
 \end{itemize}
-\end{tipbox}
 
 \subsection{PR 工作流程图}
 
@@ -2270,8 +2260,7 @@ Pull Request 的完整工作流程如图~\ref{fig:pr-workflow} 所示：
 \end{enumerate}
 \medskip
 
-\begin{tipbox}
-\textbf{本章小结}
+\noindent\textbf{提示：}\textbf{本章小结}
 \begin{itemize}
   \item 远程仓库是托管在服务器上的 Git 仓库副本，\texttt{origin} 是最常用的远程名
   \item \texttt{git push} 上传本地提交，\texttt{git pull} 下载并合并，\texttt{git fetch} 只下载不合并
@@ -2279,9 +2268,9 @@ Pull Request 的完整工作流程如图~\ref{fig:pr-workflow} 所示：
   \item Pull Request 是 GitHub 的核心协作功能，用于代码审查和合并
   \item Fork 是贡献开源项目的标准方式
 \end{itemize}
+\medskip
 
 \textbf{下一章预告}：我们将深入了解 VS Code 中的 Git 集成，学习如何用图形界面高效操作 Git。
-\end{tipbox}
 
 \subsection*{动手实验 5：推送到GitHub并创建PR}
 
@@ -2297,9 +2286,7 @@ Pull Request 的完整工作流程如图~\ref{fig:pr-workflow} 所示：
 \end{enumerate}
 \medskip
 
-\begin{tipbox}
-\textbf{成功标志}：GitHub 仓库页面的 \texttt{main} 分支中出现了 \texttt{README.md}，Pull Request 状态显示为 Merged（已合并）。
-\end{tipbox}
+\noindent\textbf{提示：}\textbf{成功标志}：GitHub 仓库页面的 \texttt{main} 分支中出现了 \texttt{README.md}，Pull Request 状态显示为 Merged（已合并）。
 
 % ================================================================
 %  第六章：VS Code 中的 Git 集成（核心章节）
@@ -2457,15 +2444,13 @@ Git History & Don Jayamanne & 查看文件/行的详细提交历史 \\
 \end{tabularx}
 \end{table}
 
-\begin{tipbox}
-\textbf{强烈推荐安装 GitLens}。它提供了：
+\noindent\textbf{提示：}\textbf{强烈推荐安装 GitLens}。它提供了：
 \begin{itemize}
   \item \textbf{行内 blame}：在每一行代码后面显示最后修改者和时间。
   \item \textbf{悬停详情}：鼠标悬停在代码上，显示该行的完整提交信息。
   \item \textbf{文件历史}：查看文件的完整修改时间线。
   \item \textbf{比较分支}：可视化比较任意两个分支的差异。
 \end{itemize}
-\end{tipbox}
 
 \subsection*{动手实验 6：VS Code中完成完整Git工作流}
 
@@ -2481,11 +2466,10 @@ Git History & Don Jayamanne & 查看文件/行的详细提交历史 \\
 \end{enumerate}
 \medskip
 
-\begin{tipbox}
-\textbf{成功标志}：Timeline 视图中 \texttt{hello.txt} 列出了多条提交记录，最近一条是 \texttt{练习部分暂存}。
+\noindent\textbf{提示：}\textbf{成功标志}：Timeline 视图中 \texttt{hello.txt} 列出了多条提交记录，最近一条是 \texttt{练习部分暂存}。
+\medskip
 
 \textbf{下一章预告}：我们将学习如何将这些技能整合成一套完整的工作流，以及如何在团队中高效协作。
-\end{tipbox}
 
 % ================================================================
 %  第七章：实战工作流
@@ -2683,8 +2667,7 @@ ssh -T git@github.com
 \end{lstlisting}
 \end{infobox}
 
-\begin{tipbox}
-\textbf{本章小结}
+\noindent\textbf{提示：}\textbf{本章小结}
 \begin{itemize}
   \item 完整的 Feature Branch 工作流：同步 → 创建分支 → 开发 → 推送 → PR → 合并 → 清理
   \item VS Code 提供了完整的图形化操作界面，无需记住命令行
@@ -2693,7 +2676,6 @@ ssh -T git@github.com
 \end{itemize}
 
 \textbf{附录预告}：接下来是常用命令速查表，方便日常查阅。
-\end{tipbox}
 
 \subsection*{动手实验 7：端到端Feature Branch开发流程}
 
@@ -2709,9 +2691,7 @@ ssh -T git@github.com
 \end{enumerate}
 \medskip
 
-\begin{tipbox}
-\textbf{成功标志}：GitHub 上 \texttt{main} 分支包含 \texttt{e2e.md}，且本地 \texttt{feature/e2e-flow} 分支已删除，整个 Feature Branch 流程闭环完成。
-\end{tipbox}
+\noindent\textbf{提示：}\textbf{成功标志}：GitHub 上 \texttt{main} 分支包含 \texttt{e2e.md}，且本地 \texttt{feature/e2e-flow} 分支已删除，整个 Feature Branch 流程闭环完成。
 
 % ================================================================
 %  第 8 章：新手避坑指南
