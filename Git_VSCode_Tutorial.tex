@@ -340,14 +340,14 @@
 }
 \caption{本教程学习路径——从心智模型到实战工作流的章节安排}\label{fig:learning-path}\end{figure}
 
-\begin{infobox}
+\medskip
 \textbf{建议阅读策略}：
 \begin{itemize}
   \item \textbf{极速上手（30 分钟）}：只看第 0 章 $\to$ 第 1 章 1.1/1.2/1.5 $\to$ 第 2 章 2.1/2.2 $\to$ 第 3 章 3.1/3.4/3.5 $\to$ 第 7 章 7.2（VS Code 操作流）
   \item \textbf{系统掌握（1 周）}：按章节顺序完整阅读，每章做完「动手实验」再进入下一章
   \item \textbf{遇到问题查阅}：直接翻「附录：避坑指南」或「命令速查表」
 \end{itemize}
-\end{infobox}
+\medskip
 
 \section{动手实验 0：验证环境就绪}
 
@@ -386,7 +386,7 @@
 想象你在写论文：每隔一段时间，你会另存一个副本——"论文\_v1.doc"、"论文\_v2\_final.doc"、
 "论文\_v3\_真的final.doc"……版本控制系统就是自动帮你管理这些"副本"的工具，而且远比手动另存高效。
 
-\begin{infobox}
+\medskip
 \textbf{场景：一个没有版本控制的下午}
 
 假设你和小明、小红三个人合作写一个网站。你们约定好，每人负责一个页面：
@@ -406,7 +406,7 @@
 更糟糕的是，如果你不小心复制错了，覆盖了某人的修改，这个修改就永远消失了，除非你记得具体内容，否则无法恢复。
 
 版本控制系统就是为解决这些问题而生的。它自动记录每次修改的内容、时间和作者，让多人协作时不再"文件满天飞"，还能让你随时回到过去的任意版本。
-\end{infobox}
+\medskip
 
 在软件开发中，版本控制系统帮助开发者解决以下核心问题：
 
@@ -530,7 +530,7 @@ Git 仓库中的所有数据都存储为以下四种对象，如图~\ref{fig:git
   \item \textbf{Branch（分支）}：只是一个指向 Commit 的指针，创建分支就是创建一个新指针。
 \end{itemize}
 
-\begin{infobox}
+\medskip
 \textbf{Tag（标签）}：指向特定 Commit 的固定引用，通常用于标记版本号（如 v1.0、v2.3）。
 
 Git 支持两种标签：
@@ -540,7 +540,7 @@ Git 支持两种标签：
   \item \textbf{Lightweight Tag（轻量标签）}：只是指向 Commit 的指针（等价于不会移动的分支），不存储额外元数据。
         创建命令：\texttt{git tag v1.0}
 \end{itemize}
-\end{infobox}
+\medskip
 
 \subsection{HEAD 与引用}
 
@@ -569,7 +569,7 @@ git show-ref --tags              # 查看所有标签引用
 Git 通过哈希值来寻址内容，而不是文件名。这意味着：如果两个文件内容相同，无论文件名是否相同，Git 只存储一份 Blob。
 \medskip
 
-\begin{infobox}
+\medskip
 \textbf{验证内容寻址}：
 
 用底层命令验证：同一内容无论文件名为何，Blob 哈希相同。
@@ -584,7 +584,7 @@ echo "Hello Git" | git hash-object --stdin
 
 这就是内容寻址的核心：Git 通过内容计算哈希，而非通过文件名定位。
 如果两个文件内容相同，无论文件名是否相同，Git 只存储一份 Blob。
-\end{infobox}
+\medskip
 
 \subsection{一次提交的完整结构}
 
@@ -646,7 +646,7 @@ git cat-file -p <blob-hash>   # 查看 Blob 的内容
 \end{lstlisting}
 \medskip
 
-\begin{infobox}
+\medskip
 \textbf{为什么 Git 高效？}
 \begin{itemize}
   \item \textbf{快照式存储}：每次提交保存完整快照，未修改的文件复用旧 Blob（通过哈希判断）。
@@ -655,7 +655,7 @@ git cat-file -p <blob-hash>   # 查看 Blob 的内容
   \item \textbf{自动垃圾回收}：Git 定期运行 \texttt{git gc}，将松散对象（loose objects）
         打包为 packfile 和索引文件，通过 delta 压缩进一步节省存储空间。
 \end{itemize}
-\end{infobox}
+\medskip
 
 \medskip
 \noindent\textbf{提示：}Porcelain vs Plumbing——Git 命令分为两层\textbf{表层（Porcelain）}是你日常使用的命令（\texttt{git add}、\texttt{git commit}、\texttt{git log}），设计为人类友好；\textbf{底层（Plumbing）}是 Git 内部使用的命令（\texttt{git cat-file}、\texttt{git hash-object}、\texttt{git ls-tree}），输出格式稳定，适合脚本调用。理解数据模型时，底层命令是最好的"显微镜"。
@@ -803,7 +803,7 @@ VS Code 内置了强大的 Git 集成，将上述所有操作都图形化了。�
 
 \section{安装 Git}
 
-\begin{infobox}
+\medskip
 \textbf{Git 版本选择建议}
 
 Git 是一个持续更新的工具，新版本通常修复了旧版本的 bug 并增加了功能。
@@ -814,7 +814,7 @@ Git 是一个持续更新的工具，新版本通常修复了旧版本的 bug �
 \end{itemize}
 
 本书基于 Git 2.40+ 版本编写，但绝大多数操作在所有现代 Git 版本中都相同。
-\end{infobox}
+\medskip
 
 \subsection{Windows 系统}
 
@@ -868,7 +868,7 @@ sudo pacman -S git
 安装 Git 后，第一件事是配置你的身份信息和偏好设置。这些配置会附加在你每次提交上，
 相当于给每次修改"签名"。
 
-\begin{infobox}
+\medskip
 \textbf{为什么需要配置用户信息？}
 
 Git 是分布式版本控制系统，每次提交都会记录"谁"做了这次修改。如果没有配置用户信息，
@@ -880,7 +880,7 @@ Git 会拒绝提交，并提示你设置 \texttt{user.name} 和 \texttt{user.ema
   \item 与 GitHub/GitLab 等平台的账号关联
   \item 生成贡献统计图表
 \end{itemize}
-\end{infobox}
+\medskip
 
 \subsection{用户身份（必须配置）}
 
@@ -959,7 +959,7 @@ Git 配置有三个层级，优先级从高到低：（见表~\ref{tab:config-le
 
 VS Code（Visual Studio Code）是微软开发的免费代码编辑器，内置了强大的 Git 集成。
 
-\begin{infobox}
+\medskip
 \textbf{为什么选择 VS Code？}
 
 VS Code 之所以成为最受欢迎的代码编辑器之一，除了免费开源外，还有以下优势：
@@ -970,7 +970,7 @@ VS Code 之所以成为最受欢迎的代码编辑器之一，除了免费开源
   \item \textbf{丰富的扩展生态}：GitLens、Git Graph 等扩展进一步增强了 Git 体验
   \item \textbf{跨平台}：Windows、macOS、Linux 都有完全一致的界面和操作
 \end{itemize}
-\end{infobox}
+\medskip
 
 \medskip
 \begin{enumerate}[leftmargin=1.5em]
@@ -1118,13 +1118,13 @@ ssh -T git@github.com
 
 每个 Git 项目都始于一个\textbf{仓库}（Repository）。
 
-\begin{infobox}
+\medskip
 \textbf{什么是仓库？}
 
 你可以把"仓库"理解为一个"时间胶囊"——它不仅存储了你当前的文件，还存储了这些文件的每一次修改记录。当你对一个文件进行修改、保存、提交后，Git 会把这次修改记录下来，就像一个时间戳，标记着"在这个时刻，文件是这样的"。
 
 初始化仓库，就是告诉 Git："从现在开始，请帮我记录这个文件夹里所有文件的变化历史。"
-\end{infobox}
+\medskip
 
 有两种方式创建仓库：
 
@@ -1170,14 +1170,14 @@ git clone -b develop https://github.com/username/repo-name.git
 
 \vscodeimg{images/11-clone-repo.png}{VS Code 的 Git: Clone 命令——按 Ctrl+Shift+P 输入"clone"，粘贴仓库 URL 即可克隆}{fig:clone-repo}
 
-\begin{infobox}
+\medskip
 \texttt{git clone} 实际上做了三件事：
 \begin{enumerate}
   \item 从远程下载完整的仓库历史到本地（包括所有分支和提交）
   \item 创建名为 \texttt{origin} 的远程引用指向原仓库
   \item 自动检出（checkout）默认分支（通常是 \texttt{main}）的文件到工作区
 \end{enumerate}
-\end{infobox}
+\medskip
 
 \section{文件状态与跟踪}
 
@@ -1664,14 +1664,14 @@ logs/
 如果直接在 \texttt{main} 上开发，这三天的半成品代码会一直"污染"主线。
 使用分支，你可以在独立的平行世界中开发，完成后一次性合并回去。
 
-\begin{infobox}
+\medskip
 \textbf{分支的本质类比}：想象你在玩一个 RPG 游戏，主线剧情是 \texttt{main} 分支。
 当你想尝试一个支线任务时，你保存了当前进度（创建分支），然后在支线任务中探索。
 如果支线任务失败（功能开发失败），你可以随时回到主线进度（切换回 \texttt{main}），
 不会丢失任何主线进度。如果支线任务成功（功能完成），你可以将支线任务的奖励合并到主线中（合并分支）。
 
 这就是分支的核心价值：\textbf{隔离风险，并行探索}。
-\end{infobox}
+\medskip
 
 \section{分支操作}
 
@@ -1733,12 +1733,12 @@ git branch -D feature-login
 
 当功能开发完成后，需要将功能分支合并回主分支。
 
-\begin{infobox}
+\medskip
 \textbf{合并的本质}：合并（merge）是将两个分支的历史整合到一起的过程。
 想象两条河流（分支）在下游汇合（合并点），Git 会尝试自动将两边的修改整合到一起。
 如果两边的修改没有冲突（比如修改了不同的文件或同一文件的不同部分），Git 会自动完成合并；
 如果两边修改了同一处内容，Git 就会标记冲突，需要人工介入决定保留哪边的修改。
-\end{infobox}
+\medskip
 
 \subsection{合并的两种类型}
 
@@ -1932,14 +1932,14 @@ git add .
 git cherry-pick --continue
 \end{lstlisting}
 
-\begin{infobox}
+\medskip
 \textbf{Cherry-pick 的使用场景}：
 \begin{itemize}
   \item 修复了 main 上的 bug，需要将修复同步到 release 分支
   \item 从功能分支中挑选某个提交到另一个功能分支
   \item 误删了某个提交，需要重新应用
 \end{itemize}
-\end{infobox}
+\medskip
 
 \section{分支策略简介}
 
@@ -2168,7 +2168,7 @@ VS Code 可以一步完成"初始化 + 提交 + 创建远程仓库 + 推送"，�
 Pull Request 是 GitHub 的核心协作功能。它不是 Git 命令，而是 GitHub 的网页功能。
 PR 的本质是："我做了些修改，请你审查并合并到主分支。"
 
-\begin{infobox}
+\medskip
 \textbf{为什么需要 Pull Request？}
 
 想象你正在为一个开源项目贡献代码。如果没有 PR 流程，你只能直接推送代码到主分支，
@@ -2188,7 +2188,7 @@ PR 流程解决了这些问题：
 \end{enumerate}
 
 \textbf{简单记忆}：PR = 代码的"体检报告"，确保代码健康后才合并。
-\end{infobox}
+\medskip
 
 \subsection{PR 的标准流程}
 
@@ -2298,7 +2298,7 @@ Pull Request 的完整工作流程如图~\ref{fig:pr-workflow} 所示：
 
 \section{源代码管理视图（Source Control）}
 
-\begin{infobox}
+\medskip
 \textbf{为什么需要图形界面？}
 
 虽然 Git 命令行功能强大，但对于初学者来说，图形界面（GUI）有以下优势：
@@ -2311,7 +2311,7 @@ Pull Request 的完整工作流程如图~\ref{fig:pr-workflow} 所示：
 \end{itemize}
 
 VS Code 的 Git 集成是业界公认最出色的之一，足以满足日常 90\% 的 Git 操作需求。
-\end{infobox}
+\medskip
 
 \subsection{打开方式}
 
@@ -2488,7 +2488,7 @@ Git History & Don Jayamanne & 查看文件/行的详细提交历史 \\
 
 \section{完整的 Feature Branch 开发流程}
 
-\begin{infobox}
+\medskip
 \textbf{为什么需要规范的工作流？}
 
 想象一个团队有 5 个开发者，每个人都在同时开发不同的功能：
@@ -2505,7 +2505,7 @@ Feature Branch 工作流通过以下原则解决这些问题：
   \item \textbf{代码审查}：通过 PR 确保代码质量
   \item \textbf{历史清晰}：合并后的历史记录完整可追溯
 \end{enumerate}
-\end{infobox}
+\medskip
 
 以下是一个完整的功能开发流程示例，从创建分支到合并：
 
@@ -2730,13 +2730,13 @@ ssh -T git@github.com
 
 \section{紧急救命命令速查}
 
-\begin{infobox}
+\medskip
 \textbf{几乎所有“搞砸了”都能用这两条命令救回来}：
 \begin{enumerate}[leftmargin=1.5em]
   \item \texttt{git reflog} —— 查看 HEAD 所有移动记录，找到想回去的那一刻的哈希值
   \item \texttt{git reset --hard <哈希值>} —— 直接穿越回那个时刻（慎用，会丢失当前未提交的改动）
 \end{enumerate}
-\end{infobox}
+\medskip
 
 \textbf{实战演练：误删提交后恢复}
 \medskip
