@@ -634,17 +634,17 @@ echo "Hello Git" | git hash-object --stdin
 }
 \caption{一次提交的完整数据模型——Commit 指向 Tree，Tree 指向 Blob，并记录父提交}\label{fig:commit-structure}\end{figure}
 
-\begin{infobox}
+\medskip
 \textbf{用底层命令查看对象}：
 
 Git 提供了底层命令来直接查看四种对象的内容：
-\begin{lstlisting}[style=shellinbox]
+\begin{lstlisting}[style=shell]
 git cat-file -p HEAD          # 查看 HEAD 指向的 Commit 对象
 git cat-file -p HEAD^{tree}   # 查看该 Commit 对应的 Tree 对象
 git ls-tree HEAD              # 列出 Tree 中的文件与 Blob 映射
 git cat-file -p <blob-hash>   # 查看 Blob 的内容
 \end{lstlisting}
-\end{infobox}
+\medskip
 
 \begin{infobox}
 \textbf{为什么 Git 高效？}
@@ -1413,9 +1413,9 @@ git diff filename.txt
 git diff abc123^..abc123
 \end{lstlisting}
 
-\begin{infobox}
+\medskip
 \textbf{diff 的输出格式解读}：
-\begin{lstlisting}[style=shellinbox]
+\begin{lstlisting}[style=shell]
 --- a/filename.txt      # 旧版本（减号开头）
 +++ b/filename.txt      # 新版本（加号开头）
 @@ -1,5 +1,7 @@         # 变更位置：从第1行开始，旧版本5行，新版本7行
@@ -1424,7 +1424,7 @@ git diff abc123^..abc123
 +added line             # 加号 = 新增的内容
   unchanged line        # 上下文行，帮助定位
 \end{lstlisting}
-\end{infobox}
+\medskip
 
 \section{查看历史：git log}
 
@@ -2599,12 +2599,12 @@ git push origin --delete feature/user-auth
 
 \section{常见问题 FAQ}
 
-\begin{infobox}
+\medskip
 \textbf{Q1：我不小心提交了密钥文件，怎么办？}
 
 首先，立即更换泄露的密钥！然后使用以下命令从历史中彻底删除：
 
-\begin{lstlisting}[style=shellinbox]
+\begin{lstlisting}[style=shell]
 # 安装 filter-repo 工具（如果尚未安装）
 # pip install git-filter-repo
 
@@ -2616,12 +2616,12 @@ git push origin --force --all
 \end{lstlisting}
 
 \textbf{注意}：这会改写提交历史，如果团队有其他人在协作，需要通知他们重新克隆仓库。
-\end{infobox}
+\medskip
 
-\begin{infobox}
+\medskip
 \textbf{Q2：我删除了一个文件，还能恢复吗？}
 
-\begin{lstlisting}[style=shellinbox]
+\begin{lstlisting}[style=shell]
 # 查看文件历史，找到删除前的最后一次提交
 git log --diff-filter=D --summary
 
@@ -2631,12 +2631,12 @@ git restore --source=HEAD~1 -- filename.txt
 # 或者从历史中恢复
 git checkout HEAD~1 -- filename.txt
 \end{lstlisting}
-\end{infobox}
+\medskip
 
-\begin{infobox}
+\medskip
 \textbf{Q3：如何撤销已经 push 的提交？}
 
-\begin{lstlisting}[style=shellinbox]
+\begin{lstlisting}[style=shell]
 # 方法 1：使用 revert（推荐，不会改写历史）
 git revert abc123
 git push
@@ -2645,14 +2645,14 @@ git push
 git reset --hard HEAD~1
 git push --force-with-lease
 \end{lstlisting}
-\end{infobox}
+\medskip
 
-\begin{infobox}
+\medskip
 \textbf{Q4：如何处理"Permission denied (publickey)"错误？}
 
 这通常是因为 SSH 密钥配置问题：
 
-\begin{lstlisting}[style=shellinbox]
+\begin{lstlisting}[style=shell]
 # 检查 SSH 密钥是否存在
 ls ~/.ssh/id_ed25519.pub
 
@@ -2665,7 +2665,7 @@ ssh-add ~/.ssh/id_ed25519
 # 测试连接
 ssh -T git@github.com
 \end{lstlisting}
-\end{infobox}
+\medskip
 
 \noindent\textbf{提示：}\textbf{本章小结}
 \begin{itemize}
