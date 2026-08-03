@@ -26,6 +26,10 @@
 \usepackage{caption}
 \usepackage{wrapfig}
 
+% colortbl 未安装时 \arrayrulecolor 无定义；提供 no-op 垫片保证兼容。
+% （未加载 colortbl 时 booktabs 规则线默认即为黑色，功能等价于 \arrayrulecolor{black}）
+\providecommand{\arrayrulecolor}[1]{}
+
 % ==================== 颜色定义 ====================
 \definecolor{gitorange}{RGB}{240,80,50}
 \definecolor{gitdark}{RGB}{40,40,40}
@@ -82,6 +86,7 @@
   showstringspaces=false,
   moredelim=[il][\color{gray}]{\#},
 }
+\lstdefinestyle{shellinbox}{basicstyle=\ttfamily\small, frame=none, backgroundcolor={}, breaklines=true, columns=flexible, keepspaces=true, showstringspaces=false, moredelim=[il][\color{gray}]{\#}, xleftmargin=0pt, xrightmargin=0pt, aboveskip=0pt, belowskip=0pt, framesep=0pt}
 
 % ==================== 提示框定义 ====================
 \tcbuselibrary{skins,breakable}
@@ -128,6 +133,7 @@
   \medskip
 }
 \renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
 
 % ==================== 图片包装命令 ====================
 \newcommand{\vscodeimg}[3]{%
@@ -249,8 +255,8 @@
 三者关系如图~\ref{fig:three-analogies} 所示——
 \begin{figure}[H]\centering
 \begin{tikzpicture}[
-  box/.style={draw, rounded corners=10pt, minimum width=3.5cm, minimum height=2.5cm,
-              font=\small, align=center, fill=#1, inner sep=8pt},
+  box/.style={draw, rounded corners=10pt, minimum width=3.5cm, minimum height=3.5cm,
+              font=\small, align=center, text width=4cm, fill=#1, inner sep=8pt},
   arr/.style={->, thick, >=stealth},
   node distance=2.5cm
 ]
@@ -260,22 +266,22 @@
     \faUndo~ 可随时回到过去版本\\
     \faCodeBranch~ 可在平行宇宙开发新功能
   };
-  \node[box=green!15] (github) at (5,0) {
+  \node[box=green!15] (github) at (7,0) {
     \textbf{GitHub = 云端仓库}\\
     \faCloud~ 代码存在云上\\
     \faUsers~ 多人协作的中心枢纽\\
     \faGlobe~ 换电脑也能接着干
   };
-  \node[box=orange!15] (vscode) at (2.5,-3) {
+  \node[box=orange!15] (vscode) at (3.5,-5.5) {
     \textbf{VS Code = 驾驶舱}\\
     \faMousePointer~ 点按钮代替敲命令\\
     \faEye~ 可视化看变更、冲突、历史\\
     \faMagic~ AI 帮写提交信息
   };
 
-  \draw[arr] (git) -- node[above, font=\small]{推送/拉取} (github);
-  \draw[arr] (vscode) -- node[left, font=\small]{图形化操作} (git);
-  \draw[arr] (vscode) -- node[right, font=\small]{一键同步} (github);
+  \draw[arr] (git) -- node[above, font=\small, align=center]{推送/拉取} (github);
+  \draw[arr] (vscode) -- node[left, font=\small, align=center]{图形化操作} (git);
+  \draw[arr] (vscode) -- node[right, font=\small, align=center]{一键同步} (github);
 \end{tikzpicture}
 \caption{Git、GitHub 与 VS Code 的关系——三者协作构成完整的版本控制工作流}\label{fig:three-analogies}\end{figure}
 
@@ -311,17 +317,18 @@
 
 完整路径如图~\ref{fig:learning-path} 所示——
 \begin{figure}[H]\centering
+\resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
-  phase/.style={draw, rounded corners=8pt, minimum width=4cm, minimum height=1.6cm,
-                font=\small\bfseries, align=center, fill=#1},
+  phase/.style={draw, rounded corners=8pt, minimum width=3.5cm, minimum height=1.6cm,
+                font=\small\bfseries, align=center, text width=3cm, fill=#1},
   arr/.style={->, thick, >=stealth},
   node distance=1.8cm
 ]
   \node[phase=blue!20] (p0) at (0,0) {第 0 章\\建立心智模型\\\normalfont\small(5 分钟)};
-  \node[phase=green!20] (p1) at (5,0) {第 1--3 章\\核心概念 + 基础操作\\\normalfont\small(2--3 小时)};
-  \node[phase=yellow!20] (p2) at (10,0) {第 4--5 章\\分支协作 + 远程同步\\\normalfont\small(2--3 小时)};
-  \node[phase=orange!20] (p3) at (15,0) {第 6--7 章\\VS Code 实战 + 完整流程\\\normalfont\small(1--2 小时)};
-  \node[phase=red!20] (p4) at (7.5,-3) {附录\\避坑指南 + 命令速查\\\normalfont\small(随时查阅)};
+  \node[phase=green!20] (p1) at (4,0) {第 1--3 章\\核心概念 + 基础操作\\\normalfont\small(2--3 小时)};
+  \node[phase=yellow!20] (p2) at (8,0) {第 4--5 章\\分支协作 + 远程同步\\\normalfont\small(2--3 小时)};
+  \node[phase=orange!20] (p3) at (12,0) {第 6--7 章\\VS Code 实战 + 完整流程\\\normalfont\small(1--2 小时)};
+  \node[phase=red!20] (p4) at (6,-3) {附录\\避坑指南 + 命令速查\\\normalfont\small(随时查阅)};
 
   \draw[arr] (p0) -- (p1);
   \draw[arr] (p1) -- (p2);
@@ -330,6 +337,7 @@
   \draw[arr] (p2) -- (p4);
   \draw[arr] (p3) -- (p4);
 \end{tikzpicture}
+}
 \caption{本教程学习路径——从心智模型到实战工作流的章节安排}\label{fig:learning-path}\end{figure}
 
 \begin{infobox}
@@ -343,14 +351,14 @@
 
 \section{动手实验 0：验证环境就绪}
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 打开终端（Windows 用 PowerShell，Mac/Linux 用 Terminal）
   \item 输入 \texttt{git --version}，看到版本号即表示 Git 已安装
   \item 输入 \texttt{code --version}，看到版本号即表示 VS Code 已安装且已加入 PATH
   \item 打开 VS Code，按 \texttt{Ctrl+Shift+G} 打开源代码管理视图，确认能看到界面
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \textbf{如果以上任一步失败}，请先翻到第 2 章「Git 安装与配置」完成安装，再回来继续。
 
@@ -413,10 +421,12 @@
   \item \textbf{可追溯性}：每次修改都有记录，便于审计和问题定位。
 \end{itemize}
 
-\begin{infobox}
-\textbf{版本控制的发展简史}
+版本控制的发展简史见表~\ref{tab:vc-history}。
 
-\begin{tabular}{lllp{6cm}}
+\begin{infobox}[boxsep=2mm, left=6mm, right=6mm]
+\captionof{table}{版本控制的发展简史}\label{tab:vc-history}
+
+{\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{6pt}\begin{tabularx}{\linewidth}{l l l >{\raggedright\arraybackslash}X}
 \toprule
 \textbf{时代} & \textbf{代表工具} & \textbf{年份} & \textbf{特点} \\
 \midrule
@@ -424,7 +434,7 @@
 集中式版本控制 & SVN, CVS & 2000 & 中央服务器，需联网，服务器挂了就无法工作 \\
 \textbf{分布式版本控制} & \textbf{Git, Mercurial} & \textbf{2005} & \textbf{每个克隆都是完整仓库，离线也能工作} \\
 \bottomrule
-\end{tabular}
+\end{tabularx}}
 \end{infobox}
 
 \section{Git 简介}
@@ -439,11 +449,11 @@ Git 是由 Linus Torvalds（Linux 内核的创造者）于 2005 年开发的\tex
 然而到了 2005 年，BitKeeper 与 Linux 社区之间爆发了许可证冲突，开发者失去了免费使用权，
 内核的日常开发一度陷入困境。作为回应，Linus Torvalds 仅用了大约 4 天时间就写出了 Git 的
 原型，并迅速将其用于 Linux 内核的版本管理。Git 从一开始就被设计为 BitKeeper 的自托管替代方案，
-这也解释了它为何如此强调速度、分布式与数据完整性。
+这也解释了它为何如此强调速度、分布式与数据完整性。集中式与分布式的对比如表~\ref{tab:centralized-vs-distributed} 所示：
 
-\begin{infobox}
-\textbf{集中式 vs 分布式版本控制}：
-\begin{tabular}{llp{5cm}p{5cm}}
+\begin{infobox}[boxsep=2mm, left=6mm, right=6mm]
+\captionof{table}{集中式 vs 分布式版本控制}\label{tab:centralized-vs-distributed}
+{\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{6pt}\begin{tabularx}{\linewidth}{l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
 \toprule
 \textbf{特性} & \textbf{集中式（如 SVN）} & \textbf{分布式（如 Git）} \\
 \midrule
@@ -453,7 +463,7 @@ Git 是由 Linus Torvalds（Linux 内核的创造者）于 2005 年开发的\tex
 数据完整性 & 依赖中央服务器 & SHA-1 哈希链保证 \\
 代表工具 & SVN, CVS & Git, Mercurial \\
 \bottomrule
-\end{tabular}
+\end{tabularx}}
 \end{infobox}
 
 \textbf{为什么 Git 能胜出？} 在 Git 之前，SVN 是主流。SVN 是集中式的——所有人的修改都要提交到
@@ -493,21 +503,23 @@ Git 是由 Linus Torvalds（Linux 内核的创造者）于 2005 年开发的\tex
 Git 仓库中的所有数据都存储为以下四种对象，如图~\ref{fig:git-objects} 所示：
 
 \begin{figure}[H]\centering
+\resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
   box/.style={draw, rounded corners=8pt, minimum width=3.5cm, minimum height=1.2cm,
-              font=\bfseries, align=center, fill=#1},
+              font=\bfseries, align=center, text width=3cm, fill=#1},
   arr/.style={->, thick, >=stealth},
   node distance=1.5cm
 ]
   \node[box=orange!20] (blob) {Blob\\{\small 文件内容}};
-  \node[box=green!20, right=1.5cm of blob] (tree) {Tree\\{\small 目录结构}};
-  \node[box=blue!20, right=1.5cm of tree] (commit) {Commit\\{\small 提交记录}};
-  \node[box=purple!20, right=1.5cm of commit] (branch) {Branch\\{\small 分支指针}};
+  \node[box=green!20, right=0.8cm of blob] (tree) {Tree\\{\small 目录结构}};
+  \node[box=blue!20, right=0.8cm of tree] (commit) {Commit\\{\small 提交记录}};
+  \node[box=purple!20, right=0.8cm of commit] (branch) {Branch\\{\small 分支指针}};
 
   \draw[arr] (blob) -- (tree);
   \draw[arr] (tree) -- (commit);
   \draw[arr] (commit) -- (branch);
 \end{tikzpicture}
+}
 \caption{Git 的四个核心对象——Blob、Tree、Commit、Branch 的层次关系}\label{fig:git-objects}\end{figure}
 
 \begin{itemize}[leftmargin=2em]
@@ -580,8 +592,8 @@ echo "Hello Git" | git hash-object --stdin
 \begin{figure}[H]\centering
 \resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
-  obj/.style={draw, rounded corners=5pt, minimum width=2.5cm, minimum height=0.8cm,
-              font=\small, align=center},
+  obj/.style={draw, rounded corners=5pt, minimum width=3cm, minimum height=0.8cm,
+              font=\small, align=center, text width=2.5cm},
   hash/.style={font=\tiny\ttfamily, color=gray},
   arr/.style={->, thick, >=stealth}
 ]
@@ -602,12 +614,12 @@ echo "Hello Git" | git hash-object --stdin
   };
 
   % Blob nodes
-  \node[obj, fill=orange!15] (blob1) at (-2.5,-4.5) {\textbf{Blob}\\main.py};
+  \node[obj, fill=orange!15] (blob1) at (-3.5,-4.5) {\textbf{Blob}\\main.py};
   \node[obj, fill=orange!15] (blob2) at (0,-4.5) {\textbf{Blob}\\README};
-  \node[obj, fill=orange!15] (blob3) at (2.5,-4.5) {\textbf{Blob}\\.gitignore};
+  \node[obj, fill=orange!15] (blob3) at (3.5,-4.5) {\textbf{Blob}\\.gitignore};
 
   % Parent commit
-  \node[obj, fill=blue!15, minimum height=1cm] (parent) at (4,0) {
+  \node[obj, fill=blue!15, minimum height=1cm] (parent) at (5,0) {
     \textbf{Parent Commit}\\
     abc123...
   };
@@ -625,7 +637,7 @@ echo "Hello Git" | git hash-object --stdin
 \textbf{用底层命令查看对象}：
 
 Git 提供了底层命令来直接查看四种对象的内容：
-\begin{lstlisting}[style=shell]
+\begin{lstlisting}[style=shellinbox]
 git cat-file -p HEAD          # 查看 HEAD 指向的 Commit 对象
 git cat-file -p HEAD^{tree}   # 查看该 Commit 对应的 Tree 对象
 git ls-tree HEAD              # 列出 Tree 中的文件与 Blob 映射
@@ -658,12 +670,12 @@ Git 命令分为两层\textbf{表层（Porcelain）}是你日常使用的命令�
 \section{GitHub 简介}
 
 \textbf{GitHub} 是全球最大的代码托管平台（2018 年被微软收购），截至 2025 年已有超过 1 亿开发者用户。
-它为 Git 仓库提供云端托管服务。
+它为 Git 仓库提供云端托管服务。Git 与 GitHub 的对比如表~\ref{tab:git-vs-github} 所示：
 
-\begin{infobox}
-\textbf{Git vs GitHub 的区别}（初学者常混淆）：
+\begin{infobox}[boxsep=2mm, left=6mm, right=6mm]
+\captionof{table}{Git vs GitHub 的区别}\label{tab:git-vs-github}
 
-\begin{tabular}{lp{6cm}p{6cm}}
+{\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{6pt}\begin{tabularx}{\linewidth}{l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
 \toprule
 & \textbf{Git} & \textbf{GitHub} \\
 \midrule
@@ -673,7 +685,7 @@ Git 命令分为两层\textbf{表层（Porcelain）}是你日常使用的命令�
 是否需要联网 & 不需要 & 需要 \\
 替代品 & Mercurial, SVN & GitLab, Bitbucket, Gitee \\
 \bottomrule
-\end{tabular}
+\end{tabularx}}
 \end{infobox}
 
 GitHub 提供的核心功能包括：
@@ -693,22 +705,24 @@ GitHub 提供的核心功能包括：
 这是学习 Git 最重要的一张图，请务必理解，如图~\ref{fig:three-zones} 所示：
 
 \begin{figure}[H]\centering
+\resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
-  box/.style={draw, rounded corners=8pt, minimum width=3cm, minimum height=1.5cm,
-              font=\bfseries, align=center, fill=#1},
+  box/.style={draw, rounded corners=8pt, minimum width=3.5cm, minimum height=1.5cm,
+              font=\bfseries, align=center, text width=3cm, fill=#1},
   arr/.style={->, thick, >=stealth},
   node distance=1.2cm
 ]
   \node[box=red!15] (work) {工作区\\(Working Directory)\\{\small 磁盘上的文件}};
-  \node[box=yellow!15, right=2cm of work] (stage) {暂存区\\(Staging Area / Index)\\{\small 准备提交的变更}};
-  \node[box=green!15, right=2cm of stage] (repo) {本地仓库\\(Repository)\\{\small 已提交的历史}};
-  \node[box=blue!15, right=2cm of repo] (remote) {远程仓库\\(Remote)\\{\small GitHub 上的副本}};
+  \node[box=yellow!15, right=1cm of work] (stage) {暂存区\\(Staging Area / Index)\\{\small 准备提交的变更}};
+  \node[box=green!15, right=1cm of stage] (repo) {本地仓库\\(Repository)\\{\small 已提交的历史}};
+  \node[box=blue!15, right=1cm of repo] (remote) {远程仓库\\(Remote)\\{\small GitHub 上的副本}};
 
   \draw[arr] (work) -- node[above, font=\small, align=center]{git add\\{\tiny 暂存变更}} (stage);
   \draw[arr] (stage) -- node[above, font=\small, align=center]{git commit\\{\tiny 提交快照}} (repo);
   \draw[arr] (repo) -- node[above, font=\small, align=center]{git push\\{\tiny 推送到远程}} (remote);
   \draw[arr] (remote) -- node[below, font=\small, align=center]{git pull / fetch\\{\tiny 拉取更新}} (work);
 \end{tikzpicture}
+}
 \caption{Git 三大工作区域与远程仓库——工作区、暂存区、本地仓库、远程仓库之间的数据流转}\label{fig:three-zones}\end{figure}
 
 \begin{itemize}[leftmargin=2em]
@@ -760,7 +774,7 @@ VS Code 内置了强大的 Git 集成，将上述所有操作都图形化了。�
 
 花 5 分钟亲手创建本章反复提到的「仓库」。本实验全程只使用鼠标点击，不需要输入任何命令。
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 在桌面空白处单击鼠标右键，选择「新建」$\to$「文件夹」，输入名称 \texttt{my-first-repo} 并回车。
   \item 打开 VS Code，点击菜单栏「文件」$\to$「打开文件夹…」，选中 \texttt{my-first-repo} 文件夹，点击「选择文件夹」按钮。
@@ -768,7 +782,7 @@ VS Code 内置了强大的 Git 集成，将上述所有操作都图形化了。�
   \item 在左侧资源管理器点击「新建文件」图标，输入文件名 \texttt{hello.txt} 并回车；在编辑器中输入文字 \texttt{Hello Git!}，按 \texttt{Ctrl+S} 保存。
   \item 回到源代码管理视图，观察 \texttt{hello.txt} 出现在「更改」列表中并带有 \texttt{U} 标记（Untracked，未跟踪），说明仓库已初始化成功。
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \begin{tipbox}
 \textbf{成功标志}：打开 Windows 资源管理器进入 \texttt{my-first-repo} 文件夹，点击菜单栏「查看」$\to$ 勾选「隐藏的项目」，可以看到 \texttt{.git} 文件夹。
@@ -807,7 +821,7 @@ Git 是一个持续更新的工具，新版本通常修复了旧版本的 bug �
 
 \subsection{Windows 系统}
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 访问 Git 官网 \url{https://git-scm.com/download/win}，下载 Windows 安装包。
   \item 运行安装程序，大部分选项保持默认即可。\textbf{建议注意以下选项}：
@@ -821,7 +835,7 @@ Git 是一个持续更新的工具，新版本通常修复了旧版本的 bug �
   \end{itemize}
   \item 安装完成后，打开 PowerShell，验证安装：
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \begin{lstlisting}[style=shell]
 # 验证 Git 安装
@@ -922,11 +936,12 @@ git config --list
 
 \subsection{配置层级}
 
-Git 配置有三个层级，优先级从高到低：
+Git 配置有三个层级，优先级从高到低：（见表~\ref{tab:config-levels}）
 
 \begin{table}[h]
 \centering
-\begin{tabular}{llp{6cm}}
+\caption{Git 配置的三个层级}\label{tab:config-levels}
+\begin{tabularx}{\textwidth}{l l >{\raggedright\arraybackslash}X}
 \toprule
 \textbf{层级} & \textbf{存储位置} & \textbf{作用范围} \\
 \midrule
@@ -934,7 +949,7 @@ Git 配置有三个层级，优先级从高到低：
 \texttt{--global} & \texttt{\~{}/.gitconfig} & 当前用户所有仓库生效 \\
 \texttt{--system} & \texttt{/etc/gitconfig} & 系统所有用户生效 \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 \begin{tipbox}
@@ -960,13 +975,13 @@ VS Code 之所以成为最受欢迎的代码编辑器之一，除了免费开源
 \end{itemize}
 \end{infobox}
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 访问 \url{https://code.visualstudio.com/} 下载并安装。
   \item 安装时勾选"将 Code 注册为受支持的文件类型的编辑器"和"添加到 PATH"。
   \item 安装完成后，可以通过命令行 \texttt{code .} 在当前目录打开 VS Code。
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \section{配置 GitHub 认证}
 
@@ -986,7 +1001,7 @@ gh auth login
 
 \subsection{方式二：Personal Access Token}
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 登录 GitHub $\to$ Settings $\to$ Developer settings $\to$
         Personal access tokens $\to$ Tokens (classic)。
@@ -994,7 +1009,7 @@ gh auth login
   \item 复制生成的 token，在 Git 提示输入密码时粘贴。
   \item 建议使用 \texttt{git credential-manager} 保存凭据，避免重复输入。
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \begin{tipbox}
 VS Code 首次连接 GitHub 时，会自动弹出登录提示，引导你通过浏览器完成 OAuth 认证。
@@ -1005,11 +1020,11 @@ VS Code 首次连接 GitHub 时，会自动弹出登录提示，引导你通过�
 
 SSH 密钥认证是最安全、最方便的 GitHub 认证方式。配置一次后，无需每次都输入密码。
 
-\begin{stepbox}
 \textbf{配置 SSH 密钥}：
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 打开终端，生成 SSH 密钥（使用你的 GitHub 邮箱）：
-\begin{lstlisting}[style=shell]
+\begin{lstlisting}[style=shellinbox]
 # 生成 SSH 密钥（使用你的 GitHub 邮箱）
 ssh-keygen -t ed25519 -C "your.email@example.com"
 
@@ -1017,7 +1032,7 @@ ssh-keygen -t ed25519 -C "your.email@example.com"
 # 输入并确认一个密码（可选，但推荐）
 \end{lstlisting}
   \item 将 SSH 密钥添加到 ssh-agent：
-\begin{lstlisting}[style=shell]
+\begin{lstlisting}[style=shellinbox]
 # 启动 ssh-agent
 eval "$(ssh-agent -s)"
 
@@ -1025,7 +1040,7 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 \end{lstlisting}
   \item 复制公钥内容：
-\begin{lstlisting}[style=shell]
+\begin{lstlisting}[style=shellinbox]
 # 复制公钥到剪贴板（macOS）
 pbcopy < ~/.ssh/id_ed25519.pub
 
@@ -1041,12 +1056,12 @@ cat ~/.ssh/id_ed25519.pub
     \item 点击 "Add SSH key"
   \end{itemize}
   \item 测试连接：
-\begin{lstlisting}[style=shell]
+\begin{lstlisting}[style=shellinbox]
 ssh -T git@github.com
 # 看到 "Hi username! You've successfully authenticated..." 表示成功
 \end{lstlisting}
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \begin{keybox}
 \textbf{HTTPS vs SSH 对比}：
@@ -1062,7 +1077,7 @@ ssh -T git@github.com
 花 5 分钟完成身份配置并添加 SSH 密钥。本实验全程只使用鼠标和浏览器，不需要输入命令。
 配置后你的每次提交都会正确显示作者身份，并且可以用 SSH 免密访问 GitHub。
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 打开 VS Code，按 \texttt{Ctrl+O}（打开文件），在输入框粘贴路径 \texttt{C:\textbackslash Users\textbackslash 你的用户名\textbackslash .gitconfig}，点击「打开」；若提示文件不存在，点击弹窗中的「创建文件」按钮。
   \item 在文件中输入以下内容（把名字和邮箱换成你自己的，邮箱须与 GitHub 账号一致），按 \texttt{Ctrl+S} 保存：
@@ -1075,7 +1090,7 @@ ssh -T git@github.com
   \item 点击绿色按钮「New SSH key」，在 Title 输入框输入 \texttt{My Laptop}。
   \item 在 Key 输入框粘贴第 2 章生成的公钥内容（\texttt{id\_ed25519.pub} 文件的内容），点击「Add SSH key」完成添加。
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \begin{tipbox}
 \textbf{成功标志}：SSH 密钥页面出现名为 \texttt{My Laptop} 的密钥记录；
@@ -1169,11 +1184,12 @@ git clone -b develop https://github.com/username/repo-name.git
 
 \section{文件状态与跟踪}
 
-Git 中的文件有四种状态，理解这些状态是掌握 Git 的基础：
+Git 中的文件有四种状态，理解这些状态是掌握 Git 的基础：如表~\ref{tab:file-states} 所示。
 
 \begin{table}[h]
 \centering
-\begin{tabular}{llp{7cm}}
+\caption{Git 中文件的四种状态}\label{tab:file-states}
+\begin{tabularx}{\textwidth}{l l >{\raggedright\arraybackslash}X}
 \toprule
 \textbf{状态} & \textbf{标记} & \textbf{含义} \\
 \midrule
@@ -1182,15 +1198,16 @@ Unmodified（未修改） & 无标记 & 已跟踪，且自上次提交后未修�
 Modified（已修改） & \texttt{M} & 已跟踪，但内容已被修改，需要决定是否提交 \\
 Staged（已暂存） & \texttt{A} / \texttt{M} & 修改已放入暂存区，将在下次提交时保存 \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 文件状态的生命周期如图~\ref{fig:file-states} 所示：
 
 \begin{figure}[H]\centering
+\resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
   state/.style={draw, rounded corners=8pt, minimum width=3.5cm, minimum height=1.2cm,
-                font=\small, align=center, fill=#1},
+                font=\small, align=center, text width=3cm, fill=#1},
   arr/.style={->, thick, >=stealth},
   node distance=1.5cm
 ]
@@ -1208,10 +1225,11 @@ Staged（已暂存） & \texttt{A} / \texttt{M} & 修改已放入暂存区，将
   \draw[arr] (unmodified) -- ++(4,0) -- ++(0,2.5) -- node[right, font=\small]{删除文件} (untracked);
 
   % Legend
-  \node[anchor=west, font=\small] at (0,-3.5) {
+  \node[anchor=west, font=\small, text width=14cm, align=center] at (0,-3.5) {
     \textbf{说明}：新建文件 → git add → 已暂存 → git commit → 未修改 → 编辑 → 已修改 → git add → ...
   };
 \end{tikzpicture}
+}
 \caption{文件状态生命周期——未跟踪、已修改、已暂存、未修改之间的转换关系}\label{fig:file-states}\end{figure}
 
 \section{日常工作流：status → add → commit}
@@ -1400,7 +1418,7 @@ git diff abc123^..abc123
 
 \begin{infobox}
 \textbf{diff 的输出格式解读}：
-\begin{lstlisting}[style=shell]
+\begin{lstlisting}[style=shellinbox]
 --- a/filename.txt      # 旧版本（减号开头）
 +++ b/filename.txt      # 新版本（加号开头）
 @@ -1,5 +1,7 @@         # 变更位置：从第1行开始，旧版本5行，新版本7行
@@ -1597,7 +1615,7 @@ logs/
 
 继续使用实验 1 的仓库，花 5 分钟走一遍本章的核心循环「修改 $\to$ 暂存 $\to$ 提交」。全程只使用鼠标点击。
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 在 VS Code 中打开 \texttt{hello.txt}，把内容修改为 \texttt{Hello Git, version 2!}，按 \texttt{Ctrl+S} 保存。
   \item 按 \texttt{Ctrl+Shift+G} 打开源代码管理视图，观察 \texttt{hello.txt} 出现在「更改」列表中并带有 \texttt{M} 标记（Modified，已修改）。
@@ -1605,7 +1623,7 @@ logs/
   \item 点击 \texttt{hello.txt} 右侧的「+」按钮，将其暂存；文件随即移动到「暂存的更改」区域。
   \item 在顶部提交信息输入框中输入 \texttt{更新问候语}，点击「提交」按钮（或按 \texttt{Ctrl+Enter}）；提交后「暂存的更改」区域清空，说明变更已保存进本地历史。
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \begin{tipbox}
 \textbf{成功标志}：点击源代码管理视图标题栏的「提交历史图」图标，能看到一条提交记录 \texttt{更新问候语}。
@@ -1699,9 +1717,12 @@ git branch -D feature-login
 
 \subsection{分支命名规范}
 
+常见的分支命名规范如表~\ref{tab:branch-naming} 所示：
+
 \begin{table}[h]
 \centering
-\begin{tabular}{llp{5cm}}
+\caption{常见分支命名规范}\label{tab:branch-naming}
+\begin{tabularx}{\textwidth}{l l >{\raggedright\arraybackslash}X}
 \toprule
 \textbf{类型} & \textbf{命名示例} & \textbf{用途} \\
 \midrule
@@ -1710,7 +1731,7 @@ git branch -D feature-login
 热修复 & \texttt{hotfix/security-patch} & 紧急修复生产环境 \\
 发布分支 & \texttt{release/v1.2.0} & 准备发布版本 \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 \section{合并分支}
@@ -1793,7 +1814,7 @@ VS Code 还提供了专门的三方合并编辑器，如图~\ref{fig:merge-edito
 
 \subsection{解决冲突的完整步骤}
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 合并后，VS Code 自动打开有冲突的文件。
   \item 在源代码管理视图中，冲突文件标记为 \texttt{!}（感叹号）。
@@ -1803,7 +1824,7 @@ VS Code 还提供了专门的三方合并编辑器，如图~\ref{fig:merge-edito
   \item 在源代码管理视图中，点击冲突文件旁的 "+" 暂存（标记为已解决）。
   \item 输入提交信息，点击"提交"完成合并。
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \begin{lstlisting}[style=shell]
 # 查看哪些文件有冲突
@@ -1835,7 +1856,7 @@ Rebase（变基，把提交历史整理成一条直线）是另一种整合分�
 \resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
   commit/.style={draw, circle, minimum size=0.4cm, fill=#1},
-  label/.style={font=\small},
+  label/.style={font=\small, text width=3cm, align=center},
   arr/.style={->, thick, >=stealth}
 ]
   % Merge 示意图
@@ -1981,7 +2002,7 @@ GitFlow 更适合有严格发布流程的大型项目。
 
 花 5 分钟体验一次「分支上开发 $\to$ 合并 $\to$ 解决冲突」的完整过程。全程只使用鼠标点击，不需要输入任何命令。
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 点击 VS Code 底部状态栏左侧的分支名称 \texttt{main}，在弹出的菜单中点击「Create new branch…」，输入 \texttt{feature/hello} 并回车（此时已自动切换到新分支）。
   \item 修改 \texttt{hello.txt}，把内容改为 \texttt{feature 分支的内容}，保存；点击文件旁「+」暂存，输入提交信息 \texttt{feature 修改}，点击「提交」。
@@ -1989,7 +2010,7 @@ GitFlow 更适合有严格发布流程的大型项目。
   \item 点击源代码管理视图顶部的「…」菜单 $\to$「分支」$\to$「合并分支…」，选择 \texttt{feature/hello} 并确认；由于两个分支都改了同一行，VS Code 弹出冲突提示，文件标记变为 \texttt{!}。
   \item 打开冲突文件，在冲突区域上方点击「Accept Both Changes」按钮，按 \texttt{Ctrl+S} 保存，点击文件旁「+」暂存，输入提交信息 \texttt{解决冲突}，点击「提交」完成合并。
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \begin{tipbox}
 \textbf{成功标志}：底部状态栏分支名为 \texttt{main}，源代码管理视图无待处理更改。
@@ -2108,7 +2129,7 @@ git config --global pull.rebase true
 
 \subsection{方式一：先在 GitHub 创建，再克隆到本地}
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 登录 GitHub，点击右上角 "+" $\to$ "New repository"。
   \item 填写仓库名称、描述，选择 Public 或 Private。
@@ -2116,16 +2137,16 @@ git config --global pull.rebase true
   \item 点击 "Create repository"。
   \item 在本地克隆：\texttt{git clone https://github.com/username/repo.git}
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \subsection{方式二：先在本地创建，再推送到 GitHub}
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 在 GitHub 上创建空仓库（\textbf{不勾选} README、.gitignore 等）。
   \item 在本地项目中初始化 Git 并推送：
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \begin{lstlisting}[style=shell]
 cd my-project
@@ -2142,7 +2163,7 @@ VS Code 可以一步完成"初始化 + 提交 + 创建远程仓库 + 推送"，�
 
 \vscodeimg{images/13-modified-files.png}{VS Code 一键发布——对于未初始化的项目，VS Code 提供"初始化仓库"按钮，之后可以直接"发布到 GitHub"}{fig:modified-files-publish}
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 打开源代码管理视图。
   \item 点击 \textbf{"Initialize Repository"}（初始化仓库）。
@@ -2152,7 +2173,7 @@ VS Code 可以一步完成"初始化 + 提交 + 创建远程仓库 + 推送"，�
   \item 选择后，VS Code 会自动在 GitHub 上创建仓库并推送代码。
   \item 点击通知中的 "Open on GitHub" 查看你的仓库。
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \section{Pull Request（PR）}
 
@@ -2183,7 +2204,7 @@ PR 流程解决了这些问题：
 
 \subsection{PR 的标准流程}
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 从 \texttt{main} 创建功能分支：\texttt{git switch -c feature/xxx}
   \item 在功能分支上开发并提交。
@@ -2195,7 +2216,7 @@ PR 流程解决了这些问题：
   \item 审查通过后，点击 "Merge pull request" 合并。
   \item 删除已合并的功能分支。
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \begin{tipbox}
 \textbf{好的 PR 描述应包含}：
@@ -2212,9 +2233,10 @@ PR 流程解决了这些问题：
 Pull Request 的完整工作流程如图~\ref{fig:pr-workflow} 所示：
 
 \begin{figure}[H]\centering
+\resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
   box/.style={draw, rounded corners=5pt, minimum width=3.5cm, minimum height=1cm,
-              font=\small, align=center, fill=#1},
+              font=\small, align=center, text width=3cm, fill=#1},
   arr/.style={->, thick, >=stealth},
   node distance=1.2cm
 ]
@@ -2234,13 +2256,14 @@ Pull Request 的完整工作流程如图~\ref{fig:pr-workflow} 所示：
   \draw[arr] (review) -- node[above, font=\small]{通过} (merge);
   \draw[arr, dashed] (merge) -- node[left, font=\small]{循环} (main);
 \end{tikzpicture}
+}
 \caption{Pull Request 完整工作流程——从创建分支到代码审查再到合并的协作循环}\label{fig:pr-workflow}\end{figure}
 
 \section{Fork 与贡献开源项目}
 
 如果你想为别人的开源项目贡献代码：
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 在 GitHub 上点击 "Fork"（复制别人的仓库到自己账号下），将项目复制到你自己的账号下。
   \item 克隆你的 Fork：\texttt{git clone https://github.com/your-username/repo.git}
@@ -2249,7 +2272,7 @@ Pull Request 的完整工作流程如图~\ref{fig:pr-workflow} 所示：
   \item 推送到你的 Fork：\texttt{git push origin feature-branch}
   \item 在原项目上创建 Pull Request。
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \begin{tipbox}
 \textbf{本章小结}
@@ -2268,7 +2291,7 @@ Pull Request 的完整工作流程如图~\ref{fig:pr-workflow} 所示：
 
 花 5 分钟把本地分支推送到 GitHub，并在网页上创建一次 Pull Request。全程只使用鼠标点击，首次推送时按浏览器提示完成登录即可。
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 点击底部状态栏分支名 $\to$「Create new branch…」，输入 \texttt{feature/pr-demo} 并回车（从 \texttt{main} 创建新分支）。
   \item 点击资源管理器「新建文件」图标创建 \texttt{README.md}，输入 \texttt{我的第一个 GitHub 仓库}，保存；点击文件旁「+」暂存，输入提交信息 \texttt{添加 README}，点击「提交」。
@@ -2276,7 +2299,7 @@ Pull Request 的完整工作流程如图~\ref{fig:pr-workflow} 所示：
   \item 在弹出菜单中选择「登录到 GitHub」，按提示在浏览器中点击「Authorize」完成授权；随后选择「发布到 GitHub 公开仓库」或「发布到 GitHub 私有仓库」并确认。
   \item 点击右下角通知中的「Open on GitHub」按钮，在仓库页面点击「Compare \& pull request」，填写标题 \texttt{添加 README}，点击「Create pull request」；再点击「Merge pull request」$\to$「Confirm merge」完成合并。
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \begin{tipbox}
 \textbf{成功标志}：GitHub 仓库页面的 \texttt{main} 分支中出现了 \texttt{README.md}，Pull Request 状态显示为 Merged（已合并）。
@@ -2361,15 +2384,15 @@ VS Code 支持精细到\textbf{代码行}级别的暂存——一个文件中改
 
 \vscodeimg{images/23-stage-lines.png}{部分暂存——打开文件 Diff 后，可以选择特定的代码块进行暂存，而非整个文件}{fig:stage-lines}
 
-\begin{stepbox}
 \textbf{部分暂存操作步骤}：
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 点击文件名打开 Diff 视图。
   \item 选中你要暂存的代码行（或用鼠标拖选区域）。
   \item 右键 $\to$ "Stage Selected Ranges"。
   \item 只有选中的代码块会被暂存，其余修改保留在"更改"中。
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \section{同步操作详解}
 
@@ -2397,7 +2420,7 @@ VS Code 的 Timeline 视图（默认在资源管理器底部）显示当前文�
 
 当你需要切换分支但当前有未完成的修改时，Stash 功能可以临时保存你的工作：
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 打开命令面板（\texttt{Ctrl + Shift + P}）。
   \item 输入 "stash"，选择相应操作：
@@ -2409,7 +2432,7 @@ VS Code 的 Timeline 视图（默认在资源管理器底部）显示当前文�
     \item \textbf{Git: Stash Drop}：删除最近一次暂存。
   \end{itemize}
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \section{Git Blame 与行内注释}
 
@@ -2419,10 +2442,11 @@ VS Code 的 Timeline 视图（默认在资源管理器底部）显示当前文�
 
 \section{推荐扩展}
 
-以下扩展可以显著增强 VS Code 中的 Git 体验：
+以下扩展可以显著增强 VS Code 中的 Git 体验：（见表~\ref{tab:recommended-extensions}）
 
 \begin{table}[H]
 \centering
+\caption{推荐 VS Code 扩展}\label{tab:recommended-extensions}
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\textwidth}{l l X}
 \toprule
@@ -2451,7 +2475,7 @@ Git History & Don Jayamanne & 查看文件/行的详细提交历史 \\
 
 花 5 分钟把本章的核心功能串起来走一遍：建分支、编辑、部分暂存、提交、查看历史图。全程只使用鼠标点击，不需要输入任何命令。
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 点击底部状态栏分支名 $\to$「Create new branch…」，输入 \texttt{feature/sc-practice} 并回车。
   \item 在 \texttt{hello.txt} 末尾新增两行内容并保存；点击文件名打开 Diff 视图，用鼠标选中其中一行，右键 $\to$「Stage Selected Ranges」，实现只暂存这一行（部分暂存）。
@@ -2459,7 +2483,7 @@ Git History & Don Jayamanne & 查看文件/行的详细提交历史 \\
   \item 点击源代码管理视图标题栏的「提交历史图」图标，在图形视图中观察 \texttt{feature/sc-practice} 相对 \texttt{main} 的分叉和本次提交。
   \item 在左侧资源管理器底部打开 Timeline（时间线）视图，点击 \texttt{hello.txt}，可以看到该文件从实验 1 到现在的每一次提交记录。
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \begin{tipbox}
 \textbf{成功标志}：Timeline 视图中 \texttt{hello.txt} 列出了多条提交记录，最近一条是 \texttt{练习部分暂存}。
@@ -2550,7 +2574,7 @@ git push origin --delete feature/user-auth
 
 \vscodeimg{images/20-view-changes.png}{开发中的 VS Code——编辑器 Gutter 实时显示你的修改（绿色/蓝色/红色标记），源代码管理视图列出所有变更文件}{fig:view-changes}
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item \textbf{同步}：点击底部状态栏的同步按钮，确保本地是最新的。
   \item \textbf{创建分支}：点击底部状态栏的分支名称 $\to$ "Create new branch" $\to$
@@ -2565,7 +2589,7 @@ git push origin --delete feature/user-auth
   \item \textbf{合并}：在 GitHub 网页上点击 "Merge"，或扩展中操作。
   \item \textbf{清理}：使用命令面板 \texttt{Git: Delete Branch} 删除已合并的分支。
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \section{日常开发的最佳实践}
 
@@ -2600,7 +2624,7 @@ git push origin --delete feature/user-auth
 
 首先，立即更换泄露的密钥！然后使用以下命令从历史中彻底删除：
 
-\begin{lstlisting}[style=shell]
+\begin{lstlisting}[style=shellinbox]
 # 安装 filter-repo 工具（如果尚未安装）
 # pip install git-filter-repo
 
@@ -2617,7 +2641,7 @@ git push origin --force --all
 \begin{infobox}
 \textbf{Q2：我删除了一个文件，还能恢复吗？}
 
-\begin{lstlisting}[style=shell]
+\begin{lstlisting}[style=shellinbox]
 # 查看文件历史，找到删除前的最后一次提交
 git log --diff-filter=D --summary
 
@@ -2632,7 +2656,7 @@ git checkout HEAD~1 -- filename.txt
 \begin{infobox}
 \textbf{Q3：如何撤销已经 push 的提交？}
 
-\begin{lstlisting}[style=shell]
+\begin{lstlisting}[style=shellinbox]
 # 方法 1：使用 revert（推荐，不会改写历史）
 git revert abc123
 git push
@@ -2648,7 +2672,7 @@ git push --force-with-lease
 
 这通常是因为 SSH 密钥配置问题：
 
-\begin{lstlisting}[style=shell]
+\begin{lstlisting}[style=shellinbox]
 # 检查 SSH 密钥是否存在
 ls ~/.ssh/id_ed25519.pub
 
@@ -2679,7 +2703,7 @@ ssh -T git@github.com
 
 花 5 分钟走一遍真实的 Feature Branch 全流程：同步 $\to$ 建分支 $\to$ 多次小提交 $\to$ 推送 $\to$ PR $\to$ 合并 $\to$ 清理。全程只使用鼠标点击。
 
-\begin{stepbox}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 确认底部状态栏分支名为 \texttt{main}，点击底部状态栏的「同步更改」旋转箭头图标拉取最新（若提示没有远程仓库，说明仓库尚未发布，直接跳到第 2 步）。
   \item 点击底部状态栏分支名 $\to$「Create new branch…」，输入 \texttt{feature/e2e-flow} 并回车。
@@ -2687,7 +2711,7 @@ ssh -T git@github.com
   \item 点击「…」菜单 $\to$「推送」，将 \texttt{feature/e2e-flow} 推送到 GitHub（若未发布过仓库，按提示登录并在公开/私有仓库中选择一个）。
   \item 点击通知中的「Open on GitHub」，点击「Compare \& pull request」创建并合并 PR；回到 VS Code 点击「同步更改」，再点击「…」菜单 $\to$「分支」$\to$「删除分支…」选择 \texttt{feature/e2e-flow}，完成清理。
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \begin{tipbox}
 \textbf{成功标志}：GitHub 上 \texttt{main} 分支包含 \texttt{e2e.md}，且本地 \texttt{feature/e2e-flow} 分支已删除，整个 Feature Branch 流程闭环完成。
@@ -2699,11 +2723,12 @@ ssh -T git@github.com
 \chapter{新手避坑指南}
 
 本章收集了新手最容易踩的坑，按“场景—错误做法—正确做法—后果对比”四列呈现。
-建议先通读一遍建立印象，遇到对应场景再回来查阅细节。
+建议先通读一遍建立印象，遇到对应场景再回来查阅细节。完整对照见表~\ref{tab:pitfalls}。
 
 \section{核心避坑表}
 
 \begin{longtable}{p{2.8cm} p{3.5cm} p{3.5cm} p{4.5cm}}
+\caption{新手避坑速查表}\label{tab:pitfalls}\\
 \toprule
 \textbf{场景} & \textbf{错误做法} & \textbf{正确做法} & \textbf{后果对比} \\
 \midrule
@@ -2737,19 +2762,20 @@ ssh -T git@github.com
 \end{enumerate}
 \end{infobox}
 
-\begin{stepbox}
 \textbf{实战演练：误删提交后恢复}
+\medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 运行 \texttt{git reflog}，找到误删前的那一行（如 \texttt{HEAD@{2}: commit: 添加登录功能}）
   \item 复制该行开头的哈希值（如 \texttt{a1b2c3d}）
   \item 运行 \texttt{git reset --hard a1b2c3d}
   \item 确认代码恢复，如已推送需 \texttt{git push --force-with-lease}
 \end{enumerate}
-\end{stepbox}
+\medskip
 
 \section{常见报错与一键修复}
 
 \begin{longtable}{p{4cm} p{10cm}}
+\caption{常见报错与一键修复}\label{tab:common-errors}\\
 \toprule
 \textbf{报错信息} & \textbf{原因与修复} \\
 \midrule
@@ -2784,7 +2810,7 @@ fatal: not a git repository & 当前目录非 Git 仓库。修复：\texttt{cd <
 \resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
   zone/.style={draw, rounded corners=12pt, minimum width=3.2cm, minimum height=2.8cm,
-               font=\small, align=center, fill=#1, inner sep=10pt},
+               font=\small, align=center, fill=#1, inner sep=10pt, text width=2.8cm},
   arr/.style={->, very thick, >=stealth, shorten >=4pt, shorten <=4pt},
   cmd/.style={font=\small\ttfamily, text=blue!70!black},
   node distance=2.2cm
@@ -2825,7 +2851,7 @@ fatal: not a git repository & 当前目录非 Git 仓库。修复：\texttt{cd <
   \draw[arr, bend right=15] (stage) to node[below, cmd]{git restore --staged} (work);
 
   % Legend
-  \node[anchor=north, font=\small, text=gray] at (7.5,-3.5) {
+  \node[anchor=north, font=\small, text=gray, text width=14cm, align=center] at (7.5,-3.5) {
     $\rightarrow$ 正向操作（创建历史） \quad
     $\leftarrow$ 逆向操作（撤销/同步） \quad
     $\triangle$ \texttt{git reset --hard} 危险：直接丢弃改动
@@ -2851,18 +2877,18 @@ fatal: not a git repository & 当前目录非 Git 仓库。修复：\texttt{cd <
   node distance=1.2cm
 ]
   % ===== MERGE =====
-  \node[anchor=south, font=\bfseries\large, text=blue!70!black] at (4,5) {Merge：保留完整历史，产生菱形合并节点};
+  \node[anchor=south, font=\bfseries\large, text=blue!70!black] at (6,5) {Merge：保留完整历史，产生菱形合并节点};
 
   % main branch
   \node[commit=blue!60, tag] (m1) at (0,4) {A};
-  \node[commit=blue!60, tag] (m2) at (2,4) {B};
-  \node[commit=blue!60, tag] (m3) at (4,4) {C};
-  \node[commit=red!60, tag] (m4) at (6,4) {M};
-  \node[commit=blue!60, tag] (m5) at (8,4) {D};
+  \node[commit=blue!60, tag] (m2) at (3,4) {B};
+  \node[commit=blue!60, tag] (m3) at (6,4) {C};
+  \node[commit=red!60, tag] (m4) at (9,4) {M};
+  \node[commit=blue!60, tag] (m5) at (12,4) {D};
 
   % feature branch
-  \node[commit=green!60, tag] (f1) at (4,2.5) {E};
-  \node[commit=green!60, tag] (f2) at (6,2.5) {F};
+  \node[commit=green!60, tag] (f1) at (6,2.5) {E};
+  \node[commit=green!60, tag] (f2) at (9,2.5) {F};
 
   \draw[arr] (m1) -- (m2);
   \draw[arr] (m2) -- (m3);
@@ -2876,16 +2902,16 @@ fatal: not a git repository & 当前目录非 Git 仓库。修复：\texttt{cd <
   \node[tag] at (f1) {feature};
 
   % ===== REBASE =====
-  \node[anchor=south, font=\bfseries\large, text=orange!70!black] at (4,-1) {Rebase：线性历史，无合并节点};
+  \node[anchor=south, font=\bfseries\large, text=orange!70!black] at (6,-1) {Rebase：线性历史，无合并节点};
 
   % main branch (same)
   \node[commit=blue!60, tag] (rm1) at (0,-2) {A};
-  \node[commit=blue!60, tag] (rm2) at (2,-2) {B};
-  \node[commit=blue!60, tag] (rm3) at (4,-2) {C};
+  \node[commit=blue!60, tag] (rm2) at (3,-2) {B};
+  \node[commit=blue!60, tag] (rm3) at (6,-2) {C};
 
   % feature rebased onto main
-  \node[commit=green!60, tag] (rf1) at (6,-2) {E'};
-  \node[commit=green!60, tag] (rf2) at (8,-2) {F'};
+  \node[commit=green!60, tag] (rf1) at (9,-2) {E'};
+  \node[commit=green!60, tag] (rf2) at (12,-2) {F'};
 
   \draw[arr] (rm1) -- (rm2);
   \draw[arr] (rm2) -- (rm3);
@@ -2915,7 +2941,7 @@ fatal: not a git repository & 当前目录非 Git 仓库。修复：\texttt{cd <
 \resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
   box/.style={draw, rounded corners=8pt, minimum width=3.5cm, minimum height=1.6cm,
-              font=\small, align=center, fill=#1, inner sep=6pt},
+              font=\small, align=center, fill=#1, inner sep=6pt, text width=3cm},
   arr/.style={->, thick, >=stealth},
   cmd/.style={font=\small\ttfamily, text=blue!70!black},
   node distance=1.8cm
@@ -2977,7 +3003,7 @@ fatal: not a git repository & 当前目录非 Git 仓库。修复：\texttt{cd <
   \draw[arr, dashed] (sync) -- node[left, cmd]{循环} (local);
 
   % Legend
-  \node[anchor=north, font=\small, text=gray] at (6,-4.5) {
+  \node[anchor=north, font=\small, text=gray, text width=14cm, align=center] at (6,-4.5) {
     \faArrowRight~ 正向流程 \quad
     \faArrowLeft~ 反向同步 \quad
     \faMagic~ VS Code 中全程鼠标操作，无需记命令
@@ -2995,6 +3021,7 @@ fatal: not a git repository & 当前目录非 Git 仓库。修复：\texttt{cd <
 \section{基础操作}
 
 \begin{longtable}{p{5.5cm} p{9cm}}
+\caption{基础操作命令速查}\label{tab:cmd-basic}\\
 \toprule
 \textbf{命令} & \textbf{说明} \\
 \midrule
@@ -3021,6 +3048,7 @@ fatal: not a git repository & 当前目录非 Git 仓库。修复：\texttt{cd <
 \section{分支操作}
 
 \begin{longtable}{p{5.5cm} p{9cm}}
+\caption{分支操作命令速查}\label{tab:cmd-branch}\\
 \toprule
 \textbf{命令} & \textbf{说明} \\
 \midrule
@@ -3042,6 +3070,7 @@ fatal: not a git repository & 当前目录非 Git 仓库。修复：\texttt{cd <
 \section{远程操作}
 
 \begin{longtable}{p{5.5cm} p{9cm}}
+\caption{远程仓库操作命令速查}\label{tab:cmd-remote}\\
 \toprule
 \textbf{命令} & \textbf{说明} \\
 \midrule
@@ -3063,6 +3092,7 @@ fatal: not a git repository & 当前目录非 Git 仓库。修复：\texttt{cd <
 \section{撤销操作}
 
 \begin{longtable}{p{5.5cm} p{9cm}}
+\caption{撤销与回退命令速查}\label{tab:cmd-undo}\\
 \toprule
 \textbf{命令} & \textbf{说明} \\
 \midrule
@@ -3084,6 +3114,7 @@ fatal: not a git repository & 当前目录非 Git 仓库。修复：\texttt{cd <
 \section{VS Code 快捷键速查}
 
 \begin{longtable}{p{4cm} p{5cm} p{5.5cm}}
+\caption{VS Code 常用快捷键速查}\label{tab:vscode-shortcuts}\\
 \toprule
 \textbf{快捷键} & \textbf{命令} & \textbf{说明} \\
 \midrule
