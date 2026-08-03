@@ -1,0 +1,72 @@
+# F4 — Scope Fidelity 证据
+
+**日期**: 2026-08-02
+**检查对象**: `git diff Git_VSCode_Tutorial.tex`
+**结论**: PASS — 改动严格限定在 TikZ 示意图代码块（节点 style / 坐标 / resizebox），未越界。
+
+## 1. 改动文件范围（git diff --stat）
+
+修改文件：`Git_VSCode_Tutorial.tex`（+47/-47 行级变动，实际为 tikz 块内改动）
+其余被列出文件：`.omo/boulder.json`（计划状态）、`.aux/.log/.toc`（编译产物）、`.pdf`（构建输出）——均非正文源文件。
+`images/` 目录无改动，无新增/删除图片。
+
+## 2. 章节结构 — 无新增
+
+`git diff | grep -E "^\+.*\\(section|subsection|chapter)"` → **0 匹配**
+章节标题行在 diff 中仅作为上下文出现，无 `+` 前缀修改。
+
+## 3. tcolorbox 环境 / 颜色定义 — 无新增
+
+`git diff | grep -E "^\+.*\\(newenvironment|newtcolorbox|definecolor)"` → **0 匹配**
+5 个 box 环境与全部颜色定义未被动过。
+
+## 4. 宏包 — 无新增
+
+`git diff | grep -E "^\+.*\\usepackage"` → **0 匹配**
+未引入任何新宏包。
+
+## 5. 图片命令 / 位图引用 — 无改动
+
+`git diff | grep -E "^\+.*\\vscodeimg"` → **0 匹配**
+`\vscodeimg` / `\vscodeimgnarrow` / `\vscodeimgwide` 及全部位图引用未改动。
+caption / `\label` 行仅作为 diff 上下文出现，无 `+` 前缀（`^\+.*\\(caption|label\{)` → 0 匹配）。
+
+## 6. 正文文字 — 无改动
+
+所有新增行（`+` 前缀）逐行审阅，全部为 tikzpicture 内部内容：
+- `\resizebox{\textwidth}{!}{...}` 包裹层
+- TikZ `.style` 定义（`phase/.style`、`obj/.style`、`box/.style`、`commit`、`label/.style`）
+- 节点参数：`fill=`、`font=`、`align=center`、`text width=`、`rounded corners=`、`inner sep=`
+- 节点坐标：`at (x,y)`、`right=... of ...`、`anchor=...`
+
+删除行（`-` 前缀）与新增行一一对称，同样全部落在 tikz 区域内。
+
+## 7. 改动 hunk 分布（全部位于 figure/tikzpicture 区）
+
+`@@` 头涉及的正文锚点（上下文行）：
+- 行 250-336：git objects / 学习路径 / 三大区域示意图
+- 行 495-516：git 四对象示意图
+- 行 583-616：hash-object 相关示意
+- 行 695-719：GitHub 功能示意
+- 行 1190-1224：Staged 状态示意
+- 行 1838：Rebase 示意
+- 行 2214-2248：PR workflow 示意图
+- 行 2787-2899 / 2918 / 2980：错误速查表区域示意
+
+全部 hunk 均在既有 figure 环境内，未增删 figure 计数，未增删章节，未改 box 环境与颜色。
+
+## 验证命令清单
+
+```powershell
+git diff --stat
+git diff Git_VSCode_Tutorial.tex | grep -E "^\+.*\\(section|subsection|chapter)"   # 0
+git diff Git_VSCode_Tutorial.tex | grep -E "^\+.*\\(newenvironment|newtcolorbox|definecolor)"  # 0
+git diff Git_VSCode_Tutorial.tex | grep -E "^\+.*\\usepackage"   # 0
+git diff Git_VSCode_Tutorial.tex | grep -E "^\+.*\\vscodeimg"    # 0
+git diff -U0 Git_VSCode_Tutorial.tex   # 逐行审阅
+```
+
+## 判定
+
+Scope fidelity **通过**：改动仅触及 tikzpicture 代码块（节点 style、坐标、resizebox），
+未改章节结构、tcolorbox 定义、颜色定义、图片命令、位图引用与正文文字，未引入新宏包。

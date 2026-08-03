@@ -1,0 +1,871 @@
+﻿diff --git a/Git_VSCode_Tutorial.tex b/Git_VSCode_Tutorial.tex
+index e944553..d1d3855 100644
+--- a/Git_VSCode_Tutorial.tex
++++ b/Git_VSCode_Tutorial.tex
+@@ -26,6 +26,10 @@
+ \usepackage{caption}
+ \usepackage{wrapfig}
+ 
++% colortbl 鏈畨瑁呮椂 \arrayrulecolor 鏃犲畾涔夛紱鎻愪緵 no-op 鍨墖淇濊瘉鍏煎銆?+% 锛堟湭鍔犺浇 colortbl 鏃?booktabs 瑙勫垯绾块粯璁ゅ嵆涓洪粦鑹诧紝鍔熻兘绛変环浜?\arrayrulecolor{black}锛?+\providecommand{\arrayrulecolor}[1]{}
++
+ % ==================== 棰滆壊瀹氫箟 ====================
+ \definecolor{gitorange}{RGB}{240,80,50}
+ \definecolor{gitdark}{RGB}{40,40,40}
+@@ -82,6 +86,7 @@
+   showstringspaces=false,
+   moredelim=[il][\color{gray}]{\#},
+ }
++\lstdefinestyle{shellinbox}{basicstyle=\ttfamily\small, frame=none, backgroundcolor={}, breaklines=true, columns=flexible, keepspaces=true, showstringspaces=false, moredelim=[il][\color{gray}]{\#}, xleftmargin=0pt, xrightmargin=0pt, aboveskip=0pt, belowskip=0pt, framesep=0pt}
+ 
+ % ==================== 鎻愮ず妗嗗畾涔?====================
+ \tcbuselibrary{skins,breakable}
+@@ -128,6 +133,7 @@
+   \medskip
+ }
+ \renewcommand{\figurename}{鍥緘
++\renewcommand{\tablename}{琛▆
+ 
+ % ==================== 鍥剧墖鍖呰鍛戒护 ====================
+ \newcommand{\vscodeimg}[3]{%
+@@ -249,8 +255,8 @@
+ 涓夎€呭叧绯诲鍥緙\ref{fig:three-analogies} 鎵€绀衡€斺€? \begin{figure}[H]\centering
+ \begin{tikzpicture}[
+-  box/.style={draw, rounded corners=10pt, minimum width=3.5cm, minimum height=2.5cm,
+-              font=\small, align=center, fill=#1, inner sep=8pt},
++  box/.style={draw, rounded corners=10pt, minimum width=3.5cm, minimum height=3.5cm,
++              font=\small, align=center, text width=4cm, fill=#1, inner sep=8pt},
+   arr/.style={->, thick, >=stealth},
+   node distance=2.5cm
+ ]
+@@ -260,22 +266,22 @@
+     \faUndo~ 鍙殢鏃跺洖鍒拌繃鍘荤増鏈琝\
+     \faCodeBranch~ 鍙湪骞宠瀹囧畽寮€鍙戞柊鍔熻兘
+   };
+-  \node[box=green!15] (github) at (5,0) {
++  \node[box=green!15] (github) at (7,0) {
+     \textbf{GitHub = 浜戠浠撳簱}\\
+     \faCloud~ 浠ｇ爜瀛樺湪浜戜笂\\
+     \faUsers~ 澶氫汉鍗忎綔鐨勪腑蹇冩灑绾絓\
+     \faGlobe~ 鎹㈢數鑴戜篃鑳芥帴鐫€骞?   };
+-  \node[box=orange!15] (vscode) at (2.5,-3) {
++  \node[box=orange!15] (vscode) at (3.5,-5.5) {
+     \textbf{VS Code = 椹鹃┒鑸眪\\
+     \faMousePointer~ 鐐规寜閽唬鏇挎暡鍛戒护\\
+     \faEye~ 鍙鍖栫湅鍙樻洿銆佸啿绐併€佸巻鍙瞈\
+     \faMagic~ AI 甯啓鎻愪氦淇℃伅
+   };
+ 
+-  \draw[arr] (git) -- node[above, font=\small]{鎺ㄩ€?鎷夊彇} (github);
+-  \draw[arr] (vscode) -- node[left, font=\small]{鍥惧舰鍖栨搷浣渳 (git);
+-  \draw[arr] (vscode) -- node[right, font=\small]{涓€閿悓姝 (github);
++  \draw[arr] (git) -- node[above, font=\small, align=center]{鎺ㄩ€?鎷夊彇} (github);
++  \draw[arr] (vscode) -- node[left, font=\small, align=center]{鍥惧舰鍖栨搷浣渳 (git);
++  \draw[arr] (vscode) -- node[right, font=\small, align=center]{涓€閿悓姝 (github);
+ \end{tikzpicture}
+ \caption{Git銆丟itHub 涓?VS Code 鐨勫叧绯烩€斺€斾笁鑰呭崗浣滄瀯鎴愬畬鏁寸殑鐗堟湰鎺у埗宸ヤ綔娴亇\label{fig:three-analogies}\end{figure}
+ 
+@@ -311,17 +317,18 @@
+ 
+ 瀹屾暣璺緞濡傚浘~\ref{fig:learning-path} 鎵€绀衡€斺€? \begin{figure}[H]\centering
++\resizebox{\textwidth}{!}{%
+ \begin{tikzpicture}[
+-  phase/.style={draw, rounded corners=8pt, minimum width=4cm, minimum height=1.6cm,
+-                font=\small\bfseries, align=center, fill=#1},
++  phase/.style={draw, rounded corners=8pt, minimum width=3.5cm, minimum height=1.6cm,
++                font=\small\bfseries, align=center, text width=3cm, fill=#1},
+   arr/.style={->, thick, >=stealth},
+   node distance=1.8cm
+ ]
+   \node[phase=blue!20] (p0) at (0,0) {绗?0 绔燶\寤虹珛蹇冩櫤妯″瀷\\\normalfont\small(5 鍒嗛挓)};
+-  \node[phase=green!20] (p1) at (5,0) {绗?1--3 绔燶\鏍稿績姒傚康 + 鍩虹鎿嶄綔\\\normalfont\small(2--3 灏忔椂)};
+-  \node[phase=yellow!20] (p2) at (10,0) {绗?4--5 绔燶\鍒嗘敮鍗忎綔 + 杩滅▼鍚屾\\\normalfont\small(2--3 灏忔椂)};
+-  \node[phase=orange!20] (p3) at (15,0) {绗?6--7 绔燶\VS Code 瀹炴垬 + 瀹屾暣娴佺▼\\\normalfont\small(1--2 灏忔椂)};
+-  \node[phase=red!20] (p4) at (7.5,-3) {闄勫綍\\閬垮潙鎸囧崡 + 鍛戒护閫熸煡\\\normalfont\small(闅忔椂鏌ラ槄)};
++  \node[phase=green!20] (p1) at (4,0) {绗?1--3 绔燶\鏍稿績姒傚康 + 鍩虹鎿嶄綔\\\normalfont\small(2--3 灏忔椂)};
++  \node[phase=yellow!20] (p2) at (8,0) {绗?4--5 绔燶\鍒嗘敮鍗忎綔 + 杩滅▼鍚屾\\\normalfont\small(2--3 灏忔椂)};
++  \node[phase=orange!20] (p3) at (12,0) {绗?6--7 绔燶\VS Code 瀹炴垬 + 瀹屾暣娴佺▼\\\normalfont\small(1--2 灏忔椂)};
++  \node[phase=red!20] (p4) at (6,-3) {闄勫綍\\閬垮潙鎸囧崡 + 鍛戒护閫熸煡\\\normalfont\small(闅忔椂鏌ラ槄)};
+ 
+   \draw[arr] (p0) -- (p1);
+   \draw[arr] (p1) -- (p2);
+@@ -330,6 +337,7 @@
+   \draw[arr] (p2) -- (p4);
+   \draw[arr] (p3) -- (p4);
+ \end{tikzpicture}
++}
+ \caption{鏈暀绋嬪涔犺矾寰勨€斺€斾粠蹇冩櫤妯″瀷鍒板疄鎴樺伐浣滄祦鐨勭珷鑺傚畨鎺拀\label{fig:learning-path}\end{figure}
+ 
+ \begin{infobox}
+@@ -343,14 +351,14 @@
+ 
+ \section{鍔ㄦ墜瀹為獙 0锛氶獙璇佺幆澧冨氨缁獇
+ 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 鎵撳紑缁堢锛圵indows 鐢?PowerShell锛孧ac/Linux 鐢?Terminal锛?   \item 杈撳叆 \texttt{git --version}锛岀湅鍒扮増鏈彿鍗宠〃绀?Git 宸插畨瑁?   \item 杈撳叆 \texttt{code --version}锛岀湅鍒扮増鏈彿鍗宠〃绀?VS Code 宸插畨瑁呬笖宸插姞鍏?PATH
+   \item 鎵撳紑 VS Code锛屾寜 \texttt{Ctrl+Shift+G} 鎵撳紑婧愪唬鐮佺鐞嗚鍥撅紝纭鑳界湅鍒扮晫闈? \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \textbf{濡傛灉浠ヤ笂浠讳竴姝ュけ璐锛岃鍏堢炕鍒扮 2 绔犮€孏it 瀹夎涓庨厤缃€嶅畬鎴愬畨瑁咃紝鍐嶅洖鏉ョ户缁€? 
+@@ -413,10 +421,12 @@
+   \item \textbf{鍙拷婧€锛氭瘡娆′慨鏀归兘鏈夎褰曪紝渚夸簬瀹¤鍜岄棶棰樺畾浣嶃€? \end{itemize}
+ 
+-\begin{infobox}
+-\textbf{鐗堟湰鎺у埗鐨勫彂灞曠畝鍙瞹
++鐗堟湰鎺у埗鐨勫彂灞曠畝鍙茶琛▇\ref{tab:vc-history}銆? 
+-\begin{tabular}{lllp{6cm}}
++\begin{infobox}[boxsep=2mm, left=6mm, right=6mm]
++\captionof{table}{鐗堟湰鎺у埗鐨勫彂灞曠畝鍙瞹\label{tab:vc-history}
++
++{\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{6pt}\begin{tabularx}{\linewidth}{l l l >{\raggedright\arraybackslash}X}
+ \toprule
+ \textbf{鏃朵唬} & \textbf{浠ｈ〃宸ュ叿} & \textbf{骞翠唤} & \textbf{鐗圭偣} \\
+ \midrule
+@@ -424,7 +434,7 @@
+ 闆嗕腑寮忕増鏈帶鍒?& SVN, CVS & 2000 & 涓ぎ鏈嶅姟鍣紝闇€鑱旂綉锛屾湇鍔″櫒鎸備簡灏辨棤娉曞伐浣?\\
+ \textbf{鍒嗗竷寮忕増鏈帶鍒秨 & \textbf{Git, Mercurial} & \textbf{2005} & \textbf{姣忎釜鍏嬮殕閮芥槸瀹屾暣浠撳簱锛岀绾夸篃鑳藉伐浣渳 \\
+ \bottomrule
+-\end{tabular}
++\end{tabularx}}
+ \end{infobox}
+ 
+ \section{Git 绠€浠媫
+@@ -439,11 +449,11 @@ Git 鏄敱 Linus Torvalds锛圠inux 鍐呮牳鐨勫垱閫犺€咃級浜?2005 骞村紑鍙戠殑\tex
+ 鐒惰€屽埌浜?2005 骞达紝BitKeeper 涓?Linux 绀惧尯涔嬮棿鐖嗗彂浜嗚鍙瘉鍐茬獊锛屽紑鍙戣€呭け鍘讳簡鍏嶈垂浣跨敤鏉冿紝
+ 鍐呮牳鐨勬棩甯稿紑鍙戜竴搴﹂櫡鍏ュ洶澧冦€備綔涓哄洖搴旓紝Linus Torvalds 浠呯敤浜嗗ぇ绾?4 澶╂椂闂村氨鍐欏嚭浜?Git 鐨? 鍘熷瀷锛屽苟杩呴€熷皢鍏剁敤浜?Linux 鍐呮牳鐨勭増鏈鐞嗐€侴it 浠庝竴寮€濮嬪氨琚璁′负 BitKeeper 鐨勮嚜鎵樼鏇夸唬鏂规锛?-杩欎篃瑙ｉ噴浜嗗畠涓轰綍濡傛寮鸿皟閫熷害銆佸垎甯冨紡涓庢暟鎹畬鏁存€с€?+杩欎篃瑙ｉ噴浜嗗畠涓轰綍濡傛寮鸿皟閫熷害銆佸垎甯冨紡涓庢暟鎹畬鏁存€с€傞泦涓紡涓庡垎甯冨紡鐨勫姣斿琛▇\ref{tab:centralized-vs-distributed} 鎵€绀猴細
+ 
+-\begin{infobox}
+-\textbf{闆嗕腑寮?vs 鍒嗗竷寮忕増鏈帶鍒秨锛?-\begin{tabular}{llp{5cm}p{5cm}}
++\begin{infobox}[boxsep=2mm, left=6mm, right=6mm]
++\captionof{table}{闆嗕腑寮?vs 鍒嗗竷寮忕増鏈帶鍒秨\label{tab:centralized-vs-distributed}
++{\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{6pt}\begin{tabularx}{\linewidth}{l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+ \toprule
+ \textbf{鐗规€ & \textbf{闆嗕腑寮忥紙濡?SVN锛墋 & \textbf{鍒嗗竷寮忥紙濡?Git锛墋 \\
+ \midrule
+@@ -453,7 +463,7 @@ Git 鏄敱 Linus Torvalds锛圠inux 鍐呮牳鐨勫垱閫犺€咃級浜?2005 骞村紑鍙戠殑\tex
+ 鏁版嵁瀹屾暣鎬?& 渚濊禆涓ぎ鏈嶅姟鍣?& SHA-1 鍝堝笇閾句繚璇?\\
+ 浠ｈ〃宸ュ叿 & SVN, CVS & Git, Mercurial \\
+ \bottomrule
+-\end{tabular}
++\end{tabularx}}
+ \end{infobox}
+ 
+ \textbf{涓轰粈涔?Git 鑳借儨鍑猴紵} 鍦?Git 涔嬪墠锛孲VN 鏄富娴併€係VN 鏄泦涓紡鐨勨€斺€旀墍鏈変汉鐨勪慨鏀归兘瑕佹彁浜ゅ埌
+@@ -493,21 +503,23 @@ Git 鏄敱 Linus Torvalds锛圠inux 鍐呮牳鐨勫垱閫犺€咃級浜?2005 骞村紑鍙戠殑\tex
+ Git 浠撳簱涓殑鎵€鏈夋暟鎹兘瀛樺偍涓轰互涓嬪洓绉嶅璞★紝濡傚浘~\ref{fig:git-objects} 鎵€绀猴細
+ 
+ \begin{figure}[H]\centering
++\resizebox{\textwidth}{!}{%
+ \begin{tikzpicture}[
+   box/.style={draw, rounded corners=8pt, minimum width=3.5cm, minimum height=1.2cm,
+-              font=\bfseries, align=center, fill=#1},
++              font=\bfseries, align=center, text width=3cm, fill=#1},
+   arr/.style={->, thick, >=stealth},
+   node distance=1.5cm
+ ]
+   \node[box=orange!20] (blob) {Blob\\{\small 鏂囦欢鍐呭}};
+-  \node[box=green!20, right=1.5cm of blob] (tree) {Tree\\{\small 鐩綍缁撴瀯}};
+-  \node[box=blue!20, right=1.5cm of tree] (commit) {Commit\\{\small 鎻愪氦璁板綍}};
+-  \node[box=purple!20, right=1.5cm of commit] (branch) {Branch\\{\small 鍒嗘敮鎸囬拡}};
++  \node[box=green!20, right=0.8cm of blob] (tree) {Tree\\{\small 鐩綍缁撴瀯}};
++  \node[box=blue!20, right=0.8cm of tree] (commit) {Commit\\{\small 鎻愪氦璁板綍}};
++  \node[box=purple!20, right=0.8cm of commit] (branch) {Branch\\{\small 鍒嗘敮鎸囬拡}};
+ 
+   \draw[arr] (blob) -- (tree);
+   \draw[arr] (tree) -- (commit);
+   \draw[arr] (commit) -- (branch);
+ \end{tikzpicture}
++}
+ \caption{Git 鐨勫洓涓牳蹇冨璞♀€斺€擝lob銆乀ree銆丆ommit銆丅ranch 鐨勫眰娆″叧绯粆\label{fig:git-objects}\end{figure}
+ 
+ \begin{itemize}[leftmargin=2em]
+@@ -580,8 +592,8 @@ echo "Hello Git" | git hash-object --stdin
+ \begin{figure}[H]\centering
+ \resizebox{\textwidth}{!}{%
+ \begin{tikzpicture}[
+-  obj/.style={draw, rounded corners=5pt, minimum width=2.5cm, minimum height=0.8cm,
+-              font=\small, align=center},
++  obj/.style={draw, rounded corners=5pt, minimum width=3cm, minimum height=0.8cm,
++              font=\small, align=center, text width=2.5cm},
+   hash/.style={font=\tiny\ttfamily, color=gray},
+   arr/.style={->, thick, >=stealth}
+ ]
+@@ -602,12 +614,12 @@ echo "Hello Git" | git hash-object --stdin
+   };
+ 
+   % Blob nodes
+-  \node[obj, fill=orange!15] (blob1) at (-2.5,-4.5) {\textbf{Blob}\\main.py};
++  \node[obj, fill=orange!15] (blob1) at (-3.5,-4.5) {\textbf{Blob}\\main.py};
+   \node[obj, fill=orange!15] (blob2) at (0,-4.5) {\textbf{Blob}\\README};
+-  \node[obj, fill=orange!15] (blob3) at (2.5,-4.5) {\textbf{Blob}\\.gitignore};
++  \node[obj, fill=orange!15] (blob3) at (3.5,-4.5) {\textbf{Blob}\\.gitignore};
+ 
+   % Parent commit
+-  \node[obj, fill=blue!15, minimum height=1cm] (parent) at (4,0) {
++  \node[obj, fill=blue!15, minimum height=1cm] (parent) at (5,0) {
+     \textbf{Parent Commit}\\
+     abc123...
+   };
+@@ -625,7 +637,7 @@ echo "Hello Git" | git hash-object --stdin
+ \textbf{鐢ㄥ簳灞傚懡浠ゆ煡鐪嬪璞锛? 
+ Git 鎻愪緵浜嗗簳灞傚懡浠ゆ潵鐩存帴鏌ョ湅鍥涚瀵硅薄鐨勫唴瀹癸細
+-\begin{lstlisting}[style=shell]
++\begin{lstlisting}[style=shellinbox]
+ git cat-file -p HEAD          # 鏌ョ湅 HEAD 鎸囧悜鐨?Commit 瀵硅薄
+ git cat-file -p HEAD^{tree}   # 鏌ョ湅璇?Commit 瀵瑰簲鐨?Tree 瀵硅薄
+ git ls-tree HEAD              # 鍒楀嚭 Tree 涓殑鏂囦欢涓?Blob 鏄犲皠
+@@ -658,12 +670,12 @@ Git 鍛戒护鍒嗕负涓ゅ眰\textbf{琛ㄥ眰锛圥orcelain锛墋鏄綘鏃ュ父浣跨敤鐨勫懡浠? \section{GitHub 绠€浠媫
+ 
+ \textbf{GitHub} 鏄叏鐞冩渶澶х殑浠ｇ爜鎵樼骞冲彴锛?018 骞磋寰蒋鏀惰喘锛夛紝鎴嚦 2025 骞村凡鏈夎秴杩?1 浜垮紑鍙戣€呯敤鎴枫€?-瀹冧负 Git 浠撳簱鎻愪緵浜戠鎵樼鏈嶅姟銆?+瀹冧负 Git 浠撳簱鎻愪緵浜戠鎵樼鏈嶅姟銆侴it 涓?GitHub 鐨勫姣斿琛▇\ref{tab:git-vs-github} 鎵€绀猴細
+ 
+-\begin{infobox}
+-\textbf{Git vs GitHub 鐨勫尯鍒珆锛堝垵瀛﹁€呭父娣锋穯锛夛細
++\begin{infobox}[boxsep=2mm, left=6mm, right=6mm]
++\captionof{table}{Git vs GitHub 鐨勫尯鍒珆\label{tab:git-vs-github}
+ 
+-\begin{tabular}{lp{6cm}p{6cm}}
++{\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{6pt}\begin{tabularx}{\linewidth}{l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+ \toprule
+ & \textbf{Git} & \textbf{GitHub} \\
+ \midrule
+@@ -673,7 +685,7 @@ Git 鍛戒护鍒嗕负涓ゅ眰\textbf{琛ㄥ眰锛圥orcelain锛墋鏄綘鏃ュ父浣跨敤鐨勫懡浠? 鏄惁闇€瑕佽仈缃?& 涓嶉渶瑕?& 闇€瑕?\\
+ 鏇夸唬鍝?& Mercurial, SVN & GitLab, Bitbucket, Gitee \\
+ \bottomrule
+-\end{tabular}
++\end{tabularx}}
+ \end{infobox}
+ 
+ GitHub 鎻愪緵鐨勬牳蹇冨姛鑳藉寘鎷細
+@@ -693,22 +705,24 @@ GitHub 鎻愪緵鐨勬牳蹇冨姛鑳藉寘鎷細
+ 杩欐槸瀛︿範 Git 鏈€閲嶈鐨勪竴寮犲浘锛岃鍔″繀鐞嗚В锛屽鍥緙\ref{fig:three-zones} 鎵€绀猴細
+ 
+ \begin{figure}[H]\centering
++\resizebox{\textwidth}{!}{%
+ \begin{tikzpicture}[
+-  box/.style={draw, rounded corners=8pt, minimum width=3cm, minimum height=1.5cm,
+-              font=\bfseries, align=center, fill=#1},
++  box/.style={draw, rounded corners=8pt, minimum width=3.5cm, minimum height=1.5cm,
++              font=\bfseries, align=center, text width=3cm, fill=#1},
+   arr/.style={->, thick, >=stealth},
+   node distance=1.2cm
+ ]
+   \node[box=red!15] (work) {宸ヤ綔鍖篭\(Working Directory)\\{\small 纾佺洏涓婄殑鏂囦欢}};
+-  \node[box=yellow!15, right=2cm of work] (stage) {鏆傚瓨鍖篭\(Staging Area / Index)\\{\small 鍑嗗鎻愪氦鐨勫彉鏇磢};
+-  \node[box=green!15, right=2cm of stage] (repo) {鏈湴浠撳簱\\(Repository)\\{\small 宸叉彁浜ょ殑鍘嗗彶}};
+-  \node[box=blue!15, right=2cm of repo] (remote) {杩滅▼浠撳簱\\(Remote)\\{\small GitHub 涓婄殑鍓湰}};
++  \node[box=yellow!15, right=1cm of work] (stage) {鏆傚瓨鍖篭\(Staging Area / Index)\\{\small 鍑嗗鎻愪氦鐨勫彉鏇磢};
++  \node[box=green!15, right=1cm of stage] (repo) {鏈湴浠撳簱\\(Repository)\\{\small 宸叉彁浜ょ殑鍘嗗彶}};
++  \node[box=blue!15, right=1cm of repo] (remote) {杩滅▼浠撳簱\\(Remote)\\{\small GitHub 涓婄殑鍓湰}};
+ 
+   \draw[arr] (work) -- node[above, font=\small, align=center]{git add\\{\tiny 鏆傚瓨鍙樻洿}} (stage);
+   \draw[arr] (stage) -- node[above, font=\small, align=center]{git commit\\{\tiny 鎻愪氦蹇収}} (repo);
+   \draw[arr] (repo) -- node[above, font=\small, align=center]{git push\\{\tiny 鎺ㄩ€佸埌杩滅▼}} (remote);
+   \draw[arr] (remote) -- node[below, font=\small, align=center]{git pull / fetch\\{\tiny 鎷夊彇鏇存柊}} (work);
+ \end{tikzpicture}
++}
+ \caption{Git 涓夊ぇ宸ヤ綔鍖哄煙涓庤繙绋嬩粨搴撯€斺€斿伐浣滃尯銆佹殏瀛樺尯銆佹湰鍦颁粨搴撱€佽繙绋嬩粨搴撲箣闂寸殑鏁版嵁娴佽浆}\label{fig:three-zones}\end{figure}
+ 
+ \begin{itemize}[leftmargin=2em]
+@@ -760,7 +774,7 @@ VS Code 鍐呯疆浜嗗己澶х殑 Git 闆嗘垚锛屽皢涓婅堪鎵€鏈夋搷浣滈兘鍥惧舰鍖栦簡銆? 
+ 鑺?5 鍒嗛挓浜叉墜鍒涘缓鏈珷鍙嶅鎻愬埌鐨勩€屼粨搴撱€嶃€傛湰瀹為獙鍏ㄧ▼鍙娇鐢ㄩ紶鏍囩偣鍑伙紝涓嶉渶瑕佽緭鍏ヤ换浣曞懡浠ゃ€? 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 鍦ㄦ闈㈢┖鐧藉鍗曞嚮榧犳爣鍙抽敭锛岄€夋嫨銆屾柊寤恒€?\to$銆屾枃浠跺す銆嶏紝杈撳叆鍚嶇О \texttt{my-first-repo} 骞跺洖杞︺€?   \item 鎵撳紑 VS Code锛岀偣鍑昏彍鍗曟爮銆屾枃浠躲€?\to$銆屾墦寮€鏂囦欢澶光€︺€嶏紝閫変腑 \texttt{my-first-repo} 鏂囦欢澶癸紝鐐瑰嚮銆岄€夋嫨鏂囦欢澶广€嶆寜閽€?@@ -768,7 +782,7 @@ VS Code 鍐呯疆浜嗗己澶х殑 Git 闆嗘垚锛屽皢涓婅堪鎵€鏈夋搷浣滈兘鍥惧舰鍖栦簡銆?   \item 鍦ㄥ乏渚ц祫婧愮鐞嗗櫒鐐瑰嚮銆屾柊寤烘枃浠躲€嶅浘鏍囷紝杈撳叆鏂囦欢鍚?\texttt{hello.txt} 骞跺洖杞︼紱鍦ㄧ紪杈戝櫒涓緭鍏ユ枃瀛?\texttt{Hello Git!}锛屾寜 \texttt{Ctrl+S} 淇濆瓨銆?   \item 鍥炲埌婧愪唬鐮佺鐞嗚鍥撅紝瑙傚療 \texttt{hello.txt} 鍑虹幇鍦ㄣ€屾洿鏀广€嶅垪琛ㄤ腑骞跺甫鏈?\texttt{U} 鏍囪锛圲ntracked锛屾湭璺熻釜锛夛紝璇存槑浠撳簱宸插垵濮嬪寲鎴愬姛銆? \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \begin{tipbox}
+ \textbf{鎴愬姛鏍囧織}锛氭墦寮€ Windows 璧勬簮绠＄悊鍣ㄨ繘鍏?\texttt{my-first-repo} 鏂囦欢澶癸紝鐐瑰嚮鑿滃崟鏍忋€屾煡鐪嬨€?\to$ 鍕鹃€夈€岄殣钘忕殑椤圭洰銆嶏紝鍙互鐪嬪埌 \texttt{.git} 鏂囦欢澶广€?@@ -807,7 +821,7 @@ Git 鏄竴涓寔缁洿鏂扮殑宸ュ叿锛屾柊鐗堟湰閫氬父淇浜嗘棫鐗堟湰鐨?bug 
+ 
+ \subsection{Windows 绯荤粺}
+ 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 璁块棶 Git 瀹樼綉 \url{https://git-scm.com/download/win}锛屼笅杞?Windows 瀹夎鍖呫€?   \item 杩愯瀹夎绋嬪簭锛屽ぇ閮ㄥ垎閫夐」淇濇寔榛樿鍗冲彲銆俓textbf{寤鸿娉ㄦ剰浠ヤ笅閫夐」}锛?@@ -821,7 +835,7 @@ Git 鏄竴涓寔缁洿鏂扮殑宸ュ叿锛屾柊鐗堟湰閫氬父淇浜嗘棫鐗堟湰鐨?bug 
+   \end{itemize}
+   \item 瀹夎瀹屾垚鍚庯紝鎵撳紑 PowerShell锛岄獙璇佸畨瑁咃細
+ \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \begin{lstlisting}[style=shell]
+ # 楠岃瘉 Git 瀹夎
+@@ -922,11 +936,12 @@ git config --list
+ 
+ \subsection{閰嶇疆灞傜骇}
+ 
+-Git 閰嶇疆鏈変笁涓眰绾э紝浼樺厛绾т粠楂樺埌浣庯細
++Git 閰嶇疆鏈変笁涓眰绾э紝浼樺厛绾т粠楂樺埌浣庯細锛堣琛▇\ref{tab:config-levels}锛? 
+ \begin{table}[h]
+ \centering
+-\begin{tabular}{llp{6cm}}
++\caption{Git 閰嶇疆鐨勪笁涓眰绾\label{tab:config-levels}
++\begin{tabularx}{\textwidth}{l l >{\raggedright\arraybackslash}X}
+ \toprule
+ \textbf{灞傜骇} & \textbf{瀛樺偍浣嶇疆} & \textbf{浣滅敤鑼冨洿} \\
+ \midrule
+@@ -934,7 +949,7 @@ Git 閰嶇疆鏈変笁涓眰绾э紝浼樺厛绾т粠楂樺埌浣庯細
+ \texttt{--global} & \texttt{\~{}/.gitconfig} & 褰撳墠鐢ㄦ埛鎵€鏈変粨搴撶敓鏁?\\
+ \texttt{--system} & \texttt{/etc/gitconfig} & 绯荤粺鎵€鏈夌敤鎴风敓鏁?\\
+ \bottomrule
+-\end{tabular}
++\end{tabularx}
+ \end{table}
+ 
+ \begin{tipbox}
+@@ -960,13 +975,13 @@ VS Code 涔嬫墍浠ユ垚涓烘渶鍙楁杩庣殑浠ｇ爜缂栬緫鍣ㄤ箣涓€锛岄櫎浜嗗厤璐瑰紑婧? \end{itemize}
+ \end{infobox}
+ 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 璁块棶 \url{https://code.visualstudio.com/} 涓嬭浇骞跺畨瑁呫€?   \item 瀹夎鏃跺嬀閫?灏?Code 娉ㄥ唽涓哄彈鏀寔鐨勬枃浠剁被鍨嬬殑缂栬緫鍣?鍜?娣诲姞鍒?PATH"銆?   \item 瀹夎瀹屾垚鍚庯紝鍙互閫氳繃鍛戒护琛?\texttt{code .} 鍦ㄥ綋鍓嶇洰褰曟墦寮€ VS Code銆? \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \section{閰嶇疆 GitHub 璁よ瘉}
+ 
+@@ -986,7 +1001,7 @@ gh auth login
+ 
+ \subsection{鏂瑰紡浜岋細Personal Access Token}
+ 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 鐧诲綍 GitHub $\to$ Settings $\to$ Developer settings $\to$
+         Personal access tokens $\to$ Tokens (classic)銆?@@ -994,7 +1009,7 @@ gh auth login
+   \item 澶嶅埗鐢熸垚鐨?token锛屽湪 Git 鎻愮ず杈撳叆瀵嗙爜鏃剁矘璐淬€?   \item 寤鸿浣跨敤 \texttt{git credential-manager} 淇濆瓨鍑嵁锛岄伩鍏嶉噸澶嶈緭鍏ャ€? \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \begin{tipbox}
+ VS Code 棣栨杩炴帴 GitHub 鏃讹紝浼氳嚜鍔ㄥ脊鍑虹櫥褰曟彁绀猴紝寮曞浣犻€氳繃娴忚鍣ㄥ畬鎴?OAuth 璁よ瘉銆?@@ -1005,11 +1020,11 @@ VS Code 棣栨杩炴帴 GitHub 鏃讹紝浼氳嚜鍔ㄥ脊鍑虹櫥褰曟彁绀猴紝寮曞浣犻€氳繃
+ 
+ SSH 瀵嗛挜璁よ瘉鏄渶瀹夊叏銆佹渶鏂逛究鐨?GitHub 璁よ瘉鏂瑰紡銆傞厤缃竴娆″悗锛屾棤闇€姣忔閮借緭鍏ュ瘑鐮併€? 
+-\begin{stepbox}
+ \textbf{閰嶇疆 SSH 瀵嗛挜}锛?+\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 鎵撳紑缁堢锛岀敓鎴?SSH 瀵嗛挜锛堜娇鐢ㄤ綘鐨?GitHub 閭锛夛細
+-\begin{lstlisting}[style=shell]
++\begin{lstlisting}[style=shellinbox]
+ # 鐢熸垚 SSH 瀵嗛挜锛堜娇鐢ㄤ綘鐨?GitHub 閭锛? ssh-keygen -t ed25519 -C "your.email@example.com"
+ 
+@@ -1017,7 +1032,7 @@ ssh-keygen -t ed25519 -C "your.email@example.com"
+ # 杈撳叆骞剁‘璁や竴涓瘑鐮侊紙鍙€夛紝浣嗘帹鑽愶級
+ \end{lstlisting}
+   \item 灏?SSH 瀵嗛挜娣诲姞鍒?ssh-agent锛?-\begin{lstlisting}[style=shell]
++\begin{lstlisting}[style=shellinbox]
+ # 鍚姩 ssh-agent
+ eval "$(ssh-agent -s)"
+ 
+@@ -1025,7 +1040,7 @@ eval "$(ssh-agent -s)"
+ ssh-add ~/.ssh/id_ed25519
+ \end{lstlisting}
+   \item 澶嶅埗鍏挜鍐呭锛?-\begin{lstlisting}[style=shell]
++\begin{lstlisting}[style=shellinbox]
+ # 澶嶅埗鍏挜鍒板壀璐存澘锛坢acOS锛? pbcopy < ~/.ssh/id_ed25519.pub
+ 
+@@ -1041,12 +1056,12 @@ cat ~/.ssh/id_ed25519.pub
+     \item 鐐瑰嚮 "Add SSH key"
+   \end{itemize}
+   \item 娴嬭瘯杩炴帴锛?-\begin{lstlisting}[style=shell]
++\begin{lstlisting}[style=shellinbox]
+ ssh -T git@github.com
+ # 鐪嬪埌 "Hi username! You've successfully authenticated..." 琛ㄧず鎴愬姛
+ \end{lstlisting}
+ \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \begin{keybox}
+ \textbf{HTTPS vs SSH 瀵规瘮}锛?@@ -1062,7 +1077,7 @@ ssh -T git@github.com
+ 鑺?5 鍒嗛挓瀹屾垚韬唤閰嶇疆骞舵坊鍔?SSH 瀵嗛挜銆傛湰瀹為獙鍏ㄧ▼鍙娇鐢ㄩ紶鏍囧拰娴忚鍣紝涓嶉渶瑕佽緭鍏ュ懡浠ゃ€? 閰嶇疆鍚庝綘鐨勬瘡娆℃彁浜ら兘浼氭纭樉绀轰綔鑰呰韩浠斤紝骞朵笖鍙互鐢?SSH 鍏嶅瘑璁块棶 GitHub銆? 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 鎵撳紑 VS Code锛屾寜 \texttt{Ctrl+O}锛堟墦寮€鏂囦欢锛夛紝鍦ㄨ緭鍏ユ绮樿创璺緞 \texttt{C:\textbackslash Users\textbackslash 浣犵殑鐢ㄦ埛鍚峔textbackslash .gitconfig}锛岀偣鍑汇€屾墦寮€銆嶏紱鑻ユ彁绀烘枃浠朵笉瀛樺湪锛岀偣鍑诲脊绐椾腑鐨勩€屽垱寤烘枃浠躲€嶆寜閽€?   \item 鍦ㄦ枃浠朵腑杈撳叆浠ヤ笅鍐呭锛堟妸鍚嶅瓧鍜岄偖绠辨崲鎴愪綘鑷繁鐨勶紝閭椤讳笌 GitHub 璐﹀彿涓€鑷达級锛屾寜 \texttt{Ctrl+S} 淇濆瓨锛?@@ -1075,7 +1090,7 @@ ssh -T git@github.com
+   \item 鐐瑰嚮缁胯壊鎸夐挳銆孨ew SSH key銆嶏紝鍦?Title 杈撳叆妗嗚緭鍏?\texttt{My Laptop}銆?   \item 鍦?Key 杈撳叆妗嗙矘璐寸 2 绔犵敓鎴愮殑鍏挜鍐呭锛圽texttt{id\_ed25519.pub} 鏂囦欢鐨勫唴瀹癸級锛岀偣鍑汇€孉dd SSH key銆嶅畬鎴愭坊鍔犮€? \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \begin{tipbox}
+ \textbf{鎴愬姛鏍囧織}锛歋SH 瀵嗛挜椤甸潰鍑虹幇鍚嶄负 \texttt{My Laptop} 鐨勫瘑閽ヨ褰曪紱
+@@ -1169,11 +1184,12 @@ git clone -b develop https://github.com/username/repo-name.git
+ 
+ \section{鏂囦欢鐘舵€佷笌璺熻釜}
+ 
+-Git 涓殑鏂囦欢鏈夊洓绉嶇姸鎬侊紝鐞嗚В杩欎簺鐘舵€佹槸鎺屾彙 Git 鐨勫熀纭€锛?+Git 涓殑鏂囦欢鏈夊洓绉嶇姸鎬侊紝鐞嗚В杩欎簺鐘舵€佹槸鎺屾彙 Git 鐨勫熀纭€锛氬琛▇\ref{tab:file-states} 鎵€绀恒€? 
+ \begin{table}[h]
+ \centering
+-\begin{tabular}{llp{7cm}}
++\caption{Git 涓枃浠剁殑鍥涚鐘舵€亇\label{tab:file-states}
++\begin{tabularx}{\textwidth}{l l >{\raggedright\arraybackslash}X}
+ \toprule
+ \textbf{鐘舵€亇 & \textbf{鏍囪} & \textbf{鍚箟} \\
+ \midrule
+@@ -1182,15 +1198,16 @@ Unmodified锛堟湭淇敼锛?& 鏃犳爣璁?& 宸茶窡韪紝涓旇嚜涓婃鎻愪氦鍚庢湭淇? Modified锛堝凡淇敼锛?& \texttt{M} & 宸茶窡韪紝浣嗗唴瀹瑰凡琚慨鏀癸紝闇€瑕佸喅瀹氭槸鍚︽彁浜?\\
+ Staged锛堝凡鏆傚瓨锛?& \texttt{A} / \texttt{M} & 淇敼宸叉斁鍏ユ殏瀛樺尯锛屽皢鍦ㄤ笅娆℃彁浜ゆ椂淇濆瓨 \\
+ \bottomrule
+-\end{tabular}
++\end{tabularx}
+ \end{table}
+ 
+ 鏂囦欢鐘舵€佺殑鐢熷懡鍛ㄦ湡濡傚浘~\ref{fig:file-states} 鎵€绀猴細
+ 
+ \begin{figure}[H]\centering
++\resizebox{\textwidth}{!}{%
+ \begin{tikzpicture}[
+   state/.style={draw, rounded corners=8pt, minimum width=3.5cm, minimum height=1.2cm,
+-                font=\small, align=center, fill=#1},
++                font=\small, align=center, text width=3cm, fill=#1},
+   arr/.style={->, thick, >=stealth},
+   node distance=1.5cm
+ ]
+@@ -1208,10 +1225,11 @@ Staged锛堝凡鏆傚瓨锛?& \texttt{A} / \texttt{M} & 淇敼宸叉斁鍏ユ殏瀛樺尯锛屽皢
+   \draw[arr] (unmodified) -- ++(4,0) -- ++(0,2.5) -- node[right, font=\small]{鍒犻櫎鏂囦欢} (untracked);
+ 
+   % Legend
+-  \node[anchor=west, font=\small] at (0,-3.5) {
++  \node[anchor=west, font=\small, text width=14cm, align=center] at (0,-3.5) {
+     \textbf{璇存槑}锛氭柊寤烘枃浠?鈫?git add 鈫?宸叉殏瀛?鈫?git commit 鈫?鏈慨鏀?鈫?缂栬緫 鈫?宸蹭慨鏀?鈫?git add 鈫?...
+   };
+ \end{tikzpicture}
++}
+ \caption{鏂囦欢鐘舵€佺敓鍛藉懆鏈熲€斺€旀湭璺熻釜銆佸凡淇敼銆佸凡鏆傚瓨銆佹湭淇敼涔嬮棿鐨勮浆鎹㈠叧绯粆\label{fig:file-states}\end{figure}
+ 
+ \section{鏃ュ父宸ヤ綔娴侊細status 鈫?add 鈫?commit}
+@@ -1400,7 +1418,7 @@ git diff abc123^..abc123
+ 
+ \begin{infobox}
+ \textbf{diff 鐨勮緭鍑烘牸寮忚В璇粆锛?-\begin{lstlisting}[style=shell]
++\begin{lstlisting}[style=shellinbox]
+ --- a/filename.txt      # 鏃х増鏈紙鍑忓彿寮€澶达級
+ +++ b/filename.txt      # 鏂扮増鏈紙鍔犲彿寮€澶达級
+ @@ -1,5 +1,7 @@         # 鍙樻洿浣嶇疆锛氫粠绗?琛屽紑濮嬶紝鏃х増鏈?琛岋紝鏂扮増鏈?琛?@@ -1597,7 +1615,7 @@ logs/
+ 
+ 缁х画浣跨敤瀹為獙 1 鐨勪粨搴擄紝鑺?5 鍒嗛挓璧颁竴閬嶆湰绔犵殑鏍稿績寰幆銆屼慨鏀?$\to$ 鏆傚瓨 $\to$ 鎻愪氦銆嶃€傚叏绋嬪彧浣跨敤榧犳爣鐐瑰嚮銆? 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 鍦?VS Code 涓墦寮€ \texttt{hello.txt}锛屾妸鍐呭淇敼涓?\texttt{Hello Git, version 2!}锛屾寜 \texttt{Ctrl+S} 淇濆瓨銆?   \item 鎸?\texttt{Ctrl+Shift+G} 鎵撳紑婧愪唬鐮佺鐞嗚鍥撅紝瑙傚療 \texttt{hello.txt} 鍑虹幇鍦ㄣ€屾洿鏀广€嶅垪琛ㄤ腑骞跺甫鏈?\texttt{M} 鏍囪锛圡odified锛屽凡淇敼锛夈€?@@ -1605,7 +1623,7 @@ logs/
+   \item 鐐瑰嚮 \texttt{hello.txt} 鍙充晶鐨勩€?銆嶆寜閽紝灏嗗叾鏆傚瓨锛涙枃浠堕殢鍗崇Щ鍔ㄥ埌銆屾殏瀛樼殑鏇存敼銆嶅尯鍩熴€?   \item 鍦ㄩ《閮ㄦ彁浜や俊鎭緭鍏ユ涓緭鍏?\texttt{鏇存柊闂€欒}锛岀偣鍑汇€屾彁浜ゃ€嶆寜閽紙鎴栨寜 \texttt{Ctrl+Enter}锛夛紱鎻愪氦鍚庛€屾殏瀛樼殑鏇存敼銆嶅尯鍩熸竻绌猴紝璇存槑鍙樻洿宸蹭繚瀛樿繘鏈湴鍘嗗彶銆? \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \begin{tipbox}
+ \textbf{鎴愬姛鏍囧織}锛氱偣鍑绘簮浠ｇ爜绠＄悊瑙嗗浘鏍囬鏍忕殑銆屾彁浜ゅ巻鍙插浘銆嶅浘鏍囷紝鑳界湅鍒颁竴鏉℃彁浜よ褰?\texttt{鏇存柊闂€欒}銆?@@ -1699,9 +1717,12 @@ git branch -D feature-login
+ 
+ \subsection{鍒嗘敮鍛藉悕瑙勮寖}
+ 
++甯歌鐨勫垎鏀懡鍚嶈鑼冨琛▇\ref{tab:branch-naming} 鎵€绀猴細
++
+ \begin{table}[h]
+ \centering
+-\begin{tabular}{llp{5cm}}
++\caption{甯歌鍒嗘敮鍛藉悕瑙勮寖}\label{tab:branch-naming}
++\begin{tabularx}{\textwidth}{l l >{\raggedright\arraybackslash}X}
+ \toprule
+ \textbf{绫诲瀷} & \textbf{鍛藉悕绀轰緥} & \textbf{鐢ㄩ€攠 \\
+ \midrule
+@@ -1710,7 +1731,7 @@ git branch -D feature-login
+ 鐑慨澶?& \texttt{hotfix/security-patch} & 绱ф€ヤ慨澶嶇敓浜х幆澧?\\
+ 鍙戝竷鍒嗘敮 & \texttt{release/v1.2.0} & 鍑嗗鍙戝竷鐗堟湰 \\
+ \bottomrule
+-\end{tabular}
++\end{tabularx}
+ \end{table}
+ 
+ \section{鍚堝苟鍒嗘敮}
+@@ -1793,7 +1814,7 @@ VS Code 杩樻彁渚涗簡涓撻棬鐨勪笁鏂瑰悎骞剁紪杈戝櫒锛屽鍥緙\ref{fig:merge-edito
+ 
+ \subsection{瑙ｅ喅鍐茬獊鐨勫畬鏁存楠
+ 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 鍚堝苟鍚庯紝VS Code 鑷姩鎵撳紑鏈夊啿绐佺殑鏂囦欢銆?   \item 鍦ㄦ簮浠ｇ爜绠＄悊瑙嗗浘涓紝鍐茬獊鏂囦欢鏍囪涓?\texttt{!}锛堟劅鍙瑰彿锛夈€?@@ -1803,7 +1824,7 @@ VS Code 杩樻彁渚涗簡涓撻棬鐨勪笁鏂瑰悎骞剁紪杈戝櫒锛屽鍥緙\ref{fig:merge-edito
+   \item 鍦ㄦ簮浠ｇ爜绠＄悊瑙嗗浘涓紝鐐瑰嚮鍐茬獊鏂囦欢鏃佺殑 "+" 鏆傚瓨锛堟爣璁颁负宸茶В鍐筹級銆?   \item 杈撳叆鎻愪氦淇℃伅锛岀偣鍑?鎻愪氦"瀹屾垚鍚堝苟銆? \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \begin{lstlisting}[style=shell]
+ # 鏌ョ湅鍝簺鏂囦欢鏈夊啿绐?@@ -1835,7 +1856,7 @@ Rebase锛堝彉鍩猴紝鎶婃彁浜ゅ巻鍙叉暣鐞嗘垚涓€鏉＄洿绾匡級鏄彟涓€绉嶆暣鍚堝垎
+ \resizebox{\textwidth}{!}{%
+ \begin{tikzpicture}[
+   commit/.style={draw, circle, minimum size=0.4cm, fill=#1},
+-  label/.style={font=\small},
++  label/.style={font=\small, text width=3cm, align=center},
+   arr/.style={->, thick, >=stealth}
+ ]
+   % Merge 绀烘剰鍥?@@ -1981,7 +2002,7 @@ GitFlow 鏇撮€傚悎鏈変弗鏍煎彂甯冩祦绋嬬殑澶у瀷椤圭洰銆? 
+ 鑺?5 鍒嗛挓浣撻獙涓€娆°€屽垎鏀笂寮€鍙?$\to$ 鍚堝苟 $\to$ 瑙ｅ喅鍐茬獊銆嶇殑瀹屾暣杩囩▼銆傚叏绋嬪彧浣跨敤榧犳爣鐐瑰嚮锛屼笉闇€瑕佽緭鍏ヤ换浣曞懡浠ゃ€? 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 鐐瑰嚮 VS Code 搴曢儴鐘舵€佹爮宸︿晶鐨勫垎鏀悕绉?\texttt{main}锛屽湪寮瑰嚭鐨勮彍鍗曚腑鐐瑰嚮銆孋reate new branch鈥︺€嶏紝杈撳叆 \texttt{feature/hello} 骞跺洖杞︼紙姝ゆ椂宸茶嚜鍔ㄥ垏鎹㈠埌鏂板垎鏀級銆?   \item 淇敼 \texttt{hello.txt}锛屾妸鍐呭鏀逛负 \texttt{feature 鍒嗘敮鐨勫唴瀹箎锛屼繚瀛橈紱鐐瑰嚮鏂囦欢鏃併€?銆嶆殏瀛橈紝杈撳叆鎻愪氦淇℃伅 \texttt{feature 淇敼}锛岀偣鍑汇€屾彁浜ゃ€嶃€?@@ -1989,7 +2010,7 @@ GitFlow 鏇撮€傚悎鏈変弗鏍煎彂甯冩祦绋嬬殑澶у瀷椤圭洰銆?   \item 鐐瑰嚮婧愪唬鐮佺鐞嗚鍥鹃《閮ㄧ殑銆屸€︺€嶈彍鍗?$\to$銆屽垎鏀€?\to$銆屽悎骞跺垎鏀€︺€嶏紝閫夋嫨 \texttt{feature/hello} 骞剁‘璁わ紱鐢变簬涓や釜鍒嗘敮閮芥敼浜嗗悓涓€琛岋紝VS Code 寮瑰嚭鍐茬獊鎻愮ず锛屾枃浠舵爣璁板彉涓?\texttt{!}銆?   \item 鎵撳紑鍐茬獊鏂囦欢锛屽湪鍐茬獊鍖哄煙涓婃柟鐐瑰嚮銆孉ccept Both Changes銆嶆寜閽紝鎸?\texttt{Ctrl+S} 淇濆瓨锛岀偣鍑绘枃浠舵梺銆?銆嶆殏瀛橈紝杈撳叆鎻愪氦淇℃伅 \texttt{瑙ｅ喅鍐茬獊}锛岀偣鍑汇€屾彁浜ゃ€嶅畬鎴愬悎骞躲€? \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \begin{tipbox}
+ \textbf{鎴愬姛鏍囧織}锛氬簳閮ㄧ姸鎬佹爮鍒嗘敮鍚嶄负 \texttt{main}锛屾簮浠ｇ爜绠＄悊瑙嗗浘鏃犲緟澶勭悊鏇存敼銆?@@ -2108,7 +2129,7 @@ git config --global pull.rebase true
+ 
+ \subsection{鏂瑰紡涓€锛氬厛鍦?GitHub 鍒涘缓锛屽啀鍏嬮殕鍒版湰鍦皚
+ 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 鐧诲綍 GitHub锛岀偣鍑诲彸涓婅 "+" $\to$ "New repository"銆?   \item 濉啓浠撳簱鍚嶇О銆佹弿杩帮紝閫夋嫨 Public 鎴?Private銆?@@ -2116,16 +2137,16 @@ git config --global pull.rebase true
+   \item 鐐瑰嚮 "Create repository"銆?   \item 鍦ㄦ湰鍦板厠闅嗭細\texttt{git clone https://github.com/username/repo.git}
+ \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \subsection{鏂瑰紡浜岋細鍏堝湪鏈湴鍒涘缓锛屽啀鎺ㄩ€佸埌 GitHub}
+ 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 鍦?GitHub 涓婂垱寤虹┖浠撳簱锛圽textbf{涓嶅嬀閫墋 README銆?gitignore 绛夛級銆?   \item 鍦ㄦ湰鍦伴」鐩腑鍒濆鍖?Git 骞舵帹閫侊細
+ \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \begin{lstlisting}[style=shell]
+ cd my-project
+@@ -2142,7 +2163,7 @@ VS Code 鍙互涓€姝ュ畬鎴?鍒濆鍖?+ 鎻愪氦 + 鍒涘缓杩滅▼浠撳簱 + 鎺ㄩ€?锛? 
+ \vscodeimg{images/13-modified-files.png}{VS Code 涓€閿彂甯冣€斺€斿浜庢湭鍒濆鍖栫殑椤圭洰锛孷S Code 鎻愪緵"鍒濆鍖栦粨搴?鎸夐挳锛屼箣鍚庡彲浠ョ洿鎺?鍙戝竷鍒?GitHub"}{fig:modified-files-publish}
+ 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 鎵撳紑婧愪唬鐮佺鐞嗚鍥俱€?   \item 鐐瑰嚮 \textbf{"Initialize Repository"}锛堝垵濮嬪寲浠撳簱锛夈€?@@ -2152,7 +2173,7 @@ VS Code 鍙互涓€姝ュ畬鎴?鍒濆鍖?+ 鎻愪氦 + 鍒涘缓杩滅▼浠撳簱 + 鎺ㄩ€?锛?   \item 閫夋嫨鍚庯紝VS Code 浼氳嚜鍔ㄥ湪 GitHub 涓婂垱寤轰粨搴撳苟鎺ㄩ€佷唬鐮併€?   \item 鐐瑰嚮閫氱煡涓殑 "Open on GitHub" 鏌ョ湅浣犵殑浠撳簱銆? \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \section{Pull Request锛圥R锛墋
+ 
+@@ -2183,7 +2204,7 @@ PR 娴佺▼瑙ｅ喅浜嗚繖浜涢棶棰橈細
+ 
+ \subsection{PR 鐨勬爣鍑嗘祦绋媫
+ 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 浠?\texttt{main} 鍒涘缓鍔熻兘鍒嗘敮锛歕texttt{git switch -c feature/xxx}
+   \item 鍦ㄥ姛鑳藉垎鏀笂寮€鍙戝苟鎻愪氦銆?@@ -2195,7 +2216,7 @@ PR 娴佺▼瑙ｅ喅浜嗚繖浜涢棶棰橈細
+   \item 瀹℃煡閫氳繃鍚庯紝鐐瑰嚮 "Merge pull request" 鍚堝苟銆?   \item 鍒犻櫎宸插悎骞剁殑鍔熻兘鍒嗘敮銆? \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \begin{tipbox}
+ \textbf{濂界殑 PR 鎻忚堪搴斿寘鍚珆锛?@@ -2212,9 +2233,10 @@ PR 娴佺▼瑙ｅ喅浜嗚繖浜涢棶棰橈細
+ Pull Request 鐨勫畬鏁村伐浣滄祦绋嬪鍥緙\ref{fig:pr-workflow} 鎵€绀猴細
+ 
+ \begin{figure}[H]\centering
++\resizebox{\textwidth}{!}{%
+ \begin{tikzpicture}[
+   box/.style={draw, rounded corners=5pt, minimum width=3.5cm, minimum height=1cm,
+-              font=\small, align=center, fill=#1},
++              font=\small, align=center, text width=3cm, fill=#1},
+   arr/.style={->, thick, >=stealth},
+   node distance=1.2cm
+ ]
+@@ -2234,13 +2256,14 @@ Pull Request 鐨勫畬鏁村伐浣滄祦绋嬪鍥緙\ref{fig:pr-workflow} 鎵€绀猴細
+   \draw[arr] (review) -- node[above, font=\small]{閫氳繃} (merge);
+   \draw[arr, dashed] (merge) -- node[left, font=\small]{寰幆} (main);
+ \end{tikzpicture}
++}
+ \caption{Pull Request 瀹屾暣宸ヤ綔娴佺▼鈥斺€斾粠鍒涘缓鍒嗘敮鍒颁唬鐮佸鏌ュ啀鍒板悎骞剁殑鍗忎綔寰幆}\label{fig:pr-workflow}\end{figure}
+ 
+ \section{Fork 涓庤础鐚紑婧愰」鐩畗
+ 
+ 濡傛灉浣犳兂涓哄埆浜虹殑寮€婧愰」鐩础鐚唬鐮侊細
+ 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 鍦?GitHub 涓婄偣鍑?"Fork"锛堝鍒跺埆浜虹殑浠撳簱鍒拌嚜宸辫处鍙蜂笅锛夛紝灏嗛」鐩鍒跺埌浣犺嚜宸辩殑璐﹀彿涓嬨€?   \item 鍏嬮殕浣犵殑 Fork锛歕texttt{git clone https://github.com/your-username/repo.git}
+@@ -2249,7 +2272,7 @@ Pull Request 鐨勫畬鏁村伐浣滄祦绋嬪鍥緙\ref{fig:pr-workflow} 鎵€绀猴細
+   \item 鎺ㄩ€佸埌浣犵殑 Fork锛歕texttt{git push origin feature-branch}
+   \item 鍦ㄥ師椤圭洰涓婂垱寤?Pull Request銆? \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \begin{tipbox}
+ \textbf{鏈珷灏忕粨}
+@@ -2268,7 +2291,7 @@ Pull Request 鐨勫畬鏁村伐浣滄祦绋嬪鍥緙\ref{fig:pr-workflow} 鎵€绀猴細
+ 
+ 鑺?5 鍒嗛挓鎶婃湰鍦板垎鏀帹閫佸埌 GitHub锛屽苟鍦ㄧ綉椤典笂鍒涘缓涓€娆?Pull Request銆傚叏绋嬪彧浣跨敤榧犳爣鐐瑰嚮锛岄娆℃帹閫佹椂鎸夋祻瑙堝櫒鎻愮ず瀹屾垚鐧诲綍鍗冲彲銆? 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 鐐瑰嚮搴曢儴鐘舵€佹爮鍒嗘敮鍚?$\to$銆孋reate new branch鈥︺€嶏紝杈撳叆 \texttt{feature/pr-demo} 骞跺洖杞︼紙浠?\texttt{main} 鍒涘缓鏂板垎鏀級銆?   \item 鐐瑰嚮璧勬簮绠＄悊鍣ㄣ€屾柊寤烘枃浠躲€嶅浘鏍囧垱寤?\texttt{README.md}锛岃緭鍏?\texttt{鎴戠殑绗竴涓?GitHub 浠撳簱}锛屼繚瀛橈紱鐐瑰嚮鏂囦欢鏃併€?銆嶆殏瀛橈紝杈撳叆鎻愪氦淇℃伅 \texttt{娣诲姞 README}锛岀偣鍑汇€屾彁浜ゃ€嶃€?@@ -2276,7 +2299,7 @@ Pull Request 鐨勫畬鏁村伐浣滄祦绋嬪鍥緙\ref{fig:pr-workflow} 鎵€绀猴細
+   \item 鍦ㄥ脊鍑鸿彍鍗曚腑閫夋嫨銆岀櫥褰曞埌 GitHub銆嶏紝鎸夋彁绀哄湪娴忚鍣ㄤ腑鐐瑰嚮銆孉uthorize銆嶅畬鎴愭巿鏉冿紱闅忓悗閫夋嫨銆屽彂甯冨埌 GitHub 鍏紑浠撳簱銆嶆垨銆屽彂甯冨埌 GitHub 绉佹湁浠撳簱銆嶅苟纭銆?   \item 鐐瑰嚮鍙充笅瑙掗€氱煡涓殑銆孫pen on GitHub銆嶆寜閽紝鍦ㄤ粨搴撻〉闈㈢偣鍑汇€孋ompare \& pull request銆嶏紝濉啓鏍囬 \texttt{娣诲姞 README}锛岀偣鍑汇€孋reate pull request銆嶏紱鍐嶇偣鍑汇€孧erge pull request銆?\to$銆孋onfirm merge銆嶅畬鎴愬悎骞躲€? \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \begin{tipbox}
+ \textbf{鎴愬姛鏍囧織}锛欸itHub 浠撳簱椤甸潰鐨?\texttt{main} 鍒嗘敮涓嚭鐜颁簡 \texttt{README.md}锛孭ull Request 鐘舵€佹樉绀轰负 Merged锛堝凡鍚堝苟锛夈€?@@ -2361,15 +2384,15 @@ VS Code 鏀寔绮剧粏鍒癨textbf{浠ｇ爜琛寎绾у埆鐨勬殏瀛樷€斺€斾竴涓枃浠朵腑鏀? 
+ \vscodeimg{images/23-stage-lines.png}{閮ㄥ垎鏆傚瓨鈥斺€旀墦寮€鏂囦欢 Diff 鍚庯紝鍙互閫夋嫨鐗瑰畾鐨勪唬鐮佸潡杩涜鏆傚瓨锛岃€岄潪鏁翠釜鏂囦欢}{fig:stage-lines}
+ 
+-\begin{stepbox}
+ \textbf{閮ㄥ垎鏆傚瓨鎿嶄綔姝ラ}锛?+\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 鐐瑰嚮鏂囦欢鍚嶆墦寮€ Diff 瑙嗗浘銆?   \item 閫変腑浣犺鏆傚瓨鐨勪唬鐮佽锛堟垨鐢ㄩ紶鏍囨嫋閫夊尯鍩燂級銆?   \item 鍙抽敭 $\to$ "Stage Selected Ranges"銆?   \item 鍙湁閫変腑鐨勪唬鐮佸潡浼氳鏆傚瓨锛屽叾浣欎慨鏀逛繚鐣欏湪"鏇存敼"涓€? \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \section{鍚屾鎿嶄綔璇﹁В}
+ 
+@@ -2397,7 +2420,7 @@ VS Code 鐨?Timeline 瑙嗗浘锛堥粯璁ゅ湪璧勬簮绠＄悊鍣ㄥ簳閮級鏄剧ず褰撳墠鏂? 
+ 褰撲綘闇€瑕佸垏鎹㈠垎鏀絾褰撳墠鏈夋湭瀹屾垚鐨勪慨鏀规椂锛孲tash 鍔熻兘鍙互涓存椂淇濆瓨浣犵殑宸ヤ綔锛? 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 鎵撳紑鍛戒护闈㈡澘锛圽texttt{Ctrl + Shift + P}锛夈€?   \item 杈撳叆 "stash"锛岄€夋嫨鐩稿簲鎿嶄綔锛?@@ -2409,7 +2432,7 @@ VS Code 鐨?Timeline 瑙嗗浘锛堥粯璁ゅ湪璧勬簮绠＄悊鍣ㄥ簳閮級鏄剧ず褰撳墠鏂?     \item \textbf{Git: Stash Drop}锛氬垹闄ゆ渶杩戜竴娆℃殏瀛樸€?   \end{itemize}
+ \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \section{Git Blame 涓庤鍐呮敞閲妢
+ 
+@@ -2419,10 +2442,11 @@ VS Code 鐨?Timeline 瑙嗗浘锛堥粯璁ゅ湪璧勬簮绠＄悊鍣ㄥ簳閮級鏄剧ず褰撳墠鏂? 
+ \section{鎺ㄨ崘鎵╁睍}
+ 
+-浠ヤ笅鎵╁睍鍙互鏄捐憲澧炲己 VS Code 涓殑 Git 浣撻獙锛?+浠ヤ笅鎵╁睍鍙互鏄捐憲澧炲己 VS Code 涓殑 Git 浣撻獙锛氾紙瑙佽〃~\ref{tab:recommended-extensions}锛? 
+ \begin{table}[H]
+ \centering
++\caption{鎺ㄨ崘 VS Code 鎵╁睍}\label{tab:recommended-extensions}
+ \renewcommand{\arraystretch}{1.5}
+ \begin{tabularx}{\textwidth}{l l X}
+ \toprule
+@@ -2451,7 +2475,7 @@ Git History & Don Jayamanne & 鏌ョ湅鏂囦欢/琛岀殑璇︾粏鎻愪氦鍘嗗彶 \\
+ 
+ 鑺?5 鍒嗛挓鎶婃湰绔犵殑鏍稿績鍔熻兘涓茶捣鏉ヨ蛋涓€閬嶏細寤哄垎鏀€佺紪杈戙€侀儴鍒嗘殏瀛樸€佹彁浜ゃ€佹煡鐪嬪巻鍙插浘銆傚叏绋嬪彧浣跨敤榧犳爣鐐瑰嚮锛屼笉闇€瑕佽緭鍏ヤ换浣曞懡浠ゃ€? 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 鐐瑰嚮搴曢儴鐘舵€佹爮鍒嗘敮鍚?$\to$銆孋reate new branch鈥︺€嶏紝杈撳叆 \texttt{feature/sc-practice} 骞跺洖杞︺€?   \item 鍦?\texttt{hello.txt} 鏈熬鏂板涓よ鍐呭骞朵繚瀛橈紱鐐瑰嚮鏂囦欢鍚嶆墦寮€ Diff 瑙嗗浘锛岀敤榧犳爣閫変腑鍏朵腑涓€琛岋紝鍙抽敭 $\to$銆孲tage Selected Ranges銆嶏紝瀹炵幇鍙殏瀛樿繖涓€琛岋紙閮ㄥ垎鏆傚瓨锛夈€?@@ -2459,7 +2483,7 @@ Git History & Don Jayamanne & 鏌ョ湅鏂囦欢/琛岀殑璇︾粏鎻愪氦鍘嗗彶 \\
+   \item 鐐瑰嚮婧愪唬鐮佺鐞嗚鍥炬爣棰樻爮鐨勩€屾彁浜ゅ巻鍙插浘銆嶅浘鏍囷紝鍦ㄥ浘褰㈣鍥句腑瑙傚療 \texttt{feature/sc-practice} 鐩稿 \texttt{main} 鐨勫垎鍙夊拰鏈鎻愪氦銆?   \item 鍦ㄥ乏渚ц祫婧愮鐞嗗櫒搴曢儴鎵撳紑 Timeline锛堟椂闂寸嚎锛夎鍥撅紝鐐瑰嚮 \texttt{hello.txt}锛屽彲浠ョ湅鍒拌鏂囦欢浠庡疄楠?1 鍒扮幇鍦ㄧ殑姣忎竴娆℃彁浜よ褰曘€? \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \begin{tipbox}
+ \textbf{鎴愬姛鏍囧織}锛歍imeline 瑙嗗浘涓?\texttt{hello.txt} 鍒楀嚭浜嗗鏉℃彁浜よ褰曪紝鏈€杩戜竴鏉℃槸 \texttt{缁冧範閮ㄥ垎鏆傚瓨}銆?@@ -2550,7 +2574,7 @@ git push origin --delete feature/user-auth
+ 
+ \vscodeimg{images/20-view-changes.png}{寮€鍙戜腑鐨?VS Code鈥斺€旂紪杈戝櫒 Gutter 瀹炴椂鏄剧ず浣犵殑淇敼锛堢豢鑹?钃濊壊/绾㈣壊鏍囪锛夛紝婧愪唬鐮佺鐞嗚鍥惧垪鍑烘墍鏈夊彉鏇存枃浠秨{fig:view-changes}
+ 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item \textbf{鍚屾}锛氱偣鍑诲簳閮ㄧ姸鎬佹爮鐨勫悓姝ユ寜閽紝纭繚鏈湴鏄渶鏂扮殑銆?   \item \textbf{鍒涘缓鍒嗘敮}锛氱偣鍑诲簳閮ㄧ姸鎬佹爮鐨勫垎鏀悕绉?$\to$ "Create new branch" $\to$
+@@ -2565,7 +2589,7 @@ git push origin --delete feature/user-auth
+   \item \textbf{鍚堝苟}锛氬湪 GitHub 缃戦〉涓婄偣鍑?"Merge"锛屾垨鎵╁睍涓搷浣溿€?   \item \textbf{娓呯悊}锛氫娇鐢ㄥ懡浠ら潰鏉?\texttt{Git: Delete Branch} 鍒犻櫎宸插悎骞剁殑鍒嗘敮銆? \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \section{鏃ュ父寮€鍙戠殑鏈€浣冲疄璺祡
+ 
+@@ -2600,7 +2624,7 @@ git push origin --delete feature/user-auth
+ 
+ 棣栧厛锛岀珛鍗虫洿鎹㈡硠闇茬殑瀵嗛挜锛佺劧鍚庝娇鐢ㄤ互涓嬪懡浠や粠鍘嗗彶涓交搴曞垹闄わ細
+ 
+-\begin{lstlisting}[style=shell]
++\begin{lstlisting}[style=shellinbox]
+ # 瀹夎 filter-repo 宸ュ叿锛堝鏋滃皻鏈畨瑁咃級
+ # pip install git-filter-repo
+ 
+@@ -2617,7 +2641,7 @@ git push origin --force --all
+ \begin{infobox}
+ \textbf{Q2锛氭垜鍒犻櫎浜嗕竴涓枃浠讹紝杩樿兘鎭㈠鍚楋紵}
+ 
+-\begin{lstlisting}[style=shell]
++\begin{lstlisting}[style=shellinbox]
+ # 鏌ョ湅鏂囦欢鍘嗗彶锛屾壘鍒板垹闄ゅ墠鐨勬渶鍚庝竴娆℃彁浜? git log --diff-filter=D --summary
+ 
+@@ -2632,7 +2656,7 @@ git checkout HEAD~1 -- filename.txt
+ \begin{infobox}
+ \textbf{Q3锛氬浣曟挙閿€宸茬粡 push 鐨勬彁浜わ紵}
+ 
+-\begin{lstlisting}[style=shell]
++\begin{lstlisting}[style=shellinbox]
+ # 鏂规硶 1锛氫娇鐢?revert锛堟帹鑽愶紝涓嶄細鏀瑰啓鍘嗗彶锛? git revert abc123
+ git push
+@@ -2648,7 +2672,7 @@ git push --force-with-lease
+ 
+ 杩欓€氬父鏄洜涓?SSH 瀵嗛挜閰嶇疆闂锛? 
+-\begin{lstlisting}[style=shell]
++\begin{lstlisting}[style=shellinbox]
+ # 妫€鏌?SSH 瀵嗛挜鏄惁瀛樺湪
+ ls ~/.ssh/id_ed25519.pub
+ 
+@@ -2679,7 +2703,7 @@ ssh -T git@github.com
+ 
+ 鑺?5 鍒嗛挓璧颁竴閬嶇湡瀹炵殑 Feature Branch 鍏ㄦ祦绋嬶細鍚屾 $\to$ 寤哄垎鏀?$\to$ 澶氭灏忔彁浜?$\to$ 鎺ㄩ€?$\to$ PR $\to$ 鍚堝苟 $\to$ 娓呯悊銆傚叏绋嬪彧浣跨敤榧犳爣鐐瑰嚮銆? 
+-\begin{stepbox}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 纭搴曢儴鐘舵€佹爮鍒嗘敮鍚嶄负 \texttt{main}锛岀偣鍑诲簳閮ㄧ姸鎬佹爮鐨勩€屽悓姝ユ洿鏀广€嶆棆杞澶村浘鏍囨媺鍙栨渶鏂帮紙鑻ユ彁绀烘病鏈夎繙绋嬩粨搴擄紝璇存槑浠撳簱灏氭湭鍙戝竷锛岀洿鎺ヨ烦鍒扮 2 姝ワ級銆?   \item 鐐瑰嚮搴曢儴鐘舵€佹爮鍒嗘敮鍚?$\to$銆孋reate new branch鈥︺€嶏紝杈撳叆 \texttt{feature/e2e-flow} 骞跺洖杞︺€?@@ -2687,7 +2711,7 @@ ssh -T git@github.com
+   \item 鐐瑰嚮銆屸€︺€嶈彍鍗?$\to$銆屾帹閫併€嶏紝灏?\texttt{feature/e2e-flow} 鎺ㄩ€佸埌 GitHub锛堣嫢鏈彂甯冭繃浠撳簱锛屾寜鎻愮ず鐧诲綍骞跺湪鍏紑/绉佹湁浠撳簱涓€夋嫨涓€涓級銆?   \item 鐐瑰嚮閫氱煡涓殑銆孫pen on GitHub銆嶏紝鐐瑰嚮銆孋ompare \& pull request銆嶅垱寤哄苟鍚堝苟 PR锛涘洖鍒?VS Code 鐐瑰嚮銆屽悓姝ユ洿鏀广€嶏紝鍐嶇偣鍑汇€屸€︺€嶈彍鍗?$\to$銆屽垎鏀€?\to$銆屽垹闄ゅ垎鏀€︺€嶉€夋嫨 \texttt{feature/e2e-flow}锛屽畬鎴愭竻鐞嗐€? \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \begin{tipbox}
+ \textbf{鎴愬姛鏍囧織}锛欸itHub 涓?\texttt{main} 鍒嗘敮鍖呭惈 \texttt{e2e.md}锛屼笖鏈湴 \texttt{feature/e2e-flow} 鍒嗘敮宸插垹闄わ紝鏁翠釜 Feature Branch 娴佺▼闂幆瀹屾垚銆?@@ -2699,11 +2723,12 @@ ssh -T git@github.com
+ \chapter{鏂版墜閬垮潙鎸囧崡}
+ 
+ 鏈珷鏀堕泦浜嗘柊鎵嬫渶瀹规槗韪╃殑鍧戯紝鎸夆€滃満鏅€旈敊璇仛娉曗€旀纭仛娉曗€斿悗鏋滃姣斺€濆洓鍒楀憟鐜般€?-寤鸿鍏堥€氳涓€閬嶅缓绔嬪嵃璞★紝閬囧埌瀵瑰簲鍦烘櫙鍐嶅洖鏉ユ煡闃呯粏鑺傘€?+寤鸿鍏堥€氳涓€閬嶅缓绔嬪嵃璞★紝閬囧埌瀵瑰簲鍦烘櫙鍐嶅洖鏉ユ煡闃呯粏鑺傘€傚畬鏁村鐓ц琛▇\ref{tab:pitfalls}銆? 
+ \section{鏍稿績閬垮潙琛▆
+ 
+ \begin{longtable}{p{2.8cm} p{3.5cm} p{3.5cm} p{4.5cm}}
++\caption{鏂版墜閬垮潙閫熸煡琛▆\label{tab:pitfalls}\\
+ \toprule
+ \textbf{鍦烘櫙} & \textbf{閿欒鍋氭硶} & \textbf{姝ｇ‘鍋氭硶} & \textbf{鍚庢灉瀵规瘮} \\
+ \midrule
+@@ -2737,19 +2762,20 @@ ssh -T git@github.com
+ \end{enumerate}
+ \end{infobox}
+ 
+-\begin{stepbox}
+ \textbf{瀹炴垬婕旂粌锛氳鍒犳彁浜ゅ悗鎭㈠}
++\medskip
+ \begin{enumerate}[leftmargin=1.5em]
+   \item 杩愯 \texttt{git reflog}锛屾壘鍒拌鍒犲墠鐨勯偅涓€琛岋紙濡?\texttt{HEAD@{2}: commit: 娣诲姞鐧诲綍鍔熻兘}锛?   \item 澶嶅埗璇ヨ寮€澶寸殑鍝堝笇鍊硷紙濡?\texttt{a1b2c3d}锛?   \item 杩愯 \texttt{git reset --hard a1b2c3d}
+   \item 纭浠ｇ爜鎭㈠锛屽宸叉帹閫侀渶 \texttt{git push --force-with-lease}
+ \end{enumerate}
+-\end{stepbox}
++\medskip
+ 
+ \section{甯歌鎶ラ敊涓庝竴閿慨澶峿
+ 
+ \begin{longtable}{p{4cm} p{10cm}}
++\caption{甯歌鎶ラ敊涓庝竴閿慨澶峿\label{tab:common-errors}\\
+ \toprule
+ \textbf{鎶ラ敊淇℃伅} & \textbf{鍘熷洜涓庝慨澶峿 \\
+ \midrule
+@@ -2784,7 +2810,7 @@ fatal: not a git repository & 褰撳墠鐩綍闈?Git 浠撳簱銆備慨澶嶏細\texttt{cd <
+ \resizebox{\textwidth}{!}{%
+ \begin{tikzpicture}[
+   zone/.style={draw, rounded corners=12pt, minimum width=3.2cm, minimum height=2.8cm,
+-               font=\small, align=center, fill=#1, inner sep=10pt},
++               font=\small, align=center, fill=#1, inner sep=10pt, text width=2.8cm},
+   arr/.style={->, very thick, >=stealth, shorten >=4pt, shorten <=4pt},
+   cmd/.style={font=\small\ttfamily, text=blue!70!black},
+   node distance=2.2cm
+@@ -2825,7 +2851,7 @@ fatal: not a git repository & 褰撳墠鐩綍闈?Git 浠撳簱銆備慨澶嶏細\texttt{cd <
+   \draw[arr, bend right=15] (stage) to node[below, cmd]{git restore --staged} (work);
+ 
+   % Legend
+-  \node[anchor=north, font=\small, text=gray] at (7.5,-3.5) {
++  \node[anchor=north, font=\small, text=gray, text width=14cm, align=center] at (7.5,-3.5) {
+     $\rightarrow$ 姝ｅ悜鎿嶄綔锛堝垱寤哄巻鍙诧級 \quad
+     $\leftarrow$ 閫嗗悜鎿嶄綔锛堟挙閿€/鍚屾锛?\quad
+     $\triangle$ \texttt{git reset --hard} 鍗遍櫓锛氱洿鎺ヤ涪寮冩敼鍔?@@ -2851,18 +2877,18 @@ fatal: not a git repository & 褰撳墠鐩綍闈?Git 浠撳簱銆備慨澶嶏細\texttt{cd <
+   node distance=1.2cm
+ ]
+   % ===== MERGE =====
+-  \node[anchor=south, font=\bfseries\large, text=blue!70!black] at (4,5) {Merge锛氫繚鐣欏畬鏁村巻鍙诧紝浜х敓鑿卞舰鍚堝苟鑺傜偣};
++  \node[anchor=south, font=\bfseries\large, text=blue!70!black] at (6,5) {Merge锛氫繚鐣欏畬鏁村巻鍙诧紝浜х敓鑿卞舰鍚堝苟鑺傜偣};
+ 
+   % main branch
+   \node[commit=blue!60, tag] (m1) at (0,4) {A};
+-  \node[commit=blue!60, tag] (m2) at (2,4) {B};
+-  \node[commit=blue!60, tag] (m3) at (4,4) {C};
+-  \node[commit=red!60, tag] (m4) at (6,4) {M};
+-  \node[commit=blue!60, tag] (m5) at (8,4) {D};
++  \node[commit=blue!60, tag] (m2) at (3,4) {B};
++  \node[commit=blue!60, tag] (m3) at (6,4) {C};
++  \node[commit=red!60, tag] (m4) at (9,4) {M};
++  \node[commit=blue!60, tag] (m5) at (12,4) {D};
+ 
+   % feature branch
+-  \node[commit=green!60, tag] (f1) at (4,2.5) {E};
+-  \node[commit=green!60, tag] (f2) at (6,2.5) {F};
++  \node[commit=green!60, tag] (f1) at (6,2.5) {E};
++  \node[commit=green!60, tag] (f2) at (9,2.5) {F};
+ 
+   \draw[arr] (m1) -- (m2);
+   \draw[arr] (m2) -- (m3);
+@@ -2876,16 +2902,16 @@ fatal: not a git repository & 褰撳墠鐩綍闈?Git 浠撳簱銆備慨澶嶏細\texttt{cd <
+   \node[tag] at (f1) {feature};
+ 
+   % ===== REBASE =====
+-  \node[anchor=south, font=\bfseries\large, text=orange!70!black] at (4,-1) {Rebase锛氱嚎鎬у巻鍙诧紝鏃犲悎骞惰妭鐐箎;
++  \node[anchor=south, font=\bfseries\large, text=orange!70!black] at (6,-1) {Rebase锛氱嚎鎬у巻鍙诧紝鏃犲悎骞惰妭鐐箎;
+ 
+   % main branch (same)
+   \node[commit=blue!60, tag] (rm1) at (0,-2) {A};
+-  \node[commit=blue!60, tag] (rm2) at (2,-2) {B};
+-  \node[commit=blue!60, tag] (rm3) at (4,-2) {C};
++  \node[commit=blue!60, tag] (rm2) at (3,-2) {B};
++  \node[commit=blue!60, tag] (rm3) at (6,-2) {C};
+ 
+   % feature rebased onto main
+-  \node[commit=green!60, tag] (rf1) at (6,-2) {E'};
+-  \node[commit=green!60, tag] (rf2) at (8,-2) {F'};
++  \node[commit=green!60, tag] (rf1) at (9,-2) {E'};
++  \node[commit=green!60, tag] (rf2) at (12,-2) {F'};
+ 
+   \draw[arr] (rm1) -- (rm2);
+   \draw[arr] (rm2) -- (rm3);
+@@ -2915,7 +2941,7 @@ fatal: not a git repository & 褰撳墠鐩綍闈?Git 浠撳簱銆備慨澶嶏細\texttt{cd <
+ \resizebox{\textwidth}{!}{%
+ \begin{tikzpicture}[
+   box/.style={draw, rounded corners=8pt, minimum width=3.5cm, minimum height=1.6cm,
+-              font=\small, align=center, fill=#1, inner sep=6pt},
++              font=\small, align=center, fill=#1, inner sep=6pt, text width=3cm},
+   arr/.style={->, thick, >=stealth},
+   cmd/.style={font=\small\ttfamily, text=blue!70!black},
+   node distance=1.8cm
+@@ -2977,7 +3003,7 @@ fatal: not a git repository & 褰撳墠鐩綍闈?Git 浠撳簱銆備慨澶嶏細\texttt{cd <
+   \draw[arr, dashed] (sync) -- node[left, cmd]{寰幆} (local);
+ 
+   % Legend
+-  \node[anchor=north, font=\small, text=gray] at (6,-4.5) {
++  \node[anchor=north, font=\small, text=gray, text width=14cm, align=center] at (6,-4.5) {
+     \faArrowRight~ 姝ｅ悜娴佺▼ \quad
+     \faArrowLeft~ 鍙嶅悜鍚屾 \quad
+     \faMagic~ VS Code 涓叏绋嬮紶鏍囨搷浣滐紝鏃犻渶璁板懡浠?@@ -2995,6 +3021,7 @@ fatal: not a git repository & 褰撳墠鐩綍闈?Git 浠撳簱銆備慨澶嶏細\texttt{cd <
+ \section{鍩虹鎿嶄綔}
+ 
+ \begin{longtable}{p{5.5cm} p{9cm}}
++\caption{鍩虹鎿嶄綔鍛戒护閫熸煡}\label{tab:cmd-basic}\\
+ \toprule
+ \textbf{鍛戒护} & \textbf{璇存槑} \\
+ \midrule
+@@ -3021,6 +3048,7 @@ fatal: not a git repository & 褰撳墠鐩綍闈?Git 浠撳簱銆備慨澶嶏細\texttt{cd <
+ \section{鍒嗘敮鎿嶄綔}
+ 
+ \begin{longtable}{p{5.5cm} p{9cm}}
++\caption{鍒嗘敮鎿嶄綔鍛戒护閫熸煡}\label{tab:cmd-branch}\\
+ \toprule
+ \textbf{鍛戒护} & \textbf{璇存槑} \\
+ \midrule
+@@ -3042,6 +3070,7 @@ fatal: not a git repository & 褰撳墠鐩綍闈?Git 浠撳簱銆備慨澶嶏細\texttt{cd <
+ \section{杩滅▼鎿嶄綔}
+ 
+ \begin{longtable}{p{5.5cm} p{9cm}}
++\caption{杩滅▼浠撳簱鎿嶄綔鍛戒护閫熸煡}\label{tab:cmd-remote}\\
+ \toprule
+ \textbf{鍛戒护} & \textbf{璇存槑} \\
+ \midrule
+@@ -3063,6 +3092,7 @@ fatal: not a git repository & 褰撳墠鐩綍闈?Git 浠撳簱銆備慨澶嶏細\texttt{cd <
+ \section{鎾ら攢鎿嶄綔}
+ 
+ \begin{longtable}{p{5.5cm} p{9cm}}
++\caption{鎾ら攢涓庡洖閫€鍛戒护閫熸煡}\label{tab:cmd-undo}\\
+ \toprule
+ \textbf{鍛戒护} & \textbf{璇存槑} \\
+ \midrule
+@@ -3084,6 +3114,7 @@ fatal: not a git repository & 褰撳墠鐩綍闈?Git 浠撳簱銆備慨澶嶏細\texttt{cd <
+ \section{VS Code 蹇嵎閿€熸煡}
+ 
+ \begin{longtable}{p{4cm} p{5cm} p{5.5cm}}
++\caption{VS Code 甯哥敤蹇嵎閿€熸煡}\label{tab:vscode-shortcuts}\\
+ \toprule
+ \textbf{蹇嵎閿畗 & \textbf{鍛戒护} & \textbf{璇存槑} \\
+ \midrule

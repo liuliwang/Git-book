@@ -1,0 +1,50 @@
+F4 — warnbox byte-integrity verification (Final Verification Wave) — RE-RUN after baseline correction
+Date: 2026-08-03
+Gate: APPROVAL GATE — reduce-boxes-pro
+Source (current): C:\Users\Admin\Desktop\Git\Git_VSCode_Tutorial.tex
+Baseline record: .omo/evidence/reduce-boxes-pro/baseline/warnbox-sha256.txt (RE-RECORDED 2026-08-03 from original.tex)
+Task 1 snapshot: .omo/evidence/reduce-boxes-pro/original.tex (whole-file SHA-256 = D85B1B5DC52E49858596AC002895EB8ACFC26CCAF3B7538E4C2EEB86D7E776E7, authoritative)
+
+METHOD (identical for baseline and current):
+  1. Read file lines (universal \n split, strip trailing \r from each line).
+  2. Find lines matching \begin{warnbox} (begin) and \end{warnbox} (end).
+  3. Block = lines[begin..end] joined with "\n".
+  4. SHA-256 of the block's UTF-8 bytes (no BOM).
+Markers: 8 x \begin{warnbox} + 8 x \end{warnbox}, sequentially paired, no nesting.
+
+=====================================================================
+STEP 1 — SANITY CHECK: corrected baseline reproducible from original.tex?
+=====================================================================
+idx  SHA256(original.tex, method above)                    baseline(corrected)                          match
+1    06e5b679655c9af2f240a9f939c754d316490a096446b82432e59b6c1e1a383f  06e5b679655c9af2f240a9f939c754d316490a096446b82432e59b6c1e1a383f  MATCH
+2    9a44095656ca56e27d28e36aeb79d136799499569691ec7028c06b92bec45ea5  9a44095656ca56e27d28e36aeb79d136799499569691ec7028c06b92bec45ea5  MATCH
+3    505cc9f0832d6e246d166d801fc3dd3d4b2838d6cfb159b9d65003305b7d0c27  505cc9f0832d6e246d166d801fc3dd3d4b2838d6cfb159b9d65003305b7d0c27  MATCH
+4    91536df24afa1db51f20a394207374a74defdd40fd3571b7b1d160a27bfe3bc8  91536df24afa1db51f20a394207374a74defdd40fd3571b7b1d160a27bfe3bc8  MATCH
+5    2ac2915971b47aae38da00fb96a1f647f978de10a1c09a3a6b9d6ea9062a49ec  2ac2915971b47aae38da00fb96a1f647f978de10a1c09a3a6b9d6ea9062a49ec  MATCH
+6    a155fdaa6dd9ee4e95048dc2ff7bd20053ef1d5be2b7f09e49a833415428fba9  a155fdaa6dd9ee4e95048dc2ff7bd20053ef1d5be2b7f09e49a833415428fba9  MATCH
+7    f625cbcccdc5af9f7f9bbfbfe2d879cd2871378cc69fd2d4a928e4d46dc5703a  f625cbcccdc5af9f7f9bbfbfe2d879cd2871378cc69fd2d4a928e4d46dc5703a  MATCH
+8    0b5679dedd7e1be8080e71fda8a775441abd19152dc35265448e6861600352bc  0b5679dedd7e1be8080e71fda8a775441abd19152dc35265448e6861600352bc  MATCH
+
+Baseline reproducibility: 8 / 8  (baseline record is now valid and reproducible)
+
+=====================================================================
+STEP 2 — CURRENT Git_VSCode_Tutorial.tex vs corrected baseline
+=====================================================================
+idx  beginLine  endLine  byteLen  SHA256(current tex, method above)            baseline(corrected)                          match
+1    243        251      1026     06e5b679655c9af2f240a9f939c754d316490a096446b82432e59b6c1e1a383f  06e5b679655c9af2f240a9f939c754d316490a096446b82432e59b6c1e1a383f  MATCH
+2    903        906      216      9a44095656ca56e27d28e36aeb79d136799499569691ec7028c06b92bec45ea5  9a44095656ca56e27d28e36aeb79d136799499569691ec7028c06b92bec45ea5  MATCH
+3    1293       1297     311      505cc9f0832d6e246d166d801fc3dd3d4b2838d6cfb159b9d65003305b7d0c27  505cc9f0832d6e246d166d801fc3dd3d4b2838d6cfb159b9d65003305b7d0c27  MATCH
+4    1479       1481     144      91536df24afa1db51f20a394207374a74defdd40fd3571b7b1d160a27bfe3bc8  91536df24afa1db51f20a394207374a74defdd40fd3571b7b1d160a27bfe3bc8  MATCH
+5    1512       1515     209      2ac2915971b47aae38da00fb96a1f647f978de10a1c09a3a6b9d6ea9062a49ec  2ac2915971b47aae38da00fb96a1f647f978de10a1c09a3a6b9d6ea9062a49ec  MATCH
+6    1585       1589     297      a155fdaa6dd9ee4e95048dc2ff7bd20053ef1d5be2b7f09e49a833415428fba9  a155fdaa6dd9ee4e95048dc2ff7bd20053ef1d5be2b7f09e49a833415428fba9  MATCH
+7    1905       1908     242      f625cbcccdc5af9f7f9bbfbfe2d879cd2871378cc69fd2d4a928e4d46dc5703a  f625cbcccdc5af9f7f9bbfbfe2d879cd2871378cc69fd2d4a928e4d46dc5703a  MATCH
+8    2589       2598     523      0b5679dedd7e1be8080e71fda8a775441abd19152dc35265448e6861600352bc  0b5679dedd7e1be8080e71fda8a775441abd19152dc35265448e6861600352bc  MATCH
+
+Current vs corrected baseline: 8 / 8
+
+=====================================================================
+VERDICT
+=====================================================================
+VERDICT: APPROVE — all 8 warnbox blocks in the current Git_VSCode_Tutorial.tex are
+byte-identical (line-joined, LF-normalized) to the corrected Task 1 baseline.
+Baseline reproducibility sanity check: 8/8 PASS. warnbox content untouched across tasks 1-10.

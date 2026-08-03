@@ -1,0 +1,47 @@
+Task 7 — Chapter objective infoboxes → bold-header lists
+=========================================================
+Date: 2026-08-03
+File modified: Git_VSCode_Tutorial.tex (only)
+
+Transform applied (6 instances, identical pattern):
+  \begin{infobox}
+  \textbf{本章学习目标}
+  \begin{enumerate}[leftmargin=1.5em]
+    ...
+  \end{enumerate}
+  \end{infobox}
+  →
+  \medskip
+  \noindent\textbf{本章学习目标：}
+  \begin{enumerate}[leftmargin=1.5em]
+    ...
+  \end{enumerate}
+  \medskip
+
+Converted instances (chapter / former lines):
+  1. ch1 版本控制与 Git 概述   (372-381)
+  2. ch2 Git 安装与配置        (794-802)
+  3. ch3 Git 基础操作          (1102-1112)
+  4. ch4 分支与合并            (1632-1641)
+  5. ch5 远程仓库与 GitHub     (2013-2022)
+  6. ch7 实战工作流            (2479-2487)
+
+Verification counts
+-------------------
+\begin{infobox} body count:              23  (grep total 23; the \newtcolorbox{infobox} definition at line 111 uses \newtcolorbox, not \begin{infobox}, so it does not match the grep pattern — 23 is purely body instances = 29 after Task 6 minus 6 converted)
+\textbf{本章学习目标：} (with colon):     6
+本章学习目标} (without colon, body):     0
+\begin{warnbox} count:                   8  (unchanged)
+\newtcolorbox{infobox} definition:       untouched (line 111)
+
+Compilation (xelatex, 2 passes, workdir project root)
+-----------------------------------------------------
+Pass 1 exit code: 0
+Pass 2 exit code: 0
+PDF pages: 86 (unchanged vs Task 6)
+LaTeX Warning: Reference.*undefined:    0
+Rerun to get cross-references:          0
+Fatal error / Emergency stop:           0
+Overfull:  6
+Underfull: 41
+Overfull+Underfull total: 47  (matches Task 6 baseline 47; budget allows +5)

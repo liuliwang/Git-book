@@ -1,0 +1,8 @@
+﻿task-2-stepbox verification (2026-08-03 12:37:56)
+- begin{stepbox} matches: 0 (expect 0; only newenvironment definition remains)
+- end{stepbox} matches: 0
+- enumerate[leftmargin] count: 32
+- xelatex pass 1 exit: 0; pass 2 exit: 0; PDF pages: 87 (baseline 87)
+- Undefined refs in log: 0
+- Overfull/Underfull: 45 (baseline 45, no regression)
+- Errors in log: 0

@@ -1,0 +1,33 @@
+Task 3 — keybox → bold-header prose paragraphs (2026-08-03)
+============================================================
+
+Edits performed:
+- Removed all 10 \begin{keybox} lines and 10 \end{keybox} lines from Git_VSCode_Tutorial.tex
+- Each converted block keeps its \textbf{<标题>} as first line (bold header)
+- All internal \begin{enumerate}/\begin{itemize} and \item content preserved byte-identical
+- Added \medskip before and after each converted block
+- Block at former line 477 (Git 核心特性 enumerate) had NO explicit \textbf header
+  inside; added \textbf{核心概念} as first line to keep it a bold-header paragraph
+  (matches the keybox environment's auto-title "核心概念" and the plan's
+  "以粗体标题引导的段落形式呈现" happy-path criterion)
+- \newenvironment{keybox} definition (line 120-126) left untouched (same as Task 2
+  left the stepbox definition)
+
+Verification:
+- \begin{keybox} matches in tex: 0
+- \end{keybox} matches in tex: 0
+- \newenvironment{keybox} definition present: 1
+- xelatex pass 1: exit 0, 84 pages (undefined refs expected on first pass)
+- xelatex pass 2: exit 0, 87 pages (matches baseline 87)
+- undefined references in 2nd-pass log: 0
+- fatal errors (lines starting with "!"): 0
+- Overfull count: 6 (baseline 6, unchanged; same lines, line numbers shifted +1)
+- Underfull count: 40 (baseline 39, +1)
+  New item: "Underfull \vbox (badness 1147) while \output is active" on the page
+  containing the converted fetch-vs-pull block (~line 2113). Mild cosmetic page-break
+  artifact from removing the box's vertical fill. Underfull warnings are explicitly
+  allowed per project rules ("Overfull/Underfull warnings are allowed (not fatal)").
+- "fatal: refusing to" in log = document body Git error example text (known non-error)
+
+Baseline reference: .omo/evidence/reduce-boxes-pro/baseline/Git_VSCode_Tutorial.log
+Task 2 reference:  .omo/evidence/reduce-boxes-pro/task-2-stepbox/Git_VSCode_Tutorial.log

@@ -1,0 +1,54 @@
+Task: Wave 1 - Fix 6 TikZ diagrams (fig 1/2/3/5/6/8) in Git_VSCode_Tutorial.tex
+Date: 2026-08-02
+Status: COMPLETE
+
+== Edits applied (16 edits, all matched uniquely) ==
+
+### Figure 1 three-analogies (orig lines 250-280)
+- box/.style: added `text width=3cm` after align=center
+- Inserted `\resizebox{\textwidth}{!}{%` after \begin{figure}[H]\centering
+- Added closing `}` after \end{tikzpicture}
+
+### Figure 2 learning-path (orig lines 313-333)
+- phase/.style: minimum width 4cm -> 3.5cm; added `text width=3cm`
+- Node coords: (5,0)->(4,0), (10,0)->(8,0), (15,0)->(12,0), (7.5,-3)->(6,-3)
+- Inserted resizebox open + closing `}`
+
+### Figure 3 git-objects (orig lines 495-511)
+- box/.style: added `text width=3cm`
+- right=1.5cm of -> right=0.8cm of (3 nodes: blob/tree/commit)
+- Inserted resizebox open + closing `}`
+
+### Figure 5 three-zones (orig lines 695-712)
+- box/.style: minimum width 3cm -> 3.5cm; added `text width=3cm`
+- right=2cm of -> right=1cm of (3 nodes: work/stage/repo)
+- Inserted resizebox open + closing `}`
+
+### Figure 6 file-states (orig lines 1190-1215)
+- state/.style: added `text width=3cm`
+- Legend node: added `text width=14cm, align=center`
+- Inserted resizebox open + closing `}`
+
+### Figure 8 pr-workflow (orig lines 2214-2237)
+- box/.style: added `text width=3cm`
+- Inserted resizebox open + closing `}`
+
+== Verification (grep) ==
+
+$ grep "text width=3cm" Git_VSCode_Tutorial.tex  -> 6 lines (254, 319, 503, 705, 1202, 2228)  [PASS]
+$ grep "text width=14cm" Git_VSCode_Tutorial.tex -> 1 line (1220)                              [PASS]
+$ grep "resizebox" Git_VSCode_Tutorial.tex       -> 11 lines total:
+   - NEW 6: 251 (fig1), 316 (fig2), 500 (fig3), 702 (fig5), 1199 (fig6), 2225 (fig8)
+   - PRE-EXISTING 5 (untouched): 587, 1845, 2796, 2858, 2927 (fig 4/7/9/10/11)
+$ grep "^\end{tikzpicture}$" -> 6 occurrences, each immediately followed by closing `}`  [PASS]
+
+== Compile check (xelatex x2, per AGENTS.md) ==
+Pass 1: Output written on Git_VSCode_Tutorial.pdf (87 pages). No fatal errors.
+Pass 2: Output written on Git_VSCode_Tutorial.pdf (87 pages). No fatal errors.
+("fatal: refusing to" in log is in-document Git error example text, not a compile error.)
+
+== Scope guard ==
+- Figures 4/7/9/10/11 untouched (their resizeboxes pre-existed at 587/1845/2796/2858/2927)
+- No chapter structure, tcolorbox, colors, image commands, bitmap refs, or body text changed
+- No new packages added
+- No git commit performed

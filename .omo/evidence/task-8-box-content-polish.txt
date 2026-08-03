@@ -1,0 +1,59 @@
+# Task 8 — 编译验证摘要（box-content-polish）
+
+日期：2026-08-02 23:41
+源文件：Git_VSCode_Tutorial.tex（3149 行）
+编译器：MiKTeX 26.5 xelatex（两次连续编译）
+
+## 关键发现：shellinbox 样式定义损坏（本次修复）
+
+原定义（第 89 行）嵌套 `\lstset{style=shell, ...}` 且含空值键 `backgroundcolor={}` / `rulecolor=`，
+导致所有 10 处 `\begin{lstlisting}[style=shellinbox]` 触发 keyval 解析错误：
+
+- `! Missing \endcsname inserted.` / `! Extra \endcsname.`
+- `! Package keyval Error: No value specified for framesep.`
+- 涉及行：637 / 1023 / 1031 / 1039 / 1055 / 1416 / 2618 / 2635 / 2650 / 2666
+
+根因：`\lstdefinestyle` 样式体内再嵌套 `\lstset{...}` 时，listings 会把 `\lstset` 内部的
+`\begingroup` 泄漏到 keyval 键名解析（`\KV@split ... \begingroup`），且空值键无法被 keyval 消费。
+最小实验（lsttest.tex）验证：嵌套 lstset 写法必报错，完整显式键列表写法通过。
+
+修复（第 89 行）：
+```
+\lstdefinestyle{shellinbox}{basicstyle=\ttfamily\small, frame=none, breaklines=true,
+  columns=flexible, keepspaces=true, showstringspaces=false,
+  moredelim=[il][\color{gray}]{\#},
+  xleftmargin=0pt, xrightmargin=0pt, aboveskip=0pt, belowskip=0pt, framesep=0pt}
+```
+- 不再嵌套 `\lstset`，完整列出所需键（复制自 shell，去 backgroundcolor/rulecolor 键）
+- frame=none + 无 backgroundcolor ⇒ 无边框、无灰底，tcolorbox colback 透出
+
+## 编译结果
+
+| 指标 | 值 |
+|------|-----|
+| 第一次编译退出码 | 0 |
+| 第二次编译退出码 | 0 |
+| 输出页数 | 86 |
+| 基线 Overfull/Underfull | 47 |
+| 最终 Overfull | 9 |
+| 最终 Underfull | 39 |
+| 最终合计 | 48（|Δ|=1 ≤ 2 ✓） |
+| `^!` 错误行 | 0 |
+| Undefined control sequence | 0 |
+| shellinbox 相关错误行 | 0 |
+| Rerun 交叉引用警告 | 0（两次编译后收敛） |
+| PDF 大小 | 3064343 字节（2.9MB） |
+
+## 验收核对
+
+- ✓ 两次 xelatex 编译退出码均 = 0
+- ✓ 无 "fatal"（log 中 1 处命中为文档正文 `fatal: refusing to` 示例文本，非编译错误）
+- ✓ 无 "Undefined control sequence" 涉及 shellinbox
+- ✓ Overfull/Underfull 计数 |Δ| = 1 ≤ 2
+- ✓ Git_VSCode_Tutorial.pdf 生成（86 页，3064343 字节，大小合理）
+- 备注：PDF 比基线旧文件小 4.6KB，因基线 PDF 为 shellinbox 损坏状态（EXIT=1）产物，修复后正确渲染
+
+## 交付物
+
+- .omo/evidence/task-8-box-content-polish.log（完整编译日志，两次编译的最终状态）
+- .omo/evidence/task-8-box-content-polish.txt（本摘要）

@@ -1,0 +1,46 @@
+# Overfull/Underfull baseline count: 45
+Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (57.57133pt too wide) in paragraph at lines 549--551
+Underfull \vbox (badness 1546) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1325) has occurred while \output is active []
+Overfull \hbox (10.29025pt too wide) in paragraph at lines 2270--2271
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 2345--2345
+Overfull \hbox (36.12744pt too wide) in paragraph at lines 2483--2484
+Overfull \hbox (35.27196pt too wide) in paragraph at lines 2580--2582
+Underfull \vbox (badness 1953) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 2741--2742
+Underfull \hbox (badness 10000) in paragraph at lines 2741--2742
+Underfull \hbox (badness 10000) in paragraph at lines 2741--2742
+Underfull \hbox (badness 10000) in paragraph at lines 2741--2742
+Underfull \hbox (badness 10000) in paragraph at lines 2742--2742
+Overfull \hbox (11.65536pt too wide) in paragraph at lines 2742--2742
+Underfull \hbox (badness 1226) in paragraph at lines 2743--2743
+Underfull \hbox (badness 10000) in paragraph at lines 2743--2743
+Underfull \hbox (badness 10000) in paragraph at lines 2743--2743
+Underfull \hbox (badness 1226) in paragraph at lines 2744--2744
+Underfull \hbox (badness 10000) in paragraph at lines 2744--2744
+Underfull \hbox (badness 10000) in paragraph at lines 2744--2744
+Underfull \hbox (badness 10000) in paragraph at lines 2744--2744
+Underfull \hbox (badness 1226) in paragraph at lines 2745--2745
+Underfull \hbox (badness 10000) in paragraph at lines 2745--2745
+Underfull \hbox (badness 10000) in paragraph at lines 2746--2746
+Underfull \hbox (badness 1226) in paragraph at lines 2747--2747
+Underfull \hbox (badness 10000) in paragraph at lines 2748--2748
+Underfull \hbox (badness 10000) in paragraph at lines 2748--2748
+Underfull \hbox (badness 10000) in paragraph at lines 2749--2749
+Underfull \hbox (badness 10000) in paragraph at lines 2750--2750
+Underfull \hbox (badness 5970) in paragraph at lines 2750--2750
+Underfull \hbox (badness 1226) in paragraph at lines 2751--2751
+Underfull \hbox (badness 5119) in paragraph at lines 2751--2751
+Underfull \hbox (badness 10000) in paragraph at lines 2787--2787
+Underfull \hbox (badness 4927) in paragraph at lines 2788--2788
+Underfull \hbox (badness 1048) in paragraph at lines 2788--2789
+Underfull \hbox (badness 10000) in paragraph at lines 2789--2789
+Underfull \hbox (badness 10000) in paragraph at lines 2789--2789
+Underfull \hbox (badness 10000) in paragraph at lines 3083--3083
+Underfull \hbox (badness 10000) in paragraph at lines 3088--3088
+Underfull \hbox (badness 10000) in paragraph at lines 3105--3105

@@ -1,0 +1,143 @@
+﻿diff --git a/Git_VSCode_Tutorial.tex b/Git_VSCode_Tutorial.tex
+index bad560a..3167880 100644
+--- a/Git_VSCode_Tutorial.tex
++++ b/Git_VSCode_Tutorial.tex
+@@ -293,9 +293,9 @@
+   \item \textbf{鎯冲皾璇曟柊鎯虫硶 = 杩涘叆骞宠瀹囧畽}锛歕texttt{git switch -c 鏂板垎鏀瘆 鍒涘缓涓€涓簰涓嶅共鎵扮殑骞宠涓栫晫锛屾悶鐮镐簡鍒犳帀鍒嗘敮灏辫锛屼富涓栫晫姣彂鏃犳崯銆? \end{itemize}
+ 
+-\begin{tipbox}
+-\textbf{闆跺熀纭€蹇冩硶}锛氬埆鎬曞紕鍧忥紒Git 璁捐鐨勫垵琛峰氨鏄浣犮€屽ぇ鑳嗚瘯閿欙紝闅忔椂鍚庢倲銆嶃€?-\end{tipbox}
++\medskip
++\noindent\textbf{鎻愮ず锛殅闆跺熀纭€蹇冩硶鈥斺€斿埆鎬曞紕鍧忥紒Git 璁捐鐨勫垵琛峰氨鏄浣犮€屽ぇ鑳嗚瘯閿欙紝闅忔椂鍚庢倲銆嶃€?+\medskip
+ 
+ \subsection{GitHub 鏄€屼簯绔粨搴撱€峿
+ 
+@@ -657,16 +657,11 @@ git cat-file -p <blob-hash>   # 鏌ョ湅 Blob 鐨勫唴瀹? \end{itemize}
+ \end{infobox}
+ 
+-\begin{tipbox}
+-\textbf{Porcelain vs Plumbing}锛?-
+-Git 鍛戒护鍒嗕负涓ゅ眰\textbf{琛ㄥ眰锛圥orcelain锛墋鏄綘鏃ュ父浣跨敤鐨勫懡浠わ紙\texttt{git add}銆?-\texttt{git commit}銆乗texttt{git log}锛夛紝璁捐涓轰汉绫诲弸濂斤紱\textbf{搴曞眰锛圥lumbing锛墋鏄?Git
+-鍐呴儴浣跨敤鐨勫懡浠わ紙\texttt{git cat-file}銆乗texttt{git hash-object}銆乗texttt{git ls-tree}锛夛紝
+-杈撳嚭鏍煎紡绋冲畾锛岄€傚悎鑴氭湰璋冪敤銆傜悊瑙ｆ暟鎹ā鍨嬫椂锛屽簳灞傚懡浠ゆ槸鏈€濂界殑"鏄惧井闀?銆?+\medskip
++\noindent\textbf{鎻愮ず锛殅Porcelain vs Plumbing鈥斺€擥it 鍛戒护鍒嗕负涓ゅ眰\textbf{琛ㄥ眰锛圥orcelain锛墋鏄綘鏃ュ父浣跨敤鐨勫懡浠わ紙\texttt{git add}銆乗texttt{git commit}銆乗texttt{git log}锛夛紝璁捐涓轰汉绫诲弸濂斤紱\textbf{搴曞眰锛圥lumbing锛墋鏄?Git 鍐呴儴浣跨敤鐨勫懡浠わ紙\texttt{git cat-file}銆乗texttt{git hash-object}銆乗texttt{git ls-tree}锛夛紝杈撳嚭鏍煎紡绋冲畾锛岄€傚悎鑴氭湰璋冪敤銆傜悊瑙ｆ暟鎹ā鍨嬫椂锛屽簳灞傚懡浠ゆ槸鏈€濂界殑"鏄惧井闀?銆? 
+ 鏃ュ父宸ヤ綔涓綘鍑犱箮涓嶉渶瑕佺洿鎺ヤ娇鐢?Plumbing 鍛戒护锛屼絾浜嗚В瀹冧滑鑳藉府浣犳繁鍏ヨ瘖鏂棶棰樸€?-\end{tipbox}
++\medskip
+ 
+ \section{GitHub 绠€浠媫
+ 
+@@ -738,14 +733,14 @@ GitHub 鎻愪緵鐨勬牳蹇冨姛鑳藉寘鎷細
+         鐢ㄤ簬鍥㈤槦闂寸殑浠ｇ爜鍏变韩鍜屽浠姐€? \end{itemize}
+ 
+-\begin{tipbox}
+-\textbf{绫绘瘮鐞嗚В}锛氭妸 Git 鎯宠薄鎴愭媿鐓с€?+\medskip
++\noindent\textbf{鎻愮ず锛殅绫绘瘮鐞嗚В鈥斺€旀妸 Git 鎯宠薄鎴愭媿鐓с€? \begin{itemize}
+   \item \textbf{宸ヤ綔鍖簘 = 浣犵溂鍓嶇殑鍦烘櫙锛堥殢鏃跺湪鍙橈級
+   \item \textbf{鏆傚瓨鍖簘 = 鍙栨櫙妗嗭紙浣犻€夋嫨瑕佹媿浠€涔堬級
+   \item \textbf{鎻愪氦} = 鎸変笅蹇棬锛堜繚瀛樹竴涓笉鍙彉鐨勫揩鐓э級
+ \end{itemize}
+-\end{tipbox}
++\medskip
+ 
+ \section{VS Code 濡備綍涓?Git 鍗忎綔}
+ 
+@@ -757,8 +752,8 @@ VS Code 鍐呯疆浜嗗己澶х殑 Git 闆嗘垚锛屽皢涓婅堪鎵€鏈夋搷浣滈兘鍥惧舰鍖栦簡銆? 鍦?VS Code 涓紝浣犲彲浠ラ€氳繃\textbf{鐐瑰嚮鎸夐挳}瀹屾垚澶ч儴鍒?Git 鎿嶄綔锛岃€屼笉蹇呰浣忓懡浠よ璇硶銆? 浣嗙悊瑙ｅ簳灞傚懡浠や粛鐒堕噸瑕佲€斺€斿畠浠府鍔╀綘璇婃柇闂銆佹墽琛岄珮绾ф搷浣溿€? 
+-\begin{tipbox}
+-\textbf{鏈珷灏忕粨}
++\medskip
++\noindent\textbf{鎻愮ず锛殅鏈珷灏忕粨
+ \begin{itemize}
+   \item 鐗堟湰鎺у埗绯荤粺璁板綍鏂囦欢鍙樻洿鍘嗗彶锛屾敮鎸佸崗浣溿€佸洖閫€鍜屽苟琛屽紑鍙?   \item Git 鏄垎甯冨紡鐗堟湰鎺у埗绯荤粺锛屾瘡涓厠闅嗛兘鍖呭惈瀹屾暣鍘嗗彶
+@@ -769,7 +764,7 @@ VS Code 鍐呯疆浜嗗己澶х殑 Git 闆嗘垚锛屽皢涓婅堪鎵€鏈夋搷浣滈兘鍥惧舰鍖栦簡銆? \end{itemize}
+ 
+ \textbf{涓嬩竴绔犻鍛妢锛氭垜浠皢瀛︿範濡備綍瀹夎 Git 鍜?VS Code锛屼互鍙婂浣曢厤缃?GitHub 璁よ瘉銆?-\end{tipbox}
++\medskip
+ 
+ \subsection*{鍔ㄦ墜瀹為獙 1锛氬垵濮嬪寲绗竴涓粨搴搣
+ 
+@@ -785,10 +780,10 @@ VS Code 鍐呯疆浜嗗己澶х殑 Git 闆嗘垚锛屽皢涓婅堪鎵€鏈夋搷浣滈兘鍥惧舰鍖栦簡銆? \end{enumerate}
+ \medskip
+ 
+-\begin{tipbox}
+-\textbf{鎴愬姛鏍囧織}锛氭墦寮€ Windows 璧勬簮绠＄悊鍣ㄨ繘鍏?\texttt{my-first-repo} 鏂囦欢澶癸紝鐐瑰嚮鑿滃崟鏍忋€屾煡鐪嬨€?\to$ 鍕鹃€夈€岄殣钘忕殑椤圭洰銆嶏紝鍙互鐪嬪埌 \texttt{.git} 鏂囦欢澶广€?+\medskip
++\noindent\textbf{鎻愮ず锛殅鎴愬姛鏍囧織鈥斺€旀墦寮€ Windows 璧勬簮绠＄悊鍣ㄨ繘鍏?\texttt{my-first-repo} 鏂囦欢澶癸紝鐐瑰嚮鑿滃崟鏍忋€屾煡鐪嬨€?\to$ 鍕鹃€夈€岄殣钘忕殑椤圭洰銆嶏紝鍙互鐪嬪埌 \texttt{.git} 鏂囦欢澶广€? 杩欎釜浠撳簱浼氫竴鐩寸敤浜庣 3銆? 绔犵殑鍔ㄦ墜瀹為獙銆?-\end{tipbox}
++\medskip
+ 
+ % ================================================================
+ %  绗簩绔狅細Git 瀹夎涓庨厤缃?@@ -953,11 +948,11 @@ Git 閰嶇疆鏈変笁涓眰绾э紝浼樺厛绾т粠楂樺埌浣庯細锛堣琛▇\ref{tab:config-le
+ \end{tabularx}
+ \end{table}
+ 
+-\begin{tipbox}
+-鏃ュ父浣跨敤涓紝缁濆ぇ澶氭暟閰嶇疆浣跨敤 \texttt{--global} 鍗冲彲銆傚鏋滄煇涓」鐩渶瑕佺壒娈婇厤缃?+\medskip
++\noindent\textbf{鎻愮ず锛殅鏃ュ父浣跨敤涓紝缁濆ぇ澶氭暟閰嶇疆浣跨敤 \texttt{--global} 鍗冲彲銆傚鏋滄煇涓」鐩渶瑕佺壒娈婇厤缃? 锛堟瘮濡傜敤鍏徃閭鎻愪氦锛夛紝鍦ㄨ浠撳簱鐩綍涓嬩笉鍔?\texttt{--global} 鍗冲彲瑕嗙洊鍏ㄥ眬璁剧疆銆? 渚嬪锛歕texttt{git config user.email "work@company.com"}锛堜粎褰卞搷褰撳墠浠撳簱锛夈€?-\end{tipbox}
++\medskip
+ 
+ \section{瀹夎 VS Code}
+ 
+@@ -1012,10 +1007,10 @@ gh auth login
+ \end{enumerate}
+ \medskip
+ 
+-\begin{tipbox}
+-VS Code 棣栨杩炴帴 GitHub 鏃讹紝浼氳嚜鍔ㄥ脊鍑虹櫥褰曟彁绀猴紝寮曞浣犻€氳繃娴忚鍣ㄥ畬鎴?OAuth 璁よ瘉銆?+\medskip
++\noindent\textbf{鎻愮ず锛殅VS Code 棣栨杩炴帴 GitHub 鏃讹紝浼氳嚜鍔ㄥ脊鍑虹櫥褰曟彁绀猴紝寮曞浣犻€氳繃娴忚鍣ㄥ畬鎴?OAuth 璁よ瘉銆? 璁よ瘉鎴愬姛鍚庯紝VS Code 浼氳嚜鍔ㄧ鐞?token锛屾棤闇€鎵嬪姩閰嶇疆銆?-\end{tipbox}
++\medskip
+ 
+ \subsection{鏂瑰紡涓夛細SSH 瀵嗛挜锛堟渶鎺ㄨ崘锛墋
+ 
+@@ -1093,10 +1088,10 @@ ssh -T git@github.com
+ \end{enumerate}
+ \medskip
+ 
+-\begin{tipbox}
+-\textbf{鎴愬姛鏍囧織}锛歋SH 瀵嗛挜椤甸潰鍑虹幇鍚嶄负 \texttt{My Laptop} 鐨勫瘑閽ヨ褰曪紱
++\medskip
++\noindent\textbf{鎻愮ず锛殅鎴愬姛鏍囧織鈥斺€擲SH 瀵嗛挜椤甸潰鍑虹幇鍚嶄负 \texttt{My Laptop} 鐨勫瘑閽ヨ褰曪紱
+ 鍚屾椂 VS Code 涓彁浜や俊鎭細鏄剧ず浣犲湪 \texttt{.gitconfig} 涓～鍐欑殑鍚嶅瓧鍜岄偖绠便€?-\end{tipbox}
++\medskip
+ 
+ % ================================================================
+ %  绗笁绔狅細Git 鍩虹鎿嶄綔
+@@ -1263,11 +1258,11 @@ git status -s
+   \item 鐐瑰嚮鏂囦欢鍚嶅彲浠ユ墦寮€宸紓瀵规瘮瑙嗗浘锛屾煡鐪嬪叿浣撴敼浜嗕粈涔? \end{itemize}
+ 
+-\begin{tipbox}
+-\texttt{git status} 鏄綘鏈€搴旇棰戠箒鎵ц鐨勫懡浠ゃ€傚畠鍛婅瘔浣犲綋鍓嶅浜庝粈涔堢姸鎬侊紝
++\medskip
++\noindent\textbf{鎻愮ず锛殅\texttt{git status} 鏄綘鏈€搴旇棰戠箒鎵ц鐨勫懡浠ゃ€傚畠鍛婅瘔浣犲綋鍓嶅浜庝粈涔堢姸鎬侊紝
+ 鍝簺鏂囦欢闇€瑕佸鐞嗐€傚吇鎴?鍋氫换浣曟搷浣滃墠鍏?status"鐨勪範鎯€? 鍦?VS Code 涓紝鐘舵€佷俊鎭缁堝彲瑙佲€斺€旀簮浠ｇ爜绠＄悊瑙嗗浘灏辨槸瀹炴椂鐨?\texttt{git status}銆?-\end{tipbox}
++\medskip
+ 
+ \subsection{绗簩姝ワ細鏆傚瓨鏂囦欢锛坓it add锛墋
+ 
+@@ -1341,10 +1336,10 @@ git commit -m "asdfasdf"         # 鏃犳剰涔? git commit -m "淇浜哹ug锛屾敼浜嗕笁涓枃浠讹紝杩樺姞浜嗕竴涓姛鑳?  # 澶潅锛屽簲鎷嗗垎涓哄涓彁浜? \end{lstlisting}
+ 
+-\begin{tipbox}
+-VS Code 鏀寔 AI 杈呭姪鐢熸垚鎻愪氦淇℃伅鈥斺€旂偣鍑绘彁浜や俊鎭緭鍏ユ鏃佺殑"榄旀硶妫?鍥炬爣锛?+\medskip
++\noindent\textbf{鎻愮ず锛殅VS Code 鏀寔 AI 杈呭姪鐢熸垚鎻愪氦淇℃伅鈥斺€旂偣鍑绘彁浜や俊鎭緭鍏ユ鏃佺殑"榄旀硶妫?鍥炬爣锛? VS Code 浼氭牴鎹綘鐨勪唬鐮佸彉鏇磋嚜鍔ㄧ敓鎴愭弿杩般€備綘鍙互鍦ㄦ鍩虹涓婁慨鏀癸紝涔熷彲浠ョ洿鎺ラ噰绾炽€?-\end{tipbox}
++\medskip
+ 
+ \section{鏌ョ湅淇敼鍐呭锛欴iff 瑙嗗浘}
+ 
+@@ -1496,9 +1491,9 @@ git reset HEAD filename.txt
+ git restore --staged filename.txt
+ \end{lstlisting}
+ 
+-\begin{tipbox}
+-鍦?VS Code 涓紝鍙栨秷鏆傚瓨灏辨槸鐐瑰嚮"鏆傚瓨鐨勬洿鏀?鍖哄煙涓枃浠舵梺杈圭殑 "-" 鎸夐挳銆?-\end{tipbox}
++\medskip
++\noindent\textbf{鎻愮ず锛殅鍦?VS Code 涓紝鍙栨秷鏆傚瓨灏辨槸鐐瑰嚮"鏆傚瓨鐨勬洿鏀?鍖哄煙涓枃浠舵梺杈圭殑 "-" 鎸夐挳銆?+\medskip
+ 
+ \subsection{淇敼涓婁竴娆℃彁浜
+ 
+@@ -1592,11 +1587,11 @@ logs/
+ 闇€瑕佷娇鐢?\texttt{git filter-repo} 宸ュ叿褰诲簳娓呴櫎锛屽苟绔嬪嵆鏇存崲娉勯湶鐨勫瘑閽ャ€? \end{warnbox}
+ 
+-\begin{tipbox}
+-\textbf{.gitignore 鐨勫父瑙佹ā鏉縸锛欸itHub 鎻愪緵浜嗗ぇ閲忕幇鎴愮殑 .gitignore 妯℃澘銆?+\medskip
++\noindent\textbf{鎻愮ず锛殅.gitignore 鐨勫父瑙佹ā鏉库€斺€擥itHub 鎻愪緵浜嗗ぇ閲忕幇鎴愮殑 .gitignore 妯℃澘銆? 鍒涘缓鏂颁粨搴撴椂鍙互鐩存帴閫夋嫨妯℃澘锛屾垨璁块棶 \url{https://github.com/github/gitignore} 涓嬭浇銆? 渚嬪 Python 椤圭洰銆丯ode.js 椤圭洰銆丣ava 椤圭洰閮芥湁瀵瑰簲鐨勬ā鏉裤€?-\end{tipbox}
++\medskip
+ 
+ \begin{tipbox}
+ \textbf{鏈珷灏忕粨}

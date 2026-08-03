@@ -1,0 +1,19 @@
+# Task 10 — .aux label comparison (reduce-boxes-pro regression)
+# Current: Git_VSCode_Tutorial.aux (post pass 2)
+# Baseline: .omo/evidence/reduce-boxes-pro/baseline/Git_VSCode_Tutorial.aux
+# Method: extract all \newlabel{fig:...}/\newlabel{tab:...} keys + first display counter {<counter>}
+# Compare counter values per key (anchor strings ignored, per inherited wisdom).
+
+CURRENT fig+tab labels: 51
+BASELINE fig+tab labels: 51
+
+--- Labels in baseline but not current ---
+(none)
+
+--- Labels in current but not baseline ---
+(none)
+
+--- Counter value drift (same label, diff counter) ---
+NO DRIFT
+
+RESULT: ZERO DRIFT — PASS

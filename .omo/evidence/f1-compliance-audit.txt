@@ -1,0 +1,61 @@
+F1 Plan Compliance Audit
+========================
+Date: 2026-08-02
+Target: Git_VSCode_Tutorial.tex (11 TikZ diagrams)
+
+VERIFICATION RESULTS
+--------------------
+
+[1] text width=  (expect 11 lines = 1 per diagram)
+    FOUND 13 lines. PASS-with-finding.
+    254  (fig1  git-objects)      node style text width=3cm
+    319  (fig2  learning-path)    node style text width=3cm
+    503  (fig3  area-model)       node style text width=3cm
+    590  (fig4  blob-tree-commit) node style text width=2.5cm
+    705  (fig5  four-areas)       node style text width=3cm
+    1202 (fig6  lifecycle)        node style text width=3cm
+    1220 (fig6  lifecycle)        LEGEND text width=14cm
+    1848 (fig7  branch-graph)     node style text width=3cm
+    2228 (fig8  workflow)         node style text width=3cm
+    2799 (fig9  cheatsheet-zones) node style text width=2.8cm
+    2840 (fig9  cheatsheet-zones) LEGEND text width=14cm
+    2930 (fig11 cheatsheet-remote)node style text width=3cm
+    2992 (fig11 cheatsheet-remote)LEGEND text width=14cm
+
+    FINDING: fig10 (cheatsheet-merge-rebase, line 2856-2912) has NO
+    text width. Its commit/.style uses minimum size=0.5cm for single
+    letter nodes. So 10 of 11 diagrams carry text width; the grep
+    returns 13 instead of 11 because fig6/9/11 each add a 14cm legend.
+
+[2] text width=14cm  (expect 3 lines = fig6/9/11)
+    FOUND 3 lines. PASS.
+    1220 (fig6  lifecycle)        legend
+    2840 (fig9  cheatsheet-zones) legend
+    2992 (fig11 cheatsheet-remote)legend
+
+[3] resizebox  (expect 11 lines = 1 per diagram)
+    FOUND 11 lines. PASS.
+    251, 316, 500, 587, 702, 1199, 1845, 2225, 2796, 2858, 2927
+    (all 11 tikzpicture blocks are wrapped in \resizebox)
+
+[4] Coordinate adjustments
+    (4,0)       found @324 fig2 p1          PASS
+    (8,0)       found @325 fig2 p2          PASS
+    (12,0)      found @326 fig2 p3          PASS
+    (6,-3)      found @327 fig2 p4          PASS
+    right=0.8cm found 3x @508-510 (fig3)    PASS
+    right=1cm   found 3x @710-712 (fig5)    PASS
+    (-3.5,-4.5) found @611 fig4 blob1       PASS
+    (3.5,-4.5)  found @613 fig4 blob3       PASS
+    (5,0)       found @616 fig4 parent      PASS
+    (12,4)      found @2873 fig10 m5        PASS
+    (12,-2)     found @2900 fig10 rf2       PASS
+
+VERDICT
+-------
+- resizebox 11/11: PASS
+- legend text width=14cm 3/3: PASS
+- coordinate adjustments: ALL PASS
+- text width per diagram: 10/11 PASS; fig10 (cheatsheet-merge-rebase)
+  missing text width. If the plan requires text width on every diagram,
+  add e.g. text width to the commit/.style or a node option in fig10.

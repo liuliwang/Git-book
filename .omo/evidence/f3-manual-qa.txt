@@ -1,0 +1,41 @@
+# F3: Manual QA — 11 张 TikZ 图目视检查记录
+
+日期：2026-08-02
+检查方法：用 PyMuPDF 将 `Git_VSCode_Tutorial.pdf`（87 页，3.07MB）中 11 张 TikZ 图所在页面渲染为 2.5x 高清 PNG，逐一目视检查。
+PDF 存在性：`Test-Path Git_VSCode_Tutorial.pdf` → True（3068898 bytes，2026/8/2 22:57:45）
+
+## 检查标准
+1. 无溢出页面（图不超出右页边距）
+2. 无文字堆叠（节点内文字清晰可读，不重叠）
+3. 无节点重叠
+4. resizebox 缩放视觉合理（文字大小适中）
+
+## 逐图检查结果
+
+| # | 图 label | 所在页 | tex 行 | 结论 |
+|---|----------|--------|--------|------|
+| 1 | fig:three-analogies（Git/GitHub/VS Code 三角关系） | p8 | 252 | PASS |
+| 2 | fig:learning-path（学习路径，5 节点） | p9 | 317 | PASS |
+| 3 | fig:git-objects（4 节点水平链） | p15 | 501 | PASS |
+| 4 | fig:commit-structure（Commit→Tree→Blob 树状） | p17 | 588 | PASS |
+| 5 | fig:three-zones（工作区/暂存区/本地/远程） | p19 | 703 | PASS |
+| 6 | fig:file-states（状态转换循环） | p33 | 1200 | PASS |
+| 7 | fig:merge-rebase（Merge/Rebase 对比） | p52 | 1846 | PASS |
+| 8 | fig:pr-workflow（PR 完整流程） | p62 | 2226 | PASS |
+| 9 | fig:cheatsheet-zones（四大区域数据流转速查） | p82 | 2797 | PASS |
+| 10 | fig:cheatsheet-merge-rebase（分支演变对比速查） | p83 | 2859 | PASS |
+| 11 | fig:cheatsheet-remote（远程协作链路速查） | p84 | 2928 | PASS |
+
+## 重点核查项（任务指定）
+- 图2 learning-path（5 节点水平排列，p4 节点居中下方）：✔ 未溢出，4 个水平主节点 + 1 附录节点下方排列，间距均匀
+- 图3 git-objects（4 节点水平排列）：✔ 未溢出，链式箭头清晰
+- 图4 commit-structure（节点大小适中）：✔ 树状结构层次分明，Commit/Tree/Blob 文字清晰
+- 图5 three-zones（节点内文字清晰）：✔ 各区域说明文字分行明确
+- 图10 cheatsheet-merge-rebase（节点大小适中）：✔ 菱形合并与线性历史节点无重叠
+
+## 结论
+11/11 张 TikZ 图全部 PASS：
+- 所有图均未超出页面右边界，右侧留白正常
+- 所有节点内文字均清晰可读，无堆叠重叠
+- 所有节点间距合理，无互相遮挡
+- resizebox 缩放比例统一合理，文字大小适中

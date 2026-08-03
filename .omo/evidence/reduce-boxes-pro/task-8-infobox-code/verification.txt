@@ -1,0 +1,37 @@
+Task 8 — Infobox code blocks → standalone listings
+Verification record (2026-08-03)
+
+CONVERSIONS (6 infoboxes, all bare \begin{infobox}):
+1. lines 637-647: \textbf{用底层命令查看对象}： → standalone (shell)
+2. lines 1416-1427: \textbf{diff 的输出格式解读}： → standalone (shell)
+3. lines 2602-2619: \textbf{Q1：我不小心提交了密钥文件，怎么办？} → standalone (shell)
+4. lines 2621-2634: \textbf{Q2：我删除了一个文件，还能恢复吗？} → standalone (shell)
+5. lines 2636-2648: \textbf{Q3：如何撤销已经 push 的提交？} → standalone (shell)
+6. lines 2650-2668: \textbf{Q4：如何处理"Permission denied (publickey)"错误？} → standalone (shell)
+
+Transform per instance:
+- \begin{infobox} removed; \medskip added before \textbf header
+- \begin{lstlisting}[style=shellinbox] → \begin{lstlisting}[style=shell]
+- \end{infobox} removed; \medskip added after last content
+- All prose and code lines byte-identical
+
+TEX COUNTS (grep):
+- \begin{infobox} body matches: 17  (was 23; minus 6)
+- \begin{lstlisting}[style=shellinbox]: 4  (only the 4 inside enumerate, former stepbox at 1024-1056)
+- \begin{lstlisting}[style=shell]: 40  (was 34; +6)
+- \begin{warnbox}: 8  (unchanged)
+
+COMPILATION (xelatex, two passes):
+- Pass 1 exit: 0
+- Pass 2 exit: 0
+- Pages: 86
+- LaTeX Warning: Reference.*undefined: 0
+- Rerun to get cross-references: 0
+- Fatal error / Emergency stop: 0
+- Overfull: 6
+- Underfull: 39
+- Overfull+Underfull total: 45  (baseline after Task 7 was 47; budget +5 — no regression, total actually improved by 2)
+
+EVIDENCE:
+- Git_VSCode_Tutorial.log (final, second pass)
+- diff.txt (git diff HEAD -- Git_VSCode_Tutorial.tex)

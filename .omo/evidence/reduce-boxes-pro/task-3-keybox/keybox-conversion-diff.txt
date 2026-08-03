@@ -1,0 +1,126 @@
+﻿diff --git a/Git_VSCode_Tutorial.tex b/Git_VSCode_Tutorial.tex
+index d1d3855..bad560a 100644
+--- a/Git_VSCode_Tutorial.tex
++++ b/Git_VSCode_Tutorial.tex
+@@ -474,7 +474,8 @@ Git 鏄敱 Linus Torvalds锛圠inux 鍐呮牳鐨勫垱閫犺€咃級浜?2005 骞村紑鍙戠殑\tex
+ 
+ \subsection{Git 鐨勬牳蹇冪壒鎬
+ 
+-\begin{keybox}
++\medskip
++\textbf{鏍稿績姒傚康}
+ \begin{enumerate}[leftmargin=1.5em]
+   \item \textbf{鍒嗗竷寮忔灦鏋剗锛氭瘡涓紑鍙戣€呯殑鏈哄櫒涓婇兘鏈変竴浠藉畬鏁寸殑浠ｇ爜浠撳簱鍜屽巻鍙茶褰曪紝
+         鏃犻渶鑱旂綉涔熻兘杩涜鎻愪氦銆佹煡鐪嬪巻鍙层€佸垱寤哄垎鏀瓑鎿嶄綔銆傝繖鎰忓懗鐫€鍗充娇 GitHub 鏈嶅姟鍣ㄥ畷鏈猴紝
+@@ -490,7 +491,7 @@ Git 鏄敱 Linus Torvalds锛圠inux 鍐呮牳鐨勫垱閫犺€咃級浜?2005 骞村紑鍙戠殑\tex
+         鍖呭惈鍝簺鍙樻洿銆傝繖鏄?Git 鍖哄埆浜庡叾浠栫増鏈帶鍒剁郴缁熺殑閲嶈鐗规€с€傝繖璁╀綘鍙互灏嗕竴涓ぇ鏀瑰姩
+         鎷嗗垎涓哄涓涔夋竻鏅扮殑鎻愪氦锛岃€岄潪涓€涓贩涔辩殑澶ф彁浜ゃ€? \end{enumerate}
+-\end{keybox}
++\medskip
+ 
+ 鐞嗚В浜?Git 瑙ｅ喅浜嗕粈涔堥棶棰樹互鍙婂畠鐨勮璁″摬瀛︿箣鍚庯紝璁╂垜浠繁鍏ュ簳灞傦紝鐪嬬湅 Git 鏄浣曞瓨鍌ㄥ拰瀵诲潃鏁版嵁鐨勩€傝繖涓€鑺傜殑鍐呭鏄悊瑙?Git 鍛戒护鑳屽悗鍘熺悊鐨勫叧閿€斺€斾綘涓嶅繀鑳岃锛屼絾鐞嗚В鍚庝細璁╀綘鍦ㄩ亣鍒伴棶棰樻椂涓嶅啀鍥版儜銆? 
+@@ -563,10 +564,10 @@ git show-ref --heads             # 鏌ョ湅鎵€鏈夊垎鏀紩鐢? git show-ref --tags              # 鏌ョ湅鎵€鏈夋爣绛惧紩鐢? \end{lstlisting}
+ 
+-\begin{keybox}
++\medskip
+ \textbf{鍏抽敭鐞嗚В}锛欸it 涓殑涓€鍒囬兘鏄搱甯屻€侭lob銆乀ree銆丆ommit 閮芥湁鍞竴鐨?SHA-1 鍝堝笇鍊硷紙40 浣嶅崄鍏繘鍒跺瓧绗︿覆锛夈€? Git 閫氳繃鍝堝笇鍊兼潵瀵诲潃鍐呭锛岃€屼笉鏄枃浠跺悕銆傝繖鎰忓懗鐫€锛氬鏋滀袱涓枃浠跺唴瀹圭浉鍚岋紝鏃犺鏂囦欢鍚嶆槸鍚︾浉鍚岋紝Git 鍙瓨鍌ㄤ竴浠?Blob銆?-\end{keybox}
++\medskip
+ 
+ \begin{infobox}
+ \textbf{楠岃瘉鍐呭瀵诲潃}锛?@@ -895,13 +896,13 @@ git config --global user.name "浣犵殑鍚嶅瓧"
+ git config --global user.email "your.email@example.com"
+ \end{lstlisting}
+ 
+-\begin{keybox}
++\medskip
+ \textbf{閰嶇疆鍘熺悊}锛氳繖浜涜缃瀛樺偍鍦ㄤ綘鐨勭敤鎴风洰褰曚笅鐨?\texttt{.gitconfig} 鏂囦欢涓紙Windows 鍦?
+ \texttt{C:\\Users\\浣犵殑鐢ㄦ埛鍚峔\.gitconfig}锛宮acOS/Linux 鍦?\texttt{\textasciitilde/.gitconfig}锛夈€? 
+ 姣忔鎵ц \texttt{git commit} 鏃讹紝Git 浼氳鍙栬繖涓枃浠讹紝灏嗙敤鎴峰悕鍜岄偖绠卞啓鍏ユ彁浜よ褰曚腑銆? 浣犲彲浠ラ殢鏃剁敤 \texttt{git config --global --list} 鏌ョ湅褰撳墠閰嶇疆銆?-\end{keybox}
++\medskip
+ 
+ \begin{warnbox}
+ 閭鍦板潃蹇呴』涓庝綘鐨?GitHub 璐﹀彿鍏宠仈鐨勯偖绠变竴鑷达紝鍚﹀垯 GitHub 鏃犳硶灏嗘彁浜や笌浣犵殑璐﹀彿鍏宠仈銆?@@ -1063,14 +1064,14 @@ ssh -T git@github.com
+ \end{enumerate}
+ \medskip
+ 
+-\begin{keybox}
++\medskip
+ \textbf{HTTPS vs SSH 瀵规瘮}锛? \begin{itemize}
+   \item \textbf{HTTPS}锛氫娇鐢ㄧ敤鎴峰悕+瀵嗙爜锛堟垨 Token锛夎璇併€傞€傚悎涓存椂浣跨敤锛屼絾棰戠箒鎺ㄩ€佹椂闇€瑕佽緭鍏ュ嚟鎹€?   \item \textbf{SSH}锛氫娇鐢ㄥ瘑閽ュ璁よ瘉銆傞厤缃竴娆″悗鍏嶅瘑鎿嶄綔锛岄€傚悎闀挎湡寮€鍙戙€? \end{itemize}
+ \textbf{鎺ㄨ崘}锛氫釜浜哄紑鍙戜娇鐢?SSH锛屽洟闃熷崗浣滃彲閰嶅悎浣跨敤 HTTPS銆?-\end{keybox}
++\medskip
+ 
+ \subsection*{鍔ㄦ墜瀹為獙 2锛氶厤缃敤鎴疯韩浠藉拰SSH瀵嗛挜}
+ 
+@@ -1534,14 +1535,14 @@ git revert HEAD
+ git revert <commit-hash>
+ \end{lstlisting}
+ 
+-\begin{keybox}
++\medskip
+ \textbf{reset vs revert 鐨勯€夋嫨鍘熷垯}锛? \begin{itemize}
+   \item \texttt{reset}锛氫慨鏀瑰巻鍙层€傞€傜敤浜嶾textbf{鏈帹閫亇鐨勬湰鍦版彁浜ゃ€?   \item \texttt{revert}锛氭坊鍔犳柊鎻愪氦鏉ユ挙閿€銆傞€傜敤浜嶾textbf{宸叉帹閫亇鐨勬彁浜わ紝涓嶄細鐮村潖浠栦汉鐨勫巻鍙层€? \end{itemize}
+ 绠€鍗曡蹇嗭細宸茬粡 push 鐨勭敤 revert锛屾病 push 鐨勭敤 reset銆?-\end{keybox}
++\medskip
+ 
+ \section{.gitignore 鏂囦欢}
+ 
+@@ -1650,7 +1651,7 @@ logs/
+ 鍒嗘敮锛圔ranch锛夋槸 Git 鏈€寮哄ぇ鐨勭壒鎬т箣涓€銆備竴涓垎鏀湰璐ㄤ笂鍙槸涓€涓猏textbf{鎸囧悜鏌愪釜鎻愪氦鐨勫彲绉诲姩鎸囬拡}銆? 鍒涘缓鍒嗘敮涓嶄細澶嶅埗浠讳綍鏂囦欢锛屽彧鏄垱寤轰簡涓€涓柊鎸囬拡鈥斺€斿洜姝ゅ嚑涔庝笉娑堣€楁椂闂村拰绌洪棿銆? 
+-\begin{keybox}
++\medskip
+ \textbf{HEAD 鎸囬拡}锛歕texttt{HEAD}锛堝綋鍓嶆墍鍦ㄧ殑骞宠瀹囧畽鍏ュ彛锛夋槸涓€涓壒娈婃寚閽堬紝鎸囧悜浣犲綋鍓嶆墍鍦ㄧ殑鍒嗘敮銆? 褰撲綘鍒囨崲鍒嗘敮鏃讹紝\texttt{HEAD} 绉诲姩鍒版柊鍒嗘敮锛屽伐浣滃尯鐨勬枃浠朵篃闅忎箣鏇存柊涓鸿鍒嗘敮鏈€鍚庝竴娆℃彁浜ょ殑鐘舵€併€? 
+@@ -1663,7 +1664,7 @@ logs/
+ 涓婂浘涓紝\texttt{HEAD} 鎸囧悜 \texttt{main} 鍒嗘敮锛孿texttt{main} 鎸囧悜鎻愪氦 C锛? \texttt{feature} 鍒嗘敮鎸囧悜鎻愪氦 E銆傚綋浣犲湪 \texttt{feature} 鍒嗘敮涓婃彁浜ゆ椂锛? \texttt{feature} 鎸囬拡浼氬悜鍓嶇Щ鍔紝浣?\texttt{main} 淇濇寔涓嶅姩銆?-\end{keybox}
++\medskip
+ 
+ \textbf{涓轰粈涔堣鐢ㄥ垎鏀紵} 鍋囪浣犳鍦ㄥ紑鍙戜竴涓姛鑳斤紝闇€瑕佷笁澶╂墠鑳藉畬鎴愩€? 濡傛灉鐩存帴鍦?\texttt{main} 涓婂紑鍙戯紝杩欎笁澶╃殑鍗婃垚鍝佷唬鐮佷細涓€鐩?姹℃煋"涓荤嚎銆?@@ -1914,14 +1915,14 @@ git rebase --abort
+ Rebase 浼氭敼鍐欐彁浜ゅ巻鍙诧紝濡傛灉鍏朵粬浜哄凡缁忓熀浜庢棫鍘嗗彶鍋氫簡宸ヤ綔锛宺ebase 鍚庝細瀵艰嚧娣蜂贡銆? \end{warnbox}
+ 
+-\begin{keybox}
++\medskip
+ \textbf{Merge vs Rebase 鐨勯€夋嫨}锛? \begin{itemize}
+   \item \textbf{Merge}锛氫繚鐣欏畬鏁村巻鍙诧紝閫傚悎鍥㈤槦鍗忎綔鐨勫叕鍏卞垎鏀紙濡?main锛?   \item \textbf{Rebase}锛氭暣鐞嗗巻鍙诧紝閫傚悎涓汉寮€鍙戠殑鍔熻兘鍒嗘敮锛堝湪鎺ㄩ€佸墠锛?   \item \textbf{鎺ㄨ崘鍋氭硶}锛氭湰鍦板紑鍙戞椂鐢?rebase 鏁寸悊鍘嗗彶锛屽悎骞跺埌 main 鏃剁敤 merge
+ \end{itemize}
+-\end{keybox}
++\medskip
+ 
+ \section{Cherry-pick锛氭寫閫夋彁浜
+ 
+@@ -2038,7 +2039,7 @@ GitFlow 鏇撮€傚悎鏈変弗鏍煎彂甯冩祦绋嬬殑澶у瀷椤圭洰銆? 杩滅▼浠撳簱锛圧emote锛夋槸鎵樼鍦ㄦ湇鍔″櫒涓婄殑 Git 浠撳簱鍓湰銆傛渶甯哥敤鐨勬槸 \texttt{origin}锛? 閫氬父鎸囧悜 GitHub 涓婄殑浠撳簱銆備綘鍙互鏈夊涓繙绋嬩粨搴擄紙姣斿鍚屾椂鎵樼鍦?GitHub 鍜?GitLab锛夈€? 
+-\begin{keybox}
++\medskip
+ \textbf{鏈湴浠撳簱 vs 杩滅▼浠撳簱}锛? 
+ 鎯宠薄浣犲湪瀹堕噷鍐欏皬璇达紙鏈湴浠撳簱锛夛紝鍚屾椂浣犺繕灏嗘墜绋垮鍗颁簡涓€浠藉瘎缁欏嚭鐗堢ぞ锛堣繙绋嬩粨搴擄級銆?@@ -2050,7 +2051,7 @@ GitFlow 鏇撮€傚悎鏈変弗鏍煎彂甯冩祦绋嬬殑澶у瀷椤圭洰銆?   \item \textbf{杩滅▼浠撳簱}锛氬瓨鍌ㄥ湪鏈嶅姟鍣紙濡?GitHub锛変笂鐨勪粨搴撳壇鏈紝鐢ㄤ簬鍥㈤槦鍗忎綔鍜屽浠?   \item \texttt{origin}锛氶粯璁ょ殑杩滅▼浠撳簱鍚嶇О锛屽氨鍍?\texttt{main} 鏄粯璁ゅ垎鏀悕涓€鏍? \end{itemize}
+-\end{keybox}
++\medskip
+ 
+ \begin{lstlisting}[style=shell]
+ # 鏌ョ湅杩滅▼浠撳簱
+@@ -2110,14 +2111,14 @@ git pull --rebase origin main
+ git config --global pull.rebase true
+ \end{lstlisting}
+ 
+-\begin{keybox}
++\medskip
+ \textbf{fetch vs pull}锛? \begin{itemize}
+   \item \texttt{fetch}锛氬彧涓嬭浇锛屼笉淇敼浣犵殑宸ヤ綔鍖恒€傚畨鍏ㄦ搷浣滐紝鍙互鍏堟煡鐪嬪啀鍐冲畾銆?   \item \texttt{pull}锛氫笅杞藉苟绔嬪嵆鍚堝苟銆傛洿鏂逛究锛屼絾鍙兘浜х敓鎰忓鐨勫悎骞舵彁浜ゃ€? \end{itemize}
+ 鎺ㄨ崘鍋氭硶锛氭棩甯镐娇鐢?\texttt{git pull --rebase}锛岄渶瑕佽皑鎱庢椂浣跨敤 \texttt{fetch} + 鎵嬪姩 \texttt{merge}銆?-\end{keybox}
++\medskip
+ 
+ 鍦?VS Code 涓紝鎺ㄩ€侊紙鎶婃湰鍦版彁浜や笂浼犲埌浜戠锛夊拰鎷夊彇锛堜粠浜戠涓嬭浇鏈€鏂板苟鍚堝苟锛夋搷浣滃彲浠ラ€氳繃搴曢儴鐘舵€佹爮鐨勫悓姝ユ寜閽竴閿畬鎴愶紝濡傚浘~\ref{fig:pull-push} 涓庡浘~\ref{fig:sync-button} 鎵€绀猴細
+ 
+@@ -2593,7 +2594,7 @@ git push origin --delete feature/user-auth
+ 
+ \section{鏃ュ父寮€鍙戠殑鏈€浣冲疄璺祡
+ 
+-\begin{keybox}
++\medskip
+ \textbf{鏃ュ父宸ヤ綔涔犳儻}锛? \begin{enumerate}[leftmargin=1.5em]
+   \item \textbf{寮€濮嬪伐浣滃墠}锛氬厛 \texttt{git pull --rebase} 鍚屾杩滅▼鏇存柊銆?@@ -2604,7 +2605,7 @@ git push origin --delete feature/user-auth
+   \item \textbf{鎺ㄩ€佸墠鍚屾}锛氭帹閫佸墠鍏?pull锛岄伩鍏嶆帹閫佸け璐ャ€?   \item \textbf{鍚堝苟鍚庢竻鐞唥锛氬垹闄ゅ凡鍚堝苟鐨勫姛鑳藉垎鏀紝淇濇寔浠撳簱鏁存磥銆? \end{enumerate}
+-\end{keybox}
++\medskip
+ 
+ \begin{warnbox}
+ \textbf{甯歌閿欒涓庨闃瞹锛?

@@ -1,0 +1,66 @@
+﻿diff --git a/Git_VSCode_Tutorial.tex b/Git_VSCode_Tutorial.tex
+index 7021a53..33309a9 100644
+--- a/Git_VSCode_Tutorial.tex
++++ b/Git_VSCode_Tutorial.tex
+@@ -423,10 +423,10 @@
+ 
+ 鐗堟湰鎺у埗鐨勫彂灞曠畝鍙茶琛▇\ref{tab:vc-history}銆? 
+-\begin{infobox}[boxsep=2mm, left=6mm, right=6mm]
+-\captionof{table}{鐗堟湰鎺у埗鐨勫彂灞曠畝鍙瞹\label{tab:vc-history}
++\begin{table}[H]\centering
++\caption{鐗堟湰鎺у埗鐨勫彂灞曠畝鍙瞹\label{tab:vc-history}
+ 
+-{\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{6pt}\begin{tabularx}{\linewidth}{l l l >{\raggedright\arraybackslash}X}
++{\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{6pt}\begin{tabularx}{\textwidth}{l l l >{\raggedright\arraybackslash}X}
+ \toprule
+ \textbf{鏃朵唬} & \textbf{浠ｈ〃宸ュ叿} & \textbf{骞翠唤} & \textbf{鐗圭偣} \\
+ \midrule
+@@ -435,7 +435,7 @@
+ \textbf{鍒嗗竷寮忕増鏈帶鍒秨 & \textbf{Git, Mercurial} & \textbf{2005} & \textbf{姣忎釜鍏嬮殕閮芥槸瀹屾暣浠撳簱锛岀绾夸篃鑳藉伐浣渳 \\
+ \bottomrule
+ \end{tabularx}}
+-\end{infobox}
++\end{table}
+ 
+ \section{Git 绠€浠媫
+ 
+@@ -451,9 +451,9 @@ Git 鏄敱 Linus Torvalds锛圠inux 鍐呮牳鐨勫垱閫犺€咃級浜?2005 骞村紑鍙戠殑\tex
+ 鍘熷瀷锛屽苟杩呴€熷皢鍏剁敤浜?Linux 鍐呮牳鐨勭増鏈鐞嗐€侴it 浠庝竴寮€濮嬪氨琚璁′负 BitKeeper 鐨勮嚜鎵樼鏇夸唬鏂规锛? 杩欎篃瑙ｉ噴浜嗗畠涓轰綍濡傛寮鸿皟閫熷害銆佸垎甯冨紡涓庢暟鎹畬鏁存€с€傞泦涓紡涓庡垎甯冨紡鐨勫姣斿琛▇\ref{tab:centralized-vs-distributed} 鎵€绀猴細
+ 
+-\begin{infobox}[boxsep=2mm, left=6mm, right=6mm]
+-\captionof{table}{闆嗕腑寮?vs 鍒嗗竷寮忕増鏈帶鍒秨\label{tab:centralized-vs-distributed}
+-{\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{6pt}\begin{tabularx}{\linewidth}{l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
++\begin{table}[H]\centering
++\caption{闆嗕腑寮?vs 鍒嗗竷寮忕増鏈帶鍒秨\label{tab:centralized-vs-distributed}
++{\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{6pt}\begin{tabularx}{\textwidth}{l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+ \toprule
+ \textbf{鐗规€ & \textbf{闆嗕腑寮忥紙濡?SVN锛墋 & \textbf{鍒嗗竷寮忥紙濡?Git锛墋 \\
+ \midrule
+@@ -464,7 +464,7 @@ Git 鏄敱 Linus Torvalds锛圠inux 鍐呮牳鐨勫垱閫犺€咃級浜?2005 骞村紑鍙戠殑\tex
+ 浠ｈ〃宸ュ叿 & SVN, CVS & Git, Mercurial \\
+ \bottomrule
+ \end{tabularx}}
+-\end{infobox}
++\end{table}
+ 
+ \textbf{涓轰粈涔?Git 鑳借儨鍑猴紵} 鍦?Git 涔嬪墠锛孲VN 鏄富娴併€係VN 鏄泦涓紡鐨勨€斺€旀墍鏈変汉鐨勪慨鏀归兘瑕佹彁浜ゅ埌
+ 鍚屼竴鍙颁腑澶湇鍔″櫒銆傚鏋滄湇鍔″櫒瀹曟満锛屾墍鏈変汉閮芥棤娉曞伐浣溿€傝€?Git 鏄垎甯冨紡鐨勶細姣忎釜浜虹殑鐢佃剳涓婇兘鏈?@@ -668,10 +668,10 @@ git cat-file -p <blob-hash>   # 鏌ョ湅 Blob 鐨勫唴瀹? \textbf{GitHub} 鏄叏鐞冩渶澶х殑浠ｇ爜鎵樼骞冲彴锛?018 骞磋寰蒋鏀惰喘锛夛紝鎴嚦 2025 骞村凡鏈夎秴杩?1 浜垮紑鍙戣€呯敤鎴枫€? 瀹冧负 Git 浠撳簱鎻愪緵浜戠鎵樼鏈嶅姟銆侴it 涓?GitHub 鐨勫姣斿琛▇\ref{tab:git-vs-github} 鎵€绀猴細
+ 
+-\begin{infobox}[boxsep=2mm, left=6mm, right=6mm]
+-\captionof{table}{Git vs GitHub 鐨勫尯鍒珆\label{tab:git-vs-github}
++\begin{table}[H]\centering
++\caption{Git vs GitHub 鐨勫尯鍒珆\label{tab:git-vs-github}
+ 
+-{\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{6pt}\begin{tabularx}{\linewidth}{l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
++{\renewcommand{\arraystretch}{1.3}\setlength{\tabcolsep}{6pt}\begin{tabularx}{\textwidth}{l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X}
+ \toprule
+ & \textbf{Git} & \textbf{GitHub} \\
+ \midrule
+@@ -682,7 +682,7 @@ git cat-file -p <blob-hash>   # 鏌ョ湅 Blob 鐨勫唴瀹? 鏇夸唬鍝?& Mercurial, SVN & GitLab, Bitbucket, Gitee \\
+ \bottomrule
+ \end{tabularx}}
+-\end{infobox}
++\end{table}
+ 
+ GitHub 鎻愪緵鐨勬牳蹇冨姛鑳藉寘鎷細
+ 

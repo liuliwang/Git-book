@@ -1,0 +1,9 @@
+tipbox begin count: 0
+tipbox end count: 0
+warnbox count: 8
+overfull/underfull: 46 (baseline 45, +1)
+undefined refs: 0
+fatal: 0
+pages: 87
+compile exit: 0/0
+commit: 107336f

@@ -1,0 +1,37 @@
+=== F1 Box Removal Audit ===
+Task: Final Verification Wave F1 (Box removal audit)
+Date: 2026-08-03
+Mode: Static audit (no xelatex, no file modification)
+Target: Git_VSCode_Tutorial.tex
+
+--- Check 1: tipbox/keybox/stepbox/infobox body usage ---
+Command: Select-String -Pattern '\begin{(tipbox|keybox|stepbox|infobox)}' Git_VSCode_Tutorial.tex
+Result: 0 matches
+NOTE: Environment definitions (\newenvironment{tipbox}, \newtcolorbox{infobox}, etc.)
+at lines 86-134 remain (expected); only BODY usage was removed.
+PASS
+
+--- Check 2: warnbox body usage ---
+Command: Select-String -Pattern '\begin{warnbox}' Git_VSCode_Tutorial.tex
+Result: 8 matches (expected exactly 8)
+Matched lines:
+243: \begin{warnbox}
+903: \begin{warnbox}
+1293: \begin{warnbox}
+1479: \begin{warnbox}
+1512: \begin{warnbox}
+1585: \begin{warnbox}
+1905: \begin{warnbox}
+2589: \begin{warnbox}
+PASS
+
+--- Check 3: git diff warnbox line differences ---
+Command: git diff -- Git_VSCode_Tutorial.tex | Select-String 'warnbox'
+Result: 0 matches (no warnbox line differences in working tree diff)
+PASS
+
+=== VERDICT: APPROVE ===
+All three checks passed:
+1. tipbox/keybox/stepbox/infobox \begin usage = 0  (PASS)
+2. warnbox \begin usage = 8                    (PASS)
+3. git diff warnbox lines = 0                   (PASS)

@@ -1,0 +1,51 @@
+# Task 9 Verification — infobox → prose paragraphs
+
+Date: 2026-08-03
+File modified: Git_VSCode_Tutorial.tex (only this file)
+Plan: reduce-boxes-pro
+
+## Transform applied
+For each of the 17 remaining infobox instances:
+- Removed `\begin{infobox}` line
+- Added `\medskip` before the first content line (\textbf header / \texttt header for the git clone block)
+- Kept ALL prose / itemize / enumerate / lstlisting content byte-identical
+- Removed `\end{infobox}` line
+- Added `\medskip` after the last content line
+
+## Converted blocks (17)
+1. 建议阅读策略 (former line 343)
+2. 场景：一个没有版本控制的下午 (389)
+3. Tag（标签） (533)
+4. 验证内容寻址 (572) — contains \begin{lstlisting}[style=shell], kept as-is
+5. 为什么 Git 高效？ (649)
+6. Git 版本选择建议 (806)
+7. 为什么需要配置用户信息？ (871)
+8. 为什么选择 VS Code？ (962)
+9. 什么是仓库？ (1121)
+10. \texttt{git clone} 实际上做了三件事 (1173) — \texttt header kept as-is
+11. 分支的本质类比 (1667)
+12. 合并的本质 (1736)
+13. Cherry-pick 的使用场景 (1935)
+14. 为什么需要 Pull Request？ (2171)
+15. 为什么需要图形界面？ (2301)
+16. 为什么需要规范的工作流？ (2491)
+17. 几乎所有"搞砸了"都能用这两条命令救回来 (2733)
+
+## Verification numbers
+- \begin{infobox} body matches: 0 (only \newtcolorbox{infobox} definition at line ~111 remains; that line contains "infobox" but not "\begin{infobox}", so grep returns 0)
+- \end{infobox} body matches: 0
+- warnbox: 8 (unchanged, verified 8 \begin{warnbox} + 8 \end{warnbox})
+- Diff stats: 34 removed infobox lines (17 begin + 17 end), 34 added \medskip lines, 0 content lines changed
+- xelatex pass 1: exit 0
+- xelatex pass 2: exit 0
+- PDF pages: 84 (baseline 87 → Task 6/7/8: 86 → now 84)
+- Undefined references in final .log: 0
+- "LaTeX Warning: Reference...undefined": 0
+- "Fatal error" / "Emergency stop": 0
+- "Rerun to get cross-references": 0
+- Overfull: 6, Underfull: 37, total 43 (baseline after Task 8 = 45; budget allows +5 → 50; 43 within budget, no regression)
+- Missing character "✓" in lmmono: 1 (pre-existing cosmetic warning in emergency-commands table, unrelated to this change)
+
+## Artifacts
+- log.txt: final (second-pass) xelatex transcript
+- diff.txt: `git --no-pager diff HEAD -- Git_VSCode_Tutorial.tex` (raw UTF-8 via cmd /c redirection)

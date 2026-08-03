@@ -1,0 +1,114 @@
+Wave 2: TikZ 图编辑验证证据（图4/7/9/10/11）
+文件：Git_VSCode_Tutorial.tex
+日期：2026-08-02
+
+============================================================
+一、编辑清单（21 处，全部应用成功）
+============================================================
+
+【图4 commit-structure】
+1. obj/.style: minimum width=2.5cm → 3cm；align=center 后追加 text width=2.5cm（行589-590）
+2. blob1: (-2.5,-4.5) → (-3.5,-4.5)（行611）
+3. blob3: (2.5,-4.5) → (3.5,-4.5)（行613）
+4. parent: (4,0) → (5,0)（行616）
+5. resizebox 行587 保持不变
+
+【图7 merge-rebase】
+6. label/.style: font=\small 后追加 text width=3cm, align=center（行1848）
+7. resizebox 行1845 保持不变
+
+【图9 cheatsheet-zones】
+8. zone/.style: inner sep=10pt 后追加 text width=2.8cm（行2798-2799）
+9. legend 节点: 追加 text width=14cm, align=center（行2840）
+10. resizebox 行2796 保持不变
+
+【图10 cheatsheet-merge-rebase】坐标 x 值 ×1.5
+11. Merge 标题: (4,5) → (6,5)（行2866）
+12. m2: (2,4) → (3,4)（行2870）
+13. m3: (4,4) → (6,4)（行2871）
+14. m4: (6,4) → (9,4)（行2872）
+15. m5: (8,4) → (12,4)（行2873）
+16. f1: (4,2.5) → (6,2.5)（行2876）
+17. f2: (6,2.5) → (9,2.5)（行2877）
+18. Rebase 标题: (4,-1) → (6,-1)（行2891）
+19. rm2: (2,-2) → (3,-2)（行2895）
+20. rm3: (4,-2) → (6,-2)（行2896）
+21. rf1: (6,-2) → (9,-2)（行2899）
+22. rf2: (8,-2) → (12,-2)（行2900）
+23. tag at (rm1)/(rf1) 保持不变；m1/rm1 at (0,4)/(0,-2) 保持不变
+24. resizebox 行2858 保持不变
+
+【图11 pr-workflow-full】
+25. box/.style: inner sep=6pt 后追加 text width=3cm（行2929-2930）
+26. legend 节点: 追加 text width=14cm, align=center（行2992）
+27. resizebox 行2927 保持不变
+
+============================================================
+二、Grep 验证结果
+============================================================
+grep "text width=2.5cm"  → 1 行 ✓（行590，图4 obj style）
+  590: font=\small, align=center, text width=2.5cm},
+
+grep "text width=3cm"    → 8 行 ✓（Wave1 图1/2/3/5/6/8：行254/319/503/705/1202/2228 + 图7 行1848 + 图11 行2930）
+  254: font=\small, align=center, text width=3cm, fill=#1, inner sep=8pt},
+  319: font=\small\bfseries, align=center, text width=3cm, fill=#1},
+  503: font=\bfseries, align=center, text width=3cm, fill=#1},
+  705: font=\bfseries, align=center, text width=3cm, fill=#1},
+  1202: font=\small, align=center, text width=3cm, fill=#1},
+  1848: label/.style={font=\small, text width=3cm, align=center},        ← 图7
+  2228: font=\small, align=center, text width=3cm, fill=#1},
+  2930: font=\small, align=center, fill=#1, inner sep=6pt, text width=3cm},  ← 图11
+
+grep "text width=2.8cm"  → 1 行 ✓（行2799，图9 zone style）
+  2799: font=\small, align=center, fill=#1, inner sep=10pt, text width=2.8cm},
+
+grep "text width=14cm"   → 3 行 ✓（Wave1 图6 行1220 + 图9 行2840 + 图11 行2992）
+  1220: \node[anchor=west, font=\small, text width=14cm, align=center] at (0,-3.5) {   ← Wave1 图6
+  2840: \node[anchor=north, font=\small, text=gray, text width=14cm, align=center] at (7.5,-3.5) {  ← 图9
+  2992: \node[anchor=north, font=\small, text=gray, text width=14cm, align=center] at (6,-4.5) {    ← 图11
+
+grep "(12,4)"            → 1 行 ✓（行2873，图10 m5）
+  2873: \node[commit=blue!60, tag] (m5) at (12,4) {D};
+
+grep "(12,-2)"           → 1 行 ✓（行2900，图10 rf2）
+  2900: \node[commit=green!60, tag] (rf2) at (12,-2) {F'};
+
+============================================================
+三、补充坐标验证（图4 / 图10）
+============================================================
+图4:
+  611: (blob1) at (-3.5,-4.5) ✓
+  613: (blob3) at (3.5,-4.5) ✓
+  616: (parent) at (5,0) ✓
+
+图10（Merge/Rebase 全部缩放点）:
+  2866: Merge 标题 at (6,5) ✓
+  2870: m2 at (3,4) ✓
+  2871: m3 at (6,4) ✓
+  2872: m4 at (9,4) ✓
+  2873: m5 at (12,4) ✓
+  2876: f1 at (6,2.5) ✓
+  2877: f2 at (9,2.5) ✓
+  2891: Rebase 标题 at (6,-1) ✓
+  2895: rm2 at (3,-2) ✓
+  2896: rm3 at (6,-2) ✓
+  2899: rf1 at (9,-2) ✓
+  2900: rf2 at (12,-2) ✓
+
+============================================================
+四、结论
+============================================================
+全部 6 项 MUST DO grep 验证 + 补充坐标验证通过。
+Wave 1 图（1/2/3/5/6/8）未做任何修改（text width=3cm 6 处 Wave1 行号未变、text width=14cm 图6 行1220 未变）。
+未修改：章节结构、tcolorbox、颜色、图片命令、位图引用、正文。
+未新增宏包。未自动提交 git。
+
+============================================================
+�塢������֤��2026-08-02��xelatex �����������Σ�
+============================================================
+����: xelatex -interaction=nonstopmode Git_VSCode_Tutorial.tex ����2��
+���: ���ξ� Output written on Git_VSCode_Tutorial.pdf (87 pages)
+״̬: ���������� (exit 0)
+����: Overfull/Underfull hbox/vbox����Ŀ�淶������
+      Missing character ? in lmmono10��ͼ11 Ԥ�ȴ��ڣ��뱾�α༭�޹أ�
+����: ����ͨ�� ?

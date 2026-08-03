@@ -1,0 +1,31 @@
+# Task 10 — Final regression verification (reduce-boxes-pro)
+# Date: 2026-08-03
+# Scope: VERIFICATION ONLY — no source modified, no commit.
+
+## Compile
+- Pass 1 xelatex: exit 0, PDF 84 pages
+- Pass 2 xelatex: exit 0, PDF 84 pages
+
+## Regression metrics vs baseline (.omo/evidence/reduce-boxes-pro/baseline/)
+| Metric | Baseline | Current | Delta | Budget | Verdict |
+|--------|----------|---------|-------|--------|---------|
+| Overfull+Underfull count | 45 | 43 | -2 | <= +5 | PASS |
+| Overfull | - | 6 | - | - | - |
+| Underfull | - | 37 | - | - | - |
+| fig+tab labels in .aux | 51 | 51 | 0 | 0 | PASS |
+| Label counter drift | - | none | 0 | 0 | PASS |
+| warnbox count | 8 | 8 | 0 | 8 | PASS |
+| infobox count | 0 | 0 | 0 | 0 | PASS |
+| tipbox count | 0 | 0 | 0 | 0 | PASS |
+| keybox count | 0 | 0 | 0 | 0 | PASS |
+| stepbox count | 0 | 0 | 0 | 0 | PASS |
+
+## Log checks (second-pass .log)
+- "Fatal error": 0 occurrences — PASS
+- "Emergency stop": 0 occurrences — PASS
+- "LaTeX Warning: Reference.*undefined": 0 occurrences — PASS
+- "Rerun to get cross-references": 0 occurrences — PASS
+- Known non-issue: "fatal: refusing to" in body (Git error example), "Missing character ✓" (pre-existing) — not errors.
+
+## Overall verdict
+PASS — all regression gates green. Ready for Final Verification Wave (F1-F4).

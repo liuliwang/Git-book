@@ -1,0 +1,164 @@
+﻿diff --git a/Git_VSCode_Tutorial.tex b/Git_VSCode_Tutorial.tex
+index 3167880..7021a53 100644
+--- a/Git_VSCode_Tutorial.tex
++++ b/Git_VSCode_Tutorial.tex
+@@ -762,6 +762,7 @@ VS Code 鍐呯疆浜嗗己澶х殑 Git 闆嗘垚锛屽皢涓婅堪鎵€鏈夋搷浣滈兘鍥惧舰鍖栦簡銆?   \item Git 鐨勪笁澶у伐浣滃尯鍩燂細宸ヤ綔鍖?鈫?鏆傚瓨鍖?鈫?鏈湴浠撳簱 鈫?杩滅▼浠撳簱
+   \item VS Code 鍐呯疆浜嗗己澶х殑 Git 闆嗘垚锛屽皢鍛戒护琛屾搷浣滃浘褰㈠寲
+ \end{itemize}
++\medskip
+ 
+ \textbf{涓嬩竴绔犻鍛妢锛氭垜浠皢瀛︿範濡備綍瀹夎 Git 鍜?VS Code锛屼互鍙婂浣曢厤缃?GitHub 璁よ瘉銆? \medskip
+@@ -1593,8 +1594,7 @@ logs/
+ 渚嬪 Python 椤圭洰銆丯ode.js 椤圭洰銆丣ava 椤圭洰閮芥湁瀵瑰簲鐨勬ā鏉裤€? \medskip
+ 
+-\begin{tipbox}
+-\textbf{鏈珷灏忕粨}
++\noindent\textbf{鎻愮ず锛殅\textbf{鏈珷灏忕粨}
+ \begin{itemize}
+   \item 閫氳繃 \texttt{git init} 鍒濆鍖栦粨搴擄紝\texttt{git clone} 鍏嬮殕杩滅▼浠撳簱
+   \item 鏂囦欢鏈夊洓绉嶇姸鎬侊細鏈窡韪€佹湭淇敼銆佸凡淇敼銆佸凡鏆傚瓨
+@@ -1603,9 +1603,9 @@ logs/
+   \item 鎾ら攢鎿嶄綔锛歕texttt{git restore}锛堝伐浣滃尯锛夈€乗texttt{git restore --staged}锛堟殏瀛樺尯锛夈€乗texttt{git commit --amend}锛堟彁浜わ級
+   \item \texttt{.gitignore} 鐢ㄤ簬鎺掗櫎涓嶉渶瑕佽窡韪殑鏂囦欢
+ \end{itemize}
++\medskip
+ 
+ \textbf{涓嬩竴绔犻鍛妢锛氭垜浠皢瀛︿範 Git 鏈€寮哄ぇ鐨勭壒鎬р€斺€斿垎鏀笌鍚堝苟銆?-\end{tipbox}
+ 
+ \subsection*{鍔ㄦ墜瀹為獙 3锛氫慨鏀?鏆傚瓨-鎻愪氦瀹屾暣娴佺▼}
+ 
+@@ -1621,9 +1621,8 @@ logs/
+ \end{enumerate}
+ \medskip
+ 
+-\begin{tipbox}
+-\textbf{鎴愬姛鏍囧織}锛氱偣鍑绘簮浠ｇ爜绠＄悊瑙嗗浘鏍囬鏍忕殑銆屾彁浜ゅ巻鍙插浘銆嶅浘鏍囷紝鑳界湅鍒颁竴鏉℃彁浜よ褰?\texttt{鏇存柊闂€欒}銆?-\end{tipbox}
++\noindent\textbf{鎻愮ず锛殅\textbf{鎴愬姛鏍囧織}锛氱偣鍑绘簮浠ｇ爜绠＄悊瑙嗗浘鏍囬鏍忕殑銆屾彁浜ゅ巻鍙插浘銆嶅浘鏍囷紝鑳界湅鍒颁竴鏉℃彁浜よ褰?\texttt{鏇存柊闂€欒}銆?+\medskip
+ 
+ % ================================================================
+ %  绗洓绔狅細鍒嗘敮涓庡悎骞?@@ -1834,10 +1833,8 @@ git commit  # 瀹屾垚鍚堝苟锛圙it 浼氳嚜鍔ㄧ敓鎴愬悎骞舵彁浜や俊鎭級
+ git merge --abort
+ \end{lstlisting}
+ 
+-\begin{tipbox}
+-\textbf{鎼滅储鍐茬獊}锛氭寜 \texttt{Ctrl + Shift + P}锛岃緭鍏?"Merge Conflict"锛?+\noindent\textbf{鎻愮ず锛殅\textbf{鎼滅储鍐茬獊}锛氭寜 \texttt{Ctrl + Shift + P}锛岃緭鍏?"Merge Conflict"锛? 鍙互鐪嬪埌鎵€鏈夊啿绐佺浉鍏崇殑鍛戒护锛屽寘鎷?Accept All Current"绛夋壒閲忔搷浣溿€?-\end{tipbox}
+ 
+ \section{Rebase锛氭暣鐞嗗巻鍙瞹
+ 
+@@ -1975,13 +1972,10 @@ feature:       C --- D --- E --- F
+   \item \texttt{hotfix/*}锛氫粠 \texttt{main} 鍒涘缓鐨勭揣鎬ヤ慨澶嶅垎鏀€? \end{itemize}
+ 
+-\begin{tipbox}
+ 瀵逛簬涓汉椤圭洰鎴栧皬鍥㈤槦锛孎eature Branch 宸ヤ綔娴佸凡缁忚冻澶熴€? GitFlow 鏇撮€傚悎鏈変弗鏍煎彂甯冩祦绋嬬殑澶у瀷椤圭洰銆?-\end{tipbox}
+ 
+-\begin{tipbox}
+-\textbf{鏈珷灏忕粨}
++\noindent\textbf{鎻愮ず锛殅\textbf{鏈珷灏忕粨}
+ \begin{itemize}
+   \item 鍒嗘敮鏄寚鍚戞彁浜ょ殑鍙Щ鍔ㄦ寚閽堬紝鍒涘缓鍜屽垏鎹㈠垎鏀嚑涔庝笉娑堣€楄祫婧?   \item 鍚堝苟鍒嗘敮鏈?Fast-forward 鍜?3-way merge 涓ょ鏂瑰紡
+@@ -1990,9 +1984,9 @@ GitFlow 鏇撮€傚悎鏈変弗鏍煎彂甯冩祦绋嬬殑澶у瀷椤圭洰銆?   \item Cherry-pick 鍙互鎸戦€夌壒瀹氭彁浜ゅ簲鐢ㄥ埌褰撳墠鍒嗘敮
+   \item Feature Branch 鏄渶甯哥敤鐨勫垎鏀瓥鐣ワ紝GitFlow 閫傚悎澶у瀷椤圭洰
+ \end{itemize}
++\medskip
+ 
+ \textbf{涓嬩竴绔犻鍛妢锛氭垜浠皢瀛︿範濡備綍灏嗘湰鍦颁粨搴撲笌杩滅▼浠撳簱鍚屾锛屼互鍙婂浣曞湪 GitHub 涓婅繘琛屽崗浣溿€?-\end{tipbox}
+ 
+ \subsection*{鍔ㄦ墜瀹為獙 4锛氬垱寤哄垎鏀€佸悎骞躲€佽В鍐冲啿绐亇
+ 
+@@ -2008,10 +2002,8 @@ GitFlow 鏇撮€傚悎鏈変弗鏍煎彂甯冩祦绋嬬殑澶у瀷椤圭洰銆? \end{enumerate}
+ \medskip
+ 
+-\begin{tipbox}
+-\textbf{鎴愬姛鏍囧織}锛氬簳閮ㄧ姸鎬佹爮鍒嗘敮鍚嶄负 \texttt{main}锛屾簮浠ｇ爜绠＄悊瑙嗗浘鏃犲緟澶勭悊鏇存敼銆?+\noindent\textbf{鎻愮ず锛殅\textbf{鎴愬姛鏍囧織}锛氬簳閮ㄧ姸鎬佹爮鍒嗘敮鍚嶄负 \texttt{main}锛屾簮浠ｇ爜绠＄悊瑙嗗浘鏃犲緟澶勭悊鏇存敼銆? 鑻ユ兂鏀惧純鍚堝苟锛岀偣鍑汇€屸€︺€嶈彍鍗?$\to$銆屽垎鏀€?\to$銆屼腑姝㈠悎骞躲€嶅嵆鍙€?-\end{tipbox}
+ 
+ % ================================================================
+ %  绗簲绔狅細杩滅▼浠撳簱涓?GitHub
+@@ -2214,15 +2206,13 @@ PR 娴佺▼瑙ｅ喅浜嗚繖浜涢棶棰橈細
+ \end{enumerate}
+ \medskip
+ 
+-\begin{tipbox}
+-\textbf{濂界殑 PR 鎻忚堪搴斿寘鍚珆锛?+\noindent\textbf{鎻愮ず锛殅\textbf{濂界殑 PR 鎻忚堪搴斿寘鍚珆锛? \begin{itemize}
+   \item 杩欎釜 PR 瑙ｅ喅浜嗕粈涔堥棶棰橈紵
+   \item 鍋氫簡浠€涔堟敼鍔紵
+   \item 濡備綍娴嬭瘯杩欎簺鏀瑰姩锛?   \item 鐩稿叧鐨?Issue 缂栧彿锛堝 \texttt{Closes \#123}锛? \end{itemize}
+-\end{tipbox}
+ 
+ \subsection{PR 宸ヤ綔娴佺▼鍥緘
+ 
+@@ -2270,8 +2260,7 @@ Pull Request 鐨勫畬鏁村伐浣滄祦绋嬪鍥緙\ref{fig:pr-workflow} 鎵€绀猴細
+ \end{enumerate}
+ \medskip
+ 
+-\begin{tipbox}
+-\textbf{鏈珷灏忕粨}
++\noindent\textbf{鎻愮ず锛殅\textbf{鏈珷灏忕粨}
+ \begin{itemize}
+   \item 杩滅▼浠撳簱鏄墭绠″湪鏈嶅姟鍣ㄤ笂鐨?Git 浠撳簱鍓湰锛孿texttt{origin} 鏄渶甯哥敤鐨勮繙绋嬪悕
+   \item \texttt{git push} 涓婁紶鏈湴鎻愪氦锛孿texttt{git pull} 涓嬭浇骞跺悎骞讹紝\texttt{git fetch} 鍙笅杞戒笉鍚堝苟
+@@ -2279,9 +2268,9 @@ Pull Request 鐨勫畬鏁村伐浣滄祦绋嬪鍥緙\ref{fig:pr-workflow} 鎵€绀猴細
+   \item Pull Request 鏄?GitHub 鐨勬牳蹇冨崗浣滃姛鑳斤紝鐢ㄤ簬浠ｇ爜瀹℃煡鍜屽悎骞?   \item Fork 鏄础鐚紑婧愰」鐩殑鏍囧噯鏂瑰紡
+ \end{itemize}
++\medskip
+ 
+ \textbf{涓嬩竴绔犻鍛妢锛氭垜浠皢娣卞叆浜嗚В VS Code 涓殑 Git 闆嗘垚锛屽涔犲浣曠敤鍥惧舰鐣岄潰楂樻晥鎿嶄綔 Git銆?-\end{tipbox}
+ 
+ \subsection*{鍔ㄦ墜瀹為獙 5锛氭帹閫佸埌GitHub骞跺垱寤篜R}
+ 
+@@ -2297,9 +2286,7 @@ Pull Request 鐨勫畬鏁村伐浣滄祦绋嬪鍥緙\ref{fig:pr-workflow} 鎵€绀猴細
+ \end{enumerate}
+ \medskip
+ 
+-\begin{tipbox}
+-\textbf{鎴愬姛鏍囧織}锛欸itHub 浠撳簱椤甸潰鐨?\texttt{main} 鍒嗘敮涓嚭鐜颁簡 \texttt{README.md}锛孭ull Request 鐘舵€佹樉绀轰负 Merged锛堝凡鍚堝苟锛夈€?-\end{tipbox}
++\noindent\textbf{鎻愮ず锛殅\textbf{鎴愬姛鏍囧織}锛欸itHub 浠撳簱椤甸潰鐨?\texttt{main} 鍒嗘敮涓嚭鐜颁簡 \texttt{README.md}锛孭ull Request 鐘舵€佹樉绀轰负 Merged锛堝凡鍚堝苟锛夈€? 
+ % ================================================================
+ %  绗叚绔狅細VS Code 涓殑 Git 闆嗘垚锛堟牳蹇冪珷鑺傦級
+@@ -2457,15 +2444,13 @@ Git History & Don Jayamanne & 鏌ョ湅鏂囦欢/琛岀殑璇︾粏鎻愪氦鍘嗗彶 \\
+ \end{tabularx}
+ \end{table}
+ 
+-\begin{tipbox}
+-\textbf{寮虹儓鎺ㄨ崘瀹夎 GitLens}銆傚畠鎻愪緵浜嗭細
++\noindent\textbf{鎻愮ず锛殅\textbf{寮虹儓鎺ㄨ崘瀹夎 GitLens}銆傚畠鎻愪緵浜嗭細
+ \begin{itemize}
+   \item \textbf{琛屽唴 blame}锛氬湪姣忎竴琛屼唬鐮佸悗闈㈡樉绀烘渶鍚庝慨鏀硅€呭拰鏃堕棿銆?   \item \textbf{鎮仠璇︽儏}锛氶紶鏍囨偓鍋滃湪浠ｇ爜涓婏紝鏄剧ず璇ヨ鐨勫畬鏁存彁浜や俊鎭€?   \item \textbf{鏂囦欢鍘嗗彶}锛氭煡鐪嬫枃浠剁殑瀹屾暣淇敼鏃堕棿绾裤€?   \item \textbf{姣旇緝鍒嗘敮}锛氬彲瑙嗗寲姣旇緝浠绘剰涓や釜鍒嗘敮鐨勫樊寮傘€? \end{itemize}
+-\end{tipbox}
+ 
+ \subsection*{鍔ㄦ墜瀹為獙 6锛歏S Code涓畬鎴愬畬鏁碐it宸ヤ綔娴亇
+ 
+@@ -2481,11 +2466,10 @@ Git History & Don Jayamanne & 鏌ョ湅鏂囦欢/琛岀殑璇︾粏鎻愪氦鍘嗗彶 \\
+ \end{enumerate}
+ \medskip
+ 
+-\begin{tipbox}
+-\textbf{鎴愬姛鏍囧織}锛歍imeline 瑙嗗浘涓?\texttt{hello.txt} 鍒楀嚭浜嗗鏉℃彁浜よ褰曪紝鏈€杩戜竴鏉℃槸 \texttt{缁冧範閮ㄥ垎鏆傚瓨}銆?+\noindent\textbf{鎻愮ず锛殅\textbf{鎴愬姛鏍囧織}锛歍imeline 瑙嗗浘涓?\texttt{hello.txt} 鍒楀嚭浜嗗鏉℃彁浜よ褰曪紝鏈€杩戜竴鏉℃槸 \texttt{缁冧範閮ㄥ垎鏆傚瓨}銆?+\medskip
+ 
+ \textbf{涓嬩竴绔犻鍛妢锛氭垜浠皢瀛︿範濡備綍灏嗚繖浜涙妧鑳芥暣鍚堟垚涓€濂楀畬鏁寸殑宸ヤ綔娴侊紝浠ュ強濡備綍鍦ㄥ洟闃熶腑楂樻晥鍗忎綔銆?-\end{tipbox}
+ 
+ % ================================================================
+ %  绗竷绔狅細瀹炴垬宸ヤ綔娴?@@ -2683,8 +2667,7 @@ ssh -T git@github.com
+ \end{lstlisting}
+ \end{infobox}
+ 
+-\begin{tipbox}
+-\textbf{鏈珷灏忕粨}
++\noindent\textbf{鎻愮ず锛殅\textbf{鏈珷灏忕粨}
+ \begin{itemize}
+   \item 瀹屾暣鐨?Feature Branch 宸ヤ綔娴侊細鍚屾 鈫?鍒涘缓鍒嗘敮 鈫?寮€鍙?鈫?鎺ㄩ€?鈫?PR 鈫?鍚堝苟 鈫?娓呯悊
+   \item VS Code 鎻愪緵浜嗗畬鏁寸殑鍥惧舰鍖栨搷浣滅晫闈紝鏃犻渶璁颁綇鍛戒护琛?@@ -2693,7 +2676,6 @@ ssh -T git@github.com
+ \end{itemize}
+ 
+ \textbf{闄勫綍棰勫憡}锛氭帴涓嬫潵鏄父鐢ㄥ懡浠ら€熸煡琛紝鏂逛究鏃ュ父鏌ラ槄銆?-\end{tipbox}
+ 
+ \subsection*{鍔ㄦ墜瀹為獙 7锛氱鍒扮Feature Branch寮€鍙戞祦绋媫
+ 
+@@ -2709,9 +2691,7 @@ ssh -T git@github.com
+ \end{enumerate}
+ \medskip
+ 
+-\begin{tipbox}
+-\textbf{鎴愬姛鏍囧織}锛欸itHub 涓?\texttt{main} 鍒嗘敮鍖呭惈 \texttt{e2e.md}锛屼笖鏈湴 \texttt{feature/e2e-flow} 鍒嗘敮宸插垹闄わ紝鏁翠釜 Feature Branch 娴佺▼闂幆瀹屾垚銆?-\end{tipbox}
++\noindent\textbf{鎻愮ず锛殅\textbf{鎴愬姛鏍囧織}锛欸itHub 涓?\texttt{main} 鍒嗘敮鍖呭惈 \texttt{e2e.md}锛屼笖鏈湴 \texttt{feature/e2e-flow} 鍒嗘敮宸插垹闄わ紝鏁翠釜 Feature Branch 娴佺▼闂幆瀹屾垚銆? 
+ % ================================================================
+ %  绗?8 绔狅細鏂版墜閬垮潙鎸囧崡

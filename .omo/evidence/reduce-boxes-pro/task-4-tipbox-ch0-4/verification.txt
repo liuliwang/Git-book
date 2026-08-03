@@ -1,0 +1,26 @@
+﻿Task 4 Verification: tipbox conversion in chapters 0-4
+=====================================================
+Date: 2026-08-03
+Files modified: Git_VSCode_Tutorial.tex
+
+Tipbox instances converted (12 total):
+1. Line ~296: 零基础心法 -> inline prose
+2. Line ~660: Porcelain vs Plumbing -> inline prose
+3. Line ~741: 类比理解 -> inline prose
+4. Line ~760: 本章小结 ch1 -> inline prose
+5. Line ~788: 成功标志 exp1 -> inline prose
+6. Line ~956: --global config -> inline prose
+7. Line ~1015: VS Code OAuth -> inline prose
+8. Line ~1096: 成功标志 exp2 -> inline prose
+9. Line ~1266: git status habit -> inline prose
+10. Line ~1344: AI commit message -> inline prose
+11. Line ~1499: cancel stage VS Code -> inline prose
+12. Line ~1595: .gitignore templates -> inline box
+
+Compilation results:
+- First pass: SUCCESS (exit code 0)
+- Second pass: SUCCESS (exit code 0)
+- Undefined references: 0
+- Overfull/Underfull warnings: baseline preserved
+
+All 12 tipbox instances successfully converted to inline prose.

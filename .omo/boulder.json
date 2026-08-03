@@ -1,223 +1,249 @@
 {
   "schema_version": 2,
-  "active_work_id": "tikz-cross-refs-dd2ab908",
+  "active_work_id": "reduce-boxes-pro-cac6980c",
   "works": {
-    "tikz-cross-refs-dd2ab908": {
-      "work_id": "tikz-cross-refs-dd2ab908",
-      "active_plan": "C:\\Users\\Admin\\Desktop\\Git\\.omo\\plans\\tikz-cross-refs.md",
-      "plan_name": "tikz-cross-refs",
+    "reduce-boxes-pro-cac6980c": {
+      "work_id": "reduce-boxes-pro-cac6980c",
+      "active_plan": "C:\\Users\\Admin\\Desktop\\Git\\.omo\\plans\\reduce-boxes-pro.md",
+      "plan_name": "reduce-boxes-pro",
       "status": "completed",
-      "started_at": "2026-08-02T12:33:15.586Z",
-      "updated_at": "2026-08-02T12:47:55.405Z",
+      "started_at": "2026-08-03T04:27:26.104Z",
+      "updated_at": "2026-08-03T06:40:04.765Z",
       "session_ids": [
-        "opencode:ses_03db5110dffeLWXzKx7xdjK5aC"
+        "opencode:ses_03a2c0ee6ffeaaL5bMGEzKVyM0"
       ],
       "session_origins": {
-        "opencode:ses_03db5110dffeLWXzKx7xdjK5aC": "direct"
+        "opencode:ses_03a2c0ee6ffeaaL5bMGEzKVyM0": "direct"
       },
       "agent": "atlas",
       "task_sessions": {
         "todo:1": {
           "task_key": "todo:1",
           "task_label": "1",
-          "task_title": "第 0-1 章 TikZ 图补 figure 环境 + caption + label + \\ref（#1-5：行 250、312、494、580、694）",
-          "session_id": "opencode:ses_03d88a652ffe6ivoWNCTd4jVdQ",
+          "task_title": "Line 343: `\\textbf{建议阅读策略}：` + itemize",
+          "session_id": "opencode:ses_039ba0b75ffeAzTyCUPgZbMaXT",
           "agent": "Sisyphus-Junior",
           "category": "quick",
-          "updated_at": "2026-08-02T12:36:21.125Z",
-          "started_at": "2026-08-02T12:36:07.172Z",
+          "started_at": "2026-08-03T04:33:11.859Z",
+          "ended_at": "2026-08-03T06:21:28.697Z",
+          "elapsed_ms": 6496838,
           "status": "completed",
-          "ended_at": "2026-08-02T12:36:21.125Z",
-          "elapsed_ms": 13953
+          "updated_at": "2026-08-03T06:21:28.697Z"
         },
         "todo:2": {
           "task_key": "todo:2",
           "task_label": "2",
-          "task_title": "第 3-5 章 TikZ 图补 figure 环境 + caption + label + \\ref（#6-8：行 1189、1832、2211）",
-          "session_id": "opencode:ses_03d8616cfffeqoElRMxau9OHpr",
+          "task_title": "转换全部 stepbox 为普通 enumerate 列表",
+          "session_id": "opencode:ses_03a18a9ecffe1DFR7hkBe68F1x",
           "agent": "Sisyphus-Junior",
           "category": "quick",
-          "updated_at": "2026-08-02T12:37:27.966Z",
-          "started_at": "2026-08-02T12:37:17.248Z",
+          "updated_at": "2026-08-03T04:42:29.653Z",
+          "started_at": "2026-08-03T04:40:44.457Z",
           "status": "completed",
-          "ended_at": "2026-08-02T12:37:27.966Z",
-          "elapsed_ms": 10718
+          "ended_at": "2026-08-03T04:42:29.653Z",
+          "elapsed_ms": 105196
         },
         "todo:3": {
           "task_key": "todo:3",
           "task_label": "3",
-          "task_title": "第 9 章 TikZ 图补 figure 环境 + caption + label + \\ref（#9-11：行 2778、2836、2901）+ 首次编译验证",
-          "session_id": "opencode:ses_03d850650ffe7oWsK0MHRJK6ys",
+          "task_title": "转换全部 keybox 为粗体散文段落",
+          "session_id": "opencode:ses_03a10b9d8ffeiAmtVZ1i8WBWHD",
           "agent": "Sisyphus-Junior",
           "category": "quick",
-          "updated_at": "2026-08-02T12:40:12.485Z",
-          "started_at": "2026-08-02T12:39:58.728Z",
+          "updated_at": "2026-08-03T04:50:47.637Z",
+          "started_at": "2026-08-03T04:48:30.157Z",
           "status": "completed",
-          "ended_at": "2026-08-02T12:40:12.485Z",
-          "elapsed_ms": 13757
+          "ended_at": "2026-08-03T04:50:47.637Z",
+          "elapsed_ms": 137480
         },
-        "final-wave:f1": {
-          "task_key": "final-wave:f1",
-          "task_label": "F1",
-          "task_title": "计划合规审计",
-          "session_id": "opencode:ses_03d82711affelcIQi7DcdxxJOl",
+        "todo:4": {
+          "task_key": "todo:4",
+          "task_label": "4",
+          "task_title": "转换全部 tipbox 为内联散文（第 0-4 章）",
+          "session_id": "opencode:ses_03a080153ffet3XoqHjXLwA7TP",
           "agent": "Sisyphus-Junior",
-          "category": "quick",
-          "updated_at": "2026-08-02T12:47:10.276Z",
-          "started_at": "2026-08-02T12:41:19.679Z",
+          "category": "writing",
+          "updated_at": "2026-08-03T05:00:55.930Z",
+          "started_at": "2026-08-03T04:58:20.792Z",
           "status": "completed",
-          "ended_at": "2026-08-02T12:47:10.276Z",
-          "elapsed_ms": 350597
+          "ended_at": "2026-08-03T05:00:55.930Z",
+          "elapsed_ms": 155138
         },
-        "final-wave:f2": {
-          "task_key": "final-wave:f2",
-          "task_label": "F2",
-          "task_title": "LaTeX 编译与引用一致性审查",
-          "session_id": "opencode:ses_03d8262e0ffeKz9CgfpUKr5c1D",
+        "todo:5": {
+          "task_key": "todo:5",
+          "task_label": "5",
+          "task_title": "转换全部 tipbox 为内联散文（第 5-8 章 + 附录）",
+          "session_id": "opencode:ses_03a00ae10ffe30zxYOKc981Lyi",
           "agent": "Sisyphus-Junior",
-          "category": "quick",
-          "updated_at": "2026-08-02T12:48:00.000Z",
-          "started_at": "2026-08-02T12:41:20.000Z",
+          "category": "writing",
+          "updated_at": "2026-08-03T05:59:16.901Z",
+          "started_at": "2026-08-03T05:56:40.872Z",
           "status": "completed",
-          "ended_at": "2026-08-02T12:48:00.000Z",
-          "elapsed_ms": 400000
+          "ended_at": "2026-08-03T05:59:16.901Z",
+          "elapsed_ms": 156029
         },
-        "final-wave:f3": {
-          "task_key": "final-wave:f3",
-          "task_label": "F3",
-          "task_title": "实际 QA（PDF 翻阅）",
-          "session_id": "opencode:ses_03d82582cffeX5VVkAX40d1ePV",
+        "todo:6": {
+          "task_key": "todo:6",
+          "task_label": "6",
+          "task_title": "提取 infobox 中的表格为独立 table 环境",
+          "session_id": "opencode:ses_039c91e32ffe0IMCzxukitfmqk",
           "agent": "Sisyphus-Junior",
           "category": "quick",
-          "updated_at": "2026-08-02T12:49:00.000Z",
-          "started_at": "2026-08-02T12:41:21.000Z",
+          "updated_at": "2026-08-03T06:05:44.197Z",
+          "started_at": "2026-08-03T06:03:30.020Z",
           "status": "completed",
-          "ended_at": "2026-08-02T12:49:00.000Z",
-          "elapsed_ms": 460000
+          "ended_at": "2026-08-03T06:05:44.197Z",
+          "elapsed_ms": 134177
         },
-        "final-wave:f4": {
-          "task_key": "final-wave:f4",
-          "task_label": "F4",
-          "task_title": "范围保真审计",
-          "session_id": "opencode:ses_03d824cb9ffetGLVGqiIyey9hM",
+        "todo:7": {
+          "task_key": "todo:7",
+          "task_label": "7",
+          "task_title": "转换 infobox 章节学习目标为粗体段落",
+          "session_id": "opencode:ses_039c39306ffe6KVR30N8JzGrxf",
           "agent": "Sisyphus-Junior",
           "category": "quick",
-          "updated_at": "2026-08-02T12:50:00.000Z",
-          "started_at": "2026-08-02T12:41:22.000Z",
+          "updated_at": "2026-08-03T06:11:39.769Z",
+          "started_at": "2026-08-03T06:10:21.841Z",
           "status": "completed",
-          "ended_at": "2026-08-02T12:50:00.000Z",
-          "elapsed_ms": 520000
+          "ended_at": "2026-08-03T06:11:39.769Z",
+          "elapsed_ms": 77928
+        },
+        "todo:10": {
+          "task_key": "todo:10",
+          "task_label": "10",
+          "task_title": "增量编译验证与警告回归检查",
+          "session_id": "opencode:ses_039b66a1bffe3S6B46ox43JbhY",
+          "agent": "Sisyphus-Junior",
+          "category": "quick",
+          "updated_at": "2026-08-03T06:26:27.201Z",
+          "started_at": "2026-08-03T06:23:41.409Z",
+          "status": "completed",
+          "ended_at": "2026-08-03T06:26:27.201Z",
+          "elapsed_ms": 165792
         }
       },
-      "ended_at": "2026-08-02T12:47:55.405Z",
-      "elapsed_ms": 879819
+      "ended_at": "2026-08-03T06:40:04.765Z",
+      "elapsed_ms": 7958661
     }
   },
-  "active_plan": "C:\\Users\\Admin\\Desktop\\Git\\.omo\\plans\\tikz-cross-refs.md",
-  "started_at": "2026-08-02T12:33:15.586Z",
+  "active_plan": "C:\\Users\\Admin\\Desktop\\Git\\.omo\\plans\\reduce-boxes-pro.md",
+  "started_at": "2026-08-03T04:27:26.104Z",
   "status": "completed",
-  "updated_at": "2026-08-02T12:47:55.405Z",
+  "updated_at": "2026-08-03T06:40:04.765Z",
   "session_ids": [
-    "opencode:ses_03db5110dffeLWXzKx7xdjK5aC"
+    "opencode:ses_03a2c0ee6ffeaaL5bMGEzKVyM0"
   ],
   "session_origins": {
-    "opencode:ses_03db5110dffeLWXzKx7xdjK5aC": "direct"
+    "opencode:ses_03a2c0ee6ffeaaL5bMGEzKVyM0": "direct"
   },
-  "plan_name": "tikz-cross-refs",
+  "plan_name": "reduce-boxes-pro",
   "task_sessions": {
     "todo:1": {
       "task_key": "todo:1",
       "task_label": "1",
-      "task_title": "第 0-1 章 TikZ 图补 figure 环境 + caption + label + \\ref（#1-5：行 250、312、494、580、694）",
-      "session_id": "opencode:ses_03d88a652ffe6ivoWNCTd4jVdQ",
+      "task_title": "Line 343: `\\textbf{建议阅读策略}：` + itemize",
+      "session_id": "opencode:ses_039ba0b75ffeAzTyCUPgZbMaXT",
       "agent": "Sisyphus-Junior",
       "category": "quick",
-      "updated_at": "2026-08-02T12:36:21.125Z",
-      "started_at": "2026-08-02T12:36:07.172Z",
+      "started_at": "2026-08-03T04:33:11.859Z",
+      "ended_at": "2026-08-03T06:21:28.697Z",
+      "elapsed_ms": 6496838,
       "status": "completed",
-      "ended_at": "2026-08-02T12:36:21.125Z",
-      "elapsed_ms": 13953
+      "updated_at": "2026-08-03T06:21:28.697Z"
     },
     "todo:2": {
       "task_key": "todo:2",
       "task_label": "2",
-      "task_title": "第 3-5 章 TikZ 图补 figure 环境 + caption + label + \\ref（#6-8：行 1189、1832、2211）",
-      "session_id": "opencode:ses_03d8616cfffeqoElRMxau9OHpr",
+      "task_title": "转换全部 stepbox 为普通 enumerate 列表",
+      "session_id": "opencode:ses_03a18a9ecffe1DFR7hkBe68F1x",
       "agent": "Sisyphus-Junior",
       "category": "quick",
-      "updated_at": "2026-08-02T12:37:27.966Z",
-      "started_at": "2026-08-02T12:37:17.248Z",
+      "updated_at": "2026-08-03T04:42:29.653Z",
+      "started_at": "2026-08-03T04:40:44.457Z",
       "status": "completed",
-      "ended_at": "2026-08-02T12:37:27.966Z",
-      "elapsed_ms": 10718
+      "ended_at": "2026-08-03T04:42:29.653Z",
+      "elapsed_ms": 105196
     },
     "todo:3": {
       "task_key": "todo:3",
       "task_label": "3",
-      "task_title": "第 9 章 TikZ 图补 figure 环境 + caption + label + \\ref（#9-11：行 2778、2836、2901）+ 首次编译验证",
-      "session_id": "opencode:ses_03d850650ffe7oWsK0MHRJK6ys",
+      "task_title": "转换全部 keybox 为粗体散文段落",
+      "session_id": "opencode:ses_03a10b9d8ffeiAmtVZ1i8WBWHD",
       "agent": "Sisyphus-Junior",
       "category": "quick",
-      "updated_at": "2026-08-02T12:40:12.485Z",
-      "started_at": "2026-08-02T12:39:58.728Z",
+      "updated_at": "2026-08-03T04:50:47.637Z",
+      "started_at": "2026-08-03T04:48:30.157Z",
       "status": "completed",
-      "ended_at": "2026-08-02T12:40:12.485Z",
-      "elapsed_ms": 13757
+      "ended_at": "2026-08-03T04:50:47.637Z",
+      "elapsed_ms": 137480
     },
-    "final-wave:f1": {
-      "task_key": "final-wave:f1",
-      "task_label": "F1",
-      "task_title": "计划合规审计",
-      "session_id": "opencode:ses_03d82711affelcIQi7DcdxxJOl",
+    "todo:4": {
+      "task_key": "todo:4",
+      "task_label": "4",
+      "task_title": "转换全部 tipbox 为内联散文（第 0-4 章）",
+      "session_id": "opencode:ses_03a080153ffet3XoqHjXLwA7TP",
       "agent": "Sisyphus-Junior",
-      "category": "quick",
-      "updated_at": "2026-08-02T12:47:10.276Z",
-      "started_at": "2026-08-02T12:41:19.679Z",
+      "category": "writing",
+      "updated_at": "2026-08-03T05:00:55.930Z",
+      "started_at": "2026-08-03T04:58:20.792Z",
       "status": "completed",
-      "ended_at": "2026-08-02T12:47:10.276Z",
-      "elapsed_ms": 350597
+      "ended_at": "2026-08-03T05:00:55.930Z",
+      "elapsed_ms": 155138
     },
-    "final-wave:f2": {
-      "task_key": "final-wave:f2",
-      "task_label": "F2",
-      "task_title": "LaTeX 编译与引用一致性审查",
-      "session_id": "opencode:ses_03d8262e0ffeKz9CgfpUKr5c1D",
+    "todo:5": {
+      "task_key": "todo:5",
+      "task_label": "5",
+      "task_title": "转换全部 tipbox 为内联散文（第 5-8 章 + 附录）",
+      "session_id": "opencode:ses_03a00ae10ffe30zxYOKc981Lyi",
       "agent": "Sisyphus-Junior",
-      "category": "quick",
-      "updated_at": "2026-08-02T12:48:00.000Z",
-      "started_at": "2026-08-02T12:41:20.000Z",
+      "category": "writing",
+      "updated_at": "2026-08-03T05:59:16.901Z",
+      "started_at": "2026-08-03T05:56:40.872Z",
       "status": "completed",
-      "ended_at": "2026-08-02T12:48:00.000Z",
-      "elapsed_ms": 400000
+      "ended_at": "2026-08-03T05:59:16.901Z",
+      "elapsed_ms": 156029
     },
-    "final-wave:f3": {
-      "task_key": "final-wave:f3",
-      "task_label": "F3",
-      "task_title": "实际 QA（PDF 翻阅）",
-      "session_id": "opencode:ses_03d82582cffeX5VVkAX40d1ePV",
+    "todo:6": {
+      "task_key": "todo:6",
+      "task_label": "6",
+      "task_title": "提取 infobox 中的表格为独立 table 环境",
+      "session_id": "opencode:ses_039c91e32ffe0IMCzxukitfmqk",
       "agent": "Sisyphus-Junior",
       "category": "quick",
-      "updated_at": "2026-08-02T12:49:00.000Z",
-      "started_at": "2026-08-02T12:41:21.000Z",
+      "updated_at": "2026-08-03T06:05:44.197Z",
+      "started_at": "2026-08-03T06:03:30.020Z",
       "status": "completed",
-      "ended_at": "2026-08-02T12:49:00.000Z",
-      "elapsed_ms": 460000
+      "ended_at": "2026-08-03T06:05:44.197Z",
+      "elapsed_ms": 134177
     },
-    "final-wave:f4": {
-      "task_key": "final-wave:f4",
-      "task_label": "F4",
-      "task_title": "范围保真审计",
-      "session_id": "opencode:ses_03d824cb9ffetGLVGqiIyey9hM",
+    "todo:7": {
+      "task_key": "todo:7",
+      "task_label": "7",
+      "task_title": "转换 infobox 章节学习目标为粗体段落",
+      "session_id": "opencode:ses_039c39306ffe6KVR30N8JzGrxf",
       "agent": "Sisyphus-Junior",
       "category": "quick",
-      "updated_at": "2026-08-02T12:50:00.000Z",
-      "started_at": "2026-08-02T12:41:22.000Z",
+      "updated_at": "2026-08-03T06:11:39.769Z",
+      "started_at": "2026-08-03T06:10:21.841Z",
       "status": "completed",
-      "ended_at": "2026-08-02T12:50:00.000Z",
-      "elapsed_ms": 520000
+      "ended_at": "2026-08-03T06:11:39.769Z",
+      "elapsed_ms": 77928
+    },
+    "todo:10": {
+      "task_key": "todo:10",
+      "task_label": "10",
+      "task_title": "增量编译验证与警告回归检查",
+      "session_id": "opencode:ses_039b66a1bffe3S6B46ox43JbhY",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-08-03T06:26:27.201Z",
+      "started_at": "2026-08-03T06:23:41.409Z",
+      "status": "completed",
+      "ended_at": "2026-08-03T06:26:27.201Z",
+      "elapsed_ms": 165792
     }
   },
   "agent": "atlas",
-  "ended_at": "2026-08-02T12:47:55.405Z",
-  "elapsed_ms": 879819
+  "ended_at": "2026-08-03T06:40:04.765Z",
+  "elapsed_ms": 7958661
 }

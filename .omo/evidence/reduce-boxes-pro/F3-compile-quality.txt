@@ -1,0 +1,30 @@
+F3 Compile Quality Regression — reduce-boxes-pro
+=================================================
+Date: 2026-08-03
+Baseline log : .omo/evidence/reduce-boxes-pro/baseline/Git_VSCode_Tutorial.log
+Final log    : .omo/evidence/reduce-boxes-pro/task-10-regression/Git_VSCode_Tutorial.log
+
+COMPILE COMPLETION
+------------------
+Final log contains: "Output written on Git_VSCode_Tutorial.pdf (84 pages)."
+Emergency stop : 0
+Fatal error    : 0
+Note: 1 occurrence of "fatal: refusing to" = Git error example body text in
+      document prose, NOT a compile error (per AGENTS.md). Excluded.
+
+WARNING COUNTS (Overfull + Underfull)
+-------------------------------------
+                    Baseline   Final   Delta
+Overfull  \hbox       --        6       --
+Underfull \hbox       --       37       --
+Combined             45        43       -2
+
+BUDGET CHECK
+------------
+Final combined (43) <= Baseline combined (45) + 5  =>  PASS (delta -2)
+
+VERDICT: APPROVE
+Criteria met:
+  - Overfull/Underfull count not increased beyond baseline + 5 (delta -2)
+  - No Emergency stop
+  - No Fatal error (excluded "fatal: refusing to" body-text example)

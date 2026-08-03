@@ -1,0 +1,38 @@
+Task 6: Extract 3 infobox tables to standalone table environments
+=================================================================
+Date: 2026-08-03
+
+CHANGES MADE (Git_VSCode_Tutorial.tex only):
+- Line 426-438: tab:vc-history (版本控制的发展简史)
+  \begin{infobox}[boxsep=2mm, left=6mm, right=6mm] -> \begin{table}[H]\centering
+  \captionof{table}{...} -> \caption{...}
+  tabularx{\linewidth} -> tabularx{\textwidth}
+  \end{infobox} -> \end{table}
+- Line 454-467: tab:centralized-vs-distributed (集中式 vs 分布式版本控制)
+  Same 4 conversions.
+- Line 671-685: tab:git-vs-github (Git vs GitHub 的区别)
+  Same 4 conversions.
+- Data rows, column specs, \arraystretch, \tabcolsep, top/mid/bottomrule: byte-identical.
+
+COMPILE:
+- xelatex pass 1: EXIT_CODE=0
+- xelatex pass 2: EXIT_CODE=0
+- "Rerun to get cross-references" warnings in final log: 0
+
+GREP COUNTS:
+- \begin{table}[H]\centering in tex: 3
+- \captionof{table} in tex (should be 0): 0
+- \begin{tabularx}{\textwidth} in tex: 7 (3 converted + 4 pre-existing table envs)
+- \begin{tabularx}{\linewidth} in tex (should be 0): 0
+- "undefined" in final .log: 0
+- Overfull in log: 6
+- Underfull in log: 41
+  (total 47 vs baseline 45; within budget +5)
+
+TABLE NUMBER STABILITY (vs baseline .omo/evidence/reduce-boxes-pro/baseline/Git_VSCode_Tutorial.aux):
+- tab:vc-history:             baseline {1.1} -> new {1.1}  MATCH
+- tab:centralized-vs-distributed: baseline {1.2} -> new {1.2}  MATCH
+- tab:git-vs-github:          baseline {1.3} -> new {1.3}  MATCH
+(hyperref anchor changed from table.N.M to table.caption.N due to caption pkg; display counter unchanged)
+
+STATUS: PASS
