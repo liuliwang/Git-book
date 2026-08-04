@@ -7,7 +7,7 @@
 ## 2. 项目结构与文件约定
 
 - **主文件**：`Git_VSCode_Tutorial.tex`（`% !TEX program = xelatex`）
-- **图片目录**：`images/` 存放 32 张真实截图，命名格式 `NN-descriptive-name.png`（如 `01-sc-overview.png`、`merge-conflict.png`）。新增截图必须遵循此数字前缀规则。
+- **图片目录**：`images/` 存放 43 个 PNG（编号 `01`-`42`，其中 `27` 空缺 + `merge-conflict.png`），命名格式 `NN-descriptive-name.png`。新增截图必须遵循此数字前缀规则，编号不得与现有文件冲突。
 - **素材文件**：`sc-overview.md`、`sc-quickstart.md`、`sc-staging.md`、`sc-branches.md` 为 VS Code 官方文档英文原文，仅作翻译/改编参考，不可直接作为最终正文。
 - **编译产物**：`.aux`、`.log`、`.out`、`.toc`、`.pdf` 为生成文件，禁止手工编辑。
 
@@ -21,6 +21,7 @@ xelatex -interaction=nonstopmode Git_VSCode_Tutorial.tex
 每次修改后必须检查 `.log`，按以下标准判读（避免误报）：
 - **必须修复**：fatal error、`undefined reference`（交叉引用缺失）、本次改动行范围内的 `Overfull \hbox ... at lines N`。
 - **可忽略（既有问题）**：`Missing character` 警告（正文 `✓` 等特殊字符缺字形，全书均存在）；改动范围之外的 Overfull。
+- **LSP 误报**：`lsp_diagnostics` 对 `.tex` 报的 `Undefined reference` 多为误报（`\vscodeimg` 等宏参数中的 label LSP 无法解析），一律以 xelatex `.log` 为权威依据。
 
 ## 4. LaTeX 写作规范（复用已有宏，禁止重复定义）
 
@@ -28,6 +29,7 @@ xelatex -interaction=nonstopmode Git_VSCode_Tutorial.tex
 - `\vscodeimg{images/XX.png}{caption}{label}` —— 标准宽度（0.92\textwidth）
 - `\vscodeimgnarrow{...}{...}{...}` —— 窄版（0.72\textwidth）
 - `\vscodeimgwide{...}{...}{...}` —— 宽版（\textwidth）
+- 三个宏（定义于 139-162 行）第三参数即 `\label{#3}`：图片 label 自动生成，正文用 `\ref{fig:xxx}` 引用即可，禁止在图片命令外重复 `\label`；未在正文引用的图片 label 会被交叉引用检查标记为孤立。
 
 **提示框环境**：
 - `tipbox` —— 提示（\faLightbulb）
@@ -77,6 +79,7 @@ xelatex -interaction=nonstopmode Git_VSCode_Tutorial.tex
   - 本项目素材：`sc-*.md`
 - **不确定内容**：无法验证的内容标记 `【待核实】`，不得写入正文。
 - **截图真实**：必须为本机实拍或官方文档原图（注明来源），禁止 AI 生成伪造截图。
+- **下载官方原图**：VS Code 官方文档图存放于 `microsoft/vscode-docs` 仓库且为 Git LFS——`raw.githubusercontent.com` 对 LFS 文件仅返回指针文本，必须直连 `https://media.githubusercontent.com/media/microsoft/vscode-docs/main/docs/sourcecontrol/images/{topic}/{file}.png` 下载；下载后校验 PNG 魔数（前 4 字节 `\x89PNG`）且大小 >5KB。
 
 ## 7. 写作流程（每节/每章标准流程）
 

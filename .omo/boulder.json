@@ -1,67 +1,261 @@
-{
-  "schema_version": 2,
-  "active_work_id": "chapter4-pr-conflicts-062e4525",
-  "works": {
-    "chapter4-pr-conflicts-062e4525": {
-      "work_id": "chapter4-pr-conflicts-062e4525",
-      "active_plan": "D:\\Git-book\\.omo\\plans\\chapter4-pr-conflicts.md",
-      "plan_name": "chapter4-pr-conflicts",
-      "status": "completed",
-      "completed_at": "2026-08-03T13:57:00.000Z",
-      "started_at": "2026-08-03T13:48:38.662Z",
-      "updated_at": "2026-08-03T13:56:30.666Z",
-      "session_ids": [
-        "opencode:ses_038246371ffe75B2XaX6qthCPD"
-      ],
-      "session_origins": {
-        "opencode:ses_038246371ffe75B2XaX6qthCPD": "direct"
-      },
-      "agent": "atlas",
-      "task_sessions": {
-        "todo:1": {
-          "task_key": "todo:1",
-          "task_label": "1",
-          "task_title": "在第4章\"解决合并冲突\"部分增加\"远程协作中的冲突（PR 冲突）\"子节",
-          "session_id": "opencode:ses_0381c86a0ffeljwR1WHgOyFrRU",
-          "agent": "Sisyphus-Junior",
-          "started_at": "2026-08-03T13:52:32.913Z",
-          "status": "completed",
-          "updated_at": "2026-08-03T13:55:58.500Z",
-          "ended_at": "2026-08-03T13:55:58.500Z",
-          "elapsed_ms": 205587
-        }
-      },
-      "ended_at": "2026-08-03T13:56:30.666Z",
-      "elapsed_ms": 472004
-    }
-  },
-  "active_plan": "D:\\Git-book\\.omo\\plans\\chapter4-pr-conflicts.md",
-  "started_at": "2026-08-03T13:48:38.662Z",
-  "status": "completed",
-  "completed_at": "2026-08-03T13:57:00.000Z",
-  "updated_at": "2026-08-03T13:56:30.666Z",
-  "session_ids": [
-    "opencode:ses_038246371ffe75B2XaX6qthCPD"
-  ],
-  "session_origins": {
-    "opencode:ses_038246371ffe75B2XaX6qthCPD": "direct"
-  },
-  "plan_name": "chapter4-pr-conflicts",
-  "task_sessions": {
-    "todo:1": {
-      "task_key": "todo:1",
-      "task_label": "1",
-      "task_title": "在第4章\"解决合并冲突\"部分增加\"远程协作中的冲突（PR 冲突）\"子节",
-      "session_id": "opencode:ses_0381c86a0ffeljwR1WHgOyFrRU",
-      "agent": "Sisyphus-Junior",
-      "started_at": "2026-08-03T13:52:32.913Z",
-      "status": "completed",
-      "updated_at": "2026-08-03T13:55:58.500Z",
-      "ended_at": "2026-08-03T13:55:58.500Z",
-      "elapsed_ms": 205587
-    }
-  },
-  "agent": "atlas",
-  "ended_at": "2026-08-03T13:56:30.666Z",
-  "elapsed_ms": 472004
+﻿{
+    "schema_version":  2,
+    "active_work_id":  "chapter6-enrichment-26adcb3c",
+    "works":  {
+                  "chapter6-enrichment-26adcb3c":  {
+                                                       "work_id":  "chapter6-enrichment-26adcb3c",
+                                                       "active_plan":  "D:\\Git-book\\.omo\\plans\\chapter6-enrichment.md",
+                                                       "plan_name":  "chapter6-enrichment",
+                                                       "status":  "completed",
+                                                       "started_at":  "2026-08-04T10:42:45.164Z",
+                                                       "updated_at":  "2026-08-04T19:13:25.0780493+08:00",
+                                                       "session_ids":  [
+                                                                           "opencode:ses_033b6f04fffeMaYQ3SPuuwAKG8",
+                                                                           "opencode:ses_03387c297ffeFFmaRZZyDzJ8wi",
+                                                                           "opencode:ses_03387b8f4ffejw5XET0BsBVJTD",
+                                                                           "opencode:ses_03387ac69ffeQqXX8aQwbnUu4d",
+                                                                           "opencode:ses_03387a0e9ffebCPIxtiBi7EjgC"
+                                                                       ],
+                                                       "session_origins":  {
+                                                                               "opencode:ses_033b6f04fffeMaYQ3SPuuwAKG8":  "direct",
+                                                                               "opencode:ses_03387c297ffeFFmaRZZyDzJ8wi":  "appended",
+                                                                               "opencode:ses_03387b8f4ffejw5XET0BsBVJTD":  "appended",
+                                                                               "opencode:ses_03387ac69ffeQqXX8aQwbnUu4d":  "appended",
+                                                                               "opencode:ses_03387a0e9ffebCPIxtiBi7EjgC":  "appended"
+                                                                           },
+                                                       "agent":  "atlas",
+                                                       "task_sessions":  {
+                                                                             "todo:1":  {
+                                                                                            "task_key":  "todo:1",
+                                                                                            "task_label":  "1",
+                                                                                            "task_title":  "新增\"合并冲突解决\"章节",
+                                                                                            "session_id":  "opencode:ses_033a00310ffeAULSXtR2JXffN4",
+                                                                                            "agent":  "Sisyphus-Junior",
+                                                                                            "category":  "writing",
+                                                                                            "updated_at":  "2026-08-04T10:50:41.685Z",
+                                                                                            "started_at":  "2026-08-04T10:50:07.947Z",
+                                                                                            "status":  "completed",
+                                                                                            "ended_at":  "2026-08-04T10:50:41.685Z",
+                                                                                            "elapsed_ms":  33738
+                                                                                        },
+                                                                             "todo:2":  {
+                                                                                            "task_key":  "todo:2",
+                                                                                            "task_label":  "2",
+                                                                                            "task_title":  "新增\"Diff 编辑器与 Gutter Indicators\"章节",
+                                                                                            "session_id":  "opencode:ses_0339a1bc6ffe3xsvoewgVTpUpu",
+                                                                                            "agent":  "Sisyphus-Junior",
+                                                                                            "category":  "writing",
+                                                                                            "updated_at":  "2026-08-04T10:53:34.617Z",
+                                                                                            "started_at":  "2026-08-04T10:53:07.662Z",
+                                                                                            "status":  "completed",
+                                                                                            "ended_at":  "2026-08-04T10:53:34.617Z",
+                                                                                            "elapsed_ms":  26955
+                                                                                        },
+                                                                             "todo:3":  {
+                                                                                            "task_key":  "todo:3",
+                                                                                            "task_label":  "3",
+                                                                                            "task_title":  "新增\"AI 辅助功能\"章节",
+                                                                                            "session_id":  "opencode:ses_03397833affeUNuG1YMhSotiGS",
+                                                                                            "agent":  "Sisyphus-Junior",
+                                                                                            "category":  "writing",
+                                                                                            "updated_at":  "2026-08-04T10:56:38.063Z",
+                                                                                            "started_at":  "2026-08-04T10:55:48.651Z",
+                                                                                            "status":  "completed",
+                                                                                            "ended_at":  "2026-08-04T10:56:38.063Z",
+                                                                                            "elapsed_ms":  49412
+                                                                                        },
+                                                                             "todo:4":  {
+                                                                                            "task_key":  "todo:4",
+                                                                                            "task_label":  "4",
+                                                                                            "task_title":  "新增\"Git Worktrees\"章节",
+                                                                                            "session_id":  "opencode:ses_0339491a3ffeLH33yzk5jE9XSm",
+                                                                                            "agent":  "Sisyphus-Junior",
+                                                                                            "category":  "writing",
+                                                                                            "updated_at":  "2026-08-04T10:59:32.694Z",
+                                                                                            "started_at":  "2026-08-04T10:59:09.692Z",
+                                                                                            "status":  "completed",
+                                                                                            "ended_at":  "2026-08-04T10:59:32.694Z",
+                                                                                            "elapsed_ms":  23002
+                                                                                        },
+                                                                             "todo:5":  {
+                                                                                            "task_key":  "todo:5",
+                                                                                            "task_label":  "5",
+                                                                                            "task_title":  "优化现有章节内容",
+                                                                                            "session_id":  "opencode:ses_03391ed06ffecfUlMktrIS54sW",
+                                                                                            "agent":  "Sisyphus-Junior",
+                                                                                            "category":  "writing",
+                                                                                            "updated_at":  "2026-08-04T11:02:48.285Z",
+                                                                                            "started_at":  "2026-08-04T11:02:20.957Z",
+                                                                                            "status":  "completed",
+                                                                                            "ended_at":  "2026-08-04T11:02:48.285Z",
+                                                                                            "elapsed_ms":  27328
+                                                                                        },
+                                                                             "todo:6":  {
+                                                                                            "task_key":  "todo:6",
+                                                                                            "task_label":  "6",
+                                                                                            "task_title":  "更新动手实验 6",
+                                                                                            "session_id":  "opencode:ses_0338eff7fffeyOfTgaWD4CbVtE",
+                                                                                            "agent":  "Sisyphus-Junior",
+                                                                                            "category":  "writing",
+                                                                                            "updated_at":  "2026-08-04T11:05:02.279Z",
+                                                                                            "started_at":  "2026-08-04T11:04:28.283Z",
+                                                                                            "status":  "completed",
+                                                                                            "ended_at":  "2026-08-04T11:05:02.279Z",
+                                                                                            "elapsed_ms":  33996
+                                                                                        },
+                                                                             "todo:8":  {
+                                                                                            "task_key":  "todo:8",
+                                                                                            "task_label":  "8",
+                                                                                            "task_title":  "交叉引用与来源标注",
+                                                                                            "session_id":  "opencode:ses_0338d0d48ffecUX2316FpSzmWZ",
+                                                                                            "agent":  "Sisyphus-Junior",
+                                                                                            "category":  "unspecified-low",
+                                                                                            "updated_at":  "2026-08-04T11:10:53.835Z",
+                                                                                            "started_at":  "2026-08-04T11:10:10.001Z",
+                                                                                            "status":  "completed",
+                                                                                            "ended_at":  "2026-08-04T11:10:53.835Z",
+                                                                                            "elapsed_ms":  43834
+                                                                                        },
+                                                                             "final-wave:f1":  {
+                                                                                                   "task_key":  "final-wave:f1",
+                                                                                                   "task_label":  "F1",
+                                                                                                   "task_title":  "编译通过验证：运行 `xelatex` 两次无 fatal error，.log 无本次改动范围内的 Overfull",
+                                                                                                   "session_id":  "opencode:ses_03387a0e9ffebCPIxtiBi7EjgC",
+                                                                                                   "agent":  "Sisyphus-Junior",
+                                                                                                   "category":  "unspecified-low",
+                                                                                                   "started_at":  "2026-08-04T11:12:57.070Z",
+                                                                                                   "status":  "completed",
+                                                                                                   "updated_at":  "2026-08-04T11:13:09.266Z",
+                                                                                                   "ended_at":  "2026-08-04T11:13:09.266Z",
+                                                                                                   "elapsed_ms":  12196
+                                                                                               }
+                                                                         }
+                                                   }
+              },
+    "active_plan":  "D:\\Git-book\\.omo\\plans\\chapter6-enrichment.md",
+    "started_at":  "2026-08-04T10:42:45.164Z",
+    "status":  "completed",
+    "updated_at":  "2026-08-04T19:13:25.0749055+08:00",
+    "session_ids":  [
+                        "opencode:ses_033b6f04fffeMaYQ3SPuuwAKG8",
+                        "opencode:ses_03387c297ffeFFmaRZZyDzJ8wi",
+                        "opencode:ses_03387b8f4ffejw5XET0BsBVJTD",
+                        "opencode:ses_03387ac69ffeQqXX8aQwbnUu4d",
+                        "opencode:ses_03387a0e9ffebCPIxtiBi7EjgC"
+                    ],
+    "session_origins":  {
+                            "opencode:ses_033b6f04fffeMaYQ3SPuuwAKG8":  "direct",
+                            "opencode:ses_03387c297ffeFFmaRZZyDzJ8wi":  "appended",
+                            "opencode:ses_03387b8f4ffejw5XET0BsBVJTD":  "appended",
+                            "opencode:ses_03387ac69ffeQqXX8aQwbnUu4d":  "appended",
+                            "opencode:ses_03387a0e9ffebCPIxtiBi7EjgC":  "appended"
+                        },
+    "plan_name":  "chapter6-enrichment",
+    "task_sessions":  {
+                          "todo:1":  {
+                                         "task_key":  "todo:1",
+                                         "task_label":  "1",
+                                         "task_title":  "新增\"合并冲突解决\"章节",
+                                         "session_id":  "opencode:ses_033a00310ffeAULSXtR2JXffN4",
+                                         "agent":  "Sisyphus-Junior",
+                                         "category":  "writing",
+                                         "updated_at":  "2026-08-04T10:50:41.685Z",
+                                         "started_at":  "2026-08-04T10:50:07.947Z",
+                                         "status":  "completed",
+                                         "ended_at":  "2026-08-04T10:50:41.685Z",
+                                         "elapsed_ms":  33738
+                                     },
+                          "todo:2":  {
+                                         "task_key":  "todo:2",
+                                         "task_label":  "2",
+                                         "task_title":  "新增\"Diff 编辑器与 Gutter Indicators\"章节",
+                                         "session_id":  "opencode:ses_0339a1bc6ffe3xsvoewgVTpUpu",
+                                         "agent":  "Sisyphus-Junior",
+                                         "category":  "writing",
+                                         "updated_at":  "2026-08-04T10:53:34.617Z",
+                                         "started_at":  "2026-08-04T10:53:07.662Z",
+                                         "status":  "completed",
+                                         "ended_at":  "2026-08-04T10:53:34.617Z",
+                                         "elapsed_ms":  26955
+                                     },
+                          "todo:3":  {
+                                         "task_key":  "todo:3",
+                                         "task_label":  "3",
+                                         "task_title":  "新增\"AI 辅助功能\"章节",
+                                         "session_id":  "opencode:ses_03397833affeUNuG1YMhSotiGS",
+                                         "agent":  "Sisyphus-Junior",
+                                         "category":  "writing",
+                                         "updated_at":  "2026-08-04T10:56:38.063Z",
+                                         "started_at":  "2026-08-04T10:55:48.651Z",
+                                         "status":  "completed",
+                                         "ended_at":  "2026-08-04T10:56:38.063Z",
+                                         "elapsed_ms":  49412
+                                     },
+                          "todo:4":  {
+                                         "task_key":  "todo:4",
+                                         "task_label":  "4",
+                                         "task_title":  "新增\"Git Worktrees\"章节",
+                                         "session_id":  "opencode:ses_0339491a3ffeLH33yzk5jE9XSm",
+                                         "agent":  "Sisyphus-Junior",
+                                         "category":  "writing",
+                                         "updated_at":  "2026-08-04T10:59:32.694Z",
+                                         "started_at":  "2026-08-04T10:59:09.692Z",
+                                         "status":  "completed",
+                                         "ended_at":  "2026-08-04T10:59:32.694Z",
+                                         "elapsed_ms":  23002
+                                     },
+                          "todo:5":  {
+                                         "task_key":  "todo:5",
+                                         "task_label":  "5",
+                                         "task_title":  "优化现有章节内容",
+                                         "session_id":  "opencode:ses_03391ed06ffecfUlMktrIS54sW",
+                                         "agent":  "Sisyphus-Junior",
+                                         "category":  "writing",
+                                         "updated_at":  "2026-08-04T11:02:48.285Z",
+                                         "started_at":  "2026-08-04T11:02:20.957Z",
+                                         "status":  "completed",
+                                         "ended_at":  "2026-08-04T11:02:48.285Z",
+                                         "elapsed_ms":  27328
+                                     },
+                          "todo:6":  {
+                                         "task_key":  "todo:6",
+                                         "task_label":  "6",
+                                         "task_title":  "更新动手实验 6",
+                                         "session_id":  "opencode:ses_0338eff7fffeyOfTgaWD4CbVtE",
+                                         "agent":  "Sisyphus-Junior",
+                                         "category":  "writing",
+                                         "updated_at":  "2026-08-04T11:05:02.279Z",
+                                         "started_at":  "2026-08-04T11:04:28.283Z",
+                                         "status":  "completed",
+                                         "ended_at":  "2026-08-04T11:05:02.279Z",
+                                         "elapsed_ms":  33996
+                                     },
+                          "todo:8":  {
+                                         "task_key":  "todo:8",
+                                         "task_label":  "8",
+                                         "task_title":  "交叉引用与来源标注",
+                                         "session_id":  "opencode:ses_0338d0d48ffecUX2316FpSzmWZ",
+                                         "agent":  "Sisyphus-Junior",
+                                         "category":  "unspecified-low",
+                                         "updated_at":  "2026-08-04T11:10:53.835Z",
+                                         "started_at":  "2026-08-04T11:10:10.001Z",
+                                         "status":  "completed",
+                                         "ended_at":  "2026-08-04T11:10:53.835Z",
+                                         "elapsed_ms":  43834
+                                     },
+                          "final-wave:f1":  {
+                                                "task_key":  "final-wave:f1",
+                                                "task_label":  "F1",
+                                                "task_title":  "编译通过验证：运行 `xelatex` 两次无 fatal error，.log 无本次改动范围内的 Overfull",
+                                                "session_id":  "opencode:ses_03387a0e9ffebCPIxtiBi7EjgC",
+                                                "agent":  "Sisyphus-Junior",
+                                                "category":  "unspecified-low",
+                                                "started_at":  "2026-08-04T11:12:57.070Z",
+                                                "status":  "completed",
+                                                "updated_at":  "2026-08-04T11:13:09.266Z",
+                                                "ended_at":  "2026-08-04T11:13:09.266Z",
+                                                "elapsed_ms":  12196
+                                            }
+                      },
+    "agent":  "atlas"
 }
