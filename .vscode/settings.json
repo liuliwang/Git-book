@@ -1,0 +1,149 @@
+{
+  // ============================================================
+  // 项目：Git 与 VS Code 实战教程（LaTeX: ctexbook + xelatex）
+  // 范围：仅 LaTeX 写作流程相关配置
+  // 依据：AGENTS.md §2（产物）、§3（编译）、§4（宏与图片）
+  // ============================================================
+
+  // --- 文件关联：*.tex 识别为 LaTeX ---
+  "files.associations": {
+    "*.tex": "latex"
+  },
+
+  // --- 隐藏 LaTeX 编译辅助文件与运行时产物（AGENTS.md §2）---
+  "files.exclude": {
+    "**/*.aux": true,
+    "**/*.log": true,
+    "**/*.out": true,
+    "**/*.toc": true,
+    "**/*.synctex.gz": true,
+    "**/*.fls": true,
+    "**/*.fdb_latexmk": true,
+    "**/*.bbl": true,
+    "**/*.blg": true,
+    "**/*.idx": true,
+    "**/*.ind": true,
+    "**/*.ilg": true,
+    "**/*.lof": true,
+    "**/*.lot": true
+  },
+
+  // --- 搜索排除（保留 images/*.png 可检索，便于图文溯源）---
+  "search.exclude": {
+    "**/*.aux": true,
+    "**/*.log": true,
+    "**/*.out": true,
+    "**/*.toc": true
+  },
+
+  // --- 文件监视器排除（避免辅助文件变动触发重编）---
+  "files.watcherExclude": {
+    "**/*.aux": true,
+    "**/*.log": true,
+    "**/*.out": true,
+    "**/*.toc": true,
+    "**/*.synctex.gz": true
+  },
+
+  // ============================================================
+  // LaTeX Workshop 配置（AGENTS.md §3：xelatex 两次编译）
+  // ============================================================
+
+  // --- xelatex 工具定义（启用 synctex 以支持正反向定位）---
+  "latex-workshop.latex.tools": [
+    {
+      "name": "xelatex",
+      "command": "xelatex",
+      "args": [
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-synctex=1",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "xelatex-clean-aux",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-Command",
+        "Remove-Item -LiteralPath \"${workspaceFolder}\\*.aux\",\"${workspaceFolder}\\*.log\",\"${workspaceFolder}\\*.out\",\"${workspaceFolder}\\*.toc\",\"${workspaceFolder}\\*.synctex.gz\" -ErrorAction SilentlyContinue"
+      ]
+    }
+  ],
+
+  // --- 编译配方：默认 xelatex x2（生成目录），单次快速构建，清理辅助 ---
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "xelatex × 2（生成目录）",
+      "tools": ["xelatex", "xelatex"]
+    },
+    {
+      "name": "xelatex × 1（快速预览）",
+      "tools": ["xelatex"]
+    },
+    {
+      "name": "清理辅助文件",
+      "tools": ["xelatex-clean-aux"]
+    }
+  ],
+
+  "latex-workshop.latex.recipe.default": "xelatex × 2（生成目录）",
+
+  // --- 自动构建：保存时不自动编译（避免误触发；按需 Ctrl+Alt+B）---
+  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": true,
+  "latex-workshop.latex.autoBuild.onSave.enabled": false,
+
+  // --- 根文件检测：固定主文件，避免多 tex 误判 ---
+  "latex-workshop.latex.search.rootFiles.include": ["Git_VSCode_Tutorial.tex"],
+  "latex-workshop.latex.rootFile.doNotPrompt": true,
+  "latex-workshop.latex.rootFile.indicator": "\\documentclass",
+
+  // --- PDF 查看器：VS Code 内嵌 tab + synctex ---
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.view.pdf.ref.viewer": "tab",
+  "latex-workshop.synctex.synctexjs.enabled": true,
+
+  // --- 辅助文件清理（手动调用配方时生效）---
+  "latex-workshop.latex.clean.subfolder.enabled": false,
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.ilg",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.synctex.gz"
+  ],
+
+  // --- 错误与警告装饰（按 AGENTS.md §3 判读标准：information 与 badbox 静音）---
+  "latex-workshop.message.error.show": true,
+  "latex-workshop.message.warning.show": true,
+  "latex-workshop.message.information.show": false,
+  "latex-workshop.message.badbox.show": false,
+
+  // --- 保留 .pdf 产物（最终交付物，不自动清理）---
+  "latex-workshop.latex.autoClean.run": "never",
+
+  // ============================================================
+  // LaTeX 编辑器特化
+  // ============================================================
+
+  "[latex]": {
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false,
+    "editor.tabSize": 2,
+    "files.trimTrailingWhitespace": true
+  },
+
+  // --- 图片查看器：点击 images/NN-*.png 时打开预览（服务于 LaTeX 插图工作流）---
+  "workbench.editorAssociations": {
+    "*.png": "imagePreview.previewEditor"
+  }
+}

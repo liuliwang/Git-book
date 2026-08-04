@@ -252,7 +252,7 @@
 
 \section{三个核心类比}
 
-三者关系如图~\ref{fig:three-analogies} 所示——
+Git、GitHub 和 VS Code 这三个名字经常一起出现，但它们各自扮演的角色其实截然不同。对初学者来说，最大的困惑往往是"到底该用哪个工具做什么"。直接记命令容易忘，不如先在大脑里建立三个鲜活的画面。我们把 Git 想象成一台时光机，它负责记录你代码的每一次变化，让你随时能回到过去。GitHub 则像一座放在云端的仓库，专门帮你把代码备份到网上，同时让多人协作变得简单。VS Code 是驾驶舱，它把 Git 和 GitHub 的能力包装成按钮和菜单，让你不用记命令也能完成操作。三者关系如图~\ref{fig:three-analogies} 所示——图中三条箭头说清了它们的分工：Git 负责保存历史，GitHub 负责云端同步与协作，VS Code 负责把这一切翻译成图形界面，让你点按钮就能完成操作。
 \begin{figure}[H]\centering
 \begin{tikzpicture}[
   box/.style={draw, rounded corners=10pt, minimum width=3.5cm, minimum height=3.5cm,
@@ -287,6 +287,8 @@
 
 \subsection{Git 是「时光机」}
 
+玩过单机游戏的人对"存档"一定不陌生。平时随便存档不心疼，关键 boss 战前存一个，打崩了就读档重来。Git 的每次提交（commit）就像给整个项目拍了一张照片，照片会被完整保存下来。想回到过去任何一刻都可以，而且"读档"不会弄坏你现在的工作，因为 Git 的读档不会动到你当前的工作区。如果你突然想尝试一个新想法，可以开一条新的剧情线，这就是分支，几条线互不影响，搞砸了删掉重来就行。
+
 \begin{itemize}[leftmargin=2em]
   \item \textbf{写代码 = 穿越时空}：每次 \texttt{git commit} 就是按下「存档」，生成一个唯一的「存档编号」（哈希值）。
   \item \textbf{想回去 = 时光倒流}：\texttt{git restore} / \texttt{git reset} 让你回到任意一次存档的瞬间。
@@ -297,7 +299,12 @@
 \noindent\textbf{提示：}零基础心法——别怕弄坏！Git 设计的初衷就是让你「大胆试错，随时后悔」。
 \medskip
 
+\noindent\textbf{专业映射：}「存档」在 Git 里叫\textbf{提交（commit）}，每次提交记录的是整个文件夹在那一刻的完整样子——不是只记"改了哪几行"。「时光倒流」对应 Git 的回到历史版本功能，「平行宇宙」对应分支：分支只是一个小标签，指向某一次存档，想开一个就开一个，几乎不花任何成本。详见第 1 章与第 4 章。
+\medskip
+
 \subsection{GitHub 是「云端仓库」}
+
+代码放在自己电脑上，硬盘坏了或电脑丢了就全没了。GitHub 不是普通网盘，它不只是存文件，还记录谁改了什么、怎么合并、如何讨论。你可以把它理解成一个大家共同使用的「公共驿站」：你把自己的改动推上去，别人就能拉下来，所有人都能随时拿到最新版本。
 
 \begin{itemize}[leftmargin=2em]
   \item \textbf{备份}：电脑丢了、硬盘坏了，代码在 GitHub 上还在。
@@ -305,7 +312,13 @@
   \item \textbf{展示}：开源项目放在 GitHub，全世界都能看、能用、能提改进建议。
 \end{itemize}
 
+\medskip
+\noindent\textbf{专业映射：}Git 在设计上并没有「中心服务器」这个概念——每台电脑上的仓库地位是平等的，都能完整保存全部历史。GitHub 之所以显得像「云端仓库」，只是因为大家约定俗成，把它作为共同使用的集散地。详见第 5 章。
+\medskip
+
 \subsection{VS Code 是「驾驶舱」}
+
+汽车有仪表盘也有引擎盖——你开车不需要懂发动机原理，但仪表盘上的每个灯背后都有真实机械在运行。VS Code 就是 Git 的仪表盘：它把 Git 的复杂命令翻译成按钮、菜单、颜色竖线，你点按钮时，背后其实是一条条 Git 命令在替你执行。那些颜色竖线（绿色新增、蓝色修改、红色删除）就像仪表盘上的指示灯，随时告诉你引擎（Git）正在做什么。
 
 \begin{itemize}[leftmargin=2em]
   \item 不用背命令：侧边栏点点鼠标，暂存、提交、推送、拉取、解决冲突全搞定。
@@ -313,9 +326,37 @@
   \item AI 助手：点「魔法棒」自动生成提交信息，遇到冲突 AI 也能帮忙分析。
 \end{itemize}
 
+\medskip
+\noindent\textbf{专业映射：}你在 VS Code 里点的每个按钮，背后都对应一条 Git 命令——点「提交」，就是替你执行了 \texttt{git commit}；点「推送」，就是替你执行了 \texttt{git push}。界面和命令只是同一件事的两种表达方式：学会看 VS Code 的输出，就能逐渐看懂命令行；反过来，懂一点命令行，也能更清楚 VS Code 在做什么。详见第 6 章。
+\medskip
+
+\section{Git 的设计哲学：四个关键词}
+
+类比帮你"想象"，但要真正理解 Git，需要四个关键词。每个关键词背后都对应 Git 设计中的一条根本取舍；本节只点出本质，细节留待第 1 章及后续章节展开。
+
+\subsection{关键词一：每个存档都有独一无二的编号}
+
+Git 给每次提交生成一个独一无二的编号，这个编号由文件内容本身算出来：内容一样编号就一样，哪怕只改一个标点，编号也会完全变。所以只要编号对得上，就能确信文件没有被悄悄改过。
+
+\subsection{关键词二：保存完整快照，不是只记差异}
+
+Git 每次提交保存的不是"改了哪几行"，而是整个项目在那一刻的完整样子。听起来很占空间，其实没变过的文件不会重复保存；需要看"改了什么"时，Git 再对比两个完整样子算给你看。
+
+\subsection{关键词三：历史是一张网，不是一条直线}
+
+每次提交都记着自己的"前一个提交"是谁。多人并行开发时，历史会分成好几条线，合并时再汇到一起——所以 Git 的历史是一张网，不是一条直线。正因为这样，多人同时开发互不干扰、合并也顺理成章。
+
+\subsection{关键词四：分支和标签只是小纸条}
+
+分支、标签在 Git 里只是一个个小标签，写着"我指向哪一次提交"。创建分支就是贴一个新标签，几乎不花任何成本——所以 Git 鼓励你多开分支、大胆尝试。
+
+\medskip
+\noindent\textbf{小结：}编号保证数据可靠、完整保存保证历史清晰、网状历史保证并行开发、小标签保证操作轻快——这四个设计加起来，让 Git 成为版本控制的事实标准。版本控制系统的三代演进（RCS $\to$ CVS/SVN $\to$ Git）详见\textbf{第 1 章表~\ref{tab:vc-history}}，BitKeeper 事件的来龙去脉见第 1 章正文。
+\medskip
+
 \section{本教程的学习路径图}
 
-完整路径如图~\ref{fig:learning-path} 所示——
+教程共 10 章加附录，按认知规律四层递进：先用三个类比建立直观画面（第 0 章），再系统掌握 Git 的核心概念与基础命令（第 1--3 章），学成分支协作与远程同步，开启多人开发的真正威力（第 4--5 章），最后回到 VS Code 实战和完整工作流，让日常操作高效顺畅（第 6--7 章）。附录（第 8--9 章）跨阶段覆盖：避坑指南帮你躲开最常见的坑，命令速查卡供你随时翻阅。完整路径如图~\ref{fig:learning-path} 所示——
 \begin{figure}[H]\centering
 \resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
@@ -351,6 +392,7 @@
 
 \section{动手实验 0：验证环境就绪}
 
+在开始正式学习之前，花两分钟确认工具箱就绪。下面四步全部通过，说明 Git 和 VS Code 都已正确安装。
 \medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 打开终端（Windows 用 PowerShell，Mac/Linux 用 Terminal）
@@ -360,7 +402,8 @@
 \end{enumerate}
 \medskip
 
-\textbf{如果以上任一步失败}，请先翻到第 2 章「Git 安装与配置」完成安装，再回来继续。
+\textbf{全部通过？环境已就绪，直接翻页进入第 1 章。}\\
+\textbf{某一步失败？} 别着急——翻到第 2 章跟着安装步骤走，装完再回到这里继续；整个过程不超过 10 分钟。
 
 \clearpage
 
@@ -1836,6 +1879,107 @@ git merge --abort
 \noindent\textbf{提示：}\textbf{搜索冲突}：按 \texttt{Ctrl + Shift + P}，输入 "Merge Conflict"，
 可以看到所有冲突相关的命令，包括"Accept All Current"等批量操作。
 
+\subsection{远程协作中的冲突（PR 冲突）}
+
+前面讲的是本地合并冲突。但在团队协作中，还有一种更常见的场景：
+你创建了一个 Pull Request（PR），继续在该分支上工作并再次 push 后，
+PR 页面突然提示"This branch has conflicts that must be resolved"。
+这不是你的 push 失败了，而是远程仓库的历史发生了分叉。
+
+\subsubsection{PR 冲突的产生原因}
+
+想象两条铁路从同一个车站（共同祖先）出发，分别向不同方向延伸。
+一条是 \texttt{main} 分支，另一条是你的 \texttt{feature} 分支。
+当你创建 PR 后，\texttt{main} 上可能又有其他人提交了新的代码，
+而你的 \texttt{feature} 分支也继续提交了新的修改。
+如果两边的修改恰好落在同一文件的同一区域，Git 就无法自动合并，PR 页面就会提示冲突。
+
+用时间线表示，冲突的产生过程如下：
+
+\begin{verbatim}
+main:    A --- B --- C --- D          <- PR 后 main 新增 C、D
+feature: A --- B --- E --- F          <- 分支上继续提交 E、F
+               |
+               | 双方在 B 后分叉，改到同一处 -> PR 冲突
+\end{verbatim}
+
+\begin{infobox}
+PR 冲突的本质和本地冲突一样：两个分支修改了同一文件的同一部分，Git 不知道听谁的。
+区别在于，本地冲突发生在你执行 \texttt{git merge} 时，而 PR 冲突发生在远程仓库尝试合并时。
+\end{infobox}
+
+\subsubsection{PR 冲突与本地冲突的区别}
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{发生位置不同}：本地冲突在你的电脑上；PR 冲突在远程仓库（GitHub/Gitee 服务器端）。
+  \item \textbf{触发时机不同}：本地冲突是执行 \texttt{git merge} 时触发；PR 冲突是 PR 页面尝试合并时检测到的。
+  \item \textbf{解决方式不同}：本地冲突直接在本地解决后提交；PR 冲突需要先同步远程最新代码，解决后再 push 更新 PR。
+\end{itemize}
+
+\begin{keybox}
+PR 冲突不是你的 push 失败了，而是 PR 双方的历史分叉所致。
+只要将远程 \texttt{main} 的最新内容同步到你的分支，解决冲突后再 push，PR 就会恢复正常。
+\end{keybox}
+
+\subsubsection{解决 PR 冲突的方法}
+
+解决 PR 冲突有两种方式：命令行和 VS Code 图形界面。
+
+\textbf{方式一：命令行}
+
+\begin{lstlisting}[style=shell]
+# 1. 先获取远程最新状态
+git fetch origin
+
+# 2. 方式一：用 rebase 把本地提交变基到最新 main 上（推荐，历史整洁）
+git rebase origin/main
+# 解决冲突后：git add <文件> 再 git rebase --continue
+# 最后强制推送更新 PR：git push --force-with-lease
+
+# 2. 方式二：用 merge 合并远程 main 到本地分支
+git merge origin/main
+# 解决冲突后：git add <文件> 再 git commit
+# 最后推送更新 PR：git push
+\end{lstlisting}
+
+\begin{warnbox}
+\textbf{rebase 会重写提交历史}。如果分支已推送到远程且被他人使用，不要 rebase，改用 merge；
+否则会导致他人的本地分支与远程不一致。
+\end{warnbox}
+
+\begin{tipbox}
+\textbf{--force-with-lease} 比 \texttt{--force} 更安全：
+它只在远程没有新提交时才强制覆盖，避免覆盖他人的工作。
+\end{tipbox}
+
+\textbf{方式二：VS Code 图形界面}
+
+在 VS Code 中解决 PR 冲突的步骤如下：
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item 点击源代码管理视图顶部的"同步"按钮（或执行 \texttt{git fetch origin}），获取远程最新代码。
+  \item 执行 rebase 或 merge 操作后，VS Code 会显示冲突标记和快捷操作按钮（如图~\ref{fig:merge-conflict} 所示）。
+  \item 使用"Accept Current Change"、"Accept Incoming Change"等按钮，或手动编辑冲突区域。
+  \item 删除所有冲突标记（\texttt{<<<<<<<}、\texttt{=======}、\texttt{>>>>>>>}），保存文件。
+  \item 在源代码管理视图中，点击冲突文件旁的"+"暂存（标记为已解决）。
+  \item 输入提交信息，点击"提交"完成合并。
+  \item 最后 push 更新 PR。
+\end{enumerate}
+
+\begin{infobox}
+PR 冲突不是分支坏了，而是双方改了同一处代码，解决后推送即可。
+核心思路是：先同步远程最新代码，解决冲突，再推送更新 PR。
+\end{infobox}
+
+\subsubsection{预防措施}
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{经常同步 main}：定期执行 \texttt{git fetch origin}，将 \texttt{main} 的最新内容同步进自己的分支（通过 rebase 或 merge）。
+  \item \textbf{小步快跑}：提交要小、PR 要小，冲突面就小。一个 PR 只解决一个问题，避免大段代码长时间不合并。
+  \item \textbf{合并前再确认}：PR 合并前再次同步 \texttt{main}，确认无冲突后再点"Merge"。
+  \item \textbf{提前沟通}：大改动前先和团队沟通改动范围，避免多人同时改同一文件。
+\end{enumerate}
+
 \section{Rebase：整理历史}
 
 Rebase（变基，把提交历史整理成一条直线）是另一种整合分支的方式。与 merge 不同，rebase 会"重写"提交历史，
@@ -2451,6 +2595,98 @@ Git History & Don Jayamanne & 查看文件/行的详细提交历史 \\
   \item \textbf{文件历史}：查看文件的完整修改时间线。
   \item \textbf{比较分支}：可视化比较任意两个分支的差异。
 \end{itemize}
+
+\subsection{GitLens 详细使用指南}
+
+GitLens 是 VS Code 中最流行的 Git 增强扩展，它能在编辑器中直接显示代码的提交历史和作者信息，帮助初学者快速理解代码的演变过程。
+
+\textbf{安装步骤}：按 \texttt{Ctrl+Shift+X} 打开 Extensions 面板，搜索 \texttt{GitLens}，点击 Install。
+
+\textbf{核心功能}：
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Inline Blame}：安装后自动在每行代码末尾显示最后修改者和时间。
+  \item \textbf{CodeLens}：在函数和类上方显示作者和提交信息。
+  \item \texttt{GitLens: Show Commit Graph}：打开提交历史图形视图。
+  \item \texttt{GitLens: Open File History}：右键文件 $\to$ 选择此命令查看完整历史。
+  \item \texttt{GitLens: Toggle Line Blame} / \texttt{GitLens: Toggle Git CodeLens}：快速开关行内 blame 和 CodeLens 显示。
+\end{itemize}
+
+\vscodeimg{images/28-gitlens-blame.png}{GitLens 行内 Blame 与 CodeLens 显示}{fig:ext-gitlens-blame}
+
+\vscodeimg{images/29-gitlens-graph.png}{GitLens 提交图（Commit Graph）}{fig:ext-gitlens-graph}
+
+\textbf{提示}：初学者可以先开启 Inline Blame 和 CodeLens，它们能让你在阅读代码时自然了解修改背景。
+
+\subsection{GitHub Pull Requests 使用指南}
+
+GitHub Pull Requests 扩展让你在 VS Code 中直接查看、创建和审查 Pull Request，无需频繁切换浏览器。
+
+\textbf{安装步骤}：按 \texttt{Ctrl+Shift+X} 打开 Extensions 面板，搜索 \texttt{GitHub Pull Requests and Issues}，点击 Install。安装后需要登录 GitHub：按 \texttt{Ctrl+Shift+P} 打开命令面板，输入 \texttt{GitHub: Sign in} 并按提示完成授权。登录后 Activity Bar 会出现 GitHub 图标。
+
+\textbf{核心功能}：
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Activity Bar 中的 GitHub 图标}：点击后查看当前仓库的 PR 列表。
+  \item \texttt{GitHub Pull Requests: Create Pull Request}：从当前分支创建 PR。
+  \item \textbf{查看 PR 详情}：点击 PR 列表中的条目，可查看 diff 和评论。
+  \item \textbf{Checkout PR}：点击 Checkout 按钮切换到 PR 对应的分支进行审查。
+\end{itemize}
+
+\vscodeimg{images/30-gh-pr.png}{GitHub Pull Requests 侧边栏中的 PR 列表}{fig:ext-gh-pr}
+
+\textbf{提示}：审查队友的 PR 时，可以直接在代码行上添加评论，所有操作都会同步到 GitHub。
+
+\subsection{GitHub Issues 使用指南}
+
+GitHub Issues 扩展将 Issue 跟踪功能集成到 VS Code 中，方便你在编码时随时查看和管理任务。
+
+\textbf{安装步骤}：按 \texttt{Ctrl+Shift+X} 打开 Extensions 面板，搜索 \texttt{GitHub Issues}，点击 Install。
+
+\textbf{核心功能}：
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{侧边栏 GitHub Issues 视图}：显示当前仓库的未关闭 Issues。
+  \item \texttt{GitHub Issues: Create Issue from Selection}：选中代码后快速创建 Issue。
+  \item \textbf{引用关联}：在提交信息或 PR 描述中输入 \texttt{\#issue-number} 自动关联对应 Issue。
+  \item \textbf{创建新 Issue}：点击侧边栏中的按钮直接创建。
+\end{itemize}
+
+\textbf{提示}：与 GitHub Pull Requests 扩展配合使用，可以在一个界面中同时管理 Issues 和 PRs。
+
+\subsection{Git Graph 使用指南}
+
+Git Graph 提供直观的图形化分支时间线，让初学者一眼看清项目的分支结构和合并历史。
+
+\textbf{安装步骤}：按 \texttt{Ctrl+Shift+X} 打开 Extensions 面板，搜索 \texttt{Git Graph}，点击 Install。
+
+\textbf{核心功能}：
+\begin{itemize}[leftmargin=2em]
+  \item \texttt{Git Graph: View Git Graph}：打开彩色分支时间线视图。
+  \item \textbf{右键点击提交}：选择 Cherry Pick、Revert、Checkout、Create Branch 或 Merge。
+  \item \textbf{右键点击分支}：选择 Checkout、Delete、Merge、Push 或 Rebase。
+  \item \textbf{比较提交}：Ctrl+Click 第二个提交，比较任意两个提交的差异。
+  \item \textbf{搜索提交}：在图形视图中按 \texttt{Ctrl+F} 搜索提交。
+\end{itemize}
+
+\vscodeimg{images/31-git-graph.png}{Git Graph 分支时间线视图}{fig:ext-git-graph}
+
+\textbf{提示}：学习分支与合并时，用 Git Graph 配合第四章内容，能直观理解分支的创建和合并过程。
+
+\subsection{Git History 使用指南}
+
+Git History 专注于查看单个文件或代码行的详细提交历史，界面轻量，适合快速追溯代码变更。
+
+\textbf{安装步骤}：按 \texttt{Ctrl+Shift+X} 打开 Extensions 面板，搜索 \texttt{Git History}，点击 Install。
+
+\textbf{核心功能}：
+\begin{itemize}[leftmargin=2em]
+  \item \texttt{Git: View File History}：查看当前文件的完整提交历史。
+  \item \texttt{Git: View Line History}：查看光标所在行的修改历史。
+  \item \texttt{Git: View Branch History}：查看当前分支的提交历史。
+  \item \texttt{Git: View Commit History}：查看整个仓库的提交历史。
+\end{itemize}
+
+\vscodeimg{images/32-git-history.png}{Git History 文件历史视图}{fig:ext-git-history}
+
+\textbf{提示}：使用前先打开目标文件，再运行命令，否则可能看不到预期的历史记录。
 
 \subsection*{动手实验 6：VS Code中完成完整Git工作流}
 

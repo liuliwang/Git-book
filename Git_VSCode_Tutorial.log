@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.5) (preloaded format=xelatex 2026.7.31)  3 AUG 2026 14:22
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.5) (preloaded format=xelatex 2026.7.31)  3 AUG 2026 21:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1522,75 +1522,75 @@ Package fontspec Info:
 (fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1824) has occurred while \output is active []
 
  [7
 
 
 ]
-[8] [9]
+[8] [9] [10] [11]
 第一章
-[10
+[12
 
 
-] [11] [12] [13]
-Overfull \hbox (57.57133pt too wide) in paragraph at lines 550--552
+] [13] [14] [15]
+Overfull \hbox (57.57133pt too wide) in paragraph at lines 593--595
 []\TU/lmr/bx/n/12 HEAD\TU/SimSun(0)/m/n/12 ：|  指 向 当 前 检 出 的 分 支 或 \TU/lmr/m/n/
 12 Commit\TU/SimSun(0)/m/n/12 。| \TU/lmtt/m/n/12 .git/HEAD \TU/SimSun(0)/m/n/12
  文 件 内 容 通 常 是 \TU/lmtt/m/n/12 ref: refs/heads/main\TU/SimSun(0)/m/n/12 ，|
  []
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 562.
-[14] [15] [16] [17]
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 605.
+[16] [17] [18] [19]
 File: images/01-sc-overview.png Graphic file (type bmp)
 <images/01-sc-overview.png>
- [18] [19]
+ [20] [21]
 第二章
-[20
+[22
 
-] [21] [22] [23] [24] [25] [26]
+] [23] [24] [25] [26] [27] [28]
 第三章
-[27
+[29
 
 ]
 File: images/12-init-repo.png Graphic file (type bmp)
 <images/12-init-repo.png>
- [28]
+ [30]
 File: images/11-clone-repo.png Graphic file (type bmp)
 <images/11-clone-repo.png>
- [29]
+ [31]
 File: images/13-modified-files.png Graphic file (type bmp)
 <images/13-modified-files.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [30]
+ [32]
 File: images/05-stage-changes.png Graphic file (type bmp)
 <images/05-stage-changes.png>
 
-[31]
+[33]
 File: images/15-commit-button.png Graphic file (type bmp)
 <images/15-commit-button.png>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32]
+ [34]
 File: images/03-diff-editor.png Graphic file (type bmp)
 <images/03-diff-editor.png>
 
-[33]
+[35]
 File: images/24-diff-sidebyside.png Graphic file (type bmp)
 <images/24-diff-sidebyside.png>
 File: images/25-diff-inline.png Graphic file (type bmp)
 <images/25-diff-inline.png>
 File: images/21-gutter-diff.png Graphic file (type bmp)
 <images/21-gutter-diff.png>
- [34] [35] [36] [37] [38] [39] [40] [41]
+ [36] [37] [38] [39] [40] [41] [42] [43]
 第四章
-[42
+[44
 
-] [43]
+] [45]
 File: images/18-current-branch.png Graphic file (type bmp)
 <images/18-current-branch.png>
 File: images/19-create-branch.png Graphic file (type bmp)
@@ -1598,17 +1598,17 @@ File: images/19-create-branch.png Graphic file (type bmp)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44]
-[45] [46]
+ [46]
+[47] [48]
 File: images/merge-conflict.png Graphic file (type bmp)
 <images/merge-conflict.png>
 File: images/08-merge-editor.png Graphic file (type bmp)
 <images/08-merge-editor.png>
- [47] [48] [49] [50] [51] [52]
+ [49] [50] [51] [52] [53] [54] [55] [56] [57]
 第五章
-[53
+[58
 
-] [54]
+] [59]
 File: images/17-pull-push.png Graphic file (type bmp)
 <images/17-pull-push.png>
 File: images/16-sync-button.png Graphic file (type bmp)
@@ -1616,39 +1616,39 @@ File: images/16-sync-button.png Graphic file (type bmp)
 
 Underfull \vbox (badness 1147) has occurred while \output is active []
 
- [55]
+ [60]
 File: images/13-modified-files.png Graphic file (type bmp)
 <images/13-modified-files.png>
 
-[56] [57] [58]
-Overfull \hbox (10.29025pt too wide) in paragraph at lines 2256--2257
+[61] [62] [63]
+Overfull \hbox (10.29025pt too wide) in paragraph at lines 2400--2401
 []\TU/SimSun(0)/m/n/12 添 加 上 游 远 程：| \TU/lmtt/m/n/12 git remote add upstream ht
 tps://github.com/original/repo.git 
  []
 
-[59] [60]
+[64] [65]
 第六章
 File: images/01-sc-overview.png Graphic file (type bmp)
 <images/01-sc-overview.png>
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 2328--2328
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 2472--2472
  [][][][] 
  []
 
-[61
+[66
 
 ]
 File: images/02-sc-graph.png Graphic file (type bmp)
 <images/02-sc-graph.png>
- [62]
+ [67]
 File: images/22-stage-detail.png Graphic file (type bmp)
 <images/22-stage-detail.png>
 File: images/23-stage-lines.png Graphic file (type bmp)
 <images/23-stage-lines.png>
- [63]
+ [68]
 File: images/07-sync-changes.png Graphic file (type bmp)
 <images/07-sync-changes.png>
- [64]
+ [69]
 File: images/19-create-branch.png Graphic file (type bmp)
 <images/19-create-branch.png>
 File: images/10-timeline.png Graphic file (type bmp)
@@ -1656,226 +1656,247 @@ File: images/10-timeline.png Graphic file (type bmp)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65]
+ [70]
 File: images/04-gutter-blame.png Graphic file (type bmp)
 <images/04-gutter-blame.png>
 
-[66] [67]
-Overfull \hbox (36.12744pt too wide) in paragraph at lines 2464--2465
+[71] [72]
+File: images/28-gitlens-blame.png Graphic file (type bmp)
+<images/28-gitlens-blame.png>
+File: images/29-gitlens-graph.png Graphic file (type bmp)
+<images/29-gitlens-graph.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [73]
+File: images/30-gh-pr.png Graphic file (type bmp)
+<images/30-gh-pr.png>
+
+Underfull \vbox (badness 2486) has occurred while \output is active []
+
+ [74]
+[75]
+File: images/31-git-graph.png Graphic file (type bmp)
+<images/31-git-graph.png>
+ [76]
+File: images/32-git-history.png Graphic file (type bmp)
+<images/32-git-history.png>
+
+Overfull \hbox (36.12744pt too wide) in paragraph at lines 2700--2701
 []\TU/SimSun(0)/m/n/12 点 击 源 代 码 管 理 视 图 标 题 栏 的  |「提 交 历 史 图」|  图 标，|  在 图 形 视
  图 中 观 察 \TU/lmtt/m/n/12 feature/sc-practice
  []
 
-[68]
+[77] [78]
 第七章
-[69
+[79
 
-] [70]
+] [80]
 File: images/20-view-changes.png Graphic file (type bmp)
 <images/20-view-changes.png>
 
-Overfull \hbox (35.27196pt too wide) in paragraph at lines 2560--2562
+Overfull \hbox (35.27196pt too wide) in paragraph at lines 2796--2798
 []\TU/SimSun(0)/b/n/12 创 建 分 支\TU/SimSun(0)/m/n/12 ：|  点 击 底 部 状 态 栏 的 分 支 名 称 
 $\OMS/cmsy/m/n/12 !$ \TU/lmr/m/n/12 ”Create new branch” $\OMS/cmsy/m/n/12 !$ \T
 U/SimSun(0)/m/n/12 输 入 \TU/lmtt/m/n/12 feature/user-auth\TU/SimSun(0)/m/n/12 。|
  
  []
 
-[71] [72] [73] [74]
+[81] [82] [83] [84]
 第八章
 
-Underfull \hbox (badness 10000) in paragraph at lines 2717--2718
+Underfull \hbox (badness 10000) in paragraph at lines 2953--2954
 []|\TU/lmr/m/n/12 2. \TU/lmtt/m/n/12 git
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2717--2718
+Underfull \hbox (badness 10000) in paragraph at lines 2953--2954
 \TU/lmtt/m/n/12 filter-repo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2717--2718
+Underfull \hbox (badness 10000) in paragraph at lines 2953--2954
 \TU/lmtt/m/n/12 --path
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2717--2718
+Underfull \hbox (badness 10000) in paragraph at lines 2953--2954
 \TU/lmtt/m/n/12 secret.txt
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2718--2718
+Underfull \hbox (badness 10000) in paragraph at lines 2954--2954
 []|\TU/lmr/m/n/12 3. \TU/lmtt/m/n/12 git push
  []
 
 
-Overfull \hbox (11.65536pt too wide) in paragraph at lines 2718--2718
+Overfull \hbox (11.65536pt too wide) in paragraph at lines 2954--2954
 \TU/lmtt/m/n/12 --force-with-lease| 
  []
 
 
-Underfull \hbox (badness 1226) in paragraph at lines 2719--2719
+Underfull \hbox (badness 1226) in paragraph at lines 2955--2955
 []|\TU/SimSun(0)/m/n/12 误 删 文 件 想 恢
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2719--2719
+Underfull \hbox (badness 10000) in paragraph at lines 2955--2955
 []|\TU/lmtt/m/n/12 git restore
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2719--2719
+Underfull \hbox (badness 10000) in paragraph at lines 2955--2955
 \TU/lmtt/m/n/12 --source=HEAD 1
  []
 
 
-Underfull \hbox (badness 1226) in paragraph at lines 2720--2720
+Underfull \hbox (badness 1226) in paragraph at lines 2956--2956
 []|\TU/SimSun(0)/m/n/12 想 撤 销 已 推 送
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2720--2720
+Underfull \hbox (badness 10000) in paragraph at lines 2956--2956
 []|\TU/lmtt/m/n/12 git reset --hard
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2720--2720
+Underfull \hbox (badness 10000) in paragraph at lines 2956--2956
 []|\TU/lmtt/m/n/12 git revert
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2720--2720
+Underfull \hbox (badness 10000) in paragraph at lines 2956--2956
 \TU/lmtt/m/n/12 <commit-hash>
  []
 
 
-Underfull \hbox (badness 1226) in paragraph at lines 2721--2721
+Underfull \hbox (badness 1226) in paragraph at lines 2957--2957
 []|\TU/SimSun(0)/m/n/12 长 期 不 拉 取 直
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2721--2721
+Underfull \hbox (badness 10000) in paragraph at lines 2957--2957
 []|\TU/SimSun(0)/m/n/12 先 \TU/lmtt/m/n/12 git pull
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2722--2722
+Underfull \hbox (badness 10000) in paragraph at lines 2958--2958
 []|\TU/lmtt/m/n/12 git switch -c
  []
 
 
-Underfull \hbox (badness 1226) in paragraph at lines 2723--2723
+Underfull \hbox (badness 1226) in paragraph at lines 2959--2959
 []|\TU/SimSun(0)/m/n/12 解 决 冲 突 时 手
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2724--2724
+Underfull \hbox (badness 10000) in paragraph at lines 2960--2960
 []|\TU/SimSun(0)/m/n/12 提 交 信 息
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2724--2724
+Underfull \hbox (badness 10000) in paragraph at lines 2960--2960
 \TU/SimSun(0)/m/n/12 写\TU/lmr/m/n/12 ”fix” ”up-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2725--2725
+Underfull \hbox (badness 10000) in paragraph at lines 2961--2961
 []|\TU/lmtt/m/n/12 git push --force
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2726--2726
+Underfull \hbox (badness 10000) in paragraph at lines 2962--2962
 []|\TU/SimSun(0)/m/n/12 忽 略\TU/lmr/m/n/12 .gitignore
  []
 
 
-Underfull \hbox (badness 5970) in paragraph at lines 2726--2726
+Underfull \hbox (badness 5970) in paragraph at lines 2962--2962
 []|\TU/SimSun(0)/m/n/12 新 建 仓 库 第 一 步
  []
 
 
-Underfull \hbox (badness 1226) in paragraph at lines 2727--2727
+Underfull \hbox (badness 1226) in paragraph at lines 2963--2963
 []|\TU/SimSun(0)/m/n/12 合 并 冲 突 后 忘
  []
 
 
-Underfull \hbox (badness 5119) in paragraph at lines 2727--2727
+Underfull \hbox (badness 5119) in paragraph at lines 2963--2963
 []|\TU/SimSun(0)/m/n/12 冲 突 解 决 后 \TU/lmtt/m/n/12 git
  []
 
-[75
+[85
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 2763--2763
+Underfull \hbox (badness 10000) in paragraph at lines 2999--2999
 []|\TU/lmr/m/n/12 Permission denied
  []
 
 
-Underfull \hbox (badness 4927) in paragraph at lines 2764--2764
+Underfull \hbox (badness 4927) in paragraph at lines 3000--3000
 []|\TU/lmr/m/n/12 remote: Repository
  []
 
 
-Underfull \hbox (badness 1048) in paragraph at lines 2764--2765
+Underfull \hbox (badness 1048) in paragraph at lines 3000--3001
 []|\TU/SimSun(0)/m/n/12 远 程 地 址 错 误 或 无 权 限。|  修 复：| \TU/lmtt/m/n/12 git remote
  -v \TU/SimSun(0)/m/n/12 核
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2765--2765
+Underfull \hbox (badness 10000) in paragraph at lines 3001--3001
 []|\TU/lmr/m/n/12 fatal: refusing to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2765--2765
+Underfull \hbox (badness 10000) in paragraph at lines 3001--3001
 \TU/lmr/m/n/12 merge unrelated
  []
 
-[76] [77]
+[86] [87]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 2836.
- [78
+(Font)              <10.95> on input line 3072.
+ [88
 
-] [79
+] [89
 
 ]
 Missing character: There is no ✓ in font [lmmono10-regular]:!
-[80
+[90
 
 ]
 第九章
-[81
+[91
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 3059--3059
+Underfull \hbox (badness 10000) in paragraph at lines 3295--3295
 []|\TU/lmtt/m/n/12 git remote add origin
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3064--3064
+Underfull \hbox (badness 10000) in paragraph at lines 3300--3300
 []|\TU/lmtt/m/n/12 git push -u origin
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3081--3081
+Underfull \hbox (badness 10000) in paragraph at lines 3317--3317
 []|\TU/lmtt/m/n/12 git restore --staged
  []
 
-[82] [83] [84] (Git_VSCode_Tutorial.aux)
+[92] [93] [94] (Git_VSCode_Tutorial.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026/07/22>
  ***********
 Package rerunfilecheck Info: File `Git_VSCode_Tutorial.out' has not changed.
-(rerunfilecheck)             Checksum: 97A3390C080280819C7BA3A5B199C09E;19936.
+(rerunfilecheck)             Checksum: A42C380AA79C75F672FE14AD9A18EB6D;22284.
  ) 
 Here is how much of TeX's memory you used:
- 37006 strings out of 402629
- 828791 string characters out of 5439127
- 1457900 words of memory out of 5000000
- 65556 multiletter control sequences out of 15000+600000
+ 37119 strings out of 402629
+ 833467 string characters out of 5439127
+ 1460640 words of memory out of 5000000
+ 65661 multiletter control sequences out of 15000+600000
  633743 words of font info for 101 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  102i,13n,111p,1207b,1910s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Git_VSCode_Tutorial.pdf (84 pages).
+Output written on Git_VSCode_Tutorial.pdf (94 pages).
