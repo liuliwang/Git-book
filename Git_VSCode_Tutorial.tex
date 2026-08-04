@@ -2491,6 +2491,20 @@ VS Code 的 Git 集成是业界公认最出色的之一，足以满足日常 90\
     \end{itemize}
 \end{enumerate}
 
+\textbf{补充功能速览}：
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Gutter Indicators}：编辑器行号旁的绿/蓝/红标记快速显示哪些行有改动（详见第~\ref{sec:diff-editor}~节）。
+  \item \textbf{AI 提交信息}：提交信息框右侧的星标图标可一键生成提交信息（详见第~\ref{sec:ai-git}~节）。
+  \item \textbf{Code Review 按钮}：暂存更改后可点击 Code Review 让 AI 审查（详见第~\ref{sec:ai-git}~节）。
+\end{itemize}
+
+\begin{tipbox}
+\textbf{快速预览 vs 详细阅读}
+
+上述三项功能在 Source Control 视图中都有入口，但完整用法和配置在第~\ref{sec:diff-editor}~节（Diff 编辑器）和第~\ref{sec:ai-git}~节（AI 辅助功能）中有更详细的介绍。建议先记住入口位置，需要时再深入阅读。
+\end{tipbox}
+
 \subsection{提交历史图（Source Control Graph）}
 
 VS Code 新增了源代码管理图形视图，直观展示提交历史和分支关系。每个节点代表一次提交，绿色圆点表示当前分支的提交，点击可查看详细信息，如图~\ref{fig:sc-graph} 所示：
@@ -2521,6 +2535,266 @@ VS Code 支持精细到\textbf{代码行}级别的暂存——一个文件中改
 \end{enumerate}
 \medskip
 
+\textbf{Diff 视图中的快捷操作}：
+
+打开文件的 Diff 视图后，编辑器 gutter 上会出现 \textbf{Stage} 和 \textbf{Revert} 按钮，可以直接从 diff 视图暂存或还原单个代码块，无需回到 Source Control 侧边栏。此外，你也可以把文件从"更改"列表直接拖到"已暂存的更改"列表实现暂存。详细操作见第~\ref{sec:diff-editor}~节。
+
+\begin{tipbox}
+\textbf{拖动暂存的小技巧}
+
+在 Source Control 视图中，按住文件直接拖动到"已暂存的更改"区域即可完成暂存。这种方式特别适合需要快速挑选多个文件的场景，比逐个点按"+"按钮更高效。
+\end{tipbox}
+
+\section{Diff 编辑器详解（Diff Editor）}\label{sec:diff-editor}
+
+Diff 编辑器是审查代码修改的核心工具。在 VS Code 中，
+它把文件的原始版本和当前修改并排展示，让你一眼看清
+每一处改动。
+
+\textbf{打开 Diff 编辑器的两种方式}：
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{点击文件名}：在 Source Control 视图的"更改"
+        或"暂存的更改"列表中，直接点击任意文件名。
+  \item \textbf{命令面板}：按 \texttt{Ctrl + Shift + P}，输入
+        "Git: Open Changes"，选择当前文件。
+\end{itemize}
+
+\subsection{并排视图与内联视图}
+
+Diff 编辑器默认使用\textbf{并排视图}（Side-by-Side），
+左侧显示文件的原始版本，右侧显示当前修改。
+绿色背景表示新增内容，红色背景表示删除内容，如图~\ref{fig:diff-editor-sidebyside} 所示。
+
+\vscodeimg{images/35-diff-editor-sidebyside.png}{Diff 编辑器并排视图——左侧为原始版本，右侧为当前修改，绿色表示新增，红色表示删除}{fig:diff-editor-sidebyside}
+
+如果屏幕较窄或改动较小，可以切换到\textbf{内联视图}
+（Inline View）。点击 Diff 编辑器右上角工具栏的
+"..."（More Actions）菜单，选择 \textbf{Inline View} 即可，内联视图如图~\ref{fig:diff-editor-inline} 所示。
+
+\vscodeimg{images/36-diff-editor-inline.png}{Diff 编辑器内联视图——变更在同一文件中紧凑显示，适合小改动或窄屏}{fig:diff-editor-inline}
+
+\begin{tipbox}
+\textbf{视图切换快捷键}
+
+内联视图和并排视图没有默认快捷键，但你可以通过
+命令面板（\texttt{Ctrl + Shift + P}）搜索
+"Toggle Inline View"快速切换。
+\end{tipbox}
+
+\subsection{常用操作}
+
+Diff 编辑器提供了多种高效操作，帮助你快速审阅修改：
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{Collapse Unchanged Regions}：折叠未更改区域。
+        对于大文件，这能让你专注于实际修改的部分。
+        点击编辑器右上角的折叠图标即可。
+  \item \textbf{Next Change / Previous Change}：导航按钮。
+        点击工具栏的左右箭头，快速跳转到上一个或
+        下一个变更点，无需手动滚动。
+  \item \textbf{Stage / Revert}：Diff 编辑器 gutter 中的
+        直接操作。每个变更块旁边会出现 "+"（暂存）和
+        "-"（还原）按钮，点击即可对单个代码块执行操作，
+        无需回到 Source Control 视图。
+\end{enumerate}
+
+\begin{warnbox}
+\textbf{从 Diff 视图直接暂存}
+
+Diff 编辑器 gutter 中的 Stage 按钮是最精细的暂存方式——
+它可以只暂存一个代码块，而"部分暂存"（Stage Selected Ranges）
+甚至可以精确到行。这比暂存整个文件更灵活。
+\end{warnbox}
+
+此外，你还可以\textbf{拖动文件进行暂存}：在 Source Control
+视图中，直接把"更改"列表中的文件拖到"暂存的更改"区域，
+文件即被暂存。这种方式直观且高效。
+
+\subsection{Gutter Indicators（行号旁的状态标记）}
+
+除了 Diff 编辑器，VS Code 还在普通编辑器的\textbf{行号旁}
+（gutter 区域）实时显示变更指示。这些标记让你在不打开
+Diff 视图的情况下，也能快速了解当前文件的修改分布，如图~\ref{fig:gutter-indicators} 所示。
+
+\vscodeimg{images/37-gutter-indicators.png}{编辑器 Gutter Indicators——绿色竖条表示新增行，蓝色竖条表示修改行，红色三角表示删除行}{fig:gutter-indicators}
+
+\textbf{三种标记的含义}：
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{绿色竖条}：新增行（Added）
+  \item \textbf{蓝色竖条}：修改行（Modified）
+  \item \textbf{红色三角}：删除行（Deleted），显示在删除点上方
+\end{itemize}
+
+这些标记不仅出现在编辑器左侧的 gutter 中，在右侧的
+\textbf{minimap}（代码缩略图）中也同样可见，方便你快速
+定位到文件中的修改位置。
+
+点击任意 gutter 指示器，会展开一个\textbf{内联 diff 预览}，
+显示该处修改的详细内容。预览中同样提供 Stage 和 Revert
+按钮，可以直接从预览中暂存或还原单个代码块，如图~\ref{fig:gutter-hover} 所示。
+
+\vscodeimg{images/38-gutter-hover.png}{点击 Gutter Indicator 展开内联 diff 预览——可直接从预览中暂存或还原代码块}{fig:gutter-hover}
+
+\textbf{相关设置}：在设置中搜索 \texttt{scm.diffDecorations}，
+可以控制变更指示的显示范围：
+
+\begin{itemize}[leftmargin=2em]
+  \item \texttt{all}：全部显示（默认）
+  \item \texttt{gutter}：仅显示在 gutter 中
+  \item \texttt{overview}：仅显示在 overview 标尺中
+  \item \texttt{minimap}：仅显示在 minimap 中
+  \item \texttt{none}：完全隐藏
+\end{itemize}
+
+另一个相关设置是 \texttt{scm.diffDecorationsGutterVisibility}，
+控制 gutter 指示器的显示时机：
+
+\begin{itemize}[leftmargin=2em]
+  \item \texttt{always}：始终显示
+  \item \texttt{onHover}：鼠标悬停时显示
+\end{itemize}
+
+\begin{keybox}
+\textbf{Diff 编辑器与 Gutter Indicators 的关系}
+
+Diff 编辑器用于\textbf{详细审查}——看清单个文件的所有改动；
+Gutter Indicators 用于\textbf{快速定位}——在编辑代码时一眼看到
+修改分布。两者互补，日常开发中配合使用效率最高。
+\end{keybox}
+
+\begin{infobox}
+\textbf{参考来源}
+
+本章内容参考 VS Code 官方文档：
+\url{https://code.visualstudio.com/docs/sourcecontrol/staging-commits}
+\end{infobox}
+
+\section{AI 辅助功能（AI-Powered Git）}\label{sec:ai-git}
+
+VS Code 从 1.90 版本起，在 Source Control 视图中集成了 AI 辅助功能。这些功能依托 GitHub Copilot 扩展，能够基于你的代码更改自动生成提交信息、审查修改内容，甚至辅助解决合并冲突。对于每天需要频繁提交和审查代码的开发者来说，AI 辅助可以显著减少重复劳动，让你把精力集中在代码本身。
+
+本章介绍的 AI 功能均需要安装并登录 GitHub Copilot 扩展（部分功能需要有效订阅）。如果你尚未配置 Copilot，请先前往 VS Code 扩展市场安装 "GitHub Copilot" 扩展并登录 GitHub 账号。
+
+\subsection{AI 生成提交信息}
+
+写提交信息（Commit Message）是开发流程中不可避免但又容易敷衍的环节。好的提交信息应该清晰描述"做了什么"和"为什么做"，但手动撰写往往耗时且容易写成 "fix bug" 或 "update" 这类无意义的描述。
+
+VS Code 的 AI 提交信息功能解决了这个问题。当你在 Source Control 视图中暂存了更改后，提交信息输入框右侧会出现一个星标（Sparkle）图标。点击该图标，Copilot 会分析当前暂存的代码差异，自动生成一段结构化的提交信息，如图~\ref{fig:ai-commit-message} 所示。
+
+\vscodeimg{images/39-ai-commit-message.png}{AI 生成提交信息——Source Control 视图提交框右侧的星标图标，点击后基于暂存更改自动生成提交信息}{fig:ai-commit-message}
+
+\textbf{使用步骤}：
+\medskip
+\begin{enumerate}[leftmargin=1.5em]
+  \item 在 Source Control 视图中，将需要提交的更改暂存（Stage）。
+  \item 点击提交信息输入框右侧的星标图标（Sparkle）。
+  \item Copilot 分析暂存文件的 diff，自动生成提交信息草稿。
+  \item 你可以直接接受、修改或重新生成。
+\end{enumerate}
+\medskip
+
+\textbf{自定义生成风格}：
+
+Copilot 支持通过 Custom Instructions 自定义提交信息的生成风格。在 VS Code 设置中搜索 "GitHub Copilot Commit Message Generation"，你可以添加类似以下的指令：
+
+\begin{lstlisting}[style=shell]
+# 使用中文生成提交信息
+请用中文撰写提交信息，格式为：
+<类型>: <简短描述>
+
+# 使用动词开头
+所有提交信息以动词开头，
+例如 "Add", "Fix", "Update", "Remove"
+
+# 简洁风格
+提交信息不超过 50 个字符，
+只描述核心改动
+\end{lstlisting}
+
+\textbf{相关设置}：
+
+\begin{itemize}[leftmargin=2em]
+  \item \texttt{git.useEditorAsCommitInput}：启用后，提交信息输入框会打开一个完整编辑器，方便撰写多段落提交信息（适合需要详细说明的提交）。
+  \item \texttt{git.addAICoAuthor}：启用后，AI 生成提交信息时会自动添加 \texttt{Co-authored-by} 标记，记录 Copilot 的辅助贡献。
+\end{itemize}
+
+\begin{tipbox}
+\textbf{AI 生成提交信息的最佳实践}
+
+AI 生成的提交信息虽然省时，但建议养成"生成后检查"的习惯。重点关注：
+\begin{itemize}[leftmargin=2em]
+  \item 是否准确描述了改动的核心内容？
+  \item 是否遗漏了重要的破坏性变更（Breaking Change）？
+  \item 是否符合团队的提交信息规范（如 Conventional Commits）？
+\end{itemize}
+\end{tipbox}
+
+\subsection{AI 代码审查（Code Review）}
+
+除了生成提交信息，Copilot 还能在提交前帮你审查代码。在 Source Control 视图中，暂存更改后会出现一个 "Code Review" 按钮。点击后，Copilot 会分析当前更改并给出审查评论和改进建议，如图~\ref{fig:ai-code-review} 所示。
+
+\vscodeimg{images/40-ai-code-review.png}{AI 代码审查——Source Control 视图中的 Code Review 按钮，AI 分析当前更改并给出审查评论}{fig:ai-code-review}
+
+\textbf{Code Review 能做什么}：
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{发现潜在问题}：如未处理的异常、边界条件遗漏、性能隐患等。
+  \item \textbf{代码风格建议}：指出不符合团队规范或最佳实践的写法。
+  \item \textbf{安全风险提示}：标记可能的 SQL 注入、XSS 等安全问题。
+  \item \textbf{改进建议}：提供更简洁或更高效的实现方式。
+\end{itemize}
+
+\textbf{GitHub Pull Requests 中的 Code Review}：
+
+如果你使用 GitHub Pull Requests 扩展，在 PR 的描述页面同样可以找到 Code Review 按钮。这里的审查范围更大，可以分析整个 PR 的所有更改，而不仅仅是当前暂存的文件。审查结果会以评论形式出现在 PR 中，方便团队成员查看和讨论。
+
+\begin{warnbox}
+\textbf{AI 审查的局限性}
+
+AI 代码审查是辅助工具，不能替代人工审查。它可能：
+\begin{itemize}[leftmargin=2em]
+  \item 误报——把正确的代码标记为有问题（False Positive）。
+  \item 漏报——遗漏真正重要的安全或逻辑缺陷。
+  \item 建议不当——在某些场景下给出不符合业务需求的修改建议。
+\end{itemize}
+建议将 AI 审查作为第一道过滤，关键代码仍需人工复核。
+\end{warnbox}
+
+\subsection{AI 辅助解决合并冲突}
+
+在第~\ref{sec:merge-conflicts}~节中，我们介绍了 VS Code 的三路合并编辑器和内联冲突解决工具。在较新版本的 VS Code 中，Copilot 还提供了 AI 辅助的合并冲突解决功能。
+
+当遇到合并冲突时，Copilot 可以分析冲突双方的代码，自动生成一个"智能合并建议"。这个建议会尝试理解双方的修改意图，给出一个兼顾两边的合并结果。你可以在合并编辑器中看到 AI 建议的选项，选择接受、修改或忽略。
+
+\begin{keybox}
+\textbf{AI 辅助冲突解决的使用场景}
+
+AI 辅助冲突解决特别适合以下情况：
+\begin{itemize}[leftmargin=2em]
+  \item 冲突双方只是格式或变量名的微小差异，AI 可以快速合并。
+  \item 冲突涉及大量重复代码，手动合并容易出错。
+  \item 你对某段代码不熟悉，不确定应该保留哪一方的实现。
+\end{itemize}
+但对于涉及核心业务逻辑的复杂冲突，仍建议手动审查每一行更改。
+\end{keybox}
+
+\begin{warnbox}
+\textbf{Copilot 订阅要求}
+
+本章介绍的 AI 辅助功能大部分需要有效的 GitHub Copilot 订阅。免费版 Copilot 有使用次数限制，部分高级功能（如 PR 级别的 Code Review）仅对付费订阅用户开放。具体功能和定价请参考 GitHub 官方页面。
+\end{warnbox}
+
+\begin{infobox}
+\textbf{参考来源}
+
+本章内容参考 VS Code 官方文档：
+\url{https://code.visualstudio.com/docs/sourcecontrol/overview}
+与
+\url{https://code.visualstudio.com/docs/sourcecontrol/staging-commits}
+\end{infobox}
+
 \section{同步操作详解}
 
 \subsection{一键同步}
@@ -2533,9 +2807,203 @@ VS Code 底部状态栏显示同步状态，点击同步图标可以一键执行
 
 \subsection{查看和切换分支}
 
-当前分支名称显示在 VS Code \textbf{底部状态栏的左下角}，点击即可查看分支列表、切换分支或创建新分支。创建新分支时，VS Code 会自动从当前分支创建并立即切换，如图~\ref{fig:create-branch-alt} 所示：
+当前分支名称显示在 VS Code \textbf{底部状态栏的左下角}，点击即可查看分支列表、切换分支或创建新分支。创建新分支时，VS Code 会自动从当前分支创建并立即切换，如图~\ref{fig:create-branch-alt} 所示。如果需要在同一仓库中并行维护多个工作目录，分别处理不同的分支，可以进一步了解第~\ref{sec:git-worktrees}~节的工作树（Worktrees）功能。
 
 \vscodeimg{images/19-create-branch.png}{创建新分支——输入新分支名称后，VS Code 会自动从当前分支创建并切换}{fig:create-branch-alt}
+
+\section{Git Worktrees（工作树）}\label{sec:git-worktrees}
+
+Git Worktree（工作树）是 Git 的一项高级功能，允许你在同一仓库中维护多个独立的工作目录。每个工作树可以检出不同的分支，拥有独立的文件系统视图，彼此之间互不干扰。这意味着你可以同时打开多个 VS Code 窗口，分别处理不同的功能分支，而无需频繁切换分支或暂存当前的工作进度。
+
+在 VS Code 中，工作树与 Source Control 面板深度集成，你可以像管理普通仓库一样管理工作树，包括创建、打开、比较差异等操作。
+
+\subsection{为什么使用工作树}
+
+工作树解决了日常开发中几个常见的痛点：
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{并行开发}：同时处理多个功能分支，无需频繁 \texttt{git stash} 和 \texttt{git checkout}。
+  \item \textbf{代码审查}：测试队友的 PR 时，无需暂存自己未提交的工作。
+  \item \textbf{紧急修复}：生产环境出现 bug 时，可以在独立工作树中快速修复并发布，同时保持主工作区中的重构工作不受影响。
+  \item \textbf{运行不同版本}：在不同工作树中运行同一应用的不同版本，方便对比行为差异。
+\end{itemize}
+
+\subsection{创建工作树}
+
+\textbf{图形界面操作}：
+
+在 VS Code 中创建工作树非常直观：
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item 打开 Source Control 视图，在顶部的 Repositories 视图中选中目标仓库。
+  \item 点击仓库名称右侧的 \textbf{More Actions(...)}（三点菜单）。
+  \item 选择 \textbf{Worktrees} > \textbf{Create Worktree}。
+  \item 在弹出的对话框中选择要检出的分支（或新建分支），并指定工作树的存放路径。
+  \item VS Code 会自动创建文件夹并检出分支，新工作树随即出现在 Repositories 视图中，整个过程如图~\ref{fig:worktree-create} 所示。
+\end{enumerate}
+
+\vscodeimg{images/41-worktree-create.png}{创建工作树——通过 More Actions 菜单选择 Create Worktree，指定分支和路径}{fig:worktree-create}
+
+创建完成后，你可以在 Repositories 视图中看到新出现的工作树条目，它与原仓库并列显示，方便你快速识别和管理，如图~\ref{fig:worktree-repositories} 所示。
+
+\vscodeimg{images/42-worktree-repositories.png}{Repositories 视图中的工作树——新工作树作为独立条目显示，与原仓库并列}{fig:worktree-repositories}
+
+\textbf{命令行方式}：
+
+如果你更习惯使用命令行，Git 也提供了简洁的工作树命令：
+
+\begin{lstlisting}[style=shell]
+# 基于当前分支创建新工作树（新目录）
+git worktree add ../my-feature feature-branch
+
+# 基于远程分支创建工作树
+git worktree add ../hotfix origin/main -b hotfix-branch
+
+# 列出所有工作树
+git worktree list
+
+# 删除工作树
+git worktree remove ../my-feature
+\end{lstlisting}
+
+\subsection{管理工作树}
+
+创建后的工作树可以通过多种方式管理：
+
+\textbf{打开工作树}：在 Repositories 视图中右键点击工作树条目，选择 \textbf{Open Worktree in New Window} 在新窗口中打开，或选择 \textbf{Open Worktree in Current Window} 在当前窗口中切换。
+
+\textbf{比较差异}：使用 \textbf{Compare with Workspace} 命令，可以快速比较当前工作区与工作树之间的文件差异，方便审查和合并。
+
+\textbf{迁移更改}：VS Code 提供了 \textbf{Migrate Worktree Changes} 命令，可以将工作树中的未提交更改合并回当前工作区，无需手动复制文件。
+
+\textbf{自动检测}：默认情况下，VS Code 不会自动检测已有的工作树。你可以在设置中启用 \texttt{git.detectWorktrees}，让 VS Code 自动识别并显示仓库关联的所有工作树。
+
+\textbf{文件复制配置}：通过设置 \texttt{git.worktreeIncludeFiles}，可以指定在工作树创建时自动复制的文件列表（如 \texttt{.gitignore}、\texttt{.env} 等），避免重复配置。注意，像 \texttt{node\_modules} 这样的大型依赖目录通常不应复制，而是通过包管理器重新安装。
+
+\begin{tipbox}
+\textbf{工作树的最佳实践}
+
+工作树虽然强大，但也需要注意以下几点：
+\begin{itemize}[leftmargin=2em]
+  \item 工作树之间共享同一个 \texttt{.git} 目录，因此提交历史是共通的。在一个工作树中提交后，其他工作树立即可见。
+  \item 不要在同一个工作树中再次运行 \texttt{git init}，这会破坏仓库结构。
+  \item 删除工作树前，确保其中的更改已提交或迁移，否则可能丢失工作进度。
+  \item 工作树路径最好与主仓库保持同级目录结构，方便管理和识别。
+\end{itemize}
+\end{tipbox}
+
+\begin{infobox}
+\textbf{参考来源}
+
+本章内容参考 VS Code 官方文档：
+\url{https://code.visualstudio.com/docs/sourcecontrol/branches-worktrees}
+\end{infobox}
+
+\section{合并冲突解决（Merge Conflicts）}\label{sec:merge-conflicts}
+
+当你把两个分支合并到一起时，如果它们对同一处代码做了不同的修改，Git 就无法自动判断该保留哪一方的改动，这种情况就叫\textbf{合并冲突}（Merge Conflict）。
+
+冲突通常发生在以下场景：
+\begin{itemize}[leftmargin=2em]
+  \item 两个分支修改了同一文件的同一行代码，执行 \texttt{git merge} 时触发
+  \item 从远程仓库 \texttt{git pull} 时，本地修改与远程新提交发生冲突
+  \item 执行 \texttt{git rebase} 或 \texttt{git cherry-pick} 时也可能遇到
+\end{itemize}
+
+遇到冲突不要慌。VS Code 提供了两种可视化工具：三路合并编辑器和内联冲突解决。下面分别介绍。
+
+\begin{warnbox}
+\textbf{冲突的本质}
+
+冲突不是错误，而是 Git 在向你求助："这里有两份不同的修改，请你来决定最终版本。"只要理解这一点，解决冲突就会变得从容。
+\end{warnbox}
+
+\subsection{三路合并编辑器（3-Way Merge Editor）}
+
+VS Code 的三路合并编辑器是处理复杂冲突的利器。它把冲突拆成三个面板，让你一目了然，如图~\ref{fig:merge-editor-3way} 所示。
+
+\vscodeimg{images/33-merge-editor-3way.png}{三路合并编辑器界面——左侧 Incoming 显示被合并分支的更改，右侧 Current 显示当前分支，底部 Result 为合并结果}{fig:merge-editor-3way}
+
+\textbf{三面板布局}：
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Incoming（左）}：被合并分支（如 \texttt{feature}）的更改
+  \item \textbf{Current（右）}：当前分支（如 \texttt{main}）的内容
+  \item \textbf{Result（底部）}：合并后的结果，你可以在这里手动编辑
+\end{itemize}
+
+\textbf{解决冲突的操作步骤}：
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item 打开冲突文件后，VS Code 自动进入三路合并视图。
+  \item 每个冲突项旁边会出现复选框，勾选你想保留的更改（可单选或多选）。
+  \item 在 Result 面板中手动微调，确保代码逻辑正确。
+  \item 点击右上角的 \textbf{Complete Merge} 按钮，暂存并关闭编辑器。
+\end{enumerate}
+
+\textbf{进阶功能}：
+
+\begin{itemize}[leftmargin=2em]
+  \item 点击右上角的三点菜单，可切换为垂直布局，或显示 \textbf{Base} 视图（文件合并前的原始状态）。
+  \item 编辑器顶部会显示未解决冲突计数指示器，实时告诉你还剩几处冲突。
+  \item 如果不喜欢三路编辑器，可以在设置中搜索 \texttt{git.mergeEditor}，取消勾选即可回退到内联视图。
+\end{itemize}
+
+\begin{tipbox}
+\textbf{Base 视图的作用}
+
+Base 视图显示的是两个分支分叉前的原始文件状态。当你不确定哪一方的改动更合理时，看看 Base 能帮你理清思路：原来这里最初长什么样。
+\end{tipbox}
+
+\subsection{内联冲突解决（Inline Merge）}
+
+对于简单的冲突，VS Code 也支持直接在代码中内联解决。冲突文件会在 Source Control 视图中高亮显示，如图~\ref{fig:merge-inline-actions} 所示。
+
+\vscodeimg{images/34-merge-inline-actions.png}{内联冲突解决操作——冲突代码块上方出现四个操作按钮，可直接选择保留方案}{fig:merge-inline-actions}
+
+当 VS Code 检测到冲突时，会在冲突代码块上方显示四个操作按钮：
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Accept Current Change}：保留当前分支的修改
+  \item \textbf{Accept Incoming Change}：保留被合并分支的修改
+  \item \textbf{Accept Both Changes}：同时保留双方的修改（上下排列）
+  \item \textbf{Compare Changes}：打开 Diff 视图，详细对比双方差异
+\end{itemize}
+
+点击任意按钮后，VS Code 会自动清理冲突标记，文件状态也会从冲突变为已修改。
+
+\begin{stepbox}
+\textbf{动手实验：人为制造并解决冲突}
+
+按以下步骤在本地仓库中体验一次完整的冲突解决流程：
+
+\begin{lstlisting}[style=shell]
+# create and switch to new branch
+git checkout -b feature
+echo "Feature branch line" > README.md
+git add README.md && git commit -m "feature update"
+# switch back to main and modify same line
+git checkout main
+echo "Main branch line" > README.md
+git add README.md && git commit -m "main update"
+# merge feature branch, conflict occurs
+git merge feature
+# open README.md in VS Code, resolve inline
+# then stage and commit
+git add README.md && git commit -m "resolve conflict"
+\end{lstlisting}
+\end{stepbox}
+
+\subsection{AI 辅助解决冲突}
+
+VS Code 新版本（需安装 GitHub Copilot 扩展）支持 AI 辅助合并冲突。当检测到冲突时，Copilot 会分析双方代码的上下文，自动生成一个合理的合并建议。你可以直接采纳建议，或在此基础上手动调整。这能显著减少处理复杂冲突时的认知负担。
+
+\begin{infobox}
+\textbf{参考来源}
+
+本章内容参考 VS Code 官方文档：\\
+\url{https://code.visualstudio.com/docs/sourcecontrol/merge-conflicts}
+\end{infobox}
 
 \section{Timeline 视图：文件历史}
 
@@ -2617,6 +3085,25 @@ GitLens 是 VS Code 中最流行的 Git 增强扩展，它能在编辑器中直�
 
 \textbf{提示}：初学者可以先开启 Inline Blame 和 CodeLens，它们能让你在阅读代码时自然了解修改背景。
 
+\textbf{进阶功能}（GitLens 16+）：
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Commit Graph 过滤}：Commit Graph 支持按提交信息、作者、文件、更改类型过滤，输入 \texttt{@me} 只看自己的提交。
+  \item \textbf{Home View}：GitLens 16 新增的起始视图，展示当前仓库、检出分支、相关 PR、Launchpad 待审查列表、最近活跃分支/工作树/PR。
+  \item \textbf{Launchpad}：优先显示待你审查的内容，集中管理 PR 和审查任务。
+  \item \textbf{Start Work}：从 Home View 或命令面板执行 \texttt{GitLens: Start Work} 创建分支并初始化任务。
+\end{itemize}
+
+\begin{infobox}
+\textbf{参考来源}
+
+GitLens 官方文档：
+\url{https://help.gitkraken.com/gitlens/gitlens-start-here/}
+
+GitLens 16 新特性：
+\url{https://www.gitkraken.com/blog/gitlens-16-vs-code-release-new-features}
+\end{infobox}
+
 \subsection{GitHub Pull Requests 使用指南}
 
 GitHub Pull Requests 扩展让你在 VS Code 中直接查看、创建和审查 Pull Request，无需频繁切换浏览器。
@@ -2634,6 +3121,21 @@ GitHub Pull Requests 扩展让你在 VS Code 中直接查看、创建和审查 P
 \vscodeimg{images/30-gh-pr.png}{GitHub Pull Requests 侧边栏中的 PR 列表}{fig:ext-gh-pr}
 
 \textbf{提示}：审查队友的 PR 时，可以直接在代码行上添加评论，所有操作都会同步到 GitHub。
+
+\textbf{进阶功能}：
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{行内评论（In-editor Commenting）}：审查 PR 时直接在代码行上添加评论，支持单条评论和整体 Review。
+  \item \textbf{Review Mode}：点击 Checkout PR 切换到 PR 分支后进入审查模式，出现 Changes in Pull Request 视图可查看 diff 和所有提交；Exit Review Mode 返回原分支。
+  \item \textbf{AI 代码审查}：PR 描述页面有 Code Review 按钮，AI 可审查整个 PR 的所有更改（详见第~\ref{sec:ai-git}~节）。
+\end{itemize}
+
+\begin{infobox}
+\textbf{参考来源}
+
+VS Code 官方文档：
+\url{https://code.visualstudio.com/docs/sourcecontrol/github}
+\end{infobox}
 
 \subsection{GitHub Issues 使用指南}
 
@@ -2690,19 +3192,21 @@ Git History 专注于查看单个文件或代码行的详细提交历史，界�
 
 \subsection*{动手实验 6：VS Code中完成完整Git工作流}
 
-花 5 分钟把本章的核心功能串起来走一遍：建分支、编辑、部分暂存、提交、查看历史图。全程只使用鼠标点击，不需要输入任何命令。
+花 8 分钟把本章的核心功能串起来走一遍：建分支、编辑、Diff 审查、部分暂存、提交、查看历史图。全程只使用鼠标点击，不需要输入任何命令。
 
 \medskip
 \begin{enumerate}[leftmargin=1.5em]
   \item 点击底部状态栏分支名 $\to$「Create new branch…」，输入 \texttt{feature/sc-practice} 并回车。
-  \item 在 \texttt{hello.txt} 末尾新增两行内容并保存；点击文件名打开 Diff 视图，用鼠标选中其中一行，右键 $\to$「Stage Selected Ranges」，实现只暂存这一行（部分暂存）。
-  \item 点击「更改」标题右侧的「+」按钮，把剩余修改全部暂存；在提交信息框输入 \texttt{练习部分暂存}，点击「提交」。
+  \item 在 \texttt{hello.txt} 末尾新增两行内容并保存；在资源管理器中点击文件名打开 Diff 视图，观察行号旁 gutter 上的绿色标记（新增行）（详见第~\ref{sec:diff-editor}~节）。
+  \item 点击 Diff 编辑器工具栏的「下一个更改」（Next Change）按钮，在两个修改位置之间跳转；再点击「折叠未更改区域」（Collapse Unchanged Regions）按钮，观察只有差异代码块显示，其余部分被折叠（详见第~\ref{sec:diff-editor}~节）。
+  \item 在 Diff 编辑器左侧 gutter 上，点击某行修改旁的 \textbf{Stage} 按钮，把该行直接暂存（部分暂存）；然后回到 Source Control 视图，点击「更改」标题右侧的「+」按钮，把剩余修改全部暂存。
+  \item 在提交信息框输入 \texttt{练习部分暂存}。如果已安装 GitHub Copilot 扩展，可点击提交信息框右侧的星标图标，让 AI 自动生成提交信息（没有则手动输入即可）（详见第~\ref{sec:ai-git}~节）。点击「提交」。
   \item 点击源代码管理视图标题栏的「提交历史图」图标，在图形视图中观察 \texttt{feature/sc-practice} 相对 \texttt{main} 的分叉和本次提交。
   \item 在左侧资源管理器底部打开 Timeline（时间线）视图，点击 \texttt{hello.txt}，可以看到该文件从实验 1 到现在的每一次提交记录。
 \end{enumerate}
 \medskip
 
-\noindent\textbf{提示：}\textbf{成功标志}：Timeline 视图中 \texttt{hello.txt} 列出了多条提交记录，最近一条是 \texttt{练习部分暂存}。
+\noindent\textbf{提示：}\textbf{成功标志}：Diff 编辑器中 gutter 的绿色标记已消失（修改已提交）；提交历史图中出现 \texttt{feature/sc-practice} 分叉；Timeline 视图中 \texttt{hello.txt} 列出了多条提交记录，最近一条是 \texttt{练习部分暂存}。
 \medskip
 
 \textbf{下一章预告}：我们将学习如何将这些技能整合成一套完整的工作流，以及如何在团队中高效协作。
